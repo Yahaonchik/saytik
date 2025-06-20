@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;1,400&family=PT+Serif+Caption:ital,wght@0,400;1,400&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=Vollkorn:ital,wght@0,400;0,500;1,400&family=Ubuntu:ital,wght@0,400;0,500;1,400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Phone shake animation synced with washing machine */
+@keyframes phoneShake {
+  65%,
+  80%,
+  88%,
+  96% {
+    transform: rotate(5deg);
+  }
+  50%,
+  75%,
+  84%,
+  92% {
+    transform: rotate(-5deg);
+  }
+  0%,
+  50%,
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.phone-shake {
+  animation: phoneShake 3s ease-in-out infinite;
+}
+
+/* Washing Machine Loader */
+.loader {
+  width: 120px;
+  height: 150px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(#ddd 50%, #bbb 51%), linear-gradient(#ddd, #ddd),
+    linear-gradient(#ddd, #ddd),
+    radial-gradient(ellipse at center, #aaa 25%, #eee 26%, #eee 50%, #0000 55%),
+    radial-gradient(ellipse at center, #aaa 25%, #eee 26%, #eee 50%, #0000 55%),
+    radial-gradient(ellipse at center, #aaa 25%, #eee 26%, #eee 50%, #0000 55%);
+  background-position:
+    0 20px,
+    45px 0,
+    8px 6px,
+    55px 3px,
+    75px 3px,
+    95px 3px;
+  background-size:
+    100% 4px,
+    1px 23px,
+    30px 8px,
+    15px 15px,
+    15px 15px,
+    15px 15px;
+  position: relative;
+  border-radius: 6%;
+  animation: shake 3s ease-in-out infinite;
+  transform-origin: 60px 180px;
+}
+
+/* Mobile responsive adjustments for loader */
+@media (max-width: 768px) {
+  .loader {
+    width: 100px;
+    height: 125px;
+    transform-origin: 50px 150px;
+    background-position:
+      0 17px,
+      37px 0,
+      7px 5px,
+      46px 2px,
+      62px 2px,
+      79px 2px;
+    background-size:
+      100% 3px,
+      1px 19px,
+      25px 7px,
+      12px 12px,
+      12px 12px,
+      12px 12px;
+  }
+
+  .loader:before {
+    left: 4px;
+    width: 6px;
+    height: 4px;
+    box-shadow: 85px 0 #aaa;
+  }
+
+  .loader:after {
+    width: 79px;
+    height: 79px;
+    bottom: 17px;
+    background-size:
+      25px 100%,
+      75px 67px;
+    border: 8px solid #ddd;
+  }
+}
+
+.loader:before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 100%;
+  width: 7px;
+  height: 5px;
+  background: #aaa;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 102px 0 #aaa;
+}
+
+.loader:after {
+  content: "";
+  position: absolute;
+  width: 95px;
+  height: 95px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 20px;
+  background-color: #bbdefb;
+  background-image:
+    linear-gradient(to right, #0004 0%, #0004 49%, #0000 50%, #0000 100%),
+    linear-gradient(135deg, #64b5f6 50%, #607d8b 51%);
+  background-size:
+    30px 100%,
+    90px 80px;
+  border-radius: 50%;
+  background-repeat: repeat, no-repeat;
+  background-position: 0 0;
+  box-sizing: border-box;
+  border: 10px solid #ddd;
+  box-shadow:
+    0 0 0 4px #999 inset,
+    0 0 6px 6px #0004 inset;
+  animation: spin 3s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  75% {
+    transform: rotate(750deg);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
+@keyframes shake {
+  65%,
+  80%,
+  88%,
+  96% {
+    transform: rotate(0.5deg);
+  }
+  50%,
+  75%,
+  84%,
+  92% {
+    transform: rotate(-0.5deg);
+  }
+  0%,
+  50%,
+  100% {
+    transform: rotate(0);
+  }
+}
