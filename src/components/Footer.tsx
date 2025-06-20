@@ -8,14 +8,14 @@ export const Footer: React.FC = () => {
   return (
     <>
       <footer
-        className="relative w-full h-[680px] bg-cover bg-center bg-no-repeat"
+        className="relative w-full h-[480px] bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
             "url(https://cdn.builder.io/api/v1/assets/5f43915d1cce45c489b075510e2da397/frame-701-338b1d?format=webp&width=800)",
         }}
       >
-        <div className="container mx-auto px-4 h-full relative">
-          <div className="flex flex-col lg:flex-row justify-between items-start h-full py-8 lg:py-20">
+        <div className="max-w-[1200px] mx-auto px-4 h-full relative">
+          <div className="flex flex-col lg:flex-row justify-between items-start h-full py-6 lg:py-12">
             {/* Left Section - Contact Info */}
             <div className="flex flex-col justify-center lg:ml-[120px] w-full lg:w-[368px] space-y-6 lg:space-y-8">
               <h3

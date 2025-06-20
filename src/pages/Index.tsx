@@ -32,9 +32,9 @@ const Index = () => {
         >
           <div className="w-full px-3 sm:px-4 h-full flex items-center justify-between max-w-[1989px] mx-auto">
             {/* Logo */}
-            <a href="/" className="flex items-center">
+            <a href="/" className="flex items-center ml-8 md:ml-12 lg:ml-16">
               <img
-                src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-2dc22e?format=webp&width=800"
+                src="https://cdn.builder.io/api/v1/assets/b5993ffd3d3f4fc78326f8b01db580e9/image-914297923-c8caa2?format=webp&width=800"
                 alt="РемСтирМаш - Ремонт стиральных машин"
                 className="h-[34px] sm:h-[39px] md:h-[46px] w-auto object-contain hover:opacity-80 transition-opacity"
               />
@@ -67,8 +67,20 @@ const Index = () => {
               <MobileMenu />
             </div>
 
+            {/* Contact Info - Desktop only */}
+            <div className="hidden lg:flex items-center gap-3 xl:gap-8 flex-shrink-0 mr-8 md:mr-12 lg:mr-16">
+              <div className="flex items-center justify-center gap-[10px] w-[160px] xl:w-[185px] h-[42px] px-[10px] py-[10px] rounded-[10px] bg-[#72B5FF] flex-shrink-0">
+                <span className="text-white font-ibm-plex-serif text-[14px] xl:text-[17px] font-normal whitespace-nowrap">
+                  +38 (067) 123-45-67
+                </span>
+              </div>
+              <div className="text-[rgba(98,107,120,0.8)] font-ibm-plex-serif text-[14px] xl:text-[17px] font-normal whitespace-nowrap">
+                Пн-Вс: 9:00-21:00
+              </div>
+            </div>
+
             {/* Navigation - Hidden on mobile and tablet */}
-            <nav className="hidden xl:flex items-center gap-[39px] flex-1 justify-center">
+            <nav className="hidden xl:flex items-center gap-[39px] absolute left-1/2 transform -translate-x-1/2">
               <a
                 href="#"
                 className="text-[#626B78] font-ibm-plex-serif text-[17px] font-normal hover:text-[#72B5FF] transition-colors whitespace-nowrap"
@@ -94,18 +106,6 @@ const Index = () => {
                 Статьи
               </a>
             </nav>
-
-            {/* Contact Info - Desktop only */}
-            <div className="hidden lg:flex items-center gap-3 xl:gap-6 flex-shrink-0">
-              <div className="text-[rgba(98,107,120,0.8)] font-ibm-plex-serif text-[14px] xl:text-[17px] font-normal whitespace-nowrap">
-                Пн-Вс: 9:00-21:00
-              </div>
-              <div className="flex items-center justify-center gap-[10px] w-[160px] xl:w-[185px] h-[42px] px-[10px] py-[10px] rounded-[10px] border border-[rgba(0,0,0,0.18)] flex-shrink-0">
-                <span className="text-[#626B78] font-ibm-plex-serif text-[14px] xl:text-[17px] font-normal whitespace-nowrap">
-                  +38 (067) 123-45-67
-                </span>
-              </div>
-            </div>
           </div>
         </div>
       </header>
@@ -141,7 +141,7 @@ const Index = () => {
 
             <p className="text-[10px] sm:text-[10px] md:text-[15px] font-pt-serif font-normal tracking-[0.7px] md:tracking-[0.75px] max-w-[600px] mx-auto px-4 text-center">
               <span className="text-[#40444F] font-normal">
-                Профессиональный ремонт стиральных машин в тот же{" "}
+                Профессиональный ремонт стир��льных машин в тот же{" "}
               </span>
               <span className="text-[#72B5FF] font-normal">день!</span>
             </p>
@@ -205,34 +205,34 @@ const Index = () => {
             <div className="loader flex-shrink-0"></div>
 
             {/* Mobile features - horizontal layout under washing machine */}
-            <div className="flex flex-row gap-4 justify-center">
-              <div className="flex items-center gap-1 text-[rgba(76,76,76,0.9)] font-pt-serif text-[10px] italic tracking-[5%] whitespace-nowrap">
+            <div className="flex flex-row gap-4 justify-center lg:gap-6 xl:gap-8">
+              <div className="flex items-center gap-1 md:gap-2 text-[rgba(76,76,76,0.9)] font-pt-serif text-[10px] md:text-[12px] italic tracking-[5%] whitespace-nowrap">
                 <img
                   src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/image-3822595-dfa1a4?format=webp&width=800"
                   alt="Быстро"
                   width="14"
                   height="18"
-                  className="w-[14px] h-[18px] object-contain flex-shrink-0"
+                  className="w-[14px] h-[18px] md:w-[16px] md:h-[20px] object-contain flex-shrink-0"
                 />
                 Быстро
               </div>
-              <div className="flex items-center gap-1 text-[rgba(76,76,76,0.9)] font-pt-serif text-[10px] italic tracking-[5%] whitespace-nowrap">
+              <div className="flex items-center gap-1 md:gap-2 text-[rgba(76,76,76,0.9)] font-pt-serif text-[10px] md:text-[12px] italic tracking-[5%] whitespace-nowrap">
                 <img
                   src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/2-0616fc?format=webp&width=800"
                   alt="Качественно"
                   width="20"
                   height="18"
-                  className="w-[20px] h-[18px] object-contain flex-shrink-0"
+                  className="w-[20px] h-[18px] md:w-[24px] md:h-[20px] object-contain flex-shrink-0"
                 />
                 Качественно
               </div>
-              <div className="flex items-center gap-1 text-[rgba(76,76,76,0.9)] font-pt-serif text-[10px] italic tracking-[5%] whitespace-nowrap">
+              <div className="flex items-center gap-1 md:gap-2 text-[rgba(76,76,76,0.9)] font-pt-serif text-[10px] md:text-[12px] italic tracking-[5%] whitespace-nowrap">
                 <img
                   src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/3-470ac4?format=webp&width=800"
                   alt="С гарантией"
                   width="16"
                   height="17"
-                  className="w-[16px] h-[17px] object-contain flex-shrink-0"
+                  className="w-[16px] h-[17px] md:w-[18px] md:h-[19px] object-contain flex-shrink-0"
                 />
                 С гарантией
               </div>
@@ -300,40 +300,6 @@ const Index = () => {
             </div>
           </div>
         </div>
-
-        {/* Quick Actions for desktop - Bottom as in Figma */}
-        <div className="absolute bottom-4 md:bottom-12 left-1/2 transform -translate-x-1/2 hidden md:flex flex-row gap-4 md:gap-8 z-20 px-4 items-center">
-          <div className="flex items-center gap-3 text-[rgba(76,76,76,0.9)] font-pt-serif text-[12px] md:text-[15px] italic tracking-[5%] whitespace-nowrap">
-            <img
-              src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/image-3822595-dfa1a4?format=webp&width=800"
-              alt="Быстро"
-              width="20"
-              height="25"
-              className="w-[20px] h-[25px] md:w-[25px] md:h-[31px] object-contain flex-shrink-0"
-            />
-            Быстро
-          </div>
-          <div className="flex items-center gap-3 text-[rgba(76,76,76,0.9)] font-pt-serif text-[12px] md:text-[15px] italic tracking-[5%] whitespace-nowrap">
-            <img
-              src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/2-0616fc?format=webp&width=800"
-              alt="Качественно"
-              width="30"
-              height="25"
-              className="w-[30px] h-[25px] md:w-[37px] md:h-[31px] object-contain flex-shrink-0"
-            />
-            Качественно
-          </div>
-          <div className="flex items-center gap-3 text-[rgba(76,76,76,0.9)] font-pt-serif text-[12px] md:text-[15px] italic tracking-[5%] whitespace-nowrap">
-            <img
-              src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/3-470ac4?format=webp&width=800"
-              alt="С гарантией"
-              width="22"
-              height="24"
-              className="w-[22px] h-[24px] md:w-[27px] md:h-[30px] object-contain flex-shrink-0"
-            />
-            С гарантией
-          </div>
-        </div>
       </section>
 
       {/* Master Rules Section */}
@@ -352,7 +318,7 @@ const Index = () => {
             Мастер по ремонту стиральных машин соблюдает ряд правил
           </h2>
 
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-16 max-w-[1300px] mx-auto justify-items-center">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-8 max-w-[1300px] mx-auto justify-items-center">
             {/* Card 1 - Image Left */}
             <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[622px] overflow-hidden">
               <div className="flex flex-col md:flex-row items-center h-auto md:h-[179px]">
@@ -488,6 +454,40 @@ const Index = () => {
             </div>
           </div>
         </div>
+
+        {/* Quick Actions for desktop - Bottom as in Figma */}
+        <div className="absolute bottom-4 md:bottom-12 left-1/2 transform -translate-x-1/2 hidden md:flex flex-row gap-4 md:gap-8 z-20 px-4 items-center">
+          <div className="flex items-center gap-3 text-[rgba(76,76,76,0.9)] font-pt-serif text-[12px] md:text-[15px] italic tracking-[5%] whitespace-nowrap">
+            <img
+              src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/image-3822595-dfa1a4?format=webp&width=800"
+              alt="Быстро"
+              width="20"
+              height="25"
+              className="w-[20px] h-[25px] md:w-[25px] md:h-[31px] object-contain flex-shrink-0"
+            />
+            Быстро
+          </div>
+          <div className="flex items-center gap-3 text-[rgba(76,76,76,0.9)] font-pt-serif text-[12px] md:text-[15px] italic tracking-[5%] whitespace-nowrap">
+            <img
+              src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/2-0616fc?format=webp&width=800"
+              alt="Качественно"
+              width="30"
+              height="25"
+              className="w-[30px] h-[25px] md:w-[37px] md:h-[31px] object-contain flex-shrink-0"
+            />
+            Качественно
+          </div>
+          <div className="flex items-center gap-3 text-[rgba(76,76,76,0.9)] font-pt-serif text-[12px] md:text-[15px] italic tracking-[5%] whitespace-nowrap">
+            <img
+              src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/3-470ac4?format=webp&width=800"
+              alt="С гарантией"
+              width="22"
+              height="24"
+              className="w-[22px] h-[24px] md:w-[27px] md:h-[30px] object-contain flex-shrink-0"
+            />
+            С гарантией
+          </div>
+        </div>
       </section>
 
       {/* Online Diagnosis & Brands Section */}
@@ -503,7 +503,7 @@ const Index = () => {
       >
         <div className="container mx-auto px-4">
           {/* Online Diagnosis */}
-          <div id="online-diagnosis" className="mb-16">
+          <div id="online-diagnosis" className="mb-12 -mt-4">
             <WashingMachineDiagnostic />
           </div>
 
@@ -528,9 +528,9 @@ const Index = () => {
             Чем мы гордимся
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-16 max-w-[1200px] mx-auto">
             {/* Card 1 */}
-            <div className="w-full max-w-[371px] h-[269px] mx-auto rounded-[15px] border-[3px] border-[rgba(108,170,212,0.25)] bg-white shadow-[4px_4px_4px_0px_rgba(0,0,0,0.16)] group cursor-pointer transition-all duration-300 hover:shadow-[6px_6px_8px_0px_rgba(0,0,0,0.2)]">
+            <div className="w-full max-w-[350px] h-[269px] rounded-[15px] border-[3px] border-[rgba(108,170,212,0.25)] bg-white shadow-[4px_4px_4px_0px_rgba(0,0,0,0.16)] group cursor-pointer transition-all duration-300 hover:shadow-[6px_6px_8px_0px_rgba(0,0,0,0.2)]">
               <div className="h-full flex flex-col">
                 <div className="flex justify-center pt-[27px] mb-[20px] relative">
                   <div className="relative w-[71px] h-[59px]">
@@ -548,13 +548,16 @@ const Index = () => {
                     />
                   </div>
                 </div>
-                <div className="px-[48px]">
-                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal mb-[16px] h-[44px] flex items-center justify-center">
+                <div className="px-[32px] h-[70px] flex items-center">
+                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal w-full">
                     Низкие цены на весь сервисный диапазон услуг
                   </h3>
                 </div>
-                <div className="flex-1 flex items-center justify-center border-t border-[#A4A4A4] px-[16px] pb-[10px]">
-                  <div className="text-[#5C6570] text-center font-arial text-[15px] font-normal leading-normal text-shadow-[0px_0px_0.5px_#000]">
+                <div className="relative px-[32px] h-[3px] flex justify-center">
+                  <div className="w-full h-[3px] bg-[rgba(114,181,255,0.25)]"></div>
+                </div>
+                <div className="flex-1 flex items-center justify-center px-[16px] pt-[16px] pb-[10px]">
+                  <div className="text-[#5C6570] text-center font-arial text-[15px] font-normal leading-normal">
                     Доступные цены благодаря большому количеству клиентов и
                     оптимизированным процессам
                   </div>
@@ -563,7 +566,7 @@ const Index = () => {
             </div>
 
             {/* Card 2 */}
-            <div className="w-full max-w-[371px] h-[269px] mx-auto rounded-[15px] border-[3px] border-[rgba(108,170,212,0.25)] bg-white shadow-[4px_4px_4px_0px_rgba(0,0,0,0.16)] group cursor-pointer transition-all duration-300 hover:shadow-[6px_6px_8px_0px_rgba(0,0,0,0.2)]">
+            <div className="w-full max-w-[350px] h-[269px] rounded-[15px] border-[3px] border-[rgba(108,170,212,0.25)] bg-white shadow-[4px_4px_4px_0px_rgba(0,0,0,0.16)] group cursor-pointer transition-all duration-300 hover:shadow-[6px_6px_8px_0px_rgba(0,0,0,0.2)]">
               <div className="h-full flex flex-col">
                 <div className="flex justify-center pt-[27px] mb-[20px]">
                   <div className="relative w-[64px] h-[63px]">
@@ -581,12 +584,15 @@ const Index = () => {
                     />
                   </div>
                 </div>
-                <div className="px-[48px]">
-                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal mb-[16px] h-[44px] flex items-center justify-center">
+                <div className="px-[32px] h-[70px] flex items-center">
+                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal w-full">
                     Современное оборудование по диагностике
                   </h3>
                 </div>
-                <div className="flex-1 flex items-center justify-center border-t border-[#A4A4A4] px-[16px] pb-[10px]">
+                <div className="relative px-[32px] h-[3px] flex justify-center">
+                  <div className="w-full h-[3px] bg-[rgba(114,181,255,0.25)]"></div>
+                </div>
+                <div className="flex-1 flex items-center justify-center px-[16px] pt-[16px] pb-[10px]">
                   <div className="text-[#5C6570] text-center font-arial text-[15px] font-normal leading-normal">
                     Ежемесячно часть от прибыли мы вкладываем в работу и
                     развитие
@@ -596,13 +602,13 @@ const Index = () => {
             </div>
 
             {/* Card 3 */}
-            <div className="w-full max-w-[371px] h-[269px] mx-auto rounded-[15px] border-[3px] border-[rgba(108,170,212,0.25)] bg-white shadow-[4px_4px_4px_0px_rgba(0,0,0,0.16)] group cursor-pointer transition-all duration-300 hover:shadow-[6px_6px_8px_0px_rgba(0,0,0,0.2)]">
+            <div className="w-full max-w-[350px] h-[269px] rounded-[15px] border-[3px] border-[rgba(108,170,212,0.25)] bg-white shadow-[4px_4px_4px_0px_rgba(0,0,0,0.16)] group cursor-pointer transition-all duration-300 hover:shadow-[6px_6px_8px_0px_rgba(0,0,0,0.2)]">
               <div className="h-full flex flex-col">
                 <div className="flex justify-center pt-[27px] mb-[20px]">
                   <div className="relative w-[85px] h-[76px]">
-                    {/* Default icon */}
+                    {/* Default icon - replaced with user's image */}
                     <img
-                      src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-360934?format=webp&width=800"
+                      src="https://cdn.builder.io/api/v1/assets/b5993ffd3d3f4fc78326f8b01db580e9/image-3232-3-caf716?format=webp&width=800"
                       alt="24 month warranty icon"
                       className="w-[85px] h-[76px] object-contain absolute inset-0 transition-opacity duration-300 group-hover:opacity-0"
                     />
@@ -614,12 +620,15 @@ const Index = () => {
                     />
                   </div>
                 </div>
-                <div className="px-[48px]">
-                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal mb-[16px] h-[44px] flex items-center justify-center">
+                <div className="px-[32px] h-[70px] flex items-center">
+                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal w-full">
                     Гарантийный срок до 24 месяцев
                   </h3>
                 </div>
-                <div className="flex-1 flex items-center justify-center border-t border-[#A4A4A4] px-[16px] pb-[10px]">
+                <div className="relative px-[32px] h-[3px] flex justify-center">
+                  <div className="w-full h-[3px] bg-[rgba(114,181,255,0.25)]"></div>
+                </div>
+                <div className="flex-1 flex items-center justify-center px-[16px] pt-[16px] pb-[10px]">
                   <div className="text-[#5C6570] text-center font-arial text-[15px] font-normal leading-normal">
                     Официальная гарантия на детали и услуги
                   </div>
@@ -628,30 +637,33 @@ const Index = () => {
             </div>
 
             {/* Card 4 */}
-            <div className="w-full max-w-[371px] h-[269px] mx-auto rounded-[15px] border-[3px] border-[rgba(108,170,212,0.25)] bg-white shadow-[4px_4px_4px_0px_rgba(0,0,0,0.16)] group cursor-pointer transition-all duration-300 hover:shadow-[6px_6px_8px_0px_rgba(0,0,0,0.2)]">
+            <div className="w-full max-w-[350px] h-[269px] rounded-[15px] border-[3px] border-[rgba(108,170,212,0.25)] bg-white shadow-[4px_4px_4px_0px_rgba(0,0,0,0.16)] group cursor-pointer transition-all duration-300 hover:shadow-[6px_6px_8px_0px_rgba(0,0,0,0.2)]">
               <div className="h-full flex flex-col">
                 <div className="flex justify-center pt-[27px] mb-[20px]">
                   <div className="relative w-[112px] h-[85px]">
                     {/* Default icon */}
                     <img
-                      src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-38226123232322-2-360278?format=webp&width=800"
+                      src="https://cdn.builder.io/api/v1/assets/b5993ffd3d3f4fc78326f8b01db580e9/image-38226123232322-2-1-6af364?format=webp&width=800"
                       alt="Supplier connections icon"
                       className="w-[112px] h-[85px] object-contain absolute inset-0 transition-opacity duration-300 group-hover:opacity-0"
                     />
                     {/* Hover icon */}
                     <img
-                      src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-38226123232322-bd1c94?format=webp&width=800"
+                      src="https://cdn.builder.io/api/v1/assets/b5993ffd3d3f4fc78326f8b01db580e9/image-38226123232322-3-9e8222?format=webp&width=800"
                       alt="Supplier connections icon colored"
                       className="w-[112px] h-[85px] object-contain absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                     />
                   </div>
                 </div>
-                <div className="px-[48px]">
-                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal mb-[16px] h-[44px] flex items-center justify-center">
+                <div className="px-[32px] h-[70px] flex items-center">
+                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal w-full">
                     Налаженные связи с поставщиками
                   </h3>
                 </div>
-                <div className="flex-1 flex items-center justify-center border-t border-[#A4A4A4] px-[16px] pb-[10px]">
+                <div className="relative px-[32px] h-[3px] flex justify-center">
+                  <div className="w-full h-[3px] bg-[rgba(114,181,255,0.25)]"></div>
+                </div>
+                <div className="flex-1 flex items-center justify-center px-[16px] pt-[16px] pb-[10px]">
                   <div className="text-[#5C6570] text-center font-arial text-[15px] font-normal leading-normal">
                     Оригинальные запчасти и европейские аналоги любых
                     комплектующих
@@ -661,7 +673,7 @@ const Index = () => {
             </div>
 
             {/* Card 5 */}
-            <div className="w-full max-w-[371px] h-[269px] mx-auto rounded-[15px] border-[3px] border-[rgba(108,170,212,0.25)] bg-white shadow-[4px_4px_4px_0px_rgba(0,0,0,0.16)] group cursor-pointer transition-all duration-300 hover:shadow-[6px_6px_8px_0px_rgba(0,0,0,0.2)]">
+            <div className="w-full max-w-[350px] h-[269px] rounded-[15px] border-[3px] border-[rgba(108,170,212,0.25)] bg-white shadow-[4px_4px_4px_0px_rgba(0,0,0,0.16)] group cursor-pointer transition-all duration-300 hover:shadow-[6px_6px_8px_0px_rgba(0,0,0,0.2)]">
               <div className="h-full flex flex-col">
                 <div className="flex justify-center pt-[27px] mb-[20px]">
                   <div className="relative w-[85px] h-[76px]">
@@ -679,12 +691,15 @@ const Index = () => {
                     />
                   </div>
                 </div>
-                <div className="px-[48px]">
-                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal mb-[16px] h-[44px] flex items-center justify-center">
+                <div className="px-[32px] h-[70px] flex items-center">
+                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal w-full">
                     Качество работы мастера
                   </h3>
                 </div>
-                <div className="flex-1 flex items-center justify-center border-t border-[#A4A4A4] px-[16px] pb-[10px]">
+                <div className="relative px-[32px] h-[3px] flex justify-center">
+                  <div className="w-full h-[3px] bg-[rgba(114,181,255,0.25)]"></div>
+                </div>
+                <div className="flex-1 flex items-center justify-center px-[16px] pt-[16px] pb-[10px]">
                   <div className="text-[#5C6570] text-center font-arial text-[15px] font-normal leading-normal">
                     Высокие стандарты качества и профессионализма в работе
                   </div>
@@ -694,9 +709,25 @@ const Index = () => {
           </div>
 
           {/* Call to Action Section */}
-          <div className="relative h-auto md:h-[218px] rounded-lg shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden bg-gradient-to-r from-blue-500 to-blue-600 p-6 md:p-8">
-            <div className="h-full flex flex-col justify-center items-center text-center">
-              <p className="text-white font-ibm-plex-serif text-[16px] md:text-[18px] lg:text-[22px] font-normal tracking-[0.88px] mb-6 md:mb-8 max-w-[600px]">
+          <div
+            className="relative h-auto md:h-[218px] rounded-lg shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden bg-cover bg-center bg-no-repeat p-6 md:p-8 mt-8 md:mt-12"
+            style={{
+              backgroundImage:
+                "url('https://cdn.builder.io/api/v1/assets/b5993ffd3d3f4fc78326f8b01db580e9/frame-701-405886?format=webp&width=800')",
+            }}
+          >
+            {/* Master Image positioned on left with head sticking out */}
+            <div className="absolute -top-24 md:-top-32 left-0 md:-left-4 z-30">
+              <img
+                src="https://cdn.builder.io/api/v1/assets/b5993ffd3d3f4fc78326f8b01db580e9/image-3822591-40af3a?format=webp&width=800"
+                alt="Мастер по ремонту"
+                className="w-[160px] md:w-[220px] lg:w-[280px] h-auto object-contain"
+              />
+            </div>
+
+            <div className="absolute inset-0 bg-black/20"></div>
+            <div className="relative z-10 h-full flex flex-col justify-center items-center text-center">
+              <p className="text-black font-ibm-plex-serif text-[22px] font-normal tracking-[0.88px] mb-6 md:mb-8 max-w-[600px]">
                 Оставьте заявку на ремонт и мы с вами свяжемся для уточнения
                 деталей
               </p>
@@ -731,41 +762,41 @@ const Index = () => {
       </section>
 
       {/* Repair Service Content Section */}
-      <section className="py-12 md:py-16 lg:py-20 bg-white">
+      <section className="py-6 md:py-8 bg-white">
         <div className="w-full px-4">
           <div className="max-w-[889px] mx-auto">
-            <div className="flex flex-col justify-center items-center gap-[25px] md:gap-[35px]">
-              <div className="flex flex-col justify-center items-center gap-[15px] md:gap-[20px] w-full">
-                <h2 className="text-[#5E5959] font-pt-serif-caption text-[18px] md:text-[20px] font-normal leading-normal text-center">
-                  Ремонт стиральных машин с выездом в Одессе — быстр�� и надёжно
+            <div className="flex flex-col justify-center items-center gap-[15px] md:gap-[20px]">
+              <div className="flex flex-col justify-center items-center gap-[8px] md:gap-[10px] w-full">
+                <h2 className="text-[#5E5959] font-pt-serif-caption text-[16px] md:text-[18px] font-normal leading-normal text-center">
+                  Ремонт стиральных машин с выездом в Одессе — быстро и надёжно
                 </h2>
-                <p className="text-[#4C4C4C] font-pt-serif text-[14px] md:text-[16px] font-normal leading-normal text-center">
+                <p className="text-[#4C4C4C] font-pt-serif text-[13px] md:text-[14px] font-normal leading-normal text-center">
                   Если ваша стиральная машина вышла из строя — не стоит
-                  переживать. Нет необходимости везт�� технику в сервис —
-                  квалифицированный мастер может приехать к вам домой и
+                  переживать. Нет необходимости везти технику в сервис —
+                  квалифицированный мастер мо��ет приехать к вам домой и
                   устранить неисправность на месте. Выездной ремонт стиральных
                   машин — это удобно, оперативно и без лишних хлопот.
                 </p>
               </div>
 
-              <div className="flex flex-col justify-center items-center gap-[15px] md:gap-[20px] w-full">
-                <h3 className="text-[#5E5959] font-pt-serif-caption text-[18px] md:text-[20px] font-normal leading-normal text-center">
+              <div className="flex flex-col justify-center items-center gap-[8px] md:gap-[10px] w-full">
+                <h3 className="text-[#5E5959] font-pt-serif-caption text-[16px] md:text-[18px] font-normal leading-normal text-center">
                   Выездной ремонт: экономия времени и усилий
                 </h3>
-                <p className="text-[#4C4C4C] font-pt-serif text-[14px] md:text-[16px] font-normal leading-normal text-center">
+                <p className="text-[#4C4C4C] font-pt-serif text-[13px] md:text-[14px] font-normal leading-normal text-center">
                   В условиях занятости многие ценят удобство. Выезд мастера —
-                  это не только ��кономия времени, но и возможность сразу
+                  это не только экономия времени, но и возможность сразу
                   получить консультацию и диагностику. Часто неполадки
                   оказываются незначительными и устраняются прямо на месте без
                   перевозки техники.
                 </p>
               </div>
 
-              <div className="flex flex-col justify-center items-center gap-[15px] md:gap-[20px] w-full">
-                <h3 className="text-[#5E5959] font-pt-serif-caption text-[18px] md:text-[20px] font-normal leading-normal text-center">
+              <div className="flex flex-col justify-center items-center gap-[8px] md:gap-[10px] w-full">
+                <h3 className="text-[#5E5959] font-pt-serif-caption text-[16px] md:text-[18px] font-normal leading-normal text-center">
                   Стоимость ремонта: доступные расценки
                 </h3>
-                <p className="text-[#4C4C4C] font-pt-serif text-[14px] md:text-[16px] font-normal leading-normal text-center">
+                <p className="text-[#4C4C4C] font-pt-serif text-[13px] md:text-[14px] font-normal leading-normal text-center">
                   Цена — один из ключевых факторов при выборе исполнителя. Мы
                   предлагаем честные и разумные цены на ремонт стиральных машин
                   в Одессе. Окончательная сумма зависит от сложности работ, но
@@ -773,11 +804,11 @@ const Index = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col justify-center items-center gap-[15px] md:gap-[20px] w-full">
-                <h3 className="text-[#5E5959] font-pt-serif-caption text-[18px] md:text-[20px] font-normal leading-normal text-center">
+              <div className="flex flex-col justify-center items-center gap-[8px] md:gap-[10px] w-full">
+                <h3 className="text-[#5E5959] font-pt-serif-caption text-[16px] md:text-[18px] font-normal leading-normal text-center">
                   Как вызвать мастера на дом
                 </h3>
-                <p className="text-[#4C4C4C] font-pt-serif text-[14px] md:text-[16px] font-normal leading-normal text-center">
+                <p className="text-[#4C4C4C] font-pt-serif text-[13px] md:text-[14px] font-normal leading-normal text-center">
                   При первых признаках сбоя в работе стиральной машины лучше не
                   откладывать — достаточно просто позвонить нам. Мы организуем
                   выезд мастера по ремонту стиральных машин в удобное для вас
@@ -786,11 +817,11 @@ const Index = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col justify-center items-center gap-[20px] w-full">
-                <h3 className="text-[#5E5959] font-pt-serif-caption text-[20px] font-normal leading-normal text-center">
+              <div className="flex flex-col justify-center items-center gap-[8px] md:gap-[10px] w-full">
+                <h3 className="text-[#5E5959] font-pt-serif-caption text-[16px] md:text-[18px] font-normal leading-normal text-center">
                   Опытный мастер по ремонту стиральных машин
                 </h3>
-                <p className="text-[#4C4C4C] font-pt-serif text-[16px] font-normal leading-normal text-center">
+                <p className="text-[#4C4C4C] font-pt-serif text-[13px] md:text-[14px] font-normal leading-normal text-center">
                   При неисправностях бытовой техники важно обращаться к
                   профессионалам. Наши мастера обладают большим опытом и
                   способны устранить любые поломки — от неисправностей модуля
@@ -800,24 +831,24 @@ const Index = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col justify-center items-center gap-[20px] w-full">
-                <h3 className="text-[#5E5959] font-pt-serif-caption text-[20px] font-normal leading-normal text-center">
+              <div className="flex flex-col justify-center items-center gap-[8px] md:gap-[10px] w-full">
+                <h3 className="text-[#5E5959] font-pt-serif-caption text-[16px] md:text-[18px] font-normal leading-normal text-center">
                   Прозрачный прайс и честные условия
                 </h3>
-                <p className="text-[#4C4C4C] font-pt-serif text-[16px] font-normal leading-normal text-center">
+                <p className="text-[#4C4C4C] font-pt-serif text-[13px] md:text-[14px] font-normal leading-normal text-center">
                   Наши клиенты знают: никаких скрытых платежей. Ориентировочные
-                  расценки размещены на сайте, а итоговая стоимость
-                  озвучи��ается до начала ремонта. Такой подход избавляет от
-                  неожиданностей и формирует доверие.
+                  расценки размещены на сайте, а итоговая стоимость озвучивается
+                  до начала ремонта. Такой подход избавляет от неожиданностей и
+                  формирует доверие.
                 </p>
               </div>
 
-              <div className="flex flex-col justify-center items-center gap-[20px] w-full">
-                <h3 className="text-[#5E5959] font-pt-serif-caption text-[20px] font-normal leading-normal text-center">
+              <div className="flex flex-col justify-center items-center gap-[8px] md:gap-[10px] w-full">
+                <h3 className="text-[#5E5959] font-pt-serif-caption text-[16px] md:text-[18px] font-normal leading-normal text-center">
                   Ремонт стиральных машин в Одессе — профессионально и
                   качественно
                 </h3>
-                <p className="text-[#4C4C4C] font-pt-serif text-[16px] font-normal leading-normal text-center">
+                <p className="text-[#4C4C4C] font-pt-serif text-[13px] md:text-[14px] font-normal leading-normal text-center">
                   Мы ценим доверие наших клиентов и предлагаем услуги по ремонту
                   стиральных машин, соответствующие высоким стандартам. Наши
                   мастера проходят регулярное обучение и владеют современными
@@ -825,11 +856,11 @@ const Index = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col justify-center items-center gap-[20px] w-full">
-                <h3 className="text-[#5E5959] font-pt-serif-caption text-[20px] font-normal leading-normal text-center">
+              <div className="flex flex-col justify-center items-center gap-[8px] md:gap-[10px] w-full">
+                <h3 className="text-[#5E5959] font-pt-serif-caption text-[16px] md:text-[18px] font-normal leading-normal text-center">
                   От чего зависит цена ремонта стиральной машины
                 </h3>
-                <p className="text-[#4C4C4C] font-pt-serif text-[16px] font-normal leading-normal text-center">
+                <p className="text-[#4C4C4C] font-pt-serif text-[13px] md:text-[14px] font-normal leading-normal text-center">
                   Стоимость может варьироваться в зависимости от характера
                   поломки, модели устройства и необходимости замены
                   комплектующих. Мы стремимся предложить выгодные условия, не
@@ -837,13 +868,13 @@ const Index = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col justify-center items-center gap-[20px] w-full">
-                <h3 className="text-[#5E5959] font-pt-serif-caption text-[20px] font-normal leading-normal text-center">
+              <div className="flex flex-col justify-center items-center gap-[8px] md:gap-[10px] w-full">
+                <h3 className="text-[#5E5959] font-pt-serif-caption text-[16px] md:text-[18px] font-normal leading-normal text-center">
                   Заключение
                 </h3>
-                <p className="text-[#4C4C4C] font-pt-serif text-[16px] font-normal leading-normal text-center">
+                <p className="text-[#4C4C4C] font-pt-serif text-[13px] md:text-[14px] font-normal leading-normal text-center">
                   Если ваша стиральная машина нуждается в ремонте — не
-                  откладывайте. Вызов мастера на дом — это быстро, ��добно и
+                  откладывайте. Вызов мастера на дом — это быстро, удобно и
                   эффективно. Мы работаем по всей Одессе, гарантируем качество и
                   доступные цены. Звоните — и ваша техника снова будет как
                   новенькая!
@@ -858,36 +889,51 @@ const Index = () => {
       <FAQSection />
 
       {/* Buyout CTA Section */}
-      <section className="py-12 md:py-16 lg:py-20 relative">
+      <section className="py-16 md:py-20 lg:py-24 relative">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="relative h-auto md:h-[180px] rounded-lg shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden bg-gradient-to-r from-green-500 to-emerald-600 p-6 md:p-8">
-            <div className="h-full flex flex-col justify-center items-center text-center">
-              <p className="text-white font-ibm-plex-serif text-[16px] md:text-[18px] lg:text-[22px] font-normal tracking-[0.88px] mb-6 md:mb-8 max-w-[600px]">
-                Выкупим вашу ст��ральную машину дорого! Не выбрасывайте –
-                получите деньги за технику, которая больше не нужна
-              </p>
+          <div className="relative rounded-2xl shadow-[0px_8px_32px_0px_rgba(0,0,0,0.12)] overflow-hidden bg-gradient-to-br from-[#446D99] via-[#72B5FF] to-[#5da3ff] p-8 md:p-12">
+            {/* Background pattern overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
 
-              <a
-                href="/buyout"
-                className="inline-flex items-center justify-center gap-3 px-6 md:px-8 py-3 md:py-4 bg-white text-green-600 rounded-[60px] font-ubuntu text-[14px] md:text-[15px] font-medium shadow-lg hover:bg-gray-50 transition-colors"
-              >
-                <svg
-                  width="20"
-                  height="19"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+            <div className="relative z-10 max-w-4xl mx-auto text-center">
+              <div className="mb-8">
+                <h2 className="text-white font-pt-serif text-[24px] md:text-[28px] lg:text-[32px] font-normal mb-4 leading-tight">
+                  Выкупим вашу стиральную машину дорого!
+                </h2>
+                <p className="text-white/90 font-pt-serif text-[16px] md:text-[18px] lg:text-[20px] font-normal leading-relaxed max-w-2xl mx-auto">
+                  Не выбрасывайте технику — получите деньги за машину, которая
+                  больше не нужна. Быстрая оценка и честная цена гарантированы.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a
+                  href="/buyout"
+                  className="group inline-flex items-center justify-center gap-3 px-8 md:px-10 py-4 md:py-5 bg-white text-[#446D99] rounded-full font-ubuntu text-[16px] md:text-[18px] font-semibold shadow-xl hover:shadow-2xl hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 min-w-[240px]"
                 >
-                  <path
-                    d="M12 2V22M17 5H9.5C8.57174 5 7.6815 5.36875 7.02513 6.02513C6.36875 6.6815 6 7.57174 6 8.5C6 9.42826 6.36875 10.3185 7.02513 10.9749C7.6815 11.6313 8.57174 12 9.5 12H14.5C15.4283 12 16.3185 12.3687 16.9749 13.0251C17.6313 13.6815 18 14.5717 18 15.5C18 16.4283 17.6313 17.3185 16.9749 17.9749C16.3185 18.6313 15.4283 19 14.5 19H6"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                Узнать стоимость выкупа
-              </a>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="transition-transform duration-300 group-hover:rotate-12"
+                  >
+                    <path
+                      d="M12 2V22M17 5H9.5C8.57174 5 7.6815 5.36875 7.02513 6.02513C6.36875 6.6815 6 7.57174 6 8.5C6 9.42826 6.36875 10.3185 7.02513 10.9749C7.6815 11.6313 8.57174 12 9.5 12H14.5C15.4283 12 16.3185 12.3687 16.9749 13.0251C17.6313 13.6815 18 14.5717 18 15.5C18 16.4283 17.6313 17.3185 16.9749 17.9749C16.3185 18.6313 15.4283 19 14.5 19H6"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  Узнать стоимость выкупа
+                </a>
+
+                <div className="text-white/80 font-pt-serif text-[14px] md:text-[16px] italic">
+                  Бесплатная оценка за 5 минут
+                </div>
+              </div>
             </div>
           </div>
         </div>

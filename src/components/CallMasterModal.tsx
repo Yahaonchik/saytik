@@ -75,11 +75,11 @@ export const CallMasterModal: React.FC<CallMasterModalProps> = ({
                     <img
                       src="https://cdn.builder.io/api/v1/assets/5f43915d1cce45c489b075510e2da397/acc8f5f7-5bb8-49af-b09c-e7bff01ba6f1-1-e6f200?format=webp&width=800"
                       alt="Мастер по ремонту стиральных машин"
-                      className="w-full h-full object-cover object-center"
+                      className="w-full h-full object-cover object-center brightness-110 contrast-105 saturate-110"
                     />
                   </div>
                   {/* Gradient overlay to blend with form */}
-                  <div className="absolute top-0 right-0 w-8 h-full bg-gradient-to-l from-white to-transparent opacity-50"></div>
+                  <div className="absolute top-0 right-0 w-8 h-full bg-gradient-to-l from-white to-transparent opacity-30"></div>
                 </div>
 
                 {/* Right Side - Form (2/3) */}

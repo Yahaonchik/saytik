@@ -107,7 +107,7 @@ const brandReliability = {
 
 // Age coefficients
 const ageCoefficients = {
-  "до 3 л��т": { electronics: 0.5, mechanics: 0.7, price: 1.0 },
+  "до 3 лет": { electronics: 0.5, mechanics: 0.7, price: 1.0 },
   "3-5 лет": { electronics: 0.8, mechanics: 1.0, price: 1.0 },
   "5-7 лет": { electronics: 1.2, mechanics: 1.3, price: 1.0 },
   "7-10 лет": { electronics: 1.8, mechanics: 1.6, price: 1.0 },
@@ -215,14 +215,14 @@ const baseProblemCauses = {
       type: "mechanics",
     },
     {
-      cause: "Нарушение в работе датчика температур��",
+      cause: "Нарушение в работе датчика температуры",
       probability: 25,
       price: 500,
       description: "Замена датчика температуры",
       type: "electronics",
     },
     {
-      cause: "Окисление ��онтактов ТЭНа (нет контакта)",
+      cause: "Окисление контактов ТЭНа (нет контакта)",
       probability: 15,
       price: 400,
       description: "Чистка контактов и переподключение ТЭНа",
@@ -252,16 +252,16 @@ const baseProblemCauses = {
       type: "electronics",
     },
   ],
-  "Не о��жимает": [
+  "Не отжимает": [
     {
-      cause: "Поломка двигател��",
+      cause: "Поломка двигателя",
       probability: 35,
       price: 1200,
-      description: "Ремонт (переборка) двига��еля, замена щеток",
+      description: "Ремонт (переборка) двигателя, замена щеток",
       type: "mechanics",
     },
     {
-      cause: "Износ приводно��о ремня",
+      cause: "Износ приводного ремня",
       probability: 45,
       price: 500,
       description: "Замена приводного ремня",
@@ -298,7 +298,7 @@ const baseProblemCauses = {
       type: "mechanics",
     },
     {
-      cause: "Противовес плохо закр��плен",
+      cause: "Противовес плохо закреплен",
       probability: 40,
       price: 500,
       description: "Регулировка противовеса",
@@ -522,7 +522,7 @@ const baseProblemCauses = {
   ],
   "Стирка не останавливается": [
     {
-      cause: "Сбой в работе модуля ��правления",
+      cause: "Сбой в работе модуля управления",
       probability: 100,
       price: 1500,
       description: "Ремонт или перепрошивка модуля управления",
@@ -531,7 +531,7 @@ const baseProblemCauses = {
   ],
   "Стиральная машина зависает": [
     {
-      cause: "Неи��правность модуля управления",
+      cause: "Неисправность модуля управления",
       probability: 100,
       price: 1500,
       description: "Ремонт модуля управления",
@@ -596,7 +596,7 @@ function calculateProbabilities(brand: string, age: string, problem: string) {
     0,
   );
 
-  // Распред��ляем проценты ��ропорционально, чтобы сумма была 100
+  // Распределяем проценты пропорционально, чтобы сумма была 100
   let remainingPercent = 100;
   const normalizedCauses = adjustedCauses.map((cause, index) => {
     if (index === adjustedCauses.length - 1) {
@@ -646,7 +646,7 @@ export function WashingMachineDiagnostic() {
   return (
     <div className="w-full max-w-[835px] mx-auto">
       <div className="text-center mb-8">
-        <h2 className="text-center text-[20px] md:text-[24px] lg:text-[30px] font-pt-serif font-normal tracking-[1.2px] mb-12 md:mb-16 bg-gradient-to-r from-[#446D99] to-[#72B5FF] bg-clip-text text-transparent">
+        <h2 className="text-[24px] md:text-[30px] font-pt-serif font-normal tracking-[1.2px] bg-gradient-to-r from-[#446D99] to-[#72B5FF] bg-clip-text text-transparent">
           Онлайн диагностика стиральной машины
         </h2>
       </div>
@@ -748,37 +748,55 @@ export function WashingMachineDiagnostic() {
                       className="flex justify-between items-center p-3 md:p-4 bg-white rounded-lg shadow-sm border border-gray-200"
                     >
                       <div className="flex-1">
-                        <p className="font-medium text-sm md:text-lg mb-2">
+                        <p className="font-medium text-sm md:text-lg">
                           {cause.cause}
                         </p>
+                        <p className="text-gray-600 text-xs md:text-sm mt-1">
+                          {cause.description}
+                        </p>
+                        <div className="flex items-center mt-2 md:mt-3">
+                          <div className="w-full bg-gray-200 rounded-full h-3 md:h-4 mr-3 md:mr-4 relative overflow-hidden">
+                            <div
+                              className={`h-3 md:h-4 rounded-full transition-all duration-1000 relative ${
+                                cause.probability > 50
+                                  ? "bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500"
+                                  : "bg-gradient-to-r from-green-400 to-yellow-400"
+                              }`}
+                              style={{ width: `${cause.probability}%` }}
+                            />
+                            <div className="absolute top-0 left-1/2 w-0.5 h-3 md:h-4 bg-red-600 transform -translate-x-0.5"></div>
+                          </div>
+                          <span
+                            className={`text-base md:text-xl font-bold ${cause.probability > 50 ? "text-red-600" : "text-gray-700"}`}
+                          >
+                            {cause.probability}%
+                          </span>
+                        </div>
                       </div>
                       <div className="ml-6 text-right">
                         <span
-                          className={`text-base md:text-lg font-semibold break-words ${
-                            cause.price === "Самостоятельно" ||
-                            (typeof cause.price === "string" &&
-                              cause.price.includes("0"))
+                          className={`text-lg md:text-xl font-semibold ${
+                            cause.probability > 50
                               ? "text-red-600"
                               : "text-green-600"
                           }`}
                         >
-                          {cause.price === "Самостоятельно" ? (
-                            <span className="whitespace-nowrap">
-                              Самостоятельно
-                            </span>
-                          ) : (
-                            `${cause.price} грн`
-                          )}
+                          {cause.price === "Самостоятельно"
+                            ? cause.price
+                            : `${cause.price} грн`}
                         </span>
+                        <div className="text-xs md:text-sm text-gray-500 mt-1">
+                          Вероятность: {cause.probability}%
+                        </div>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-10 flex justify-center">
+                <div className="mt-8 flex justify-center">
                   <Button
                     onClick={resetForm}
-                    className="text-white px-8 py-3 text-lg bg-[#72B5FF] hover:bg-[#5da3ff]"
+                    className="bg-white text-[#7C7878] px-6 py-2 text-[16px] font-ibm-plex-serif rounded-[10px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.35)] hover:shadow-lg transition-all duration-300"
                   >
                     Новая диагностика
                   </Button>

@@ -46,19 +46,19 @@ const stepperSteps = [
 const categories: Category[] = [
   {
     id: "general",
-    name: "Общие вопросы по ремонту",
+    name: "Общие вопро��ы по ремонту",
     questions: [
       {
         id: 1,
         question: "Сколько стоит диагностика стиральной машины?",
         answer:
-          "Диагностика стиральной машины бесплатная при условии согласия на ремонт. В случае отказа от ремонта стоимость диагностики составляет 300 грн.",
+          "Диагностика стиральной машины бесплатная при условии согласия на ремонт. В случае отказа от ремонта стоимость диагностики составляет 150 грн.",
       },
       {
         id: 2,
-        question: "Какие марки стиральных машин вы ремонтируете?",
+        question: "Где мастер возьмет запчасти для моей стиральной машинки?",
         answer:
-          "Мы ремонтируем стиральные машины всех популярных марок: Bosch, Siemens, LG, Samsung, Indesit, Ariston, Whirlpool, Candy, Electrolux, Zanussi и многие другие.",
+          "Перед выездом вы сообщаете марку и модель вашей стиральной машины, и мастер заранее подготавливает необходимые запчасти. У нас есть склад оригинальных деталей и качественных аналогов для всех популярных брендов.",
       },
       {
         id: 3,
@@ -88,25 +88,25 @@ const categories: Category[] = [
         id: 1,
         question: "Как часто нужно чистить стиральную машину?",
         answer:
-          "Рекомендуется проводить профилактическую чистку стиральной машины не реже 1 раза в месяц. Это поможет избежать накопления накипи и неприятных запахов.",
+          "Проводите чистку лимонной кислотой (100г на 5-6 кг машину) раз в 3 месяца при мягкой воде, раз в месяц при жесткой. Запускайте пустую стирку при 90°C. Протирайте резинку манжеты после каждой стирки.",
       },
       {
         id: 2,
-        question: "Какое средство лучше использовать для стирки?",
+        question: "Какое количество порошка использовать?",
         answer:
-          "Используйте качественные порошки и жидкие средства, соблюдайте дозировку. Избегайте перегрузки барабана и используйте специальные средства для смягчения воды.",
+          "Для машины 5-6 кг: при мягкой воде — 1 ст.л. порошка, при жесткой — 1.5 ст.л. Жидкого средства нужно на 20% меньше. Передозировка приводит к излишней пене и плохому полосканию.",
       },
       {
         id: 3,
-        question: "Почему важно очищать фильтр?",
+        question: "Как правильно чистить сливной фильтр?",
         answer:
-          "Засоренный фильтр может привести к проблемам со сливом воды, неприятным запахам и даже поломке насоса. Очищайте фильтр каждые 2-3 месяца.",
+          "Очищайте фильтр каждые 2 месяца. Он находится внизу справа за панелью. Перед откручиванием подставьте тазик — выльется до 0.5л воды. Промойте под краном, удалите волосы и мелкий мусор.",
       },
       {
         id: 4,
-        question: "Как правильно загружать белье в машину?",
+        question: "Какая оптимальная загрузка барабана?",
         answer:
-          "Не перегружайте барабан, оставляйте место для свободного движения белья. Проверяйте карманы на наличие посторонних предметов перед стиркой.",
+          "Хлопок — до 90% объема барабана, синтетика — до 60%, деликатные ткани — до 30%. Белье должно свободно двигаться. Проверяйте карманы: монеты могут повредить барабан, а салфетки — засорить систему.",
       },
     ],
   },
@@ -184,79 +184,111 @@ export const FAQSection: React.FC = () => {
                     transition={{ duration: 0.3 }}
                   >
                     {/* Special Stepper Content */}
-                    {currentCategory?.isSpecial ? (
-                      <div>
+                    {activeCategory === "process" && (
+                      <div className="space-y-8">
                         <h3 className="text-xl font-semibold text-gray-800 mb-6">
                           Как мы работаем
                         </h3>
                         <div className="space-y-6">
-                          {stepperSteps.map((step, index) => (
-                            <motion.div
-                              key={step.id}
-                              initial={{ opacity: 0, x: -20 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: index * 0.1 }}
-                              className="flex items-start gap-4"
-                            >
-                              <div className="flex-shrink-0">
-                                <div className="w-10 h-10 bg-[#72B5FF] text-white rounded-full flex items-center justify-center font-semibold">
-                                  {step.id}
-                                </div>
-                              </div>
-                              <div className="flex-1">
-                                <h4 className="text-lg font-semibold text-gray-800 mb-2">
-                                  {step.title}
-                                </h4>
-                                <p className="text-gray-600 leading-relaxed">
-                                  {step.description}
-                                </p>
-                              </div>
-                              {index < stepperSteps.length - 1 && (
-                                <div className="absolute left-5 mt-10 w-0.5 h-8 bg-gray-300"></div>
-                              )}
-                            </motion.div>
-                          ))}
+                          <div className="flex items-start space-x-4">
+                            <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-semibold">
+                              1
+                            </div>
+                            <div>
+                              <h4 className="font-semibold text-gray-800 mb-2">
+                                Звонок и консультация
+                              </h4>
+                              <p className="text-gray-600">
+                                Вы звоните нам, описываете проблему, мы даем
+                                первичную консультацию и согласовываем время
+                                визита мастера.
+                              </p>
+                            </div>
+                          </div>
+                          <div className="flex items-start space-x-4">
+                            <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-semibold">
+                              2
+                            </div>
+                            <div>
+                              <h4 className="font-semibold text-gray-800 mb-2">
+                                Диагностика на месте
+                              </h4>
+                              <p className="text-gray-600">
+                                Мастер приезжает в удобное время, проводит
+                                диагностику и озвучивает стоимость ремонта.
+                              </p>
+                            </div>
+                          </div>
+                          <div className="flex items-start space-x-4">
+                            <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-semibold">
+                              3
+                            </div>
+                            <div>
+                              <h4 className="font-semibold text-gray-800 mb-2">
+                                Ремонт и тестирование
+                              </h4>
+                              <p className="text-gray-600">
+                                После согласования цены выполняем ремонт,
+                                тестируем работу машины и выдаем гарантию.
+                              </p>
+                            </div>
+                          </div>
+                          <div className="flex items-start space-x-4">
+                            <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-semibold">
+                              4
+                            </div>
+                            <div>
+                              <h4 className="font-semibold text-gray-800 mb-2">
+                                Гарантия и поддержка
+                              </h4>
+                              <p className="text-gray-600">
+                                Предоставляем гарантию на выполненные работы и
+                                консультации по дальнейшему обслуживанию.
+                              </p>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    ) : (
-                      /* Regular FAQ Content */
-                      <div>
-                        <h3 className="text-xl font-semibold text-gray-800 mb-6">
-                          {currentCategory?.name}
-                        </h3>
+                    )}
+
+                    {/* Regular Questions */}
+                    {currentCategory?.questions &&
+                      currentCategory.questions.length > 0 && (
                         <div className="space-y-4">
-                          {currentCategory?.questions.map((question) => (
+                          {currentCategory.questions.map((item) => (
                             <div
-                              key={question.id}
+                              key={item.id}
                               className="border border-gray-200 rounded-lg overflow-hidden"
                             >
                               <button
-                                onClick={() => toggleQuestion(question.id)}
-                                className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition-colors"
+                                onClick={() =>
+                                  setOpenQuestion(
+                                    openQuestion === item.id ? null : item.id,
+                                  )
+                                }
+                                className="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center"
                               >
-                                <span className="font-medium text-gray-800 flex-1 pr-4">
-                                  {question.question}
+                                <span className="font-medium text-gray-800">
+                                  {item.question}
                                 </span>
-                                <motion.div
-                                  animate={{
-                                    rotate:
-                                      openQuestion === question.id ? 180 : 0,
-                                  }}
-                                  transition={{ duration: 0.2 }}
-                                  className="flex-shrink-0"
+                                <svg
+                                  className={`w-5 h-5 text-gray-500 transform transition-transform duration-200 ${
+                                    openQuestion === item.id ? "rotate-180" : ""
+                                  }`}
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
                                 >
-                                  {openQuestion === question.id ? (
-                                    <Minus
-                                      size={20}
-                                      className="text-[#72B5FF]"
-                                    />
-                                  ) : (
-                                    <Plus size={20} className="text-gray-500" />
-                                  )}
-                                </motion.div>
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M19 9l-7 7-7-7"
+                                  />
+                                </svg>
                               </button>
                               <AnimatePresence>
-                                {openQuestion === question.id && (
+                                {openQuestion === item.id && (
                                   <motion.div
                                     initial={{ height: 0, opacity: 0 }}
                                     animate={{ height: "auto", opacity: 1 }}
@@ -264,8 +296,8 @@ export const FAQSection: React.FC = () => {
                                     transition={{ duration: 0.3 }}
                                     className="overflow-hidden"
                                   >
-                                    <div className="p-4 pt-0 text-gray-600 leading-relaxed">
-                                      {question.answer}
+                                    <div className="px-6 py-4 bg-white text-gray-600 leading-relaxed">
+                                      {item.answer}
                                     </div>
                                   </motion.div>
                                 )}
@@ -273,8 +305,7 @@ export const FAQSection: React.FC = () => {
                             </div>
                           ))}
                         </div>
-                      </div>
-                    )}
+                      )}
                   </motion.div>
                 </AnimatePresence>
               </div>

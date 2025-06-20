@@ -38,16 +38,29 @@ const Buyout = () => {
         >
           <div className="w-full px-3 sm:px-4 h-full flex items-center justify-between max-w-[1989px] mx-auto">
             {/* Logo */}
-            <a href="/" className="flex items-center">
+            <a href="/" className="flex items-center ml-8 md:ml-12 lg:ml-16">
               <img
-                src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-2dc22e?format=webp&width=800"
+                src="https://cdn.builder.io/api/v1/assets/b5993ffd3d3f4fc78326f8b01db580e9/image-914297923-c8caa2?format=webp&width=800"
                 alt="РемСтирМаш - Ремонт стиральных машин"
                 className="h-[34px] sm:h-[39px] md:h-[46px] w-auto object-contain hover:opacity-80 transition-opacity"
               />
             </a>
 
             {/* Navigation */}
-            <nav className="hidden xl:flex items-center gap-[39px] flex-1 justify-center">
+            {/* Contact Info - Desktop only */}
+            <div className="hidden lg:flex items-center gap-3 xl:gap-8 flex-shrink-0 mr-8 md:mr-12 lg:mr-16">
+              <div className="flex items-center justify-center gap-[10px] w-[160px] xl:w-[185px] h-[42px] px-[10px] py-[10px] rounded-[10px] bg-[#72B5FF] flex-shrink-0">
+                <span className="text-white font-ibm-plex-serif text-[14px] xl:text-[17px] font-normal whitespace-nowrap">
+                  +38 (067) 123-45-67
+                </span>
+              </div>
+              <div className="text-[rgba(98,107,120,0.8)] font-ibm-plex-serif text-[14px] xl:text-[17px] font-normal whitespace-nowrap">
+                Пн-Вс: 9:00-21:00
+              </div>
+            </div>
+
+            {/* Navigation - Hidden on mobile and tablet */}
+            <nav className="hidden xl:flex items-center gap-[39px] absolute left-1/2 transform -translate-x-1/2">
               <a
                 href="/"
                 className="text-[rgba(98,107,120,0.8)] font-ibm-plex-serif text-[17px] font-normal hover:text-[#72B5FF] transition-colors whitespace-nowrap"
@@ -73,18 +86,6 @@ const Buyout = () => {
                 Статьи
               </a>
             </nav>
-
-            {/* Contact Info */}
-            <div className="hidden lg:flex items-center gap-3 xl:gap-6 flex-shrink-0">
-              <div className="text-[rgba(98,107,120,0.8)] font-ibm-plex-serif text-[14px] xl:text-[17px] font-normal whitespace-nowrap">
-                Пн-Вс: 9:00-21:00
-              </div>
-              <div className="flex items-center justify-center gap-[10px] w-[160px] xl:w-[185px] h-[42px] px-[10px] py-[10px] rounded-[10px] border border-[rgba(0,0,0,0.18)] flex-shrink-0">
-                <span className="text-[#626B78] font-ibm-plex-serif text-[14px] xl:text-[17px] font-normal whitespace-nowrap">
-                  +38 (067) 123-45-67
-                </span>
-              </div>
-            </div>
           </div>
         </div>
       </header>
@@ -130,9 +131,9 @@ const Buyout = () => {
                   </h3>
                   <p className="text-[#4C4C4C] font-pt-serif text-[15px] md:text-[16px] font-normal leading-relaxed mb-6">
                     Бесспорно это несвоевременная неприятность — когда ваша
-                    верная подруга подводит Вас. Невероятно как много пользы она
-                    приносила и тут вдруг… Теперь продать машинку в Одессе, это
-                    ни сколько не сложно, гарантированно высокая оплата и
+                    верная подруга подводит Вас. Неве��оятно как много пользы
+                    она приносила и тут вдруг… Теперь продать машинку в Одессе,
+                    это ни сколько не сложно, гарантированно высокая оплата и
                     минимум действий.
                   </p>
 
@@ -145,7 +146,7 @@ const Buyout = () => {
                       <p className="text-[#4C4C4C] font-pt-serif text-[15px] md:text-[16px] font-normal leading-relaxed">
                         <strong>Честность</strong> – редкое качество в данной
                         отрасли, и мы им обладаем. Оценим фактическую стоимость
-                        машинки в любом состоянии: рабочем или неисправном и не
+                        машинки в любо�� состоянии: рабочем или неисправном и не
                         будем ее занижать.
                       </p>
                     </li>
@@ -224,10 +225,12 @@ const Buyout = () => {
                   className="bg-white rounded-[15px] shadow-lg p-4"
                   variants={fadeInUp}
                 >
-                  <div className="w-full h-[200px] bg-gray-200 rounded-lg flex items-center justify-center mb-4">
-                    <span className="text-gray-500 text-sm">
-                      Фото 1 - Будет добавлено
-                    </span>
+                  <div className="w-full h-[200px] rounded-lg overflow-hidden mb-4">
+                    <img
+                      src="https://cdn.builder.io/api/v1/assets/b5993ffd3d3f4fc78326f8b01db580e9/1-300x235-e61f8e?format=webp&width=800"
+                      alt="Выкуп стиральных машин"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <p className="text-[#4C4C4C] font-pt-serif text-[14px] text-center">
                     Выкуп стиральных машин
@@ -238,10 +241,12 @@ const Buyout = () => {
                   className="bg-white rounded-[15px] shadow-lg p-4"
                   variants={fadeInUp}
                 >
-                  <div className="w-full h-[200px] bg-gray-200 rounded-lg flex items-center justify-center mb-4">
-                    <span className="text-gray-500 text-sm">
-                      Фото 2 - Будет добавлено
-                    </span>
+                  <div className="w-full h-[200px] rounded-lg overflow-hidden mb-4">
+                    <img
+                      src="https://cdn.builder.io/api/v1/assets/b5993ffd3d3f4fc78326f8b01db580e9/2-300x235-c521cb?format=webp&width=800"
+                      alt="Профессиональная оценка"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <p className="text-[#4C4C4C] font-pt-serif text-[14px] text-center">
                     Профессиональная оценка
@@ -252,10 +257,12 @@ const Buyout = () => {
                   className="bg-white rounded-[15px] shadow-lg p-4"
                   variants={fadeInUp}
                 >
-                  <div className="w-full h-[200px] bg-gray-200 rounded-lg flex items-center justify-center mb-4">
-                    <span className="text-gray-500 text-sm">
-                      Фото 3 - Будет добавлено
-                    </span>
+                  <div className="w-full h-[200px] rounded-lg overflow-hidden mb-4">
+                    <img
+                      src="https://cdn.builder.io/api/v1/assets/b5993ffd3d3f4fc78326f8b01db580e9/3-300x234-cc1d63?format=webp&width=800"
+                      alt="Быстрый вывоз"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <p className="text-[#4C4C4C] font-pt-serif text-[14px] text-center">
                     Быстрый вывоз
@@ -274,7 +281,7 @@ const Buyout = () => {
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <motion.div
-                  className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-100"
+                  className="bg-white rounded-lg p-6 shadow-[0_8px_30px_rgba(59,130,246,0.3)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.4)] transition-all duration-300"
                   variants={fadeInUp}
                 >
                   <h4 className="text-[#446D99] font-pt-serif-caption text-[18px] font-medium mb-3">
@@ -285,7 +292,7 @@ const Buyout = () => {
                   </p>
                 </motion.div>
                 <motion.div
-                  className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg p-6 border border-green-100"
+                  className="bg-white rounded-lg p-6 shadow-[0_8px_30px_rgba(34,197,94,0.3)] hover:shadow-[0_12px_40px_rgba(34,197,94,0.4)] transition-all duration-300"
                   variants={fadeInUp}
                 >
                   <h4 className="text-[#446D99] font-pt-serif-caption text-[18px] font-medium mb-3">
@@ -296,7 +303,7 @@ const Buyout = () => {
                   </p>
                 </motion.div>
                 <motion.div
-                  className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-lg p-6 border border-orange-100"
+                  className="bg-white rounded-lg p-6 shadow-[0_8px_30px_rgba(251,146,60,0.3)] hover:shadow-[0_12px_40px_rgba(251,146,60,0.4)] transition-all duration-300"
                   variants={fadeInUp}
                 >
                   <h4 className="text-[#446D99] font-pt-serif-caption text-[18px] font-medium mb-3">
