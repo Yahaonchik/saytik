@@ -555,13 +555,13 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Card 2 */}
+              {/* Card 2 - Masters (moved from Card 5) */}
               <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white">
                 {/* Icon section - fixed height */}
                 <div className="flex justify-center items-center w-full h-[80px] mb-4">
                   <img
-                    src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822654-2077cf?format=webp&width=800"
-                    alt="Modern equipment icon"
+                    src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822653-b68b7d?format=webp&width=800"
+                    alt="Master work quality icon"
                     className="w-[64px] h-[64px] object-contain"
                   />
                 </div>
@@ -571,7 +571,7 @@ const Index = () => {
                   {/* Title section - fixed height */}
                   <div className="h-[60px] flex items-center justify-center mb-4">
                     <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-tight px-4">
-                      Современное оборудование по диагностике
+                      Лучшие мастера с многолетним стажем 7-10 лет
                     </h3>
                   </div>
 
@@ -581,8 +581,7 @@ const Index = () => {
                   {/* Description - flexible height */}
                   <div className="flex-1 flex items-start">
                     <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-relaxed px-4">
-                      Ежемесячно часть от прибыли мы вкладываем в работу и
-                      развитие
+                      Опытные профессионалы с подтвержденной квалификацией
                     </div>
                   </div>
                 </div>
@@ -653,13 +652,13 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Card 5 */}
+              {/* Card 5 - Modern Equipment (moved from Card 2) */}
               <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white lg:col-start-3 lg:col-end-4">
                 {/* Icon section - fixed height */}
                 <div className="flex justify-center items-center w-full h-[80px] mb-4">
                   <img
-                    src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822653-b68b7d?format=webp&width=800"
-                    alt="Master work quality icon"
+                    src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822654-2077cf?format=webp&width=800"
+                    alt="Modern equipment icon"
                     className="w-[64px] h-[64px] object-contain"
                   />
                 </div>
@@ -669,7 +668,7 @@ const Index = () => {
                   {/* Title section - fixed height */}
                   <div className="h-[60px] flex items-center justify-center mb-4">
                     <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-tight px-4">
-                      Лучшие мастера с многолетним стажем 7-10 лет
+                      Современное оборудование по диагностике
                     </h3>
                   </div>
 
@@ -679,7 +678,8 @@ const Index = () => {
                   {/* Description - flexible height */}
                   <div className="flex-1 flex items-start">
                     <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-relaxed px-4">
-                      Опытные профессионалы с подтвержденной квалификацией
+                      Ежемесячно часть от прибыли мы вкладываем в работу и
+                      развитие
                     </div>
                   </div>
                 </div>
@@ -692,19 +692,9 @@ const Index = () => {
             className="relative h-auto md:h-[218px] rounded-lg shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden bg-cover bg-center bg-no-repeat p-6 md:p-8 mt-8 md:mt-12"
             style={{
               backgroundImage:
-                "url('https://cdn.builder.io/api/v1/assets/b5993ffd3d3f4fc78326f8b01db580e9/frame-701-405886?format=webp&width=800')",
+                "url('https://cdn.builder.io/api/v1/assets/5f43915d1cce45c489b075510e2da397/frame-701232-3b1429?format=webp&width=800')",
             }}
           >
-            {/* Master Image positioned on left with head sticking out */}
-            <div className="absolute -top-24 md:-top-32 left-0 md:-left-4 z-30">
-              <img
-                src="https://cdn.builder.io/api/v1/assets/b5993ffd3d3f4fc78326f8b01db580e9/image-3822591-40af3a?format=webp&width=800"
-                alt="Мастер по ремонту"
-                className="w-[160px] md:w-[220px] lg:w-[280px] h-auto object-contain"
-              />
-            </div>
-
-            <div className="absolute inset-0 bg-black/20"></div>
             <div className="relative z-10 h-full flex flex-col justify-center items-center text-center">
               <p className="text-black font-ibm-plex-serif text-[22px] font-normal tracking-[0.88px] mb-6 md:mb-8 max-w-[600px]">
                 Оставьте заявку на ремонт и мы с вами свяжемся для уточнения
@@ -740,124 +730,197 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Repair Service Content Section */}
+      {/* Service Center Content Section */}
+      <section className="py-8 md:py-12 bg-white">
+        <div className="w-full px-4">
+          <div className="max-w-[900px] mx-auto">
+            <h2 className="text-black font-sans text-[16px] md:text-[18px] font-bold text-center mb-6 uppercase tracking-wider">
+              РЕМОНТ СТИРАЛЬНЫХ МАШИН В СЕРВИСНОМ ЦЕНТРЕ РЕМСТИРМАШ В ОДЕССЕ
+            </h2>
+
+            <div className="text-black font-sans text-[13px] md:text-[14px] font-normal leading-[1.6] text-justify space-y-4">
+              <p>
+                Стиральная машина — это техника, которая должна работать
+                исправно, отжимать, стирать и радовать стабильностью. Но на
+                практике даже самая надёжная техника со временем требует
+                внимания. Механические детали изнашиваются, электроника дает
+                сбои, а бытовая нагрузка делает своё дело. Вот почему ремонт
+                стиральных машин в Одессе — это не просто разовая услуга, а
+                реальная необходимость для большинства владельцев. Важно
+                доверить ремонт проверенным специалистам, а не случайному
+                мастеру.
+              </p>
+
+              <p>
+                Под брендом РемСтирМаш работает команда мастеров, каждый из
+                которых занимается ремонтом стиральных машин более десяти лет.
+                Мы обучались у специалистов европейских брендов, прошли
+                сертификацию, посещали техкурсы и накопили опыт работы с
+                техникой любых поколений. Сегодня мы предлагаем ремонт
+                стиральных машин в Одессе с гарантией, использованием
+                оригинальных запчастей и вниманием к каждой детали. В нашем
+                распоряжении — профессионально оснащённая мастерская, склад
+                комплектующих и выездной сервис. Мы находим даже редкие детали и
+                точно знаем, как продлить жизнь вашей технике.
+              </p>
+
+              <div className="space-y-1 my-4">
+                <p>1. На рынке ремонта бытовой техники с 2011 года.</p>
+                <p>
+                  2. Работаем напрямую с поставщиками — без переплат и
+                  посредников.
+                </p>
+                <p>
+                  3. В штате только опытные мастера с профподготовкой и
+                  практикой.
+                </p>
+                <p>
+                  4. Используем современное оборудование и точную диагностику.
+                </p>
+                <p>
+                  5. Работаем как с типовыми, так и со сложными неисправностями.
+                </p>
+              </div>
+
+              <h3 className="text-black font-sans text-[14px] md:text-[16px] font-bold mt-6 mb-3">
+                Ремонт стиральных машин в Одессе
+              </h3>
+
+              <p>
+                Ремонт стиральных машин в Одессе необходим и новым, и давно
+                используемым моделям. Все узлы техники имеют ограниченный
+                ресурс, и при активной эксплуатации однажды выходят из строя. Мы
+                собрали самые частые причины, по которым клиенты обращаются в
+                наш сервис:
+              </p>
+
+              <div className="space-y-1 my-4">
+                <p>
+                  1. Машина не сливает воду. Проблема с помпой или засор сливной
+                  системы.
+                </p>
+                <p>
+                  2. Шум и вибрации. Часто связано с износом амортизаторов или
+                  подшипников.
+                </p>
+                <p>
+                  3. Не запускается стирка. Диагностируем модуль управления или
+                  кнопку питания.
+                </p>
+                <p>
+                  4. Течёт корпус. Устраняем утечки, заменяем шланги, манжеты,
+                  патрубки.
+                </p>
+                <p>5. Не греет вода. Проверим и заменим ТЭН.</p>
+                <p>
+                  6. Выдаёт ошибку. Определим код неисправности и устраним
+                  причину.
+                </p>
+                <p>
+                  7. Регулярное техобслуживание. Профилактика раз в 12 месяцев
+                  продлевает срок службы.
+                </p>
+              </div>
+
+              <p>
+                Мы работаем с брендами LG, Samsung, Bosch, Electrolux,
+                Whirlpool, Indesit, Zanussi, Gorenje, AEG, Miele и другими.
+                Обслуживаем не только город, но и пригороды. Возможен выезд
+                мастера на дом либо доставка машины в мастерскую.
+              </p>
+
+              <h3 className="text-black font-sans text-[14px] md:text-[16px] font-bold mt-6 mb-3">
+                Мастерская по ремонту и обслуживанию стиральных машин
+              </h3>
+
+              <p>
+                Сервисный центр РемСтирМаш — это современная профессиональная
+                мастерская по ремонту стиральных машин в Одессе, где оказываются
+                все виды услуг: от быстрой замены деталей до глубокого ремонта с
+                полной разборкой. Мы берёмся за любую технику: от массовых
+                моделей до премиальных.
+              </p>
+
+              <p>
+                Выполняем замену амортизаторов, подшипников, сливных насосов,
+                управляющих модулей, датчиков, ТЭНов. Также восстанавливаем
+                герметичность, заменяем стекла и люки, устраняем вибрации и
+                посторонние шумы. Проводим профилактику и глубокую чистку
+                барабана и бака.
+              </p>
+
+              <p>
+                Работаем только с гарантией. Каждый ремонт начинается с
+                диагностики, после которой мастер подробно объясняет, в чём
+                проблема, и предлагает решение. После согласования с клиентом мы
+                начинаем ремонт.
+              </p>
+
+              <p>
+                Наша команда ценит доверие клиентов, поэтому относимся к каждой
+                машине бережно — без спешки и халтуры. Вы можете выбрать
+                стандартный или срочный ремонт (до 48 часов).
+              </p>
+
+              <p>
+                Ниже на сайте — карта проезда к нашей мастерской. Также вы
+                найдёте контактные телефоны службы поддержки. Звоните для
+                записи, консультации или если вы заметили странности в работе
+                вашей стиральной машины. Мы всё объясним, рассчитаем стоимость и
+                возьмёмся за дело.
+              </p>
+
+              <p>
+                <strong>
+                  Ремонт стиральных машин в Одессе с РемСтирМаш — это быстро,
+                  надёжно и профессионально.
+                </strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Buyout Section - moved here */}
       <section className="py-6 md:py-8 bg-white">
         <div className="w-full px-4">
-          <div className="max-w-[889px] mx-auto">
-            <div className="flex flex-col justify-center items-center gap-[15px] md:gap-[20px]">
-              <div className="flex flex-col justify-center items-center gap-[8px] md:gap-[10px] w-full">
-                <h2 className="text-[#5E5959] font-pt-serif-caption text-[16px] md:text-[18px] font-normal leading-normal text-center">
-                  Ремонт стиральных машин с выездом в Одессе — быстро и надёжно
-                </h2>
-                <p className="text-[#4C4C4C] font-pt-serif text-[13px] md:text-[14px] font-normal leading-normal text-center">
-                  Если ваша стиральная машина вышла из строя — не стоит
-                  переживать. Нет необходимости везти технику в сервис —
-                  квалифицированный мастер мо��ет приехать к вам домой и
-                  устранить неисправность на месте. Выездной ремонт стиральных
-                  машин — это удобно, оперативно и без лишних хлопот.
+          <div className="max-w-[1200px] mx-auto">
+            <div
+              className="relative h-auto md:h-[218px] rounded-lg shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden bg-cover bg-center bg-no-repeat p-6 md:p-8"
+              style={{
+                backgroundImage:
+                  "url('https://cdn.builder.io/api/v1/assets/5f43915d1cce45c489b075510e2da397/frame-777232-baec6c')",
+              }}
+            >
+              <div className="relative z-10 h-full flex flex-col justify-center items-center text-center">
+                <p className="text-black font-ibm-plex-serif text-[22px] font-normal tracking-[0.88px] mb-6 md:mb-8 max-w-[600px]">
+                  Выкупаем б/у стиральные машины в любом состоянии. Быстрая
+                  оценка и честная цена
                 </p>
-              </div>
 
-              <div className="flex flex-col justify-center items-center gap-[8px] md:gap-[10px] w-full">
-                <h3 className="text-[#5E5959] font-pt-serif-caption text-[16px] md:text-[18px] font-normal leading-normal text-center">
-                  Выездной ремонт: экономия времени и усилий
-                </h3>
-                <p className="text-[#4C4C4C] font-pt-serif text-[13px] md:text-[14px] font-normal leading-normal text-center">
-                  В условиях занятости многие ценят удобство. Выезд мастера —
-                  это не только экономия времени, но и возможность сразу
-                  получить консультацию и диагностику. Часто неполадки
-                  оказываются незначительными и устраняются прямо на месте без
-                  перевозки техники.
-                </p>
-              </div>
-
-              <div className="flex flex-col justify-center items-center gap-[8px] md:gap-[10px] w-full">
-                <h3 className="text-[#5E5959] font-pt-serif-caption text-[16px] md:text-[18px] font-normal leading-normal text-center">
-                  Стоимость ремонта: доступные расценки
-                </h3>
-                <p className="text-[#4C4C4C] font-pt-serif text-[13px] md:text-[14px] font-normal leading-normal text-center">
-                  Цена — один из ключевых факторов при выборе исполнителя. Мы
-                  предлагаем честные и разумные цены на ремонт стиральных машин
-                  в Одессе. Окончательная сумма зависит от сложности работ, но
-                  вы всегда будете проинформированы заранее.
-                </p>
-              </div>
-
-              <div className="flex flex-col justify-center items-center gap-[8px] md:gap-[10px] w-full">
-                <h3 className="text-[#5E5959] font-pt-serif-caption text-[16px] md:text-[18px] font-normal leading-normal text-center">
-                  Как вызвать мастера на дом
-                </h3>
-                <p className="text-[#4C4C4C] font-pt-serif text-[13px] md:text-[14px] font-normal leading-normal text-center">
-                  При первых признаках сбоя в работе стиральной машины лучше не
-                  откладывать — достаточно просто позвонить нам. Мы организуем
-                  выезд мастера по ремонту стиральных машин в удобное для вас
-                  время. Это позволяет не только сэкономить, но и избежать более
-                  серьёзных поломок.
-                </p>
-              </div>
-
-              <div className="flex flex-col justify-center items-center gap-[8px] md:gap-[10px] w-full">
-                <h3 className="text-[#5E5959] font-pt-serif-caption text-[16px] md:text-[18px] font-normal leading-normal text-center">
-                  Опытный мастер по ремонту стиральных машин
-                </h3>
-                <p className="text-[#4C4C4C] font-pt-serif text-[13px] md:text-[14px] font-normal leading-normal text-center">
-                  При неисправностях бытовой техники важно обращаться к
-                  профессионалам. Наши мастера обладают большим опытом и
-                  способны устранить любые поломки — от неисправностей модуля
-                  управления до проблем с мотором или системой подачи во��ы.
-                  Ответственный подход и технические знания — залог долгой
-                  службы вашей техники после ремонта.
-                </p>
-              </div>
-
-              <div className="flex flex-col justify-center items-center gap-[8px] md:gap-[10px] w-full">
-                <h3 className="text-[#5E5959] font-pt-serif-caption text-[16px] md:text-[18px] font-normal leading-normal text-center">
-                  Прозрачный прайс и честные условия
-                </h3>
-                <p className="text-[#4C4C4C] font-pt-serif text-[13px] md:text-[14px] font-normal leading-normal text-center">
-                  Наши клиенты знают: никаких скрытых платежей. Ориентировочные
-                  расценки размещены на сайте, а итоговая стоимость озвучивается
-                  до начала ремонта. Такой подход избавляет от неожиданностей и
-                  формирует доверие.
-                </p>
-              </div>
-
-              <div className="flex flex-col justify-center items-center gap-[8px] md:gap-[10px] w-full">
-                <h3 className="text-[#5E5959] font-pt-serif-caption text-[16px] md:text-[18px] font-normal leading-normal text-center">
-                  Ремонт стиральных машин в Одессе — профессионально и
-                  качественно
-                </h3>
-                <p className="text-[#4C4C4C] font-pt-serif text-[13px] md:text-[14px] font-normal leading-normal text-center">
-                  Мы ценим д��верие наших клиентов и предлагаем услуги по
-                  ремонту стиральных машин, соответствующие высоким стандартам.
-                  Наши мастера проходят регулярное обучение и владеют
-                  современными методиками ремонта.
-                </p>
-              </div>
-
-              <div className="flex flex-col justify-center items-center gap-[8px] md:gap-[10px] w-full">
-                <h3 className="text-[#5E5959] font-pt-serif-caption text-[16px] md:text-[18px] font-normal leading-normal text-center">
-                  От чего зависит цена ремонта стиральной машины
-                </h3>
-                <p className="text-[#4C4C4C] font-pt-serif text-[13px] md:text-[14px] font-normal leading-normal text-center">
-                  Стоимость может варьироваться в зависимости от характера
-                  поломки, модели устройства и необходимости замены
-                  комплектующих. Мы стремимся предложить выгодные условия, не
-                  снижая качества.
-                </p>
-              </div>
-
-              <div className="flex flex-col justify-center items-center gap-[8px] md:gap-[10px] w-full">
-                <h3 className="text-[#5E5959] font-pt-serif-caption text-[16px] md:text-[18px] font-normal leading-normal text-center">
-                  Заключение
-                </h3>
-                <p className="text-[#4C4C4C] font-pt-serif text-[13px] md:text-[14px] font-normal leading-normal text-center">
-                  Если ваша стиральная машина нуждается в ремонте — не
-                  откладывайте. Вызов мастера на дом — это быстро, удобно и
-                  эффективно. Мы работаем по всей Одессе, гарантируем качество и
-                  доступные цены. Звоните — и ваша техника снова будет как
-                  новенькая!
-                </p>
+                <a
+                  href="/buyout"
+                  className="flex items-center justify-center gap-3 w-full max-w-[253px] h-[50px] px-[20px] md:px-[38px] py-[15px] rounded-[60px] bg-[#72B5FF] shadow-[9px_13px_4px_0px_rgba(0,0,0,0.06)] button-shake hover:bg-[#5FA3E6] transition-colors"
+                >
+                  <svg
+                    width="20"
+                    height="19"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 6L9 17L4 12"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="text-white font-ubuntu text-[15px] font-medium">
+                    Выкуп б/у машин
+                  </span>
+                </a>
               </div>
             </div>
           </div>
@@ -866,57 +929,6 @@ const Index = () => {
 
       {/* FAQ Section */}
       <FAQSection />
-
-      {/* Buyout CTA Section */}
-      <section className="py-16 md:py-20 lg:py-24 relative">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="relative rounded-2xl shadow-[0px_8px_32px_0px_rgba(0,0,0,0.12)] overflow-hidden bg-gradient-to-br from-[#446D99] via-[#72B5FF] to-[#5da3ff] p-8 md:p-12">
-            {/* Background pattern overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
-
-            <div className="relative z-10 max-w-4xl mx-auto text-center">
-              <div className="mb-8">
-                <h2 className="text-white font-pt-serif text-[24px] md:text-[28px] lg:text-[32px] font-normal mb-4 leading-tight">
-                  Выкупим вашу стиральную машину дорого!
-                </h2>
-                <p className="text-white/90 font-pt-serif text-[16px] md:text-[18px] lg:text-[20px] font-normal leading-relaxed max-w-2xl mx-auto">
-                  Не выбрасывайте технику — получите деньги за машину, которая
-                  больше не нужна. Быстрая оценка и честная цена гарантированы.
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a
-                  href="/buyout"
-                  className="group inline-flex items-center justify-center gap-3 px-8 md:px-10 py-4 md:py-5 bg-white text-[#446D99] rounded-full font-ubuntu text-[16px] md:text-[18px] font-semibold shadow-xl hover:shadow-2xl hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 min-w-[240px]"
-                >
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="transition-transform duration-300 group-hover:rotate-12"
-                  >
-                    <path
-                      d="M12 2V22M17 5H9.5C8.57174 5 7.6815 5.36875 7.02513 6.02513C6.36875 6.6815 6 7.57174 6 8.5C6 9.42826 6.36875 10.3185 7.02513 10.9749C7.6815 11.6313 8.57174 12 9.5 12H14.5C15.4283 12 16.3185 12.3687 16.9749 13.0251C17.6313 13.6815 18 14.5717 18 15.5C18 16.4283 17.6313 17.3185 16.9749 17.9749C16.3185 18.6313 15.4283 19 14.5 19H6"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  Узнать стоимость выкупа
-                </a>
-
-                <div className="text-white/80 font-pt-serif text-[14px] md:text-[16px] italic">
-                  Бесплатная оценка за 5 минут
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Footer */}
       <Footer />
