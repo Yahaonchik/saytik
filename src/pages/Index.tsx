@@ -23,9 +23,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="relative z-50 w-full">
+      <header className="relative z-50 w-full mt-[15px]">
         <div
-          className="w-full h-[50px] sm:h-[60px] md:h-[84px] bg-white/95 md:bg-white/63 shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] relative"
+          className="w-full h-[48px] sm:h-[58px] md:h-[82px] bg-white/95 md:bg-white/63 shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] relative"
           style={{
             backdropFilter: "blur(10px)",
             WebkitBackdropFilter: "blur(10px)",
@@ -42,7 +42,7 @@ const Index = () => {
             </a>
 
             {/* Mobile Actions */}
-            <div className="flex items-center gap-2 lg:hidden">
+            <div className="flex items-center gap-2 xl:hidden">
               <a
                 href="tel:+380671234567"
                 className="flex items-center justify-center w-[40px] h-[40px] rounded-[10px] border border-[rgba(0,0,0,0.18)] bg-white shadow-sm"
@@ -69,13 +69,13 @@ const Index = () => {
             </div>
 
             {/* Contact Info - Desktop only */}
-            <div className="hidden lg:flex items-center gap-3 xl:gap-8 flex-shrink-0 mr-8 md:mr-12 lg:mr-16">
+            <div className="hidden xl:flex items-center gap-3 xl:gap-8 flex-shrink-0 mr-8 md:mr-12 lg:mr-16">
               <div className="flex items-center justify-center gap-[10px] w-[160px] xl:w-[185px] h-[42px] px-[10px] py-[10px] rounded-[10px] bg-[#72B5FF] flex-shrink-0">
                 <span className="text-white font-ibm-plex-serif text-[14px] xl:text-[17px] font-normal whitespace-nowrap">
                   +38 (067) 123-45-67
                 </span>
               </div>
-              <div className="text-[rgba(98,107,120,0.8)] font-ibm-plex-serif text-[14px] xl:text-[17px] font-normal whitespace-nowrap">
+              <div className="text-[#626B78] font-ibm-plex-serif text-[14px] xl:text-[17px] font-normal whitespace-nowrap">
                 Пн-Вс: 9:00-21:00
               </div>
             </div>
@@ -90,19 +90,13 @@ const Index = () => {
               </a>
               <a
                 href="/buyout"
-                className="text-[rgba(98,107,120,0.8)] font-ibm-plex-serif text-[17px] font-normal hover:text-[#72B5FF] transition-colors whitespace-nowrap"
+                className="text-[#626B78] font-ibm-plex-serif text-[17px] font-normal hover:text-[#72B5FF] transition-colors whitespace-nowrap"
               >
                 Выкуп б/у машин
               </a>
               <a
                 href="#"
-                className="text-[rgba(98,107,120,0.8)] font-ibm-plex-serif text-[17px] font-normal hover:text-[#72B5FF] transition-colors whitespace-nowrap"
-              >
-                Отзывы
-              </a>
-              <a
-                href="#"
-                className="text-[rgba(98,107,120,0.8)] font-ibm-plex-serif text-[17px] font-normal hover:text-[#72B5FF] transition-colors whitespace-nowrap"
+                className="text-[#626B78] font-ibm-plex-serif text-[17px] font-normal hover:text-[#72B5FF] transition-colors whitespace-nowrap"
               >
                 Статьи
               </a>
@@ -344,7 +338,7 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage:
-              "url('https://cdn.builder.io/api/v1/assets/ab9c320785cc40dbb2ad955655018371/frame-645-c6292a?format=webp&width=800')",
+              "url('https://cdn.builder.io/api/v1/assets/777536c48a5841ebbea4bcebb08ba44c/frame-645-3a9b26?format=webp&width=800')",
           }}
         ></div>
 
@@ -372,7 +366,7 @@ const Index = () => {
                   </div>
                   <div className="border-t-[1px] border-[rgba(0,0,0,0.3)] mb-3 md:mb-0"></div>
                   <div className="md:h-1/2 flex items-center md:items-start md:pt-2">
-                    <p className="text-[#5C6570] text-[14px] md:text-[14px] font-normal leading-relaxed text-center md:text-left">
+                    <p className="text-[#484848] font-vollkorn text-[14.5px] font-normal leading-relaxed text-center md:text-left">
                       Наш мастер всегда приезжает вовремя и в назначенное время
                       согласно договоренности
                     </p>
@@ -392,9 +386,8 @@ const Index = () => {
                   </div>
                   <div className="border-t-[1px] border-[rgba(0,0,0,0.3)] mb-3 md:mb-0"></div>
                   <div className="md:h-1/2 flex items-center md:items-start md:pt-2">
-                    <p className="text-[#5C6570] text-[14px] md:text-[14px] font-normal leading-relaxed text-center md:text-left">
-                      Официальная гарантия на все виды ремонта работ и
-                      установленные детали
+                    <p className="text-[#484848] font-vollkorn text-[14.5px] font-normal leading-relaxed text-center md:text-left">
+                      Пунктуальность и профессионализм в каждом выезде
                     </p>
                   </div>
                 </div>
@@ -426,9 +419,9 @@ const Index = () => {
                   </div>
                   <div className="border-t-[1px] border-[rgba(0,0,0,0.3)] mb-3 md:mb-0"></div>
                   <div className="md:h-1/2 flex items-center md:items-start md:pt-2">
-                    <p className="text-[#5C6570] text-[14px] md:text-[14px] font-normal leading-relaxed text-center md:text-left">
+                    <p className="text-[#484848] font-vollkorn text-[14.5px] font-normal leading-relaxed text-center md:text-left">
                       Аккуратная работа без повреждений мебели и предметов
-                      и��терьера
+                      интерьера
                     </p>
                   </div>
                 </div>
@@ -492,16 +485,7 @@ const Index = () => {
       </section>
 
       {/* Online Diagnosis & Brands Section */}
-      <section
-        className="py-12 md:py-16 lg:py-24 relative"
-        style={{
-          backgroundImage:
-            "url('https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/frame-770-e7c0ef?format=webp&width=800')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+      <section className="py-12 md:py-16 lg:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           {/* Online Diagnosis */}
           <div id="online-diagnosis" className="mb-12 -mt-4">
@@ -523,7 +507,40 @@ const Index = () => {
           <div className="max-w-[1200px] mx-auto mb-16 px-4">
             {/* All cards in one responsive grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-              {/* Card 1 */}
+              {/* Card 1 - Modern Equipment (moved to first position) */}
+              <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white">
+                {/* Icon section - fixed height */}
+                <div className="flex justify-center items-center w-full h-[80px] mb-4">
+                  <img
+                    src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822654-2077cf?format=webp&width=800"
+                    alt="Modern equipment icon"
+                    className="w-[64px] h-[64px] object-contain"
+                  />
+                </div>
+
+                {/* Content section - flexible layout */}
+                <div className="flex flex-col w-full flex-1">
+                  {/* Title section - fixed height */}
+                  <div className="h-[60px] flex items-center justify-center mb-4">
+                    <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-tight px-4">
+                      Современное оборудование по диагностике
+                    </h3>
+                  </div>
+
+                  {/* Divider - always at same position */}
+                  <div className="h-[1px] bg-[#A4A4A4] mb-4"></div>
+
+                  {/* Description - flexible height */}
+                  <div className="flex-1 flex items-start">
+                    <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-relaxed px-4">
+                      Ежемесячно часть от прибыли мы вкладываем в работу и
+                      развитие
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2 - Price */}
               <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white">
                 {/* Icon section - fixed height */}
                 <div className="flex justify-center items-center w-full h-[80px] mb-4">
@@ -556,39 +573,7 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Card 2 - Masters (moved from Card 5) */}
-              <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white">
-                {/* Icon section - fixed height */}
-                <div className="flex justify-center items-center w-full h-[80px] mb-4">
-                  <img
-                    src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822653-b68b7d?format=webp&width=800"
-                    alt="Master work quality icon"
-                    className="w-[64px] h-[64px] object-contain"
-                  />
-                </div>
-
-                {/* Content section - flexible layout */}
-                <div className="flex flex-col w-full flex-1">
-                  {/* Title section - fixed height */}
-                  <div className="h-[60px] flex items-center justify-center mb-4">
-                    <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-tight px-4">
-                      Лучшие мастера с многолетним стажем 7-10 лет
-                    </h3>
-                  </div>
-
-                  {/* Divider - always at same position */}
-                  <div className="h-[1px] bg-[#A4A4A4] mb-4"></div>
-
-                  {/* Description - flexible height */}
-                  <div className="flex-1 flex items-start">
-                    <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-relaxed px-4">
-                      Опытные профессионалы с подтвержденной квалификацией
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 3 */}
+              {/* Card 3 - Warranty */}
               <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white">
                 {/* Icon section - fixed height */}
                 <div className="flex justify-center items-center w-full h-[80px] mb-4">
@@ -614,14 +599,14 @@ const Index = () => {
                   {/* Description - flexible height */}
                   <div className="flex-1 flex items-start">
                     <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-relaxed px-4">
-                      Официальная гарантия на детали и услуги
+                      Офиц��альная гарантия на детали и услуги
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Card 4 */}
-              <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white lg:col-start-1 lg:col-end-2">
+              {/* Card 4 - Supplier Connections (moved next to warranty) */}
+              <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white">
                 {/* Icon section - fixed height */}
                 <div className="flex justify-center items-center w-full h-[80px] mb-4">
                   <img
@@ -653,13 +638,13 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Card 5 - Modern Equipment (moved from Card 2) */}
-              <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white lg:col-start-3 lg:col-end-4">
+              {/* Card 5 - Masters (moved to last position) */}
+              <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white">
                 {/* Icon section - fixed height */}
                 <div className="flex justify-center items-center w-full h-[80px] mb-4">
                   <img
-                    src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822654-2077cf?format=webp&width=800"
-                    alt="Modern equipment icon"
+                    src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822653-b68b7d?format=webp&width=800"
+                    alt="Master work quality icon"
                     className="w-[64px] h-[64px] object-contain"
                   />
                 </div>
@@ -669,7 +654,7 @@ const Index = () => {
                   {/* Title section - fixed height */}
                   <div className="h-[60px] flex items-center justify-center mb-4">
                     <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-tight px-4">
-                      Современное оборудование по диагностике
+                      Лучшие мастера с многолетним стажем 7-10 лет
                     </h3>
                   </div>
 
@@ -679,8 +664,7 @@ const Index = () => {
                   {/* Description - flexible height */}
                   <div className="flex-1 flex items-start">
                     <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-relaxed px-4">
-                      Ежемесячно часть от прибыли мы вкладываем в работу и
-                      развитие
+                      Опытные профессионалы с подтвержденной квалификацией
                     </div>
                   </div>
                 </div>
@@ -704,25 +688,25 @@ const Index = () => {
 
               <button
                 onClick={() => setIsCallMasterModalOpen(true)}
-                className="flex items-center justify-center gap-3 w-full max-w-[253px] h-[50px] px-[20px] md:px-[38px] py-[15px] rounded-[60px] bg-[#72B5FF] shadow-[9px_13px_4px_0px_rgba(0,0,0,0.06)] button-shake"
+                className="flex items-center justify-center gap-3 w-full max-w-[253px] h-[50px] px-[16px] md:px-[38px] py-[12px] md:py-[15px] rounded-[60px] bg-transparent border-2 border-[#72B5FF] shadow-[9px_13px_4px_0px_rgba(0,0,0,0.06)] button-shake"
               >
                 <svg
-                  width="20"
-                  height="19"
+                  width="16"
+                  height="15"
                   viewBox="0 0 22 21"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="phone-shake"
+                  className="phone-shake md:w-[18px] md:h-[17px]"
                 >
                   <path
                     d="M12.832 14.354C13.0385 14.4409 13.2712 14.4608 13.4917 14.4103C13.7122 14.3598 13.9073 14.242 14.045 14.0762L14.4 13.65C14.5863 13.4223 14.8279 13.2375 15.1056 13.1102C15.3833 12.9829 15.6895 12.9167 16 12.9167H19C19.5304 12.9167 20.0391 13.1098 20.4142 13.4536C20.7893 13.7975 21 14.2638 21 14.75V17.5C21 17.9862 20.7893 18.4525 20.4142 18.7964C20.0391 19.1402 19.5304 19.3333 19 19.3333C14.2261 19.3333 9.64773 17.5949 6.27208 14.5006C2.89642 11.4062 1 7.20941 1 2.83333C1 2.3471 1.21071 1.88079 1.58579 1.53697C1.96086 1.19315 2.46957 1 3 1H6C6.53043 1 7.03914 1.19315 7.41421 1.53697C7.78929 1.88079 8 2.3471 8 2.83333V5.58333C8 5.86795 7.92771 6.14866 7.78885 6.40323C7.65 6.65779 7.44839 6.87923 7.2 7.05L6.732 7.37175C6.54842 7.50025 6.41902 7.68304 6.36579 7.88907C6.31256 8.09511 6.33878 8.31168 6.44 8.502C7.80668 11.0465 10.0544 13.1044 12.832 14.354Z"
-                    stroke="white"
+                    stroke="#72B5FF"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                 </svg>
-                <span className="text-white font-ubuntu text-[15px] font-medium">
+                <span className="text-[#72B5FF] font-ubuntu text-[12px] md:text-[15px] font-medium">
                   Вызвать мастера
                 </span>
               </button>
@@ -762,7 +746,7 @@ const Index = () => {
                 оригинальных запчастей и вниманием к каждой детали. В нашем
                 распоряжении — профессионально оснащённая мастерская, склад
                 комплектующих и выездной сервис. Мы находим даже редкие детали и
-                точно знаем, как продлить жизнь вашей технике.
+                точно знаем, как продлить жизнь вашей техни��е.
               </p>
 
               <div className="space-y-1 my-4">
@@ -784,7 +768,7 @@ const Index = () => {
               </div>
 
               <h3 className="text-black font-sans text-[14px] md:text-[16px] font-bold mt-6 mb-3">
-                Ремонт стиральных машин в Одессе
+                Ремо��т стиральных машин в Одессе
               </h3>
 
               <p>

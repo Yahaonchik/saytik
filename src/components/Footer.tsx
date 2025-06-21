@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
             {/* Contact Information */}
             <div className="space-y-4">
               <h3
-                className="text-[#555C67] text-[20px] font-pt-serif font-normal tracking-[1.28px] mb-4"
+                className="text-[#626B78] text-[20px] font-pt-serif font-normal tracking-[1.28px] mb-4"
                 style={{ WebkitTextStroke: "0.3px #D2D6DB" }}
               >
                 Контакты
@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
 
               <div className="space-y-3">
                 <div className="text-[14px] font-pt-serif-caption tracking-[0.64px]">
-                  <span className="text-[#555C67]">Тел.: </span>
+                  <span className="text-[#626B78]">Тел.: </span>
                   <a
                     href="tel:+380984671352"
                     className="text-[#72B5FF] underline hover:text-[#5da3ff] transition-colors"
@@ -40,7 +40,7 @@ export const Footer: React.FC = () => {
                 </div>
 
                 <div className="text-[14px] font-pt-serif-caption tracking-[0.64px]">
-                  <span className="text-[#555C67]">Тел.: </span>
+                  <span className="text-[#626B78]">Тел.: </span>
                   <a
                     href="tel:+380935435666"
                     className="text-[#72B5FF] underline hover:text-[#5da3ff] transition-colors"
@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
                   </a>
                 </div>
 
-                <div className="text-[14px] font-georgia text-[#555C67] tracking-[0.64px] leading-normal">
+                <div className="text-[14px] font-georgia text-[#626B78] tracking-[0.64px] leading-normal">
                   E-mail:{" "}
                   <a
                     href="mailto:remstirmash@gmail.com"
@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
                   </a>
                 </div>
 
-                <div className="text-[14px] font-georgia text-[#555C67] tracking-[0.64px]">
+                <div className="text-[14px] font-georgia text-[#626B78] tracking-[0.64px]">
                   Пн-Вс: 9:00-21:00
                 </div>
               </div>
@@ -68,7 +68,7 @@ export const Footer: React.FC = () => {
             {/* Call to Action */}
             <div className="space-y-4 flex flex-col items-center">
               <div className="max-w-[280px] text-center">
-                <p className="text-[#555C67]/90 text-[14px] font-pt-serif-caption font-normal tracking-[0.8px] leading-normal">
+                <p className="text-[#626B78]/90 text-[14px] font-pt-serif-caption font-normal tracking-[0.8px] leading-normal">
                   Оставьте заявку на бесплатный выезд мастера и диагностику
                 </p>
               </div>
@@ -88,25 +88,19 @@ export const Footer: React.FC = () => {
             <nav className="flex flex-row flex-wrap justify-center gap-4">
               <a
                 href="/"
-                className="text-[#555C67] font-georgia text-[14px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors"
+                className="text-[#626B78] font-georgia text-[14px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors"
               >
                 Главная
               </a>
               <a
                 href="/buyout"
-                className="text-[#555C67] font-georgia text-[14px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors"
+                className="text-[#626B78] font-georgia text-[14px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors"
               >
                 Выкуп б/у машин
               </a>
               <a
-                href="/reviews"
-                className="text-[#555C67] font-georgia text-[14px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors"
-              >
-                Отзывы
-              </a>
-              <a
                 href="/articles"
-                className="text-[#555C67] font-georgia text-[14px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors"
+                className="text-[#626B78] font-georgia text-[14px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors"
               >
                 Статьи
               </a>
@@ -130,7 +124,7 @@ export const Footer: React.FC = () => {
             {/* Left Column - Contact Information */}
             <div className="flex flex-col justify-start items-start text-left">
               <h3
-                className="text-[#555C67] text-[24px] lg:text-[32px] font-pt-serif font-normal tracking-[1.28px] mb-6 lg:mb-8"
+                className="text-[#626B78] text-[24px] lg:text-[32px] font-pt-serif font-normal tracking-[1.28px] mb-6 lg:mb-8"
                 style={{ WebkitTextStroke: "0.3px #D2D6DB" }}
               >
                 Контакты
@@ -138,7 +132,7 @@ export const Footer: React.FC = () => {
 
               <div className="space-y-4 lg:space-y-6">
                 <div className="text-[15px] lg:text-[16px] font-pt-serif-caption tracking-[0.64px]">
-                  <span className="text-[#555C67]">Тел.: </span>
+                  <span className="text-[#626B78]">Тел.: </span>
                   <a
                     href="tel:+380984671352"
                     className="text-[#72B5FF] underline hover:text-[#5da3ff] transition-colors"
@@ -148,7 +142,7 @@ export const Footer: React.FC = () => {
                 </div>
 
                 <div className="text-[15px] lg:text-[16px] font-pt-serif-caption tracking-[0.64px]">
-                  <span className="text-[#555C67]">Тел.: </span>
+                  <span className="text-[#626B78]">Тел.: </span>
                   <a
                     href="tel:+380935435666"
                     className="text-[#72B5FF] underline hover:text-[#5da3ff] transition-colors"
@@ -158,13 +152,13 @@ export const Footer: React.FC = () => {
                 </div>
 
                 <div className="border-t border-black/22 pt-3 lg:pt-4">
-                  <div className="text-[15px] lg:text-[16px] font-georgia text-[#555C67] tracking-[0.64px] leading-normal">
+                  <div className="text-[15px] lg:text-[16px] font-georgia text-[#626B78] tracking-[0.64px] leading-normal">
                     Адрес: пл. Независимости, 1, Одесса, Одесская область, 65000
                   </div>
                 </div>
 
                 <div className="text-[15px] lg:text-[16px] font-georgia tracking-[0.64px]">
-                  <span className="text-[#555C67]">E-mail: </span>
+                  <span className="text-[#626B78]">E-mail: </span>
                   <a
                     href="mailto:remstirmash@gmail.com"
                     className="text-[#72B5FF] hover:text-[#5da3ff] transition-colors"
@@ -173,7 +167,7 @@ export const Footer: React.FC = () => {
                   </a>
                 </div>
 
-                <div className="text-[15px] lg:text-[16px] font-georgia text-[#555C67] tracking-[0.64px]">
+                <div className="text-[15px] lg:text-[16px] font-georgia text-[#626B78] tracking-[0.64px]">
                   Пн-Вс: 9:00-21:00
                 </div>
               </div>
@@ -182,7 +176,7 @@ export const Footer: React.FC = () => {
             {/* Center Column - Call to Action */}
             <div className="flex flex-col justify-center items-center text-center">
               <div className="mb-6 lg:mb-8 max-w-[334px]">
-                <h3 className="text-[#555C67]/90 text-[16px] lg:text-[20px] font-pt-serif-caption font-normal tracking-[0.8px] leading-normal">
+                <h3 className="text-[#626B78]/90 text-[16px] lg:text-[20px] font-pt-serif-caption font-normal tracking-[0.8px] leading-normal">
                   Оставьте заявку на бесплатный выезд мастера и диагностику
                 </h3>
               </div>
@@ -203,29 +197,23 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* Right Column - Navigation */}
-            <div className="flex flex-col justify-start items-end text-right md:items-end md:text-right">
+            <div className="flex flex-col justify-start items-end text-right md:items-end md:text-right pr-8 lg:pr-12">
               <nav className="flex flex-col space-y-3 lg:space-y-4 items-end">
                 <a
                   href="/"
-                  className="text-[#555C67] font-georgia text-[15px] lg:text-[16px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors"
+                  className="text-[#626B78] font-georgia text-[15px] lg:text-[16px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors"
                 >
                   Главная
                 </a>
                 <a
                   href="/buyout"
-                  className="text-[#555C67] font-georgia text-[15px] lg:text-[16px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors"
+                  className="text-[#626B78] font-georgia text-[15px] lg:text-[16px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors"
                 >
                   Выкуп б/у машин
                 </a>
                 <a
-                  href="/reviews"
-                  className="text-[#555C67] font-georgia text-[15px] lg:text-[16px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors"
-                >
-                  Отзывы
-                </a>
-                <a
                   href="/articles"
-                  className="text-[#555C67] font-georgia text-[15px] lg:text-[16px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors"
+                  className="text-[#626B78] font-georgia text-[15px] lg:text-[16px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors"
                 >
                   Статьи
                 </a>

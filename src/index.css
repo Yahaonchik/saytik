@@ -321,7 +321,7 @@
 .wave-path {
   stroke-width: 2;
   transform: translateX(-100%);
-  animation: snake-move 3s linear infinite;
+  animation: snake-move 15s linear infinite;
 }
 
 .group:hover .wave-path {

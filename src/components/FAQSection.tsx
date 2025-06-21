@@ -64,7 +64,7 @@ const categories: Category[] = [
         id: 3,
         question: "Сколько времени занимает ремонт?",
         answer:
-          "Время ремонта зависит от сложности поломки. Простые неисправности устраняются в течение 1-2 часов, более сложный ремонт может занять до 3-4 часов.",
+          "Время ремонта зависит от сложности поломки. Простые неисправн��сти устраняются в течение 1-2 часов, более сложный ремонт может занять до 3-4 часов.",
       },
       {
         id: 4,
@@ -106,7 +106,7 @@ const categories: Category[] = [
         id: 4,
         question: "Какая оптимальная загрузка барабана?",
         answer:
-          "Хлопок — до 90% объема барабана, синтетика — до 60%, деликатные ткани — до 30%. Белье должно свободно двигаться. Проверяйте карманы: монеты могут повредить барабан, а салфетки — засорить систему.",
+          "Хлопок — до 90% объема барабана, синтетика — до 60%, деликатные ткани — до 30%. Белье должно свободно двигаться. Проверяйте карманы: монеты могут повредить барабан, а салфетк�� — засорить систему.",
       },
     ],
   },
@@ -124,8 +124,16 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="py-12 md:py-16 lg:py-24 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-12 md:py-16 lg:py-24 relative">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage:
+            "url('https://cdn.builder.io/api/v1/assets/777536c48a5841ebbea4bcebb08ba44c/frame-6455-27563e?format=webp&width=800')",
+        }}
+      ></div>
+      <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-center text-[20px] md:text-[24px] lg:text-[30px] font-pt-serif font-normal tracking-[1.2px] mb-12 md:mb-16 text-[#5D5D5D]">
           Часто задаваемые вопросы
         </h2>
@@ -163,10 +171,27 @@ export const FAQSection: React.FC = () => {
                 <div className="mt-6 pt-4 border-t border-gray-200">
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="w-full flex items-center justify-center gap-2 bg-[#72B5FF] text-white px-4 py-3 rounded-lg hover:bg-[#5da3ff] transition-colors font-medium button-shake"
+                    className="w-full flex items-center justify-center gap-3 h-[50px] px-[16px] md:px-[38px] py-[12px] md:py-[15px] rounded-[60px] bg-transparent border-2 border-[#72B5FF] shadow-[9px_13px_4px_0px_rgba(0,0,0,0.06)] button-shake"
                   >
-                    <Phone size={18} />
-                    Вызвать мастера
+                    <svg
+                      width="16"
+                      height="15"
+                      viewBox="0 0 22 21"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="phone-shake md:w-[18px] md:h-[17px]"
+                    >
+                      <path
+                        d="M12.832 14.354C13.0385 14.4409 13.2712 14.4608 13.4917 14.4103C13.7122 14.3598 13.9073 14.242 14.045 14.0762L14.4 13.65C14.5863 13.4223 14.8279 13.2375 15.1056 13.1102C15.3833 12.9829 15.6895 12.9167 16 12.9167H19C19.5304 12.9167 20.0391 13.1098 20.4142 13.4536C20.7893 13.7975 21 14.2638 21 14.75V17.5C21 17.9862 20.7893 18.4525 20.4142 18.7964C20.0391 19.1402 19.5304 19.3333 19 19.3333C14.2261 19.3333 9.64773 17.5949 6.27208 14.5006C2.89642 11.4062 1 7.20941 1 2.83333C1 2.3471 1.21071 1.88079 1.58579 1.53697C1.96086 1.19315 2.46957 1 3 1H6C6.53043 1 7.03914 1.19315 7.41421 1.53697C7.78929 1.88079 8 2.3471 8 2.83333V5.58333C8 5.86795 7.92771 6.14866 7.78885 6.40323C7.65 6.65779 7.44839 6.87923 7.2 7.05L6.732 7.37175C6.54842 7.50025 6.41902 7.68304 6.36579 7.88907C6.31256 8.09511 6.33878 8.31168 6.44 8.502C7.80668 11.0465 10.0544 13.1044 12.832 14.354Z"
+                        stroke="#72B5FF"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span className="text-[#72B5FF] font-ubuntu text-[12px] md:text-[15px] font-medium">
+                      Вызвать мастера
+                    </span>
                   </button>
                 </div>
               </div>
@@ -196,11 +221,12 @@ export const FAQSection: React.FC = () => {
                             </div>
                             <div>
                               <h4 className="font-semibold text-gray-800 mb-2">
-                                Звонок и консультация
+                                Бесплатная консультация по телефону
                               </h4>
                               <p className="text-gray-600">
-                                Вы звоните нам, описываете проблему, мы даем
-                                первичную консультацию и согласовываем время
+                                Просто позвоните нам! Мы внимательно выслушаем
+                                вашу ситуацию, дадим профессиональную
+                                консультацию и подберем удобное для вас время
                                 визита мастера.
                               </p>
                             </div>
@@ -211,11 +237,12 @@ export const FAQSection: React.FC = () => {
                             </div>
                             <div>
                               <h4 className="font-semibold text-gray-800 mb-2">
-                                Диагностика на месте
+                                Точная диагностика у вас дома
                               </h4>
                               <p className="text-gray-600">
-                                Мастер приезжает в удобное время, проводит
-                                диагностику и озвучивает стоимость ремонта.
+                                Наш опытный мастер приедет точно в назначенное
+                                время, проведет тщательную диагностику и честно
+                                озвучит стоимость. Никаких скрытых доплат!
                               </p>
                             </div>
                           </div>
@@ -225,11 +252,13 @@ export const FAQSection: React.FC = () => {
                             </div>
                             <div>
                               <h4 className="font-semibold text-gray-800 mb-2">
-                                Ремонт и тестирование
+                                Качественный ремонт с проверкой
                               </h4>
                               <p className="text-gray-600">
-                                После согласования цены выполняем ремонт,
-                                тестируем работу машины и выдаем гарантию.
+                                После вашего согласия мы бережно выполняем все
+                                необходимые работы, тщательно тестируем машину и
+                                сразу оформляем гарантию. Ваша техника будет
+                                работать как новая!
                               </p>
                             </div>
                           </div>
@@ -239,11 +268,13 @@ export const FAQSection: React.FC = () => {
                             </div>
                             <div>
                               <h4 className="font-semibold text-gray-800 mb-2">
-                                Гарантия и поддержка
+                                Долгосрочная гарантия и поддержка
                               </h4>
                               <p className="text-gray-600">
-                                Предоставляем гарантию на выполненные работы и
-                                консультации по дальнейшему обслуживанию.
+                                Мы даем реальную гарантию до 24 месяцев на все
+                                работы и детали. А также всегда готовы
+                                проконсультировать вас по уходу за техникой. Мы
+                                заботимся о наших клиентах!
                               </p>
                             </div>
                           </div>
@@ -266,7 +297,7 @@ export const FAQSection: React.FC = () => {
                                     openQuestion === item.id ? null : item.id,
                                   )
                                 }
-                                className="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center"
+                                className="w-full px-6 py-4 text-left bg-gray-200 hover:bg-gray-300 transition-colors duration-200 flex justify-between items-center"
                               >
                                 <span className="font-medium text-gray-800">
                                   {item.question}

@@ -8,7 +8,7 @@ export function MobileMenu() {
   };
 
   return (
-    <div className="lg:hidden relative">
+    <div className="xl:hidden relative">
       {/* Mobile menu button */}
       <button
         onClick={toggleMenu}
@@ -64,13 +64,7 @@ export function MobileMenu() {
                 >
                   Выкуп б/у машин
                 </a>
-                <a
-                  href="#"
-                  className="block text-[rgba(98,107,120,0.8)] font-ibm-plex-serif text-[16px] font-normal hover:text-[#72B5FF] transition-colors py-2 px-2 rounded-md hover:bg-white/50"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Отзывы
-                </a>
+
                 <a
                   href="#"
                   className="block text-[rgba(98,107,120,0.8)] font-ibm-plex-serif text-[16px] font-normal hover:text-[#72B5FF] transition-colors py-2 px-2 rounded-md hover:bg-white/50"

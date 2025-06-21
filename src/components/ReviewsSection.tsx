@@ -79,7 +79,7 @@ const ReadMoreButton: React.FC<{
           className="wave-animation"
         >
           <path
-            d="M-50,2 L-45,0 L-40,4 L-35,0 L-30,4 L-25,0 L-20,4 L-15,0 L-10,4 L-5,0 L0,4 L5,0 L10,4 L15,0 L20,4 L25,0 L30,4 L35,0 L40,4 L45,0 L50,4 L55,0 L60,4 L65,0 L70,4 L75,0 L80,4 L85,0 L90,4 L95,0 L100,4 L105,0 L110,4 L115,0 L120,4 L125,0 L130,4 L135,0 L140,4 L145,0 L150,4 L155,0 L160,4 L165,0 L170,4 L175,0 L180,4 L185,0 L190,4 L195,0 L200,4 L205,0 L210,4 L215,0 L220,4 L225,0 L230,4 L235,0 L240,4 L245,0 L250,2"
+            d="M-50,2 L-20,0 L20,4 L60,0 L100,4 L140,0 L180,4 L220,0 L250,2"
             stroke="#72B5FF"
             strokeWidth="2"
             fill="none"
@@ -94,9 +94,11 @@ const ReadMoreButton: React.FC<{
 const ReviewCard: React.FC<{ review: Review }> = ({ review }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const shouldTruncate = review.isLong && !isExpanded;
+  // Calculate if text is longer than 3 lines (approximately 35 characters for 3 lines)
+  const isTextLong = review.text.length > 35;
+  const shouldTruncate = isTextLong && !isExpanded;
   const displayText = shouldTruncate
-    ? review.text.slice(0, 120) + "..."
+    ? review.text.slice(0, 35) + "..."
     : review.text;
 
   return (
@@ -129,7 +131,7 @@ const ReviewCard: React.FC<{ review: Review }> = ({ review }) => {
       <div className="flex-1">
         <p className="text-gray-700 text-sm leading-relaxed">{displayText}</p>
 
-        {review.isLong && (
+        {isTextLong && (
           <ReadMoreButton
             onClick={() => setIsExpanded(!isExpanded)}
             isExpanded={isExpanded}
