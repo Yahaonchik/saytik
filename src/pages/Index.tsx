@@ -83,7 +83,7 @@ const Index = () => {
             {/* Navigation - Hidden on mobile and tablet */}
             <nav className="hidden xl:flex items-center gap-[39px] absolute left-1/2 transform -translate-x-1/2">
               <a
-                href="#"
+                href="/"
                 className="text-[#626B78] font-ibm-plex-serif text-[17px] font-normal hover:text-[#72B5FF] transition-colors whitespace-nowrap"
               >
                 Главная
@@ -95,7 +95,7 @@ const Index = () => {
                 Выкуп б/у машин
               </a>
               <a
-                href="#"
+                href="/articles"
                 className="text-[#626B78] font-ibm-plex-serif text-[17px] font-normal hover:text-[#72B5FF] transition-colors whitespace-nowrap"
               >
                 Статьи
@@ -136,7 +136,7 @@ const Index = () => {
 
             <p className="text-[10px] sm:text-[10px] md:text-[15px] font-pt-serif font-normal tracking-[0.7px] md:tracking-[0.75px] max-w-[600px] mx-auto px-4 text-center">
               <span className="text-[#40444F] font-normal">
-                Профессиональный ремонт стир��льных машин в тот же{" "}
+                Профессиональный ремонт стиральных машин в тот же{" "}
               </span>
               <span className="text-[#72B5FF] font-normal">день!</span>
             </p>
@@ -394,7 +394,7 @@ const Index = () => {
                 <div className="flex-shrink-0 w-full md:w-auto order-1 md:order-2">
                   <img
                     src="https://cdn.builder.io/api/v1/assets/ab9c320785cc40dbb2ad955655018371/2-27fe87?format=webp&width=1200"
-                    alt="Предоставляет гарантию до 24 ��ес на работу и запчасти"
+                    alt="Предоставляет гарантию до 24 месяцев на работу и запчасти"
                     className="w-full h-[200px] md:w-[264px] md:h-[179px] object-cover"
                   />
                 </div>
@@ -414,7 +414,7 @@ const Index = () => {
                 <div className="flex-1 px-4 py-4 md:px-6 md:py-0 md:h-full flex flex-col justify-center">
                   <div className="mb-3 md:mb-2 md:h-1/2 flex items-center md:items-end md:pb-2">
                     <h3 className="text-[#484848] font-vollkorn text-[16px] md:text-[16px] font-medium leading-tight text-center md:text-left">
-                      ��облюдает ч��стоту в квартире работая в бахилах
+                      Соблюдает чистоту в квартире работая в бахилах
                     </h3>
                   </div>
                   <div className="border-t-[1px] border-[rgba(0,0,0,0.3)] mb-3 md:mb-0"></div>
@@ -506,11 +506,11 @@ const Index = () => {
 
           <div className="max-w-[1200px] mx-auto mb-16 px-4">
             {/* All cards in one responsive grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
               {/* Card 1 - Modern Equipment (moved to first position) */}
-              <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white">
+              <div className="w-full max-w-[359px] h-[300px] flex flex-col items-center text-center p-5 bg-white">
                 {/* Icon section - fixed height */}
-                <div className="flex justify-center items-center w-full h-[80px] mb-4">
+                <div className="flex justify-center items-center w-full h-[70px] mb-3">
                   <img
                     src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822654-2077cf?format=webp&width=800"
                     alt="Modern equipment icon"
@@ -521,14 +521,14 @@ const Index = () => {
                 {/* Content section - flexible layout */}
                 <div className="flex flex-col w-full flex-1">
                   {/* Title section - fixed height */}
-                  <div className="h-[60px] flex items-center justify-center mb-4">
+                  <div className="h-[55px] flex items-center justify-center mb-3">
                     <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-tight px-4">
                       Современное оборудование по диагностике
                     </h3>
                   </div>
 
                   {/* Divider - always at same position */}
-                  <div className="h-[1px] bg-[#A4A4A4] mb-4"></div>
+                  <div className="h-[1px] bg-[#A4A4A4] mb-3"></div>
 
                   {/* Description - flexible height */}
                   <div className="flex-1 flex items-start">
@@ -541,9 +541,9 @@ const Index = () => {
               </div>
 
               {/* Card 2 - Price */}
-              <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white">
+              <div className="w-full max-w-[359px] h-[300px] flex flex-col items-center text-center p-5 bg-white">
                 {/* Icon section - fixed height */}
-                <div className="flex justify-center items-center w-full h-[80px] mb-4">
+                <div className="flex justify-center items-center w-full h-[70px] mb-3">
                   <img
                     src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/group-8-474887?format=webp&width=800"
                     alt="Price tag icon"
@@ -554,14 +554,14 @@ const Index = () => {
                 {/* Content section - flexible layout */}
                 <div className="flex flex-col w-full flex-1">
                   {/* Title section - fixed height */}
-                  <div className="h-[60px] flex items-center justify-center mb-4">
+                  <div className="h-[55px] flex items-center justify-center mb-3">
                     <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-tight px-4">
                       Низкие цены на весь сервисный диапазон услуг
                     </h3>
                   </div>
 
                   {/* Divider - always at same position */}
-                  <div className="h-[1px] bg-[#A4A4A4] mb-4"></div>
+                  <div className="h-[1px] bg-[#A4A4A4] mb-3"></div>
 
                   {/* Description - flexible height */}
                   <div className="flex-1 flex items-start">
@@ -574,9 +574,9 @@ const Index = () => {
               </div>
 
               {/* Card 3 - Warranty */}
-              <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white">
+              <div className="w-full max-w-[359px] h-[300px] flex flex-col items-center text-center p-5 bg-white">
                 {/* Icon section - fixed height */}
-                <div className="flex justify-center items-center w-full h-[80px] mb-4">
+                <div className="flex justify-center items-center w-full h-[70px] mb-3">
                   <img
                     src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822655-b66f5b?format=webp&width=800"
                     alt="24 month warranty icon"
@@ -587,28 +587,28 @@ const Index = () => {
                 {/* Content section - flexible layout */}
                 <div className="flex flex-col w-full flex-1">
                   {/* Title section - fixed height */}
-                  <div className="h-[60px] flex items-center justify-center mb-4">
+                  <div className="h-[55px] flex items-center justify-center mb-3">
                     <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-tight px-4">
                       Гарантийный срок до 24 месяцев
                     </h3>
                   </div>
 
                   {/* Divider - always at same position */}
-                  <div className="h-[1px] bg-[#A4A4A4] mb-4"></div>
+                  <div className="h-[1px] bg-[#A4A4A4] mb-3"></div>
 
                   {/* Description - flexible height */}
                   <div className="flex-1 flex items-start">
                     <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-relaxed px-4">
-                      Офиц��альная гарантия на детали и услуги
+                      Официальная гарантия на детали и услуги
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Card 4 - Supplier Connections (moved next to warranty) */}
-              <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white">
+              <div className="w-full max-w-[359px] h-[300px] flex flex-col items-center text-center p-5 bg-white">
                 {/* Icon section - fixed height */}
-                <div className="flex justify-center items-center w-full h-[80px] mb-4">
+                <div className="flex justify-center items-center w-full h-[70px] mb-3">
                   <img
                     src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/group-2-4a23b8?format=webp&width=800"
                     alt="Supplier connections icon"
@@ -619,14 +619,14 @@ const Index = () => {
                 {/* Content section - flexible layout */}
                 <div className="flex flex-col w-full flex-1">
                   {/* Title section - fixed height */}
-                  <div className="h-[60px] flex items-center justify-center mb-4">
+                  <div className="h-[55px] flex items-center justify-center mb-3">
                     <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-tight px-4">
                       Налаженные связи с поставщиками
                     </h3>
                   </div>
 
                   {/* Divider - always at same position */}
-                  <div className="h-[1px] bg-[#A4A4A4] mb-4"></div>
+                  <div className="h-[1px] bg-[#A4A4A4] mb-3"></div>
 
                   {/* Description - flexible height */}
                   <div className="flex-1 flex items-start">
@@ -639,9 +639,9 @@ const Index = () => {
               </div>
 
               {/* Card 5 - Masters (moved to last position) */}
-              <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white">
+              <div className="w-full max-w-[359px] h-[300px] flex flex-col items-center text-center p-5 bg-white">
                 {/* Icon section - fixed height */}
-                <div className="flex justify-center items-center w-full h-[80px] mb-4">
+                <div className="flex justify-center items-center w-full h-[70px] mb-3">
                   <img
                     src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822653-b68b7d?format=webp&width=800"
                     alt="Master work quality icon"
@@ -652,14 +652,14 @@ const Index = () => {
                 {/* Content section - flexible layout */}
                 <div className="flex flex-col w-full flex-1">
                   {/* Title section - fixed height */}
-                  <div className="h-[60px] flex items-center justify-center mb-4">
+                  <div className="h-[55px] flex items-center justify-center mb-3">
                     <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-tight px-4">
                       Лучшие мастера с многолетним стажем 7-10 лет
                     </h3>
                   </div>
 
                   {/* Divider - always at same position */}
-                  <div className="h-[1px] bg-[#A4A4A4] mb-4"></div>
+                  <div className="h-[1px] bg-[#A4A4A4] mb-3"></div>
 
                   {/* Description - flexible height */}
                   <div className="flex-1 flex items-start">
@@ -683,7 +683,7 @@ const Index = () => {
             <div className="relative z-10 h-full flex flex-col justify-center items-center text-center">
               <p className="text-black font-ibm-plex-serif text-[22px] font-normal tracking-[0.88px] mb-6 md:mb-8 max-w-[600px]">
                 Оставьте заявку на ремонт и мы с вами свяжемся для уточнения
-                детале��
+                деталей
               </p>
 
               <button
@@ -720,7 +720,7 @@ const Index = () => {
         <div className="w-full px-4">
           <div className="max-w-[900px] mx-auto">
             <h2 className="text-black font-sans text-[16px] md:text-[18px] font-bold text-center mb-6 uppercase tracking-wider">
-              РЕМОНТ СТИРАЛЬНЫХ МАШИН В СЕРВИСНОМ ЦЕНТРЕ РЕМСТИРМАШ В ОДЕССЕ
+              РЕМОНТ СТИРАЛЬНЫХ МАШИН В СЕРВИСНОМ ЦЕНТРЕ РЕМСТИРМАШ В О��ЕССЕ
             </h2>
 
             <div className="text-black font-sans text-[13px] md:text-[14px] font-normal leading-[1.6] text-justify space-y-4">
@@ -746,7 +746,7 @@ const Index = () => {
                 оригинальных запчастей и вниманием к каждой детали. В нашем
                 распоряжении — профессионально оснащённая мастерская, склад
                 комплектующих и выездной сервис. Мы находим даже редкие детали и
-                точно знаем, как продлить жизнь вашей техни��е.
+                точно знаем, как продлить жизнь вашей технике.
               </p>
 
               <div className="space-y-1 my-4">
@@ -768,21 +768,21 @@ const Index = () => {
               </div>
 
               <h3 className="text-black font-sans text-[14px] md:text-[16px] font-bold mt-6 mb-3">
-                Ремо��т стиральных машин в Одессе
+                Ремонт стиральных машин в Одессе
               </h3>
 
               <p>
                 Ремонт стиральных машин в Одессе необходим и новым, и давно
                 используемым моделям. Все узлы техники имеют ограниченный
-                ресурс, и при активной эксплуатации однажды выходят из строя. Мы
+                ресурс, и при активной эксплуатации однажды выходят из строя.
                 собрали самые частые причины, по которым клиенты обращаются в
                 наш сервис:
               </p>
 
               <div className="space-y-1 my-4">
                 <p>
-                  1. Машина не сливает воду. Проблема с помпой или засор сливной
-                  системы.
+                  1. Машина не сливает воду. Пробл��ма с помпой или засор
+                  сливной системы.
                 </p>
                 <p>
                   2. Шум и вибрации. Часто связано с износом амортизаторов или
@@ -810,7 +810,7 @@ const Index = () => {
               <p>
                 Мы работаем с брендами LG, Samsung, Bosch, Electrolux,
                 Whirlpool, Indesit, Zanussi, Gorenje, AEG, Miele и другими.
-                Обслуживаем не только город, ��о и пригороды. Возможен выезд
+                Обслуживаем не только город, но и пригороды. Возможен выезд
                 мастера на дом либо доставка машины в мастерскую.
               </p>
 

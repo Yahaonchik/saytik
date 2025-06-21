@@ -13,42 +13,34 @@ interface Review {
 const reviewsData: Review[] = [
   {
     id: 1,
-    name: "Alexey Petrov",
-    avatar: "AP",
-    rating: 5,
-    text: "I have used a thousand development teams really quick and quality work",
-    isLong: false,
-  },
-  {
-    id: 2,
     name: "Ivan Smirnov",
     avatar: "IS",
     rating: 5,
-    text: "Мастер пришел точно в назначенное время по телефону диагностика моей стиральной машины LG понравилась мне больше всего работа получилась качественно и быстро",
+    text: "Мастер пришел точно в назначенное время по телефону. Диагностика моей стиральной машины LG понравилась мне больше всего. Работа получилась качественно и быстро. Рекомендую всем этого мастера для ремонта техники!",
     isLong: true,
   },
   {
-    id: 3,
+    id: 2,
     name: "Oleg Mashuk",
     avatar: "OM",
     rating: 5,
-    text: "Отличный мастер по стиральным машинам. Все сделал быстро, качественно, дешево. Рекомендую всем нуждающимся",
+    text: "Отличный мастер. Все быстро и качественно.",
     isLong: false,
   },
   {
-    id: 4,
+    id: 3,
     name: "Igor Lynyuk",
     avatar: "IL",
     rating: 5,
-    text: "Мастер пришел в назначенное время по телефону проблема ш мает из внутри духа. Мастер постановил провода диагностики и всё заработало. Диагностика внешняя хорошая сама звёт",
+    text: "Мастер пришел в назначенное время по телефону. Проблема была с внутренним механизмом стиральной машины. Мастер поставил правильный диагноз и всё заработало отлично. Диагностика качественная, сервис профессиональный!",
     isLong: true,
   },
   {
-    id: 5,
-    name: "Olya Elagin",
-    avatar: "OE",
+    id: 4,
+    name: "Alexey Petrov",
+    avatar: "AP",
     rating: 5,
-    text: "Быстро откликнулся и приехал на срочной заявки машина сервиса",
+    text: "Быстро приехал, все исправил. Рекомендую!",
     isLong: false,
   },
 ];
@@ -69,7 +61,7 @@ const ReadMoreButton: React.FC<{
       {/* Straight underline */}
       <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#72B5FF] transition-opacity duration-300 group-hover:opacity-0"></span>
 
-      {/* Zigzag snake wave underline */}
+      {/* Zigzag wavy underline - continuous animation */}
       <span className="absolute bottom-0 left-0 w-full h-[4px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-hidden">
         <svg
           width="200%"
@@ -79,14 +71,47 @@ const ReadMoreButton: React.FC<{
           className="wave-animation"
         >
           <path
-            d="M-50,2 L-20,0 L20,4 L60,0 L100,4 L140,0 L180,4 L220,0 L250,2"
+            d="M-20,2 Q-10,0.5 0,2 Q10,3.5 20,2 Q30,0.5 40,2 Q50,3.5 60,2 Q70,0.5 80,2 Q90,3.5 100,2 Q110,0.5 120,2 Q130,3.5 140,2 Q150,0.5 160,2 Q170,3.5 180,2 Q190,0.5 200,2 Q210,3.5 220,2"
             stroke="#72B5FF"
-            strokeWidth="2"
+            strokeWidth="1.8"
             fill="none"
-            className="wave-path"
+            className="zigzag-path"
           />
         </svg>
       </span>
+
+      <style jsx>{`
+        .wave-animation {
+          animation: wave-flow 3s linear infinite;
+        }
+
+        .zigzag-path {
+          animation: zigzag-morph 2s ease-in-out infinite;
+        }
+
+        @keyframes wave-flow {
+          0% {
+            transform: translateX(-50%);
+          }
+          100% {
+            transform: translateX(0%);
+          }
+        }
+
+        @keyframes zigzag-morph {
+          0%,
+          100% {
+            d: path(
+              "M-20,2 Q-10,0.5 0,2 Q10,3.5 20,2 Q30,0.5 40,2 Q50,3.5 60,2 Q70,0.5 80,2 Q90,3.5 100,2 Q110,0.5 120,2 Q130,3.5 140,2 Q150,0.5 160,2 Q170,3.5 180,2 Q190,0.5 200,2 Q210,3.5 220,2"
+            );
+          }
+          50% {
+            d: path(
+              "M-20,2 Q-10,3.5 0,2 Q10,0.5 20,2 Q30,3.5 40,2 Q50,0.5 60,2 Q70,3.5 80,2 Q90,0.5 100,2 Q110,3.5 120,2 Q130,0.5 140,2 Q150,3.5 160,2 Q170,0.5 180,2 Q190,3.5 200,2 Q210,0.5 220,2"
+            );
+          }
+        }
+      `}</style>
     </button>
   );
 };
@@ -94,11 +119,12 @@ const ReadMoreButton: React.FC<{
 const ReviewCard: React.FC<{ review: Review }> = ({ review }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Calculate if text is longer than 3 lines (approximately 35 characters for 3 lines)
-  const isTextLong = review.text.length > 35;
+  // Calculate if text is longer than 15 words
+  const words = review.text.split(" ");
+  const isTextLong = words.length > 15;
   const shouldTruncate = isTextLong && !isExpanded;
   const displayText = shouldTruncate
-    ? review.text.slice(0, 35) + "..."
+    ? words.slice(0, 15).join(" ") + "..."
     : review.text;
 
   return (
@@ -118,7 +144,7 @@ const ReviewCard: React.FC<{ review: Review }> = ({ review }) => {
         {[...Array(5)].map((_, i) => (
           <svg
             key={i}
-            className={`w-4 h-4 ${i < review.rating ? "text-yellow-400" : "text-gray-300"}`}
+            className={`w-4 h-4 ${i < review.rating ? "text-[#72B5FF]" : "text-gray-300"}`}
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -154,8 +180,8 @@ export const ReviewsSection: React.FC = () => {
         </div>
 
         {/* Reviews Grid */}
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {reviewsData.map((review) => (
               <motion.div
                 key={review.id}

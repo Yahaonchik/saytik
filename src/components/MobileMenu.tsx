@@ -64,16 +64,14 @@ export function MobileMenu() {
                 >
                   Выкуп б/у машин
                 </a>
-
                 <a
-                  href="#"
+                  href="/articles"
                   className="block text-[rgba(98,107,120,0.8)] font-ibm-plex-serif text-[16px] font-normal hover:text-[#72B5FF] transition-colors py-2 px-2 rounded-md hover:bg-white/50"
                   onClick={() => setIsOpen(false)}
                 >
                   Статьи
                 </a>
               </nav>
-
               {/* Contact Info */}
               <div className="pt-4 border-t border-gray-300 space-y-3">
                 <div className="text-[rgba(98,107,120,0.8)] font-ibm-plex-serif text-[14px] font-normal px-2">

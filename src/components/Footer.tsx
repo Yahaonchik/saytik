@@ -7,9 +7,9 @@ export const Footer: React.FC = () => {
 
   return (
     <>
-      {/* Adaptive footer for screens < 1200px */}
+      {/* Mobile footer for screens < 1280px */}
       <footer
-        className="xl:hidden relative w-full bg-cover bg-center bg-no-repeat mt-8"
+        className="hidden max-xl:block relative w-full bg-cover bg-center bg-no-repeat mt-8"
         style={{
           backgroundImage:
             "url(https://cdn.builder.io/api/v1/assets/ab9c320785cc40dbb2ad955655018371/frame-70123232-588194?format=webp&width=800)",
@@ -17,12 +17,12 @@ export const Footer: React.FC = () => {
         }}
       >
         {/* Content overlay for small screens */}
-        <div className="w-full h-full px-4 py-8 flex items-center justify-center min-h-[400px]">
-          <div className="flex flex-col justify-center items-center gap-6 max-w-sm mx-auto text-center">
+        <div className="w-full h-full px-4 py-4 flex items-start justify-center min-h-[400px] pt-6">
+          <div className="flex flex-col justify-start items-center gap-3 max-w-sm mx-auto text-center w-full">
             {/* Contact Information */}
-            <div className="space-y-4">
+            <div className="space-y-3">
               <h3
-                className="text-[#626B78] text-[20px] font-pt-serif font-normal tracking-[1.28px] mb-4"
+                className="text-[#626B78] text-[18px] font-pt-serif font-normal tracking-[1.28px] mb-3"
                 style={{ WebkitTextStroke: "0.3px #D2D6DB" }}
               >
                 Контакты
@@ -65,46 +65,45 @@ export const Footer: React.FC = () => {
               </div>
             </div>
 
-            {/* Call to Action */}
-            <div className="space-y-4 flex flex-col items-center">
-              <div className="max-w-[280px] text-center">
-                <p className="text-[#626B78]/90 text-[14px] font-pt-serif-caption font-normal tracking-[0.8px] leading-normal">
-                  Оставьте заявку на бесплатный выезд мастера и диагностику
-                </p>
-              </div>
-
+            {/* Call to Action - Simplified */}
+            <div className="space-y-2 flex flex-col items-center">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="flex items-center justify-center gap-2 w-[200px] h-[40px] px-[12px] py-[12px] rounded-[60px] bg-[#72B5FF] shadow-[9px_13px_4px_0px_rgba(0,0,0,0.06)] hover:bg-[#5da3ff] transition-colors button-shake mx-auto"
+                className="flex items-center justify-center gap-2 w-[180px] h-[36px] px-[10px] py-[10px] rounded-[60px] bg-[#72B5FF] shadow-[9px_13px_4px_0px_rgba(0,0,0,0.06)] hover:bg-[#5da3ff] transition-colors button-shake mx-auto"
               >
-                <Phone size={16} className="text-white" strokeWidth={2} />
-                <span className="text-white font-ubuntu text-[13px] font-medium">
+                <Phone size={14} className="text-white" strokeWidth={2} />
+                <span className="text-white font-ubuntu text-[12px] font-medium">
                   Вызвать мастера
                 </span>
               </button>
             </div>
 
-            {/* Navigation */}
-            <nav className="flex flex-row flex-wrap justify-center gap-4">
-              <a
-                href="/"
-                className="text-[#626B78] font-georgia text-[14px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors"
+            {/* Navigation - Mobile visible (vertical layout) */}
+            <div className="w-full mt-4">
+              <nav
+                className="flex flex-col items-center gap-2 w-full"
+                style={{ marginLeft: "-30px" }}
               >
-                Главная
-              </a>
-              <a
-                href="/buyout"
-                className="text-[#626B78] font-georgia text-[14px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors"
-              >
-                Выкуп б/у машин
-              </a>
-              <a
-                href="/articles"
-                className="text-[#626B78] font-georgia text-[14px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors"
-              >
-                Статьи
-              </a>
-            </nav>
+                <a
+                  href="/"
+                  className="text-[#626B78] font-georgia text-[15px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors text-center py-1"
+                >
+                  Главная
+                </a>
+                <a
+                  href="/buyout"
+                  className="text-[#626B78] font-georgia text-[15px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors text-center py-1"
+                >
+                  Выкуп б/у машин
+                </a>
+                <a
+                  href="/articles"
+                  className="text-[#626B78] font-georgia text-[15px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors text-center py-1"
+                >
+                  Статьи
+                </a>
+              </nav>
+            </div>
           </div>
         </div>
       </footer>

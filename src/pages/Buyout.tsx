@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
 import { CallMasterModal } from "@/components/CallMasterModal";
+import { MobileMenu } from "@/components/MobileMenu";
 
 const Buyout = () => {
   const [isCallMasterModalOpen, setIsCallMasterModalOpen] = useState(false);
@@ -28,9 +29,9 @@ const Buyout = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="relative z-50 w-full">
+      <header className="relative z-50 w-full mt-[15px]">
         <div
-          className="w-full h-[60px] sm:h-[70px] md:h-[84px] bg-white/63 shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] relative"
+          className="w-full h-[48px] sm:h-[58px] md:h-[82px] bg-white/95 md:bg-white/63 shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] relative"
           style={{
             backdropFilter: "blur(10px)",
             WebkitBackdropFilter: "blur(10px)",
@@ -46,15 +47,41 @@ const Buyout = () => {
               />
             </a>
 
-            {/* Navigation */}
+            {/* Mobile Actions */}
+            <div className="flex items-center gap-2 xl:hidden">
+              <a
+                href="tel:+380671234567"
+                className="flex items-center justify-center w-[40px] h-[40px] rounded-[10px] border border-[rgba(0,0,0,0.18)] bg-white shadow-sm"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 22 21"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.832 14.354C13.0385 14.4409 13.2712 14.4608 13.4917 14.4103C13.7122 14.3598 13.9073 14.242 14.045 14.0762L14.4 13.65C14.5863 13.4223 14.8279 13.2375 15.1056 13.1102C15.3833 12.9829 15.6895 12.9167 16 12.9167H19C19.5304 12.9167 20.0391 13.1098 20.4142 13.4536C20.7893 13.7975 21 14.2638 21 14.75V17.5C21 17.9862 20.7893 18.4525 20.4142 18.7964C20.0391 19.1402 19.5304 19.3333 19 19.3333C14.2261 19.3333 9.64773 17.5949 6.27208 14.5006C2.89642 11.4062 1 7.20941 1 2.83333C1 2.3471 1.21071 1.88079 1.58579 1.53697C1.96086 1.19315 2.46957 1 3 1H6C6.53043 1 7.03914 1.19315 7.41421 1.53697C7.78929 1.88079 8 2.3471 8 2.83333V5.58333C8 5.86795 7.92771 6.14866 7.78885 6.40323C7.65 6.65779 7.44839 6.87923 7.2 7.05L6.732 7.37175C6.54842 7.50025 6.41902 7.68304 6.36579 7.88907C6.31256 8.09511 6.33878 8.31168 6.44 8.502C7.80668 11.0465 10.0544 13.1044 12.832 14.354Z"
+                    stroke="#72B5FF"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
+
+              {/* Mobile menu */}
+              <MobileMenu />
+            </div>
+
             {/* Contact Info - Desktop only */}
-            <div className="hidden lg:flex items-center gap-3 xl:gap-8 flex-shrink-0 mr-8 md:mr-12 lg:mr-16">
+            <div className="hidden xl:flex items-center gap-3 xl:gap-8 flex-shrink-0 mr-8 md:mr-12 lg:mr-16">
               <div className="flex items-center justify-center gap-[10px] w-[160px] xl:w-[185px] h-[42px] px-[10px] py-[10px] rounded-[10px] bg-[#72B5FF] flex-shrink-0">
                 <span className="text-white font-ibm-plex-serif text-[14px] xl:text-[17px] font-normal whitespace-nowrap">
                   +38 (067) 123-45-67
                 </span>
               </div>
-              <div className="text-[rgba(98,107,120,0.8)] font-ibm-plex-serif text-[14px] xl:text-[17px] font-normal whitespace-nowrap">
+              <div className="text-[#626B78] font-ibm-plex-serif text-[14px] xl:text-[17px] font-normal whitespace-nowrap">
                 Пн-Вс: 9:00-21:00
               </div>
             </div>
@@ -63,7 +90,7 @@ const Buyout = () => {
             <nav className="hidden xl:flex items-center gap-[39px] absolute left-1/2 transform -translate-x-1/2">
               <a
                 href="/"
-                className="text-[rgba(98,107,120,0.8)] font-ibm-plex-serif text-[17px] font-normal hover:text-[#72B5FF] transition-colors whitespace-nowrap"
+                className="text-[#626B78] font-ibm-plex-serif text-[17px] font-normal hover:text-[#72B5FF] transition-colors whitespace-nowrap"
               >
                 Главная
               </a>
@@ -74,14 +101,8 @@ const Buyout = () => {
                 Выкуп б/у машин
               </a>
               <a
-                href="#"
-                className="text-[rgba(98,107,120,0.8)] font-ibm-plex-serif text-[17px] font-normal hover:text-[#72B5FF] transition-colors whitespace-nowrap"
-              >
-                Отзывы
-              </a>
-              <a
-                href="#"
-                className="text-[rgba(98,107,120,0.8)] font-ibm-plex-serif text-[17px] font-normal hover:text-[#72B5FF] transition-colors whitespace-nowrap"
+                href="/articles"
+                className="text-[#626B78] font-ibm-plex-serif text-[17px] font-normal hover:text-[#72B5FF] transition-colors whitespace-nowrap"
               >
                 Статьи
               </a>
@@ -131,9 +152,9 @@ const Buyout = () => {
                   </h3>
                   <p className="text-[#4C4C4C] font-pt-serif text-[15px] md:text-[16px] font-normal leading-relaxed mb-6">
                     Бесспорно это несвоевременная неприятность — когда ваша
-                    верная подруга подводит Вас. Неве��оятно как много пользы
-                    она приносила и тут вдруг… Теперь продать машинку в Одессе,
-                    это ни сколько не сложно, гарантированно высокая оплата и
+                    верная подруга подводит Вас. Невероятно как много пользы она
+                    приносила и тут вдруг… Теперь продать машинку в Одессе, это
+                    ни сколько не сложно, гарантированно высокая оплата и
                     минимум действий.
                   </p>
 
@@ -146,7 +167,7 @@ const Buyout = () => {
                       <p className="text-[#4C4C4C] font-pt-serif text-[15px] md:text-[16px] font-normal leading-relaxed">
                         <strong>Честность</strong> – редкое качество в данной
                         отрасли, и мы им обладаем. Оценим фактическую стоимость
-                        машинки в любо�� состоянии: рабочем или неисправном и не
+                        машинки в любом состоянии: рабочем или неисправном и не
                         будем ее занижать.
                       </p>
                     </li>
@@ -331,7 +352,7 @@ const Buyout = () => {
               <p className="text-[#4C4C4C] font-pt-serif text-[15px] md:text-[16px] font-normal leading-relaxed mb-6">
                 <strong>Если у Вас рабочая стиральная машина</strong> — В случае
                 если Ваша стиральная машина в рабочем состоянии, Вы можете
-                продать ее по весьма высокой цене. Будь то рабоч��я или
+                продать ее по весьма высокой цене. Будь то рабочая или
                 неисправная машинка — мы найдем ей достойное применение.
               </p>
               <p className="text-[#4C4C4C] font-pt-serif text-[15px] md:text-[16px] font-normal leading-relaxed">
