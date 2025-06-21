@@ -302,3 +302,33 @@
     transform: rotate(0);
   }
 }
+
+/* Zigzag snake wave animation for read more button */
+@keyframes snake-move {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.wave-animation {
+  overflow: hidden;
+  position: relative;
+}
+
+.wave-path {
+  stroke-width: 2;
+  transform: translateX(-100%);
+  animation: snake-move 3s linear infinite;
+}
+
+.group:hover .wave-path {
+  animation-play-state: running;
+}
+
+.group:not(:hover) .wave-path {
+  animation-play-state: paused;
+  transform: translateX(-100%);
+}

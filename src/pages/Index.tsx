@@ -4,6 +4,7 @@ import { AuroraBackground } from "@/components/ui/aurora-background";
 import { WashingMachineDiagnostic } from "@/components/WashingMachineDiagnostic";
 import { BrandCarousel } from "@/components/BrandCarousel";
 import { FAQSection } from "@/components/FAQSection";
+import { ReviewsSection } from "@/components/ReviewsSection";
 import { Footer } from "@/components/Footer";
 import { CallMasterModal } from "@/components/CallMasterModal";
 import { MobileMenu } from "@/components/MobileMenu";
@@ -698,7 +699,7 @@ const Index = () => {
             <div className="relative z-10 h-full flex flex-col justify-center items-center text-center">
               <p className="text-black font-ibm-plex-serif text-[22px] font-normal tracking-[0.88px] mb-6 md:mb-8 max-w-[600px]">
                 Оставьте заявку на ремонт и мы с вами свяжемся для уточнения
-                деталей
+                детале��
               </p>
 
               <button
@@ -825,7 +826,7 @@ const Index = () => {
               <p>
                 Мы работаем с брендами LG, Samsung, Bosch, Electrolux,
                 Whirlpool, Indesit, Zanussi, Gorenje, AEG, Miele и другими.
-                Обслуживаем не только город, но и пригороды. Возможен выезд
+                Обслуживаем не только город, ��о и пригороды. Возможен выезд
                 мастера на дом либо доставка машины в мастерскую.
               </p>
 
@@ -926,6 +927,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Reviews Section */}
+      <ReviewsSection />
 
       {/* FAQ Section */}
       <FAQSection />
