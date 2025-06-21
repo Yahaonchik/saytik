@@ -150,7 +150,7 @@ const Reviews = () => {
       >
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-12" variants={fadeInUp}>
-            <h1 className="text-[28px] md:text-[36px] lg:text-[42px] font-pt-serif-caption font-normal tracking-[1.2px] mb-6 bg-gradient-to-r from-[#446D99] to-[#72B5FF] bg-clip-text text-transparent">
+            <h1 className="text-[28px] md:text-[36px] lg:text-[42px] font-pt-serif-caption font-normal tracking-[1.2px] mb-6 text-[#5D5D5D]">
               Отзывы клиентов о ремонте стиральных машин
             </h1>
             <p className="text-[16px] md:text-[18px] text-[#4C4C4C] font-pt-serif max-w-[800px] mx-auto leading-relaxed">

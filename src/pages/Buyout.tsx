@@ -99,7 +99,7 @@ const Buyout = () => {
       >
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-12" variants={fadeInUp}>
-            <h1 className="text-[28px] md:text-[36px] lg:text-[42px] font-pt-serif-caption font-normal tracking-[1.2px] mb-6 bg-gradient-to-r from-[#446D99] to-[#72B5FF] bg-clip-text text-transparent">
+            <h1 className="text-[28px] md:text-[36px] lg:text-[42px] font-pt-serif-caption font-normal tracking-[1.2px] mb-6 text-[#5D5D5D]">
               Выкуп б/у стиральных машин в Одессе
             </h1>
             <p className="text-[16px] md:text-[18px] text-[#4C4C4C] font-pt-serif max-w-[800px] mx-auto leading-relaxed">
@@ -331,7 +331,7 @@ const Buyout = () => {
               <p className="text-[#4C4C4C] font-pt-serif text-[15px] md:text-[16px] font-normal leading-relaxed mb-6">
                 <strong>Если у Вас рабочая стиральная машина</strong> — В случае
                 если Ваша стиральная машина в рабочем состоянии, Вы можете
-                продать ее по весьма высокой цене. Будь то рабочая или
+                продать ее по весьма высокой цене. Будь то рабоч��я или
                 неисправная машинка — мы найдем ей достойное применение.
               </p>
               <p className="text-[#4C4C4C] font-pt-serif text-[15px] md:text-[16px] font-normal leading-relaxed">

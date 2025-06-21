@@ -139,7 +139,7 @@ const baseProblemCauses = {
       type: "mechanics",
     },
     {
-      cause: "Повреждение манжеты люка",
+      cause: "Повреждение ��анжеты люка",
       probability: 15,
       price: 1000,
       description: "Установка новой манжеты, либо ремонт старой",
@@ -525,7 +525,7 @@ const baseProblemCauses = {
       cause: "Сбой в работе модуля управления",
       probability: 100,
       price: 1500,
-      description: "Ремонт или перепрошивка модуля управления",
+      description: "Ремонт или ��ерепрошивка модуля управления",
       type: "electronics",
     },
   ],
@@ -646,7 +646,7 @@ export function WashingMachineDiagnostic() {
   return (
     <div className="w-full max-w-[835px] mx-auto">
       <div className="text-center mb-8">
-        <h2 className="text-[24px] md:text-[30px] font-pt-serif font-normal tracking-[1.2px] bg-gradient-to-r from-[#446D99] to-[#72B5FF] bg-clip-text text-transparent">
+        <h2 className="text-[24px] md:text-[30px] font-pt-serif font-normal tracking-[1.2px] text-[#5D5D5D]">
           Онлайн диагностика стиральной машины
         </h2>
       </div>

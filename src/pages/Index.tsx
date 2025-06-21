@@ -343,12 +343,12 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage:
-              "url('https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/frame-3232-7ecf25?format=webp&width=800')",
+              "url('https://cdn.builder.io/api/v1/assets/ab9c320785cc40dbb2ad955655018371/frame-645-c6292a?format=webp&width=800')",
           }}
         ></div>
 
         <div className="container mx-auto px-3 sm:px-4 relative z-10">
-          <h2 className="text-center text-[16px] sm:text-[18px] md:text-[24px] lg:text-[30px] font-pt-serif font-normal tracking-[0.8px] sm:tracking-[1.0px] md:tracking-[1.2px] mb-8 sm:mb-10 md:mb-16 bg-gradient-to-r from-[#446D99] to-[#72B5FF] bg-clip-text text-transparent max-w-[935px] mx-auto leading-tight px-2">
+          <h2 className="text-center text-[16px] sm:text-[18px] md:text-[24px] lg:text-[30px] font-pt-serif font-normal tracking-[0.8px] sm:tracking-[1.0px] md:tracking-[1.2px] mb-8 sm:mb-10 md:mb-16 text-[#5D5D5D] max-w-[935px] mx-auto leading-tight px-2">
             Мастер по ремонту стиральных машин соблюдает ряд правил
           </h2>
 
@@ -369,7 +369,7 @@ const Index = () => {
                       Соблюдает договор и время прибытия на адрес
                     </h3>
                   </div>
-                  <div className="border-t-[3px] border-[rgba(114,181,255,0.24)] mb-3 md:mb-0"></div>
+                  <div className="border-t-[1px] border-[rgba(0,0,0,0.3)] mb-3 md:mb-0"></div>
                   <div className="md:h-1/2 flex items-center md:items-start md:pt-2">
                     <p className="text-[#5C6570] text-[14px] md:text-[14px] font-normal leading-relaxed text-center md:text-left">
                       Наш мастер всегда приезжает вовремя и в назначенное время
@@ -389,7 +389,7 @@ const Index = () => {
                       Предоставляет гарантию до 24 мес на работу и запчасти
                     </h3>
                   </div>
-                  <div className="border-t-[3px] border-[rgba(114,181,255,0.24)] mb-3 md:mb-0"></div>
+                  <div className="border-t-[1px] border-[rgba(0,0,0,0.3)] mb-3 md:mb-0"></div>
                   <div className="md:h-1/2 flex items-center md:items-start md:pt-2">
                     <p className="text-[#5C6570] text-[14px] md:text-[14px] font-normal leading-relaxed text-center md:text-left">
                       Официальная гарантия на все виды ремонта работ и
@@ -423,7 +423,7 @@ const Index = () => {
                       ��облюдает ч��стоту в квартире работая в бахилах
                     </h3>
                   </div>
-                  <div className="border-t-[3px] border-[rgba(114,181,255,0.24)] mb-3 md:mb-0"></div>
+                  <div className="border-t-[1px] border-[rgba(0,0,0,0.3)] mb-3 md:mb-0"></div>
                   <div className="md:h-1/2 flex items-center md:items-start md:pt-2">
                     <p className="text-[#5C6570] text-[14px] md:text-[14px] font-normal leading-relaxed text-center md:text-left">
                       Аккуратная работа без повреждений мебели и предметов
@@ -443,7 +443,7 @@ const Index = () => {
                       Работает быстро и качественно
                     </h3>
                   </div>
-                  <div className="border-t-[3px] border-[rgba(114,181,255,0.24)] mb-3 md:mb-0"></div>
+                  <div className="border-t-[1px] border-[rgba(0,0,0,0.3)] mb-3 md:mb-0"></div>
                   <div className="md:h-1/2 flex items-center md:items-start md:pt-2">
                     <p className="text-[#5C6570] text-[14px] md:text-[14px] font-normal leading-relaxed text-center md:text-left">
                       Эффективное решение проблем и качественная работа мастера
@@ -515,7 +515,7 @@ const Index = () => {
       {/* What We're Proud Of Section */}
       <section className="py-12 md:py-16 lg:py-24 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-center text-[20px] md:text-[24px] lg:text-[30px] font-pt-serif font-normal tracking-[1.2px] mb-12 md:mb-16 bg-gradient-to-r from-[#446D99] to-[#72B5FF] bg-clip-text text-transparent">
+          <h2 className="text-center text-[20px] md:text-[24px] lg:text-[30px] font-pt-serif font-normal tracking-[1.2px] mb-12 md:mb-16 text-[#5D5D5D]">
             Чем мы гордимся
           </h2>
 

@@ -56,7 +56,7 @@ const categories: Category[] = [
       },
       {
         id: 2,
-        question: "Где мастер возьмет запчасти для моей стиральной машинки?",
+        question: "Где мастер возьмет запчасти для моей стираль��ой машинки?",
         answer:
           "Перед выездом вы сообщаете марку и модель вашей стиральной машины, и мастер заранее подготавливает необходимые запчасти. У нас есть склад оригинальных деталей и качественных аналогов для всех популярных брендов.",
       },
@@ -126,7 +126,7 @@ export const FAQSection: React.FC = () => {
   return (
     <section className="py-12 md:py-16 lg:py-24 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-center text-[20px] md:text-[24px] lg:text-[30px] font-pt-serif font-normal tracking-[1.2px] mb-12 md:mb-16 bg-gradient-to-r from-[#446D99] to-[#72B5FF] bg-clip-text text-transparent">
+        <h2 className="text-center text-[20px] md:text-[24px] lg:text-[30px] font-pt-serif font-normal tracking-[1.2px] mb-12 md:mb-16 text-[#5D5D5D]">
           Часто задаваемые вопросы
         </h2>
 
