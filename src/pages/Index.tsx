@@ -386,7 +386,7 @@ const Index = () => {
                 <div className="flex-1 px-4 py-4 md:px-6 md:py-0 md:h-full flex flex-col justify-center">
                   <div className="mb-3 md:mb-2 md:h-1/2 flex items-center md:items-end md:pb-2">
                     <h3 className="text-[#484848] font-vollkorn text-[16px] md:text-[16px] font-medium leading-tight text-center md:text-left">
-                      Соблюдает чистоту в квартире работая в бахилах
+                      Соблюдает ч��стоту в квартире работая в бахилах
                     </h3>
                   </div>
                   <div className="border-t-[3px] border-[rgba(114,181,255,0.24)] mb-3 md:mb-0"></div>
@@ -432,7 +432,7 @@ const Index = () => {
                 <div className="flex-shrink-0 w-full md:w-auto">
                   <img
                     src="https://cdn.builder.io/api/v1/assets/ab9c320785cc40dbb2ad955655018371/5-234616?format=webp&width=800"
-                    alt="Опыт мастера по ремонту стиральных машин не менее 5 лет"
+                    alt="Опыт маст��ра по ремонту стиральных машин не менее 5 лет"
                     className="w-full h-[200px] md:w-[264px] md:h-[179px] object-cover"
                   />
                 </div>
@@ -513,195 +513,114 @@ const Index = () => {
       </section>
 
       {/* What We're Proud Of Section */}
-      <section className="py-12 md:py-16 lg:py-24 relative">
-        {/* Background image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage:
-              "url('https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/frame-662323-2e1d32?format=webp&width=800')",
-          }}
-        ></div>
-
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-12 md:py-16 lg:py-24 bg-white">
+        <div className="container mx-auto px-4">
           <h2 className="text-center text-[20px] md:text-[24px] lg:text-[30px] font-pt-serif font-normal tracking-[1.2px] mb-12 md:mb-16 bg-gradient-to-r from-[#446D99] to-[#72B5FF] bg-clip-text text-transparent">
             Чем мы гордимся
           </h2>
 
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-16 max-w-[1200px] mx-auto">
-            {/* Card 1 */}
-            <div className="w-full max-w-[350px] h-[269px] rounded-[15px] border-[3px] border-[rgba(108,170,212,0.25)] bg-white shadow-[4px_4px_4px_0px_rgba(0,0,0,0.16)] group cursor-pointer transition-all duration-300 hover:shadow-[6px_6px_8px_0px_rgba(0,0,0,0.2)]">
-              <div className="h-full flex flex-col">
-                <div className="flex justify-center pt-[27px] mb-[20px] relative">
-                  <div className="relative w-[71px] h-[59px]">
-                    {/* Default icon */}
-                    <img
-                      src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822600-26-b09e59?format=webp&width=800"
-                      alt="Price tag icon"
-                      className="w-[71px] h-[59px] object-contain absolute inset-0 transition-opacity duration-300 group-hover:opacity-0"
-                    />
-                    {/* Hover icon */}
-                    <img
-                      src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822600-27-d62316?format=webp&width=800"
-                      alt="Price tag icon colored"
-                      className="w-[71px] h-[59px] object-contain absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                    />
-                  </div>
+          <div className="max-w-[1200px] mx-auto mb-16 px-4">
+            {/* All cards in one responsive grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+              {/* Card 1 */}
+              <div className="w-full max-w-[359px] h-[281px] flex flex-col items-center text-center p-6 bg-white">
+                <div className="flex justify-center items-center w-full h-[82px]">
+                  <img
+                    src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/group-8-474887?format=webp&width=800"
+                    alt="Price tag icon"
+                    className="w-auto h-auto max-w-[74px] max-h-[76px] object-contain"
+                  />
                 </div>
-                <div className="px-[32px] h-[70px] flex items-center">
-                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal w-full">
+                <div className="flex flex-col w-full h-[149px]">
+                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal h-[44px] flex items-center justify-center px-4">
                     Низкие цены на весь сервисный диапазон услуг
                   </h3>
-                </div>
-                <div className="relative px-[32px] h-[3px] flex justify-center">
-                  <div className="w-full h-[3px] bg-[rgba(114,181,255,0.25)]"></div>
-                </div>
-                <div className="flex-1 flex items-center justify-center px-[16px] pt-[16px] pb-[10px]">
-                  <div className="text-[#5C6570] text-center font-arial text-[15px] font-normal leading-normal">
+                  <div className="h-[1px] bg-[#A4A4A4] mt-[16px] mb-4"></div>
+                  <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-normal px-4">
                     Доступные цены благодаря большому количеству клиентов и
                     оптимизированным процессам
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Card 2 */}
-            <div className="w-full max-w-[350px] h-[269px] rounded-[15px] border-[3px] border-[rgba(108,170,212,0.25)] bg-white shadow-[4px_4px_4px_0px_rgba(0,0,0,0.16)] group cursor-pointer transition-all duration-300 hover:shadow-[6px_6px_8px_0px_rgba(0,0,0,0.2)]">
-              <div className="h-full flex flex-col">
-                <div className="flex justify-center pt-[27px] mb-[20px]">
-                  <div className="relative w-[64px] h-[63px]">
-                    {/* Default icon */}
-                    <img
-                      src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-382260023-4-359c68?format=webp&width=800"
-                      alt="Modern equipment icon"
-                      className="w-[64px] h-[63px] object-contain absolute inset-0 transition-opacity duration-300 group-hover:opacity-0"
-                    />
-                    {/* Hover icon */}
-                    <img
-                      src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-382260023-2-97223e?format=webp&width=800"
-                      alt="Modern equipment icon colored"
-                      className="w-[64px] h-[63px] object-contain absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                    />
-                  </div>
+              {/* Card 2 */}
+              <div className="w-full max-w-[359px] h-[281px] flex flex-col items-center text-center p-6 bg-white">
+                <div className="flex justify-center items-center w-full h-[82px]">
+                  <img
+                    src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822654-2077cf?format=webp&width=800"
+                    alt="Modern equipment icon"
+                    className="w-auto h-auto max-w-[74px] max-h-[76px] object-contain"
+                  />
                 </div>
-                <div className="px-[32px] h-[70px] flex items-center">
-                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal w-full">
+                <div className="flex flex-col w-full h-[149px]">
+                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal h-[44px] flex items-center justify-center px-4">
                     Современное оборудование по диагностике
                   </h3>
-                </div>
-                <div className="relative px-[32px] h-[3px] flex justify-center">
-                  <div className="w-full h-[3px] bg-[rgba(114,181,255,0.25)]"></div>
-                </div>
-                <div className="flex-1 flex items-center justify-center px-[16px] pt-[16px] pb-[10px]">
-                  <div className="text-[#5C6570] text-center font-arial text-[15px] font-normal leading-normal">
+                  <div className="h-[1px] bg-[#A4A4A4] mt-[16px] mb-4"></div>
+                  <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-normal px-4">
                     Ежемесячно часть от прибыли мы вкладываем в работу и
                     развитие
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Card 3 */}
-            <div className="w-full max-w-[350px] h-[269px] rounded-[15px] border-[3px] border-[rgba(108,170,212,0.25)] bg-white shadow-[4px_4px_4px_0px_rgba(0,0,0,0.16)] group cursor-pointer transition-all duration-300 hover:shadow-[6px_6px_8px_0px_rgba(0,0,0,0.2)]">
-              <div className="h-full flex flex-col">
-                <div className="flex justify-center pt-[27px] mb-[20px]">
-                  <div className="relative w-[85px] h-[76px]">
-                    {/* Default icon - replaced with user's image */}
-                    <img
-                      src="https://cdn.builder.io/api/v1/assets/b5993ffd3d3f4fc78326f8b01db580e9/image-3232-3-caf716?format=webp&width=800"
-                      alt="24 month warranty icon"
-                      className="w-[85px] h-[76px] object-contain absolute inset-0 transition-opacity duration-300 group-hover:opacity-0"
-                    />
-                    {/* Hover icon */}
-                    <img
-                      src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3232-2-829880?format=webp&width=800"
-                      alt="24 month warranty icon colored"
-                      className="w-[85px] h-[76px] object-contain absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                    />
-                  </div>
+              {/* Card 3 */}
+              <div className="w-full max-w-[359px] h-[281px] flex flex-col items-center text-center p-6 bg-white">
+                <div className="flex justify-center items-center w-full h-[82px]">
+                  <img
+                    src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822655-b66f5b?format=webp&width=800"
+                    alt="24 month warranty icon"
+                    className="w-auto h-auto max-w-[74px] max-h-[76px] object-contain"
+                  />
                 </div>
-                <div className="px-[32px] h-[70px] flex items-center">
-                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal w-full">
+                <div className="flex flex-col w-full h-[149px]">
+                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal h-[44px] flex items-center justify-center px-4">
                     Гарантийный срок до 24 месяцев
                   </h3>
-                </div>
-                <div className="relative px-[32px] h-[3px] flex justify-center">
-                  <div className="w-full h-[3px] bg-[rgba(114,181,255,0.25)]"></div>
-                </div>
-                <div className="flex-1 flex items-center justify-center px-[16px] pt-[16px] pb-[10px]">
-                  <div className="text-[#5C6570] text-center font-arial text-[15px] font-normal leading-normal">
+                  <div className="h-[1px] bg-[#A4A4A4] mt-[16px] mb-4"></div>
+                  <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-normal px-4">
                     Официальная гарантия на детали и услуги
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Card 4 */}
-            <div className="w-full max-w-[350px] h-[269px] rounded-[15px] border-[3px] border-[rgba(108,170,212,0.25)] bg-white shadow-[4px_4px_4px_0px_rgba(0,0,0,0.16)] group cursor-pointer transition-all duration-300 hover:shadow-[6px_6px_8px_0px_rgba(0,0,0,0.2)]">
-              <div className="h-full flex flex-col">
-                <div className="flex justify-center pt-[27px] mb-[20px]">
-                  <div className="relative w-[112px] h-[85px]">
-                    {/* Default icon */}
-                    <img
-                      src="https://cdn.builder.io/api/v1/assets/b5993ffd3d3f4fc78326f8b01db580e9/image-38226123232322-2-1-6af364?format=webp&width=800"
-                      alt="Supplier connections icon"
-                      className="w-[112px] h-[85px] object-contain absolute inset-0 transition-opacity duration-300 group-hover:opacity-0"
-                    />
-                    {/* Hover icon */}
-                    <img
-                      src="https://cdn.builder.io/api/v1/assets/b5993ffd3d3f4fc78326f8b01db580e9/image-38226123232322-3-9e8222?format=webp&width=800"
-                      alt="Supplier connections icon colored"
-                      className="w-[112px] h-[85px] object-contain absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                    />
-                  </div>
+              {/* Card 4 */}
+              <div className="w-full max-w-[359px] h-[281px] flex flex-col items-center text-center p-6 bg-white lg:col-start-1 lg:col-end-2">
+                <div className="flex justify-center items-center w-full h-[82px]">
+                  <img
+                    src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/group-2-4a23b8?format=webp&width=800"
+                    alt="Supplier connections icon"
+                    className="w-auto h-auto max-w-[74px] max-h-[76px] object-contain"
+                  />
                 </div>
-                <div className="px-[32px] h-[70px] flex items-center">
-                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal w-full">
+                <div className="flex flex-col w-full h-[149px]">
+                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal h-[44px] flex items-center justify-center px-4">
                     Налаженные связи с поставщиками
                   </h3>
-                </div>
-                <div className="relative px-[32px] h-[3px] flex justify-center">
-                  <div className="w-full h-[3px] bg-[rgba(114,181,255,0.25)]"></div>
-                </div>
-                <div className="flex-1 flex items-center justify-center px-[16px] pt-[16px] pb-[10px]">
-                  <div className="text-[#5C6570] text-center font-arial text-[15px] font-normal leading-normal">
+                  <div className="h-[1px] bg-[#A4A4A4] mt-[16px] mb-4"></div>
+                  <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-normal px-4">
                     Оригинальные запчасти и европейские аналоги любых
                     комплектующих
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Card 5 */}
-            <div className="w-full max-w-[350px] h-[269px] rounded-[15px] border-[3px] border-[rgba(108,170,212,0.25)] bg-white shadow-[4px_4px_4px_0px_rgba(0,0,0,0.16)] group cursor-pointer transition-all duration-300 hover:shadow-[6px_6px_8px_0px_rgba(0,0,0,0.2)]">
-              <div className="h-full flex flex-col">
-                <div className="flex justify-center pt-[27px] mb-[20px]">
-                  <div className="relative w-[85px] h-[76px]">
-                    {/* Default icon */}
-                    <img
-                      src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822574-2-1b354a?format=webp&width=800"
-                      alt="Master work quality icon"
-                      className="w-[85px] h-[76px] object-contain absolute inset-0 transition-opacity duration-300 group-hover:opacity-0"
-                    />
-                    {/* Hover icon */}
-                    <img
-                      src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822574-30f1f6?format=webp&width=800"
-                      alt="Master work quality icon colored"
-                      className="w-[85px] h-[76px] object-contain absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                    />
-                  </div>
+              {/* Card 5 */}
+              <div className="w-full max-w-[359px] h-[281px] flex flex-col items-center text-center p-6 bg-white lg:col-start-3 lg:col-end-4">
+                <div className="flex justify-center items-center w-full h-[82px]">
+                  <img
+                    src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822653-b68b7d?format=webp&width=800"
+                    alt="Master work quality icon"
+                    className="w-auto h-auto max-w-[74px] max-h-[76px] object-contain"
+                  />
                 </div>
-                <div className="px-[32px] h-[70px] flex items-center">
-                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal w-full">
-                    Качество работы мастера
+                <div className="flex flex-col w-full h-[149px]">
+                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal h-[44px] flex items-center justify-center px-4">
+                    Лучшие мастера с многолетним стажем 7-10 лет
                   </h3>
-                </div>
-                <div className="relative px-[32px] h-[3px] flex justify-center">
-                  <div className="w-full h-[3px] bg-[rgba(114,181,255,0.25)]"></div>
-                </div>
-                <div className="flex-1 flex items-center justify-center px-[16px] pt-[16px] pb-[10px]">
-                  <div className="text-[#5C6570] text-center font-arial text-[15px] font-normal leading-normal">
-                    Высокие стандарты качества и профессионализма в работе
+                  <div className="h-[1px] bg-[#A4A4A4] mt-[16px] mb-4"></div>
+                  <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-normal px-4">
+                    Опытные профессионалы с подтвержденной квалификацией
                   </div>
                 </div>
               </div>
@@ -849,10 +768,10 @@ const Index = () => {
                   качественно
                 </h3>
                 <p className="text-[#4C4C4C] font-pt-serif text-[13px] md:text-[14px] font-normal leading-normal text-center">
-                  Мы ценим доверие наших клиентов и предлагаем услуги по ремонту
-                  стиральных машин, соответствующие высоким стандартам. Наши
-                  мастера проходят регулярное обучение и владеют современными
-                  методиками ремонта.
+                  Мы ценим д��верие наших клиентов и предлагаем услуги по
+                  ремонту стиральных машин, соответствующие высоким стандартам.
+                  Наши мастера проходят регулярное обучение и владеют
+                  современными методиками ремонта.
                 </p>
               </div>
 
