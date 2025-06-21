@@ -205,7 +205,7 @@ const Index = () => {
             <div className="loader flex-shrink-0"></div>
 
             {/* Mobile features - horizontal layout under washing machine */}
-            <div className="flex flex-row gap-4 justify-center lg:gap-6 xl:gap-8">
+            <div className="flex flex-row gap-4 justify-center lg:gap-6 xl:gap-8 mt-5">
               <div className="flex items-center gap-1 md:gap-2 text-[rgba(76,76,76,0.9)] font-pt-serif text-[10px] md:text-[12px] italic tracking-[5%] whitespace-nowrap">
                 <img
                   src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/image-3822595-dfa1a4?format=webp&width=800"
@@ -299,6 +299,40 @@ const Index = () => {
               </button>
             </div>
           </div>
+
+          {/* Desktop features at bottom - for large screens from lg+ */}
+          <div className="hidden lg:flex flex-row gap-4 md:gap-8 justify-center items-center mb-8">
+            <div className="flex items-center gap-3 text-[rgba(76,76,76,0.9)] font-pt-serif text-[12px] md:text-[15px] italic tracking-[5%] whitespace-nowrap">
+              <img
+                src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/image-3822595-dfa1a4?format=webp&width=800"
+                alt="Быстро"
+                width="20"
+                height="25"
+                className="w-[20px] h-[25px] md:w-[25px] md:h-[31px] object-contain flex-shrink-0"
+              />
+              Быстро
+            </div>
+            <div className="flex items-center gap-3 text-[rgba(76,76,76,0.9)] font-pt-serif text-[12px] md:text-[15px] italic tracking-[5%] whitespace-nowrap">
+              <img
+                src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/2-0616fc?format=webp&width=800"
+                alt="Качественно"
+                width="30"
+                height="25"
+                className="w-[30px] h-[25px] md:w-[37px] md:h-[31px] object-contain flex-shrink-0"
+              />
+              Качественно
+            </div>
+            <div className="flex items-center gap-3 text-[rgba(76,76,76,0.9)] font-pt-serif text-[12px] md:text-[15px] italic tracking-[5%] whitespace-nowrap">
+              <img
+                src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/3-470ac4?format=webp&width=800"
+                alt="С гарантией"
+                width="22"
+                height="24"
+                className="w-[22px] h-[24px] md:w-[27px] md:h-[30px] object-contain flex-shrink-0"
+              />
+              С гарантией
+            </div>
+          </div>
         </div>
       </section>
 
@@ -324,7 +358,7 @@ const Index = () => {
               <div className="flex flex-col md:flex-row items-center h-auto md:h-[179px]">
                 <div className="flex-shrink-0 w-full md:w-auto">
                   <img
-                    src="https://cdn.builder.io/api/v1/assets/dc3a3566f86e4f86a1ec8c8f84e595f0/div.card-image-container-540a79?format=webp&width=800"
+                    src="https://cdn.builder.io/api/v1/assets/dc3a3566f86e4f86a1ec8c8f84e595f0/div.card-image-container-540a79?format=webp&width=1200"
                     alt="Соблюдает договор и время прибытия на адрес"
                     className="w-full h-[200px] md:w-[264px] md:h-[179px] object-cover"
                   />
@@ -365,8 +399,8 @@ const Index = () => {
                 </div>
                 <div className="flex-shrink-0 w-full md:w-auto order-1 md:order-2">
                   <img
-                    src="https://cdn.builder.io/api/v1/assets/ab9c320785cc40dbb2ad955655018371/2-27fe87?format=webp&width=800"
-                    alt="Предоставляет гарантию до 24 мес на работу и запчасти"
+                    src="https://cdn.builder.io/api/v1/assets/ab9c320785cc40dbb2ad955655018371/2-27fe87?format=webp&width=1200"
+                    alt="Предоставляет гарантию до 24 ��ес на работу и запчасти"
                     className="w-full h-[200px] md:w-[264px] md:h-[179px] object-cover"
                   />
                 </div>
@@ -378,15 +412,15 @@ const Index = () => {
               <div className="flex flex-col md:flex-row items-center h-auto md:h-[179px]">
                 <div className="flex-shrink-0 w-full md:w-auto">
                   <img
-                    src="https://cdn.builder.io/api/v1/assets/ab9c320785cc40dbb2ad955655018371/3-cdecca?format=webp&width=800"
-                    alt="Соблюдает чистоту в квар��ире работая в бахилах"
+                    src="https://cdn.builder.io/api/v1/assets/ab9c320785cc40dbb2ad955655018371/3-cdecca?format=webp&width=1200"
+                    alt="Соблюдает чистоту в квартире работая в бахилах"
                     className="w-full h-[200px] md:w-[264px] md:h-[179px] object-cover"
                   />
                 </div>
                 <div className="flex-1 px-4 py-4 md:px-6 md:py-0 md:h-full flex flex-col justify-center">
                   <div className="mb-3 md:mb-2 md:h-1/2 flex items-center md:items-end md:pb-2">
                     <h3 className="text-[#484848] font-vollkorn text-[16px] md:text-[16px] font-medium leading-tight text-center md:text-left">
-                      Соблюдает ч��стоту в квартире работая в бахилах
+                      ��облюдает ч��стоту в квартире работая в бахилах
                     </h3>
                   </div>
                   <div className="border-t-[3px] border-[rgba(114,181,255,0.24)] mb-3 md:mb-0"></div>
@@ -418,7 +452,7 @@ const Index = () => {
                 </div>
                 <div className="flex-shrink-0 w-full md:w-auto order-1 md:order-2">
                   <img
-                    src="https://cdn.builder.io/api/v1/assets/ab9c320785cc40dbb2ad955655018371/4-c4f7c0?format=webp&width=800"
+                    src="https://cdn.builder.io/api/v1/assets/ab9c320785cc40dbb2ad955655018371/4-c4f7c0?format=webp&width=1200"
                     alt="Работает быстро и качественно"
                     className="w-full h-[200px] md:w-[264px] md:h-[179px] object-cover"
                   />
@@ -431,8 +465,8 @@ const Index = () => {
               <div className="flex flex-col md:flex-row items-center h-auto md:h-[179px]">
                 <div className="flex-shrink-0 w-full md:w-auto">
                   <img
-                    src="https://cdn.builder.io/api/v1/assets/ab9c320785cc40dbb2ad955655018371/5-234616?format=webp&width=800"
-                    alt="Опыт маст��ра по ремонту стиральных машин не менее 5 лет"
+                    src="https://cdn.builder.io/api/v1/assets/ab9c320785cc40dbb2ad955655018371/5-234616?format=webp&width=1200"
+                    alt="Опыт мастера по ремонту стиральных машин не менее 5 лет"
                     className="w-full h-[200px] md:w-[264px] md:h-[179px] object-cover"
                   />
                 </div>
@@ -452,40 +486,6 @@ const Index = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Quick Actions for desktop - Bottom as in Figma */}
-        <div className="absolute bottom-4 md:bottom-12 left-1/2 transform -translate-x-1/2 hidden md:flex flex-row gap-4 md:gap-8 z-20 px-4 items-center">
-          <div className="flex items-center gap-3 text-[rgba(76,76,76,0.9)] font-pt-serif text-[12px] md:text-[15px] italic tracking-[5%] whitespace-nowrap">
-            <img
-              src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/image-3822595-dfa1a4?format=webp&width=800"
-              alt="Быстро"
-              width="20"
-              height="25"
-              className="w-[20px] h-[25px] md:w-[25px] md:h-[31px] object-contain flex-shrink-0"
-            />
-            Быстро
-          </div>
-          <div className="flex items-center gap-3 text-[rgba(76,76,76,0.9)] font-pt-serif text-[12px] md:text-[15px] italic tracking-[5%] whitespace-nowrap">
-            <img
-              src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/2-0616fc?format=webp&width=800"
-              alt="Качественно"
-              width="30"
-              height="25"
-              className="w-[30px] h-[25px] md:w-[37px] md:h-[31px] object-contain flex-shrink-0"
-            />
-            Качественно
-          </div>
-          <div className="flex items-center gap-3 text-[rgba(76,76,76,0.9)] font-pt-serif text-[12px] md:text-[15px] italic tracking-[5%] whitespace-nowrap">
-            <img
-              src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/3-470ac4?format=webp&width=800"
-              alt="С гарантией"
-              width="22"
-              height="24"
-              className="w-[22px] h-[24px] md:w-[27px] md:h-[30px] object-contain flex-shrink-0"
-            />
-            С гарантией
           </div>
         </div>
       </section>
@@ -523,104 +523,164 @@ const Index = () => {
             {/* All cards in one responsive grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
               {/* Card 1 */}
-              <div className="w-full max-w-[359px] h-[281px] flex flex-col items-center text-center p-6 bg-white">
-                <div className="flex justify-center items-center w-full h-[82px]">
+              <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white">
+                {/* Icon section - fixed height */}
+                <div className="flex justify-center items-center w-full h-[80px] mb-4">
                   <img
                     src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/group-8-474887?format=webp&width=800"
                     alt="Price tag icon"
-                    className="w-auto h-auto max-w-[74px] max-h-[76px] object-contain"
+                    className="w-[64px] h-[64px] object-contain"
                   />
                 </div>
-                <div className="flex flex-col w-full h-[149px]">
-                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal h-[44px] flex items-center justify-center px-4">
-                    Низкие цены на весь сервисный диапазон услуг
-                  </h3>
-                  <div className="h-[1px] bg-[#A4A4A4] mt-[16px] mb-4"></div>
-                  <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-normal px-4">
-                    Доступные цены благодаря большому количеству клиентов и
-                    оптимизированным процессам
+
+                {/* Content section - flexible layout */}
+                <div className="flex flex-col w-full flex-1">
+                  {/* Title section - fixed height */}
+                  <div className="h-[60px] flex items-center justify-center mb-4">
+                    <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-tight px-4">
+                      Низкие цены на весь сервисный диапазон услуг
+                    </h3>
+                  </div>
+
+                  {/* Divider - always at same position */}
+                  <div className="h-[1px] bg-[#A4A4A4] mb-4"></div>
+
+                  {/* Description - flexible height */}
+                  <div className="flex-1 flex items-start">
+                    <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-relaxed px-4">
+                      Доступные цены благодаря большому количеству клиентов и
+                      оптимизированным процессам
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Card 2 */}
-              <div className="w-full max-w-[359px] h-[281px] flex flex-col items-center text-center p-6 bg-white">
-                <div className="flex justify-center items-center w-full h-[82px]">
+              <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white">
+                {/* Icon section - fixed height */}
+                <div className="flex justify-center items-center w-full h-[80px] mb-4">
                   <img
                     src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822654-2077cf?format=webp&width=800"
                     alt="Modern equipment icon"
-                    className="w-auto h-auto max-w-[74px] max-h-[76px] object-contain"
+                    className="w-[64px] h-[64px] object-contain"
                   />
                 </div>
-                <div className="flex flex-col w-full h-[149px]">
-                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal h-[44px] flex items-center justify-center px-4">
-                    Современное оборудование по диагностике
-                  </h3>
-                  <div className="h-[1px] bg-[#A4A4A4] mt-[16px] mb-4"></div>
-                  <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-normal px-4">
-                    Ежемесячно часть от прибыли мы вкладываем в работу и
-                    развитие
+
+                {/* Content section - flexible layout */}
+                <div className="flex flex-col w-full flex-1">
+                  {/* Title section - fixed height */}
+                  <div className="h-[60px] flex items-center justify-center mb-4">
+                    <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-tight px-4">
+                      Современное оборудование по диагностике
+                    </h3>
+                  </div>
+
+                  {/* Divider - always at same position */}
+                  <div className="h-[1px] bg-[#A4A4A4] mb-4"></div>
+
+                  {/* Description - flexible height */}
+                  <div className="flex-1 flex items-start">
+                    <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-relaxed px-4">
+                      Ежемесячно часть от прибыли мы вкладываем в работу и
+                      развитие
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Card 3 */}
-              <div className="w-full max-w-[359px] h-[281px] flex flex-col items-center text-center p-6 bg-white">
-                <div className="flex justify-center items-center w-full h-[82px]">
+              <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white">
+                {/* Icon section - fixed height */}
+                <div className="flex justify-center items-center w-full h-[80px] mb-4">
                   <img
                     src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822655-b66f5b?format=webp&width=800"
                     alt="24 month warranty icon"
-                    className="w-auto h-auto max-w-[74px] max-h-[76px] object-contain"
+                    className="w-[64px] h-[64px] object-contain"
                   />
                 </div>
-                <div className="flex flex-col w-full h-[149px]">
-                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal h-[44px] flex items-center justify-center px-4">
-                    Гарантийный срок до 24 месяцев
-                  </h3>
-                  <div className="h-[1px] bg-[#A4A4A4] mt-[16px] mb-4"></div>
-                  <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-normal px-4">
-                    Официальная гарантия на детали и услуги
+
+                {/* Content section - flexible layout */}
+                <div className="flex flex-col w-full flex-1">
+                  {/* Title section - fixed height */}
+                  <div className="h-[60px] flex items-center justify-center mb-4">
+                    <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-tight px-4">
+                      Гарантийный срок до 24 месяцев
+                    </h3>
+                  </div>
+
+                  {/* Divider - always at same position */}
+                  <div className="h-[1px] bg-[#A4A4A4] mb-4"></div>
+
+                  {/* Description - flexible height */}
+                  <div className="flex-1 flex items-start">
+                    <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-relaxed px-4">
+                      Официальная гарантия на детали и услуги
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Card 4 */}
-              <div className="w-full max-w-[359px] h-[281px] flex flex-col items-center text-center p-6 bg-white lg:col-start-1 lg:col-end-2">
-                <div className="flex justify-center items-center w-full h-[82px]">
+              <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white lg:col-start-1 lg:col-end-2">
+                {/* Icon section - fixed height */}
+                <div className="flex justify-center items-center w-full h-[80px] mb-4">
                   <img
                     src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/group-2-4a23b8?format=webp&width=800"
                     alt="Supplier connections icon"
-                    className="w-auto h-auto max-w-[74px] max-h-[76px] object-contain"
+                    className="w-[64px] h-[64px] object-contain"
                   />
                 </div>
-                <div className="flex flex-col w-full h-[149px]">
-                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal h-[44px] flex items-center justify-center px-4">
-                    Налаженные связи с поставщиками
-                  </h3>
-                  <div className="h-[1px] bg-[#A4A4A4] mt-[16px] mb-4"></div>
-                  <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-normal px-4">
-                    Оригинальные запчасти и европейские аналоги любых
-                    комплектующих
+
+                {/* Content section - flexible layout */}
+                <div className="flex flex-col w-full flex-1">
+                  {/* Title section - fixed height */}
+                  <div className="h-[60px] flex items-center justify-center mb-4">
+                    <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-tight px-4">
+                      Налаженные связи с поставщиками
+                    </h3>
+                  </div>
+
+                  {/* Divider - always at same position */}
+                  <div className="h-[1px] bg-[#A4A4A4] mb-4"></div>
+
+                  {/* Description - flexible height */}
+                  <div className="flex-1 flex items-start">
+                    <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-relaxed px-4">
+                      Оригинальные запчасти и европейские аналоги любых
+                      комплектующих
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Card 5 */}
-              <div className="w-full max-w-[359px] h-[281px] flex flex-col items-center text-center p-6 bg-white lg:col-start-3 lg:col-end-4">
-                <div className="flex justify-center items-center w-full h-[82px]">
+              <div className="w-full max-w-[359px] h-[320px] flex flex-col items-center text-center p-6 bg-white lg:col-start-3 lg:col-end-4">
+                {/* Icon section - fixed height */}
+                <div className="flex justify-center items-center w-full h-[80px] mb-4">
                   <img
                     src="https://cdn.builder.io/api/v1/assets/95be16b641a34dc4828b2b46057dd4a8/image-3822653-b68b7d?format=webp&width=800"
                     alt="Master work quality icon"
-                    className="w-auto h-auto max-w-[74px] max-h-[76px] object-contain"
+                    className="w-[64px] h-[64px] object-contain"
                   />
                 </div>
-                <div className="flex flex-col w-full h-[149px]">
-                  <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-normal h-[44px] flex items-center justify-center px-4">
-                    Лучшие мастера с многолетним стажем 7-10 лет
-                  </h3>
-                  <div className="h-[1px] bg-[#A4A4A4] mt-[16px] mb-4"></div>
-                  <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-normal px-4">
-                    Опытные профессионалы с подтвержденной квалификацией
+
+                {/* Content section - flexible layout */}
+                <div className="flex flex-col w-full flex-1">
+                  {/* Title section - fixed height */}
+                  <div className="h-[60px] flex items-center justify-center mb-4">
+                    <h3 className="text-[#484848] text-center font-vollkorn text-[16px] font-medium leading-tight px-4">
+                      Лучшие мастера с многолетним стажем 7-10 лет
+                    </h3>
+                  </div>
+
+                  {/* Divider - always at same position */}
+                  <div className="h-[1px] bg-[#A4A4A4] mb-4"></div>
+
+                  {/* Description - flexible height */}
+                  <div className="flex-1 flex items-start">
+                    <div className="text-[#484848] text-center font-vollkorn text-[14.5px] font-normal leading-relaxed px-4">
+                      Опытные профессионалы с подтвержденной квалификацией
+                    </div>
                   </div>
                 </div>
               </div>
@@ -744,7 +804,7 @@ const Index = () => {
                   При неисправностях бытовой техники важно обращаться к
                   профессионалам. Наши мастера обладают большим опытом и
                   способны устранить любые поломки — от неисправностей модуля
-                  управления до проблем с мотором или системой подачи воды.
+                  управления до проблем с мотором или системой подачи во��ы.
                   Ответственный подход и технические знания — залог долгой
                   службы вашей техники после ремонта.
                 </p>
