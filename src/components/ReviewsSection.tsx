@@ -174,7 +174,7 @@ export const ReviewsSection: React.FC = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-[20px] md:text-[24px] lg:text-[30px] font-pt-serif font-normal tracking-[1.2px] mb-4 text-[#5D5D5D]">
+          <h2 className="text-[25px] font-pt-serif font-bold tracking-[4%] mb-4 text-[#5D5D5D]">
             GOOGLE ОТЗЫВЫ
           </h2>
         </div>

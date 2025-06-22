@@ -88,7 +88,7 @@ const categories: Category[] = [
         id: 1,
         question: "Как часто нужно чистить стиральную машину?",
         answer:
-          "Проводите чистку лимонной кислотой (100г на 5-6 кг машину) раз в 3 месяца при мягкой воде, раз в месяц при жесткой. Запускайте пустую стирку при 90°C. Протирайте резинку манжеты после каждой стирки.",
+          "Проводите чистку лимонной кислотой (100г на 5-6 кг машину) раз в 3 месяца при мягкой воде, раз в месяц при жесткой. Запускайте пустую стирку при 90°C. Протирайте резинку манж��ты после каждой стирки.",
       },
       {
         id: 2,
@@ -134,7 +134,7 @@ export const FAQSection: React.FC = () => {
         }}
       ></div>
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-center text-[20px] md:text-[24px] lg:text-[30px] font-pt-serif font-normal tracking-[1.2px] mb-12 md:mb-16 text-[#5D5D5D]">
+        <h2 className="text-center text-[25px] font-pt-serif font-bold tracking-[4%] mb-12 md:mb-16 text-[#5D5D5D]">
           Часто задаваемые вопросы
         </h2>
 

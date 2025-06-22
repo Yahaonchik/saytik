@@ -55,7 +55,7 @@ export function BrandCarousel() {
   return (
     <div className="py-16 overflow-hidden w-full">
       <div className="w-full px-4 mb-8">
-        <h2 className="text-center text-[20px] md:text-[24px] lg:text-[30px] font-pt-serif font-normal tracking-[1.2px] mb-12 md:mb-16 text-[#5D5D5D]">
+        <h2 className="text-center text-[25px] font-pt-serif font-bold tracking-[4%] mb-12 md:mb-16 text-[#5D5D5D]">
           Ремонтируем все марки
         </h2>
       </div>

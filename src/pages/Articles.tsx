@@ -3,14 +3,26 @@ import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
 import { CallMasterModal } from "@/components/CallMasterModal";
 import { MobileMenu } from "@/components/MobileMenu";
+import { RepairArticle } from "@/components/RepairArticle";
+import { repairArticles } from "@/data/repairArticles";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 
 const Articles = () => {
   const [isCallMasterModalOpen, setIsCallMasterModalOpen] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [selectedRepairArticle, setSelectedRepairArticle] = useState<
+    string | null
+  >(null);
 
   useEffect(() => {
     setHasAnimated(true);
+
+    // Check if there's an article parameter in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const articleParam = urlParams.get("article");
+    if (articleParam) {
+      setSelectedRepairArticle(articleParam);
+    }
   }, []);
 
   const fadeInUp = {
@@ -40,7 +52,7 @@ const Articles = () => {
     },
     {
       id: 2,
-      title: "Как правильно ухаживать за стиральной машиной",
+      title: "Как правильно ухаживать за стиральной ма��иной",
       excerpt:
         "Простые правила ухода, которые продлят срок службы вашей стиральной машины и сэкономят деньги на ремонте.",
       date: "10 декабря 2023",
@@ -104,10 +116,25 @@ const Articles = () => {
   ];
   const [selectedCategory, setSelectedCategory] = useState("Все статьи");
 
+  // Combine regular articles with repair articles
+  const allArticles = [
+    ...articles,
+    ...repairArticles.map((article) => ({
+      id: article.id,
+      title: article.title,
+      excerpt: article.excerpt,
+      date: article.date,
+      readTime: article.readTime,
+      category: article.category,
+      image: article.image,
+      isRepairArticle: true,
+    })),
+  ];
+
   const filteredArticles =
     selectedCategory === "Все статьи"
-      ? articles
-      : articles.filter((article) => article.category === selectedCategory);
+      ? allArticles
+      : allArticles.filter((article) => article.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-white">
@@ -194,131 +221,150 @@ const Articles = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <motion.section
-        className="py-16 md:py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50"
-        initial="initial"
-        animate="animate"
-        variants={staggerChildren}
-      >
-        <div className="container mx-auto px-4">
-          <motion.div className="text-center mb-12" variants={fadeInUp}>
-            <h1 className="text-[28px] md:text-[36px] lg:text-[42px] font-pt-serif-caption font-normal tracking-[1.2px] mb-6 text-[#5D5D5D]">
-              Полезные статьи о ремонте стиральных машин
-            </h1>
-            <p className="text-[16px] md:text-[18px] text-[#4C4C4C] font-pt-serif max-w-[800px] mx-auto leading-relaxed">
-              Экспертные советы, инструкции и рекомендации по обслуживанию и
-              ремонту стиральных машин
-            </p>
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* Category Filter */}
-      <motion.section
-        className="py-8 border-b border-gray-100"
-        initial="initial"
-        animate="animate"
-        variants={staggerChildren}
-      >
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="flex flex-wrap justify-center gap-2 md:gap-4"
-            variants={fadeInUp}
+      {/* Check if showing repair article */}
+      {selectedRepairArticle ? (
+        <RepairArticle
+          article={repairArticles.find((a) => a.id === selectedRepairArticle)!}
+          onBack={() => {
+            setSelectedRepairArticle(null);
+            // Update URL without article parameter
+            const url = new URL(window.location.href);
+            url.searchParams.delete("article");
+            window.history.pushState({}, "", url.toString());
+          }}
+        />
+      ) : (
+        <>
+          {/* Hero Section */}
+          <motion.section
+            className="py-16 md:py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50"
+            initial="initial"
+            animate="animate"
+            variants={staggerChildren}
           >
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  selectedCategory === category
-                    ? "bg-[#72B5FF] text-white"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </motion.div>
-        </div>
-      </motion.section>
+            <div className="container mx-auto px-4">
+              <motion.div className="text-center mb-12" variants={fadeInUp}>
+                <h1 className="text-[28px] md:text-[36px] lg:text-[42px] font-pt-serif-caption font-normal tracking-[1.2px] mb-6 text-[#5D5D5D]">
+                  Полезные статьи о ремонте стиральных машин
+                </h1>
+                <p className="text-[16px] md:text-[18px] text-[#4C4C4C] font-pt-serif max-w-[800px] mx-auto leading-relaxed">
+                  Экспертные советы, инструкции и рекомендации по обслуживанию и
+                  ремонту стиральных машин
+                </p>
+              </motion.div>
+            </div>
+          </motion.section>
 
-      {/* Articles Grid */}
-      <motion.section
-        className="py-12 md:py-16 lg:py-20"
-        initial="initial"
-        animate="animate"
-        variants={staggerChildren}
-      >
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-[1200px] mx-auto">
-            {filteredArticles.map((article) => (
-              <motion.article
-                key={article.id}
-                className="bg-white rounded-[15px] shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+          {/* Category Filter */}
+          <motion.section
+            className="py-8 border-b border-gray-100"
+            initial="initial"
+            animate="animate"
+            variants={staggerChildren}
+          >
+            <div className="container mx-auto px-4">
+              <motion.div
+                className="flex flex-wrap justify-center gap-2 md:gap-4"
                 variants={fadeInUp}
               >
-                <div className="h-[200px] overflow-hidden">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
-                      {article.category}
-                    </span>
-                    <div className="flex items-center text-gray-500 text-sm">
-                      <Clock className="w-4 h-4 mr-1" />
-                      {article.readTime}
-                    </div>
-                  </div>
-
-                  <h3 className="font-pt-serif-caption text-[18px] font-medium text-[#446D99] mb-3 line-clamp-2">
-                    {article.title}
-                  </h3>
-
-                  <p className="text-[#4C4C4C] font-pt-serif text-[14px] leading-relaxed mb-4 line-clamp-3">
-                    {article.excerpt}
-                  </p>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center text-gray-500 text-sm">
-                      <Calendar className="w-4 h-4 mr-1" />
-                      {article.date}
-                    </div>
-                    <button className="flex items-center text-[#72B5FF] hover:text-[#446D99] transition-colors">
-                      <span className="text-sm font-medium mr-1">Читать</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              </motion.article>
-            ))}
-          </div>
-
-          {/* CTA Section */}
-          <motion.div className="mt-16 text-center" variants={fadeInUp}>
-            <div className="bg-gradient-to-r from-[#446D99] to-[#72B5FF] rounded-2xl p-8 md:p-12 max-w-[800px] mx-auto">
-              <h2 className="text-white font-pt-serif text-[24px] md:text-[28px] font-normal mb-4">
-                Остались вопросы?
-              </h2>
-              <p className="text-white/90 font-pt-serif text-[16px] md:text-[18px] mb-6">
-                Наши эксперты готовы помочь с любыми проблемами стиральных машин
-              </p>
-              <button
-                onClick={() => setIsCallMasterModalOpen(true)}
-                className="bg-white text-[#446D99] px-8 py-4 rounded-full font-ubuntu text-[16px] font-semibold hover:bg-gray-50 transition-colors"
-              >
-                Получить консультацию
-              </button>
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                      selectedCategory === category
+                        ? "bg-[#72B5FF] text-white"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                    }`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </motion.div>
             </div>
-          </motion.div>
-        </div>
-      </motion.section>
+          </motion.section>
+
+          {/* Articles Grid */}
+          <motion.section
+            className="py-12 md:py-16 lg:py-20"
+            initial="initial"
+            animate="animate"
+            variants={staggerChildren}
+          >
+            <div className="container mx-auto px-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-[1200px] mx-auto">
+                {filteredArticles.map((article) => (
+                  <motion.article
+                    key={article.id}
+                    className="bg-white rounded-[15px] shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                    variants={fadeInUp}
+                  >
+                    <div className="h-[200px] overflow-hidden">
+                      <img
+                        src={article.image}
+                        alt={article.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+                          {article.category}
+                        </span>
+                        <div className="flex items-center text-gray-500 text-sm">
+                          <Clock className="w-4 h-4 mr-1" />
+                          {article.readTime}
+                        </div>
+                      </div>
+
+                      <h3 className="font-pt-serif-caption text-[18px] font-medium text-[#446D99] mb-3 line-clamp-2">
+                        {article.title}
+                      </h3>
+
+                      <p className="text-[#4C4C4C] font-pt-serif text-[14px] leading-relaxed mb-4 line-clamp-3">
+                        {article.excerpt}
+                      </p>
+
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center text-gray-500 text-sm">
+                          <Calendar className="w-4 h-4 mr-1" />
+                          {article.date}
+                        </div>
+                        <button className="flex items-center text-[#72B5FF] hover:text-[#446D99] transition-colors">
+                          <span className="text-sm font-medium mr-1">
+                            Читать
+                          </span>
+                          <ArrowRight className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                  </motion.article>
+                ))}
+              </div>
+
+              {/* CTA Section */}
+              <motion.div className="mt-16 text-center" variants={fadeInUp}>
+                <div className="bg-gradient-to-r from-[#446D99] to-[#72B5FF] rounded-2xl p-8 md:p-12 max-w-[800px] mx-auto">
+                  <h2 className="text-white font-pt-serif text-[24px] md:text-[28px] font-normal mb-4">
+                    Остались вопросы?
+                  </h2>
+                  <p className="text-white/90 font-pt-serif text-[16px] md:text-[18px] mb-6">
+                    Наши эксперты готовы помочь с любыми проблемами стиральных
+                    машин
+                  </p>
+                  <button
+                    onClick={() => setIsCallMasterModalOpen(true)}
+                    className="bg-white text-[#446D99] px-8 py-4 rounded-full font-ubuntu text-[16px] font-semibold hover:bg-gray-50 transition-colors"
+                  >
+                    Получить консультацию
+                  </button>
+                </div>
+              </motion.div>
+            </div>
+          </motion.section>
+        </>
+      )}
 
       {/* Footer */}
       <Footer />

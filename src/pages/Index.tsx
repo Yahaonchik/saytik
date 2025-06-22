@@ -8,6 +8,7 @@ import { ReviewsSection } from "@/components/ReviewsSection";
 import { Footer } from "@/components/Footer";
 import { CallMasterModal } from "@/components/CallMasterModal";
 import { MobileMenu } from "@/components/MobileMenu";
+import { MasterProblemsSection } from "@/components/MasterProblemsSection";
 
 const Index = () => {
   const [isCallMasterModalOpen, setIsCallMasterModalOpen] =
@@ -134,7 +135,7 @@ const Index = () => {
               <span className="text-[#72B5FF] block font-normal">Одесса</span>
             </h1>
 
-            <p className="text-[10px] sm:text-[10px] md:text-[15px] font-pt-serif font-normal tracking-[0.7px] md:tracking-[0.75px] max-w-[600px] mx-auto px-4 text-center">
+            <p className="text-[10px] sm:text-[10px] md:text-[15px] font-pt-serif font-normal tracking-[0.7px] md:tracking-[0.75px] max-w-[600px] mx-auto px-4 text-center mt-[20px] md:mt-0">
               <span className="text-[#40444F] font-normal">
                 Профессиональный ремонт стиральных машин в тот же{" "}
               </span>
@@ -200,7 +201,7 @@ const Index = () => {
             <div className="loader flex-shrink-0"></div>
 
             {/* Mobile features - horizontal layout under washing machine */}
-            <div className="flex flex-row gap-4 justify-center lg:gap-6 xl:gap-8 mt-5">
+            <div className="flex flex-row gap-4 justify-center lg:gap-6 xl:gap-8 mt-[30px] sm:mt-5">
               <div className="flex items-center gap-1 md:gap-2 text-[rgba(76,76,76,0.9)] font-pt-serif text-[10px] md:text-[12px] italic tracking-[5%] whitespace-nowrap">
                 <img
                   src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/image-3822595-dfa1a4?format=webp&width=800"
@@ -331,6 +332,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Master Problems Section */}
+      <MasterProblemsSection />
+
       {/* Master Rules Section */}
       <section className="py-8 sm:py-10 md:py-16 lg:py-24 relative">
         {/* Background image */}
@@ -343,13 +347,13 @@ const Index = () => {
         ></div>
 
         <div className="container mx-auto px-3 sm:px-4 relative z-10">
-          <h2 className="text-center text-[16px] sm:text-[18px] md:text-[24px] lg:text-[30px] font-pt-serif font-normal tracking-[0.8px] sm:tracking-[1.0px] md:tracking-[1.2px] mb-8 sm:mb-10 md:mb-16 text-[#5D5D5D] max-w-[935px] mx-auto leading-tight px-2">
+          <h2 className="text-center text-[25px] font-pt-serif font-bold tracking-[4%] mb-8 sm:mb-10 md:mb-16 text-[#5D5D5D] max-w-[935px] mx-auto leading-tight px-2">
             Мастер по ремонту стиральных машин соблюдает ряд правил
           </h2>
 
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-8 max-w-[1300px] mx-auto justify-items-center">
             {/* Card 1 - Image Left */}
-            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[400px] md:max-w-[622px] overflow-hidden drop-shadow-[7px_6px_21px_rgba(0,0,0,0.2)]">
+            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[400px] md:max-w-[622px] overflow-hidden drop-shadow-[7px_6px_10px_rgba(0,0,0,0.2)]">
               <div className="flex flex-col md:flex-row items-center h-auto md:h-[179px]">
                 <div className="flex-shrink-0 w-full md:w-auto">
                   <img
@@ -376,7 +380,7 @@ const Index = () => {
             </div>
 
             {/* Card 2 - Image Right */}
-            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[400px] md:max-w-[622px] overflow-hidden drop-shadow-[1px_2px_21px_rgba(0,0,0,0.2)]">
+            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[400px] md:max-w-[622px] overflow-hidden drop-shadow-[1px_2px_10px_rgba(0,0,0,0.2)]">
               <div className="flex flex-col md:flex-row items-center h-auto md:h-[179px]">
                 <div className="flex-1 px-2 py-2 md:px-6 md:py-0 md:h-full flex flex-col justify-center order-2 md:order-1">
                   <div className="mb-2 md:mb-2 md:h-1/2 flex items-center md:items-end md:pb-2">
@@ -403,7 +407,7 @@ const Index = () => {
             </div>
 
             {/* Card 3 - Image Left */}
-            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[400px] md:max-w-[622px] overflow-hidden drop-shadow-[7px_6px_21px_rgba(0,0,0,0.2)]">
+            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[400px] md:max-w-[622px] overflow-hidden drop-shadow-[7px_6px_10px_rgba(0,0,0,0.2)]">
               <div className="flex flex-col md:flex-row items-center h-auto md:h-[179px]">
                 <div className="flex-shrink-0 w-full md:w-auto">
                   <img
@@ -430,7 +434,7 @@ const Index = () => {
             </div>
 
             {/* Card 4 - Image Right */}
-            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[400px] md:max-w-[622px] overflow-hidden drop-shadow-[1px_2px_21px_rgba(0,0,0,0.2)]">
+            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[400px] md:max-w-[622px] overflow-hidden drop-shadow-[1px_2px_10px_rgba(0,0,0,0.2)]">
               <div className="flex flex-col md:flex-row items-center h-auto md:h-[179px]">
                 <div className="flex-1 px-2 py-2 md:px-6 md:py-0 md:h-full flex flex-col justify-center order-2 md:order-1">
                   <div className="mb-2 md:mb-2 md:h-1/2 flex items-center md:items-end md:pb-2">
@@ -457,7 +461,7 @@ const Index = () => {
             </div>
 
             {/* Card 5 - Image Left - centered on all screens */}
-            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[400px] md:max-w-[622px] overflow-hidden xl:col-span-2 xl:justify-self-center drop-shadow-[7px_6px_21px_rgba(0,0,0,0.2)]">
+            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[400px] md:max-w-[622px] overflow-hidden xl:col-span-2 xl:justify-self-center drop-shadow-[7px_6px_10px_rgba(0,0,0,0.2)]">
               <div className="flex flex-col md:flex-row items-center h-auto md:h-[179px]">
                 <div className="flex-shrink-0 w-full md:w-auto">
                   <img
@@ -502,7 +506,7 @@ const Index = () => {
       {/* What We're Proud Of Section */}
       <section className="py-12 md:py-16 lg:py-24 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-center text-[20px] md:text-[24px] lg:text-[30px] font-pt-serif font-normal tracking-[1.2px] mb-12 md:mb-16 text-[#5D5D5D]">
+          <h2 className="text-center text-[25px] font-pt-serif font-bold tracking-[4%] mb-12 md:mb-16 text-[#5D5D5D]">
             Чем мы гордимся
           </h2>
 
@@ -729,7 +733,7 @@ const Index = () => {
               <p>
                 Стиральная машина — это техника, которая должна работать
                 исправно, отжимать, стирать и радовать стабильностью. Но на
-                практике даже самая надёжная техника со временем требует
+                практике даже самая надёжная техника со временем тр��бует
                 внимания. Механические детали изнашиваются, электроника дает
                 сбои, а бытовая нагрузка делает своё дело. Вот почему ремонт
                 стиральных машин в Одессе — это не просто разовая услуга, а
@@ -758,7 +762,7 @@ const Index = () => {
                   посредников.
                 </p>
                 <p>
-                  3. В штате только опытные мастера с профподготовкой и
+                  3. В штате только опытные мастера с про��подготовкой и
                   практикой.
                 </p>
                 <p>
@@ -778,7 +782,7 @@ const Index = () => {
                 используемым моделям. Все узлы техники имеют ограниченный
                 ресурс, и при активной эксплуатации однажды выходят из строя.
                 собрали самые частые причины, по которым клиенты обращаются в
-                наш сервис:
+                наш с��рвис:
               </p>
 
               <div className="space-y-1 my-4">
@@ -838,7 +842,7 @@ const Index = () => {
 
               <p>
                 Работаем только с гарантией. Каждый ремонт начинается с
-                диагностики, после которой мастер подробно объясняет, в чём
+                диагностики, после которой мастер подробно объяс��яет, в чём
                 проблема, и предлагает решение. После согласования с клиентом мы
                 начинаем ремонт.
               </p>

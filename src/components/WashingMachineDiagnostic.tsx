@@ -320,7 +320,7 @@ const baseProblemCauses = {
       type: "self",
     },
     {
-      cause: "Поврежден сетевой кабель",
+      cause: "Поврежден сет��вой кабель",
       probability: 20,
       price: 300,
       description: "Замена сетевого кабеля",
@@ -529,7 +529,7 @@ const baseProblemCauses = {
   ],
   "Стиральная машина зависает": [
     {
-      cause: "Неисправность модуля управления",
+      cause: "Неисп��авность модуля управления",
       probability: 100,
       price: 1500,
       description: "Ремонт модуля управления",
@@ -644,7 +644,7 @@ export function WashingMachineDiagnostic() {
   return (
     <div className="w-full max-w-[835px] mx-auto">
       <div className="text-center mb-8">
-        <h2 className="text-[24px] md:text-[30px] font-pt-serif font-normal tracking-[1.2px] text-[#5D5D5D]">
+        <h2 className="text-[25px] font-pt-serif font-bold tracking-[4%] text-[#5D5D5D]">
           Онлайн диагностика стиральной машины
         </h2>
       </div>

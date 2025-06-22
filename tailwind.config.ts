@@ -24,6 +24,7 @@ export default {
         "ibm-plex-serif": ["IBM Plex Serif", "serif"],
         vollkorn: ["Vollkorn", "serif"],
         ubuntu: ["Ubuntu", "sans-serif"],
+        "nunito-sans": ["Nunito Sans", "sans-serif"],
         georgia: ["Georgia", "serif"],
         arial: ["Arial", "sans-serif"],
       },

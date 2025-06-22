@@ -78,27 +78,24 @@ export const Footer: React.FC = () => {
               </button>
             </div>
 
-            {/* Navigation - Mobile visible (vertical layout) */}
+            {/* Navigation - Mobile visible (horizontal centered layout) */}
             <div className="w-full mt-4">
-              <nav
-                className="flex flex-col items-center gap-2 w-full"
-                style={{ marginLeft: "-30px" }}
-              >
+              <nav className="flex flex-row justify-center items-center gap-4 sm:gap-6 w-full px-2">
                 <a
                   href="/"
-                  className="text-[#626B78] font-georgia text-[15px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors text-center py-1"
+                  className="text-[#626B78] font-georgia text-[13px] sm:text-[15px] font-normal tracking-[0.4px] hover:text-[#72B5FF] transition-colors text-center py-1 whitespace-nowrap"
                 >
                   Главная
                 </a>
                 <a
                   href="/buyout"
-                  className="text-[#626B78] font-georgia text-[15px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors text-center py-1"
+                  className="text-[#626B78] font-georgia text-[11px] sm:text-[15px] font-normal tracking-[0.4px] hover:text-[#72B5FF] transition-colors text-center py-1 whitespace-nowrap"
                 >
                   Выкуп б/у машин
                 </a>
                 <a
                   href="/articles"
-                  className="text-[#626B78] font-georgia text-[15px] font-normal tracking-[0.64px] hover:text-[#72B5FF] transition-colors text-center py-1"
+                  className="text-[#626B78] font-georgia text-[13px] sm:text-[15px] font-normal tracking-[0.4px] hover:text-[#72B5FF] transition-colors text-center py-1 whitespace-nowrap"
                 >
                   Статьи
                 </a>
