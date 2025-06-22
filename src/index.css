@@ -219,13 +219,16 @@
   }
 
   .loader:after {
-    width: 79px;
-    height: 79px;
-    bottom: 17px;
+    width: 70px !important;
+    height: 70px !important;
+    left: 50% !important;
+    margin-left: -35px !important;
+    bottom: 22px !important;
     background-size:
-      25px 100%,
-      75px 67px;
-    border: 8px solid #ddd;
+      17px 100%,
+      56px 49px !important;
+    border: 6px solid #ddd !important;
+    animation: spin 3s ease-in-out infinite !important;
   }
 }
 

@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -114,7 +112,7 @@ export function CallMasterMenu() {
 
                         <input
                           type="tel"
-                          placeholder="Номер телефона"
+                          placeholder="Но��ер телефона"
                           value={formData.phone}
                           onChange={(e) =>
                             setFormData({ ...formData, phone: e.target.value })

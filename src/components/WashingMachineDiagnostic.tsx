@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -118,7 +116,7 @@ const ageCoefficients = {
 const baseProblemCauses = {
   "Течет вода (натекает небольшая лужа)": [
     {
-      cause: "Течь в бункере дозатора",
+      cause: "Течь в бунке��е дозатора",
       probability: 5,
       price: 500,
       description: "Замена или ремонт бункера дозатора порошка",
@@ -383,7 +381,7 @@ const baseProblemCauses = {
       cause: "Вышел из строя модуль управления",
       probability: 10,
       price: 1500,
-      description: "Ремонт или перепрошивка модуля управления",
+      description: "Ремо��т или перепрошивка модуля управления",
       type: "electronics",
     },
     {
@@ -429,7 +427,7 @@ const baseProblemCauses = {
       cause: "Посторонний предмет между баком и барабаном",
       probability: 100,
       price: 600,
-      description: "Извлечение посторонних предметов",
+      description: "Извлече��ие посторонних предметов",
       type: "mechanics",
     },
   ],
@@ -465,7 +463,7 @@ const baseProblemCauses = {
   ],
   "Бьется током или искрит": [
     {
-      cause: "Неисправность электроцепи",
+      cause: "Неисправность элек��роцепи",
       probability: 100,
       price: 500,
       description: "Поиск и устранение неисправности �� электроцепи",
