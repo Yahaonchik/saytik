@@ -335,7 +335,7 @@ const Index = () => {
       <section className="py-8 sm:py-10 md:py-16 lg:py-24 relative">
         {/* Background image */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
           style={{
             backgroundImage:
               "url('https://cdn.builder.io/api/v1/assets/777536c48a5841ebbea4bcebb08ba44c/frame-645-3a9b26?format=webp&width=800')",
@@ -349,7 +349,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-8 max-w-[1300px] mx-auto justify-items-center">
             {/* Card 1 - Image Left */}
-            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[622px] overflow-hidden">
+            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[622px] overflow-hidden drop-shadow-[7px_6px_21px_rgba(0,0,0,0.2)]">
               <div className="flex flex-col md:flex-row items-center h-auto md:h-[179px]">
                 <div className="flex-shrink-0 w-full md:w-auto">
                   <img
@@ -360,15 +360,15 @@ const Index = () => {
                 </div>
                 <div className="flex-1 px-4 py-4 md:px-6 md:py-0 md:h-full flex flex-col justify-center">
                   <div className="mb-3 md:mb-2 md:h-1/2 flex items-center md:items-end md:pb-2">
-                    <h3 className="text-[#484848] font-vollkorn text-[16px] md:text-[16px] font-medium leading-tight text-center md:text-left">
+                    <h3 className="text-[#313131] font-vollkorn text-[16px] md:text-[16px] font-medium leading-tight text-center md:text-left">
                       Соблюдает договор и время прибытия на адрес
                     </h3>
                   </div>
                   <div className="border-t-[1px] border-[rgba(0,0,0,0.3)] mb-3 md:mb-0"></div>
                   <div className="md:h-1/2 flex items-center md:items-start md:pt-2">
-                    <p className="text-[#484848] font-vollkorn text-[14.5px] font-normal leading-relaxed text-center md:text-left">
-                      Наш мастер всегда приезжает вовремя и в назначенное время
-                      согласно договоренности
+                    <p className="text-[#484848] font-pt-serif text-[14px] font-normal leading-relaxed text-center md:text-left max-w-[314px] drop-shadow-sm">
+                      Наш Мастер всегда приезжает вовремя и выполняет все
+                      договоренности
                     </p>
                   </div>
                 </div>
@@ -376,25 +376,26 @@ const Index = () => {
             </div>
 
             {/* Card 2 - Image Right */}
-            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[622px] overflow-hidden">
+            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[622px] overflow-hidden drop-shadow-[1px_2px_21px_rgba(0,0,0,0.2)]">
               <div className="flex flex-col md:flex-row items-center h-auto md:h-[179px]">
                 <div className="flex-1 px-4 py-4 md:px-6 md:py-0 md:h-full flex flex-col justify-center order-2 md:order-1">
                   <div className="mb-3 md:mb-2 md:h-1/2 flex items-center md:items-end md:pb-2">
-                    <h3 className="text-[#484848] font-vollkorn text-[16px] md:text-[16px] font-medium leading-tight text-center md:text-left">
+                    <h3 className="text-[#313131] font-vollkorn text-[16px] md:text-[16px] font-medium leading-tight text-center md:text-left">
                       Предоставляет гарантию до 24 мес на работу и запчасти
                     </h3>
                   </div>
                   <div className="border-t-[1px] border-[rgba(0,0,0,0.3)] mb-3 md:mb-0"></div>
                   <div className="md:h-1/2 flex items-center md:items-start md:pt-2">
-                    <p className="text-[#484848] font-vollkorn text-[14.5px] font-normal leading-relaxed text-center md:text-left">
-                      Пунктуальность и профессионализм в каждом выезде
+                    <p className="text-[#484848] font-pt-serif text-[14px] font-normal leading-relaxed text-center md:text-left max-w-[314px] drop-shadow-sm">
+                      Наш Мастер всегда приезжает вовремя и выполняет все
+                      договоренности
                     </p>
                   </div>
                 </div>
                 <div className="flex-shrink-0 w-full md:w-auto order-1 md:order-2">
                   <img
                     src="https://cdn.builder.io/api/v1/assets/ab9c320785cc40dbb2ad955655018371/2-27fe87?format=webp&width=1200"
-                    alt="Предоставляет гарантию до 24 месяцев на работу и запчасти"
+                    alt="Предоставляет гарантию до 24 месяцев н�� работу и запчасти"
                     className="w-full h-[200px] md:w-[264px] md:h-[179px] object-cover"
                   />
                 </div>
@@ -402,7 +403,7 @@ const Index = () => {
             </div>
 
             {/* Card 3 - Image Left */}
-            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[622px] overflow-hidden">
+            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[622px] overflow-hidden drop-shadow-[7px_6px_21px_rgba(0,0,0,0.2)]">
               <div className="flex flex-col md:flex-row items-center h-auto md:h-[179px]">
                 <div className="flex-shrink-0 w-full md:w-auto">
                   <img
@@ -413,15 +414,15 @@ const Index = () => {
                 </div>
                 <div className="flex-1 px-4 py-4 md:px-6 md:py-0 md:h-full flex flex-col justify-center">
                   <div className="mb-3 md:mb-2 md:h-1/2 flex items-center md:items-end md:pb-2">
-                    <h3 className="text-[#484848] font-vollkorn text-[16px] md:text-[16px] font-medium leading-tight text-center md:text-left">
+                    <h3 className="text-[#313131] font-vollkorn text-[16px] md:text-[16px] font-medium leading-tight text-center md:text-left">
                       Соблюдает чистоту в квартире работая в бахилах
                     </h3>
                   </div>
                   <div className="border-t-[1px] border-[rgba(0,0,0,0.3)] mb-3 md:mb-0"></div>
                   <div className="md:h-1/2 flex items-center md:items-start md:pt-2">
-                    <p className="text-[#484848] font-vollkorn text-[14.5px] font-normal leading-relaxed text-center md:text-left">
-                      Аккуратная работа без повреждений мебели и предметов
-                      интерьера
+                    <p className="text-[#484848] font-pt-serif text-[14px] font-normal leading-relaxed text-center md:text-left max-w-[314px] drop-shadow-sm">
+                      Наш Мастер всегда приезжает вовремя и выполняет все
+                      договоренности
                     </p>
                   </div>
                 </div>
@@ -429,18 +430,19 @@ const Index = () => {
             </div>
 
             {/* Card 4 - Image Right */}
-            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[622px] overflow-hidden">
+            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[622px] overflow-hidden drop-shadow-[1px_2px_21px_rgba(0,0,0,0.2)]">
               <div className="flex flex-col md:flex-row items-center h-auto md:h-[179px]">
                 <div className="flex-1 px-4 py-4 md:px-6 md:py-0 md:h-full flex flex-col justify-center order-2 md:order-1">
                   <div className="mb-3 md:mb-2 md:h-1/2 flex items-center md:items-end md:pb-2">
-                    <h3 className="text-[#484848] font-vollkorn text-[16px] md:text-[16px] font-medium leading-tight text-center md:text-left">
+                    <h3 className="text-[#313131] font-vollkorn text-[16px] md:text-[16px] font-medium leading-tight text-center md:text-left">
                       Работает быстро и качественно
                     </h3>
                   </div>
                   <div className="border-t-[1px] border-[rgba(0,0,0,0.3)] mb-3 md:mb-0"></div>
                   <div className="md:h-1/2 flex items-center md:items-start md:pt-2">
-                    <p className="text-[#5C6570] text-[14px] md:text-[14px] font-normal leading-relaxed text-center md:text-left">
-                      Эффективное решение проблем и качественная работа мастера
+                    <p className="text-[#484848] font-pt-serif text-[14px] font-normal leading-relaxed text-center md:text-left max-w-[314px] drop-shadow-sm">
+                      Наш Мастер всегда приезжает вовремя и выполняет все
+                      договоренности
                     </p>
                   </div>
                 </div>
@@ -455,7 +457,7 @@ const Index = () => {
             </div>
 
             {/* Card 5 - Image Left - centered on all screens */}
-            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[622px] overflow-hidden xl:col-span-2 xl:justify-self-center">
+            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[622px] overflow-hidden xl:col-span-2 xl:justify-self-center drop-shadow-[7px_6px_21px_rgba(0,0,0,0.2)]">
               <div className="flex flex-col md:flex-row items-center h-auto md:h-[179px]">
                 <div className="flex-shrink-0 w-full md:w-auto">
                   <img
@@ -466,15 +468,15 @@ const Index = () => {
                 </div>
                 <div className="flex-1 px-4 py-4 md:px-6 md:py-0 md:h-full flex flex-col justify-center">
                   <div className="mb-3 md:mb-2 md:h-1/2 flex items-center md:items-end md:pb-2">
-                    <h3 className="text-[#484848] font-vollkorn text-[16px] md:text-[16px] font-medium leading-tight text-center md:text-left">
+                    <h3 className="text-[#313131] font-vollkorn text-[16px] md:text-[16px] font-medium leading-tight text-center md:text-left">
                       Опыт мастера по ремонту стиральных машин не менее 5 лет
                     </h3>
                   </div>
                   <div className="border-t-[3px] border-[rgba(114,181,255,0.24)] mb-3 md:mb-0"></div>
                   <div className="md:h-1/2 flex items-center md:items-start md:pt-2">
-                    <p className="text-[#5C6570] text-[14px] md:text-[14px] font-normal leading-relaxed text-center md:text-left">
-                      Большой опыт работы позволяет быстро находить и устранять
-                      любые поломки
+                    <p className="text-[#484848] font-pt-serif text-[14px] font-normal leading-relaxed text-center md:text-left max-w-[314px] drop-shadow-sm">
+                      Наш Мастер всегда приезжает вовремя и выполняет все
+                      договоренности
                     </p>
                   </div>
                 </div>
@@ -760,7 +762,7 @@ const Index = () => {
                   практикой.
                 </p>
                 <p>
-                  4. Используем современное оборудование и точную диагностику.
+                  4. Использ��ем современное оборудование и точную диагностику.
                 </p>
                 <p>
                   5. Работаем как с типовыми, так и со сложными неисправностями.
@@ -830,7 +832,7 @@ const Index = () => {
                 Выполняем замену амортизаторов, подшипников, сливных насосов,
                 управляющих модулей, датчиков, ТЭНов. Также восстанавливаем
                 герметичность, заменяем стекла и люки, устраняем вибрации и
-                посторонние шумы. Проводим профилактику и глубокую чистку
+                посторонние шумы. Проводим ��рофилактику и глубокую чистку
                 барабана и бака.
               </p>
 
@@ -850,7 +852,7 @@ const Index = () => {
               <p>
                 Ниже на сайте — карта проезда к нашей мастерской. Также вы
                 найдёте контактные телефоны службы поддержки. Звоните для
-                записи, консультации или если вы заметили странности в работе
+                записи, консультации или если вы заметили стран��ости в работе
                 вашей стиральной машины. Мы всё объясним, рассчитаем стоимость и
                 возьмёмся за дело.
               </p>
