@@ -210,8 +210,8 @@ export const MasterProblemsSection = () => {
           {allProblems.slice(0, 3).map((problem, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center bg-white rounded-full shadow-[0px_-3px_9.7px_0px_rgba(0,0,0,0.26)] relative
-                         w-[251px] h-[251px] p-[23px_10px_10px_10px] gap-[10px]"
+              className="flex flex-col items-center justify-center bg-white rounded-full shadow-[0px_-3px_29.8px_0px_rgba(0,0,0,0.34)] relative
+                         w-[191px] h-[191px] p-[23px_10px_10px_10px] gap-[10px]"
             >
               {/* SVG Border with Linear Gradient */}
               <svg
@@ -240,45 +240,31 @@ export const MasterProblemsSection = () => {
                 />
               </svg>
 
-              <div className="flex flex-col items-center w-full h-full relative z-10">
-                <div className="flex flex-col items-center gap-[20px] w-[119px] mt-[23px]">
-                  {/* Icon */}
-                  <img
-                    src={problem.iconUrl}
-                    alt={problem.title}
-                    className="w-[67px] h-[67px] rounded-[85px]"
-                  />
+              <div className="flex flex-col items-center w-full h-full relative z-10 pt-6 pb-4">
+                {/* Icon - near top with smaller margin */}
+                <img
+                  src={problem.iconUrl}
+                  alt={problem.title}
+                  className="w-[50px] h-[50px] rounded-[85px] mb-4"
+                />
 
-                  {/* Title */}
-                  <div
-                    className={`text-[#40444F] text-center tracking-[0.64px] ${
-                      problem.title === "Не крутит барабан"
-                        ? "w-[180px]"
-                        : "w-[147px]"
-                    }`}
-                    style={{
-                      fontFamily:
-                        "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                      fontSize: "16px",
-                      fontStyle: "italic",
-                      fontWeight: "700",
-                      lineHeight:
-                        problem.title === "Не крутит барабан"
-                          ? "1.1"
-                          : "normal",
-                      whiteSpace:
-                        problem.title === "Не крутит барабан"
-                          ? "nowrap"
-                          : "normal",
-                    }}
-                  >
-                    {problem.title}
-                  </div>
+                {/* Title - in middle with proper spacing */}
+                <div
+                  className="text-[#40444F] text-center px-4 flex-grow flex items-center justify-center"
+                  style={{
+                    fontFamily:
+                      "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                    fontSize: "15px",
+                    fontWeight: "400",
+                    lineHeight: "1.2",
+                  }}
+                >
+                  {problem.title}
                 </div>
 
-                {/* Learn More Button - Fixed at 40px from bottom */}
+                {/* Learn More Button - at bottom */}
                 <div
-                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer w-full absolute bottom-[40px]"
+                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer mt-4"
                   style={{
                     fontFamily:
                       "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
@@ -294,7 +280,7 @@ export const MasterProblemsSection = () => {
                   }}
                   onClick={() => handleOpenModal(problem.articleId)}
                 >
-                  Узнать подробнее
+                  Подробнее
                 </div>
               </div>
             </div>
@@ -319,8 +305,8 @@ export const MasterProblemsSection = () => {
           {allProblems.slice(3).map((problem, index) => (
             <div
               key={index + 3}
-              className={`flex flex-col items-center justify-center bg-white rounded-full shadow-[0px_-3px_9.7px_0px_rgba(0,0,0,0.26)] relative
-                         w-[251px] h-[251px] p-[23px_10px_10px_10px] gap-[10px]
+              className={`flex flex-col items-center justify-center bg-white rounded-full shadow-[0px_-3px_29.8px_0px_rgba(0,0,0,0.34)] relative
+                         w-[191px] h-[191px] p-[23px_10px_10px_10px] gap-[10px]
                          ${index === 0 ? "md:-translate-x-[30px]" : "md:translate-x-[30px]"}`}
             >
               {/* SVG Border with Linear Gradient */}
@@ -350,41 +336,31 @@ export const MasterProblemsSection = () => {
                 />
               </svg>
 
-              <div className="flex flex-col items-center w-full h-full relative z-10">
-                <div className="flex flex-col items-center gap-[20px] w-[119px] mt-[23px]">
-                  {/* Icon */}
-                  <img
-                    src={problem.iconUrl}
-                    alt={problem.title}
-                    className="w-[67px] h-[67px] rounded-[85px]"
-                  />
+              <div className="flex flex-col items-center w-full h-full relative z-10 pt-6 pb-4">
+                {/* Icon - near top with smaller margin */}
+                <img
+                  src={problem.iconUrl}
+                  alt={problem.title}
+                  className="w-[50px] h-[50px] rounded-[85px] mb-4"
+                />
 
-                  {/* Title */}
-                  <div
-                    className={`text-[#40444F] text-center tracking-[0.64px] ${
-                      problem.title === "Сильно шумит при отжиме"
-                        ? "w-[190px]"
-                        : "w-[147px]"
-                    }`}
-                    style={{
-                      fontFamily:
-                        "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                      fontSize: "16px",
-                      fontStyle: "italic",
-                      fontWeight: "700",
-                      lineHeight:
-                        problem.title === "Сильно шумит при отжиме"
-                          ? "1.1"
-                          : "normal",
-                    }}
-                  >
-                    {problem.title}
-                  </div>
+                {/* Title - in middle with proper spacing */}
+                <div
+                  className="text-[#40444F] text-center px-4 flex-grow flex items-center justify-center"
+                  style={{
+                    fontFamily:
+                      "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                    fontSize: "15px",
+                    fontWeight: "400",
+                    lineHeight: "1.2",
+                  }}
+                >
+                  {problem.title}
                 </div>
 
-                {/* Learn More Button - Fixed at 40px from bottom */}
+                {/* Learn More Button - at bottom */}
                 <div
-                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer w-full absolute bottom-[40px]"
+                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer mt-4"
                   style={{
                     fontFamily:
                       "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
@@ -400,7 +376,7 @@ export const MasterProblemsSection = () => {
                   }}
                   onClick={() => handleOpenModal(problem.articleId)}
                 >
-                  Узнать подробнее
+                  Подробнее
                 </div>
               </div>
             </div>
