@@ -8,13 +8,6 @@ interface ProblemCard {
   iconUrl: string;
 }
 
-interface ProblemCard {
-  title: string;
-  description: string;
-  articleId: string;
-  iconUrl: string;
-}
-
 const allProblems: ProblemCard[] = [
   {
     title: "Не сливает воду",
@@ -44,7 +37,7 @@ const allProblems: ProblemCard[] = [
     title: "Протекает",
     description:
       "Одежда остаётся влажной после отжима? Возможно, нужно проверить сливной шланг или вентиляцию",
-    articleId: "protekaet",
+    articleId: "protekaet-voda",
     iconUrl:
       "https://cdn.builder.io/api/v1/assets/810f7024ee0344baaafca74e1ef4c728/group-235-95a6de?format=webp&width=800",
   },
@@ -127,44 +120,59 @@ export const MasterProblemsSection = () => {
           перезвоним.
         </div>
 
-        {/* Wave Background SVG */}
-        <svg
-          width="1910"
-          height="514"
-          viewBox="0 0 1910 514"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute pointer-events-none"
+        {/* Wave Background - Adaptive and Stable */}
+        <div
+          className="absolute pointer-events-none overflow-hidden"
           style={{
-            top: "45%",
+            top: "calc(45% - 13px)", // Опускаем на 12px вниз от предыдущей позиции
             left: "50%",
             width: "100vw",
             height: "90%",
             transform: "translateX(-50%)",
             zIndex: -20,
           }}
-          preserveAspectRatio="none"
         >
-          <path
-            d="M-4 517V71.6489C83.5514 124.852 171.103 178.056 311.671 132.217C452.239 86.3774 630.418 -8.41736 781.093 0.600469C931.769 9.61829 1054.94 122.449 1157.46 160.719C1259.97 198.989 1357.23 112.613 1482.45 76.9931C1607.67 41.3736 1760.83 56.5113 1914 71.6489V517H-4Z"
-            fill="url(#paint0_linear_6454_986)"
-            fillOpacity="0.35"
+          {/* Основная волна - упрощенная и стабильная */}
+          <svg
+            width="100%"
+            height="100%"
+            viewBox="0 0 1910 514"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-full h-full"
+            preserveAspectRatio="xMidYMid slice"
+          >
+            <path
+              d="M-4 517V71.6489C83.5514 124.852 171.103 178.056 311.671 132.217C452.239 86.3774 630.418 -8.41736 781.093 0.600469C931.769 9.61829 1054.94 122.449 1157.46 160.719C1259.97 198.989 1357.23 112.613 1482.45 76.9931C1607.67 41.3736 1760.83 56.5113 1914 71.6489V517H-4Z"
+              fill="url(#paint0_linear_6454_986)"
+              fillOpacity="0.33"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_6454_986"
+                x1="-4"
+                y1="258.5"
+                x2="1914"
+                y2="258.5"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stopColor="#72B5FF" />
+                <stop offset="0.471154" stopColor="#5D93CF" />
+                <stop offset="1" stopColor="#83B2E6" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          {/* Дополнительный градиент для сглаживания на мобильных */}
+          <div
+            className="absolute inset-0 md:hidden"
+            style={{
+              background:
+                "linear-gradient(135deg, rgba(114,181,255,0.1) 0%, rgba(93,147,207,0.2) 47%, rgba(131,178,230,0.1) 100%)",
+              mixBlendMode: "multiply",
+            }}
           />
-          <defs>
-            <linearGradient
-              id="paint0_linear_6454_986"
-              x1="-4"
-              y1="258.5"
-              x2="1914"
-              y2="258.5"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#72B5FF" />
-              <stop offset="0.471154" stopColor="#5D93CF" />
-              <stop offset="1" stopColor="#83B2E6" />
-            </linearGradient>
-          </defs>
-        </svg>
+        </div>
 
         {/* Circular Problems - First 3 */}
         <div className="flex flex-wrap justify-center gap-8 lg:gap-[60px] mb-8 md:mb-10">
@@ -266,26 +274,23 @@ export const MasterProblemsSection = () => {
         <img
           src="https://cdn.builder.io/api/v1/assets/fa85d7386c224d4d9f5093703eaea3c5/image-3822679-f5df36?format=webp&width=800"
           alt="Схема стиральной машины"
-          className="absolute w-[332px] h-[332px] object-contain pointer-events-none -z-10"
+          className="absolute w-[272px] h-[272px] object-contain pointer-events-none -z-10"
           style={{
-            top: "calc(50% + 105px)",
-            left: "calc(50% + 145px)",
-            opacity: "0.67",
+            top: "426px",
+            left: "769px",
+            opacity: "0.57",
             transform: "translate(-50%, -50%)",
           }}
         />
 
-        {/* Circular Problems - Last 2 cards */}
+        {/* Circular Problems - Last 2 cards with responsive positioning */}
         <div className="flex flex-wrap justify-center gap-6 lg:gap-8 max-w-5xl mx-auto">
           {allProblems.slice(3).map((problem, index) => (
             <div
               key={index + 3}
-              className="flex flex-col items-center justify-center bg-white rounded-full shadow-[0px_-3px_9.7px_0px_rgba(0,0,0,0.26)] relative
-                         w-[251px] h-[251px] p-[23px_10px_10px_10px] gap-[10px]"
-              style={{
-                transform:
-                  index === 0 ? "translateX(-30px)" : "translateX(30px)",
-              }}
+              className={`flex flex-col items-center justify-center bg-white rounded-full shadow-[0px_-3px_9.7px_0px_rgba(0,0,0,0.26)] relative
+                         w-[251px] h-[251px] p-[23px_10px_10px_10px] gap-[10px]
+                         ${index === 0 ? "md:-translate-x-[30px]" : "md:translate-x-[30px]"}`}
             >
               {/* SVG Border with Linear Gradient */}
               <svg

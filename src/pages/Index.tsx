@@ -135,7 +135,7 @@ const Index = () => {
               <span className="text-[#72B5FF] block font-normal">Одесса</span>
             </h1>
 
-            <p className="text-[10px] sm:text-[10px] md:text-[15px] font-pt-serif font-normal tracking-[0.7px] md:tracking-[0.75px] max-w-[600px] mx-auto px-4 text-center mt-[20px] md:mt-0">
+            <p className="text-[12px] sm:text-[12px] md:text-[15px] font-pt-serif font-normal tracking-[0.7px] md:tracking-[0.75px] max-w-[600px] mx-auto px-4 text-center mt-[20px] md:mt-0">
               <span className="text-[#40444F] font-normal">
                 Профессиональный ремонт стиральных машин в тот же{" "}
               </span>
@@ -202,7 +202,7 @@ const Index = () => {
 
             {/* Mobile features - horizontal layout under washing machine */}
             <div className="flex flex-row gap-4 justify-center lg:gap-6 xl:gap-8 mt-[30px] sm:mt-5">
-              <div className="flex items-center gap-1 md:gap-2 text-[rgba(76,76,76,0.9)] font-pt-serif text-[10px] md:text-[12px] italic tracking-[5%] whitespace-nowrap">
+              <div className="flex items-center gap-1 md:gap-2 text-[rgba(76,76,76,0.9)] font-pt-serif text-[12px] md:text-[14px] italic tracking-[5%] whitespace-nowrap">
                 <img
                   src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/image-3822595-dfa1a4?format=webp&width=800"
                   alt="Быстро"
@@ -212,7 +212,7 @@ const Index = () => {
                 />
                 Быстро
               </div>
-              <div className="flex items-center gap-1 md:gap-2 text-[rgba(76,76,76,0.9)] font-pt-serif text-[10px] md:text-[12px] italic tracking-[5%] whitespace-nowrap">
+              <div className="flex items-center gap-1 md:gap-2 text-[rgba(76,76,76,0.9)] font-pt-serif text-[12px] md:text-[14px] italic tracking-[5%] whitespace-nowrap">
                 <img
                   src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/2-0616fc?format=webp&width=800"
                   alt="Качественно"
@@ -222,7 +222,7 @@ const Index = () => {
                 />
                 Качественно
               </div>
-              <div className="flex items-center gap-1 md:gap-2 text-[rgba(76,76,76,0.9)] font-pt-serif text-[10px] md:text-[12px] italic tracking-[5%] whitespace-nowrap">
+              <div className="flex items-center gap-1 md:gap-2 text-[rgba(76,76,76,0.9)] font-pt-serif text-[12px] md:text-[14px] italic tracking-[5%] whitespace-nowrap">
                 <img
                   src="https://cdn.builder.io/api/v1/assets/485f32eaccd940459f228ddc7002fb07/3-470ac4?format=webp&width=800"
                   alt="С гарантией"
@@ -466,7 +466,7 @@ const Index = () => {
                 <div className="flex-shrink-0 w-full md:w-auto">
                   <img
                     src="https://cdn.builder.io/api/v1/assets/ab9c320785cc40dbb2ad955655018371/5-234616?format=webp&width=1200"
-                    alt="Опыт мастера по ремонту стиральных машин не менее 5 лет"
+                    alt="Опыт мастера по ремонту стиральных ма��ин не менее 5 лет"
                     className="w-full h-[110px] md:w-[264px] md:h-[179px] object-cover"
                   />
                 </div>
@@ -843,8 +843,8 @@ const Index = () => {
               <p>
                 Работаем только с гарантией. Каждый ремонт начинается с
                 диагностики, после которой мастер подробно объяс��яет, в чём
-                проблема, и предлагает решение. После согласования с клиентом мы
-                начинаем ремонт.
+                проблема, и предлагает решение. Пос��е согласования с клиентом
+                мы начинаем ремонт.
               </p>
 
               <p>
@@ -864,7 +864,7 @@ const Index = () => {
               <p>
                 <strong>
                   Ремонт стиральных машин в Одессе с РемСтирМаш — это быстро,
-                  надёжно и профессионально.
+                  надёжно и профессионал��но.
                 </strong>
               </p>
             </div>
