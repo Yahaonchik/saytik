@@ -6,7 +6,7 @@ interface ProblemCard {
   articleId: string;
 }
 
-const circularProblems: ProblemCard[] = [
+const allProblems: ProblemCard[] = [
   {
     title: "Не крутит",
     description:
@@ -25,9 +25,6 @@ const circularProblems: ProblemCard[] = [
       "Существует несколько признаков того, что у вашей машины проблемы с мотором. Один из них — это если бельё не двигается во время стирки.",
     articleId: "problemy-s-motorom",
   },
-];
-
-const rectangularProblems: ProblemCard[] = [
   {
     title: "Не сушит",
     description:
@@ -35,7 +32,7 @@ const rectangularProblems: ProblemCard[] = [
     articleId: "ne-sushit",
   },
   {
-    title: "Эле��трические неисправности",
+    title: "Электрические неисправности",
     description:
       "Если вы всё проверили, а один или несколько компонентов всё ещё не работают, возможно, проблема в электрике.",
     articleId: "elektricheskie-neispravnosti",
@@ -198,9 +195,9 @@ export const MasterProblemsSection = () => {
           <div>Просто позвоните или оставьте заявку, и мы вам перезвоним.</div>
         </div>
 
-        {/* Circular Problems Grid */}
+        {/* Circular Problems - First 3 */}
         <div className="flex flex-wrap justify-center gap-6 lg:gap-8 mb-8 md:mb-10">
-          {circularProblems.map((problem, index) => (
+          {allProblems.slice(0, 3).map((problem, index) => (
             <div
               key={index}
               className="flex flex-col items-center bg-white rounded-full shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative
@@ -209,78 +206,97 @@ export const MasterProblemsSection = () => {
             >
               {/* Title - Fixed height to ensure single line */}
               <h3
-                className="text-[#40444F] text-center font-pt-serif italic leading-tight tracking-[0.64px] mb-[22px] h-[20px] flex items-center justify-center
+                className="text-[#40444F] text-center leading-tight tracking-[0.64px] mb-[22px] h-[20px] flex items-center justify-center
                            md:text-[16px]
                            text-[15px]"
-                style={{ fontWeight: "700" }}
+                style={{
+                  fontFamily:
+                    "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                  fontStyle: "italic",
+                  fontWeight: "700",
+                }}
               >
                 {problem.title}
               </h3>
 
-              {/* Description - Flexible height */}
+              {/* Description - Flexible height, full width */}
               <p
-                className="text-[#40444F] text-center font-pt-serif font-normal leading-normal tracking-[0.14px] flex-1
+                className="text-[#40444F] text-center font-pt-serif font-normal leading-normal tracking-[0.14px] flex-1 w-full
                           md:text-[14px]
                           text-[13px]"
               >
                 {problem.description}
               </p>
 
-              {/* Learn More Button - Fixed at bottom, moved up 15px */}
+              {/* Learn More Button - Fixed at bottom */}
               <LearnMoreButton articleId={problem.articleId} />
             </div>
           ))}
         </div>
 
-        {/* Rectangular Problems Grid */}
+        {/* Rectangular Problems - Last 2 cards */}
         <div className="flex flex-wrap justify-center gap-6 lg:gap-12 max-w-5xl mx-auto">
-          {rectangularProblems.map((problem, index) => (
+          {allProblems.slice(3).map((problem, index) => (
             <div
-              key={index}
-              className="flex flex-col items-center bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)]
-                         md:w-[448px] md:rounded-[15px] md:gap-[25px] md:p-[17px_30px_2px_30px]
+              key={index + 3}
+              className="flex flex-col items-center bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative
+                         md:w-[448px] md:h-[250px] md:rounded-[15px] md:px-[30px] md:pt-[70px] md:pb-[40px]
                          w-[268px] h-[268px] rounded-full gap-[22px] p-[42px_28px_18px_28px]"
             >
-              {/* Title */}
+              {/* Title - Rectangular style */}
               <h3
-                className="text-[#40444F] text-center font-pt-serif italic leading-tight tracking-[0.64px]
-                           md:w-[458px] md:mb-0 md:leading-normal md:h-auto md:text-[16px]
+                className="text-[#40444F] text-center leading-normal tracking-[0.64px] w-full
+                           md:text-[16px] md:mb-[30px]
                            mb-[22px] h-[20px] flex items-center justify-center text-[15px]"
-                style={{ fontWeight: "700" }}
+                style={{
+                  fontFamily:
+                    "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                  fontStyle: "italic",
+                  fontWeight: "700",
+                }}
               >
                 {problem.title}
               </h3>
 
-              {/* Description */}
+              {/* Description - Rectangular style */}
               <p
-                className="text-[#40444F] text-center font-pt-serif font-normal leading-normal tracking-[0.14px]
-                          md:w-[246px] md:mb-0 md:flex-none md:text-[14px]
-                          flex-1 text-[13px]"
+                className="text-[#40444F] text-center leading-normal tracking-[0.14px] w-full
+                          md:text-[14px] md:px-[20px] md:mb-[30px]
+                          text-[13px] flex-1 flex items-center justify-center"
+                style={{
+                  fontFamily:
+                    "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                  fontWeight: "400",
+                }}
               >
                 {problem.description}
               </p>
 
-              {/* Learn More Button */}
+              {/* Learn More Button - Rectangular style */}
               <div
                 onClick={() =>
                   (window.location.href = `/articles?article=${problem.articleId}`)
                 }
-                className="text-[#72B5FF] text-center font-pt-serif tracking-[0.6px] cursor-pointer
-                          md:text-[15px] md:mt-0
-                          text-[14px] mt-auto"
-                style={{ fontWeight: "700" }}
+                className="text-[#72B5FF] text-center tracking-[0.6px] cursor-pointer transition-opacity hover:opacity-80
+                          md:text-[15px]
+                          text-[14px]"
+                style={{
+                  fontFamily:
+                    "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                  fontWeight: "700",
+                }}
               >
                 Узнать подробнее
               </div>
 
-              {/* Blue Line - SVG - Only on desktop */}
+              {/* Blue Line - Positioned at the very bottom */}
               <svg
                 width="387"
                 height="4"
                 viewBox="0 0 388 4"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-[387px] h-[4px] hidden md:block"
+                className="w-[387px] max-w-full h-[4px] hidden md:block absolute bottom-0 left-1/2 transform -translate-x-1/2"
               >
                 <path d="M0.5 2H387.5" stroke="#72B5FF" strokeWidth="4" />
               </svg>
