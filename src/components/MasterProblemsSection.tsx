@@ -250,19 +250,14 @@ export const MasterProblemsSection = () => {
 
                 {/* Title - centered vertically */}
                 <div
-                  className={`text-[#40444F] text-center tracking-[0.64px] absolute top-1/2 transform -translate-y-1/2 ${
-                    problem.title === "Не крутит барабан"
-                      ? "w-[150px]"
-                      : "w-[130px]"
-                  }`}
+                  className="text-[#40444F] text-center absolute top-1/2 transform -translate-y-1/2 px-2"
                   style={{
                     fontFamily:
                       "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                    fontSize: "16px",
-                    fontStyle: "italic",
-                    fontWeight: "700",
-                    lineHeight:
-                      problem.title === "Не крутит барабан" ? "1.1" : "normal",
+                    fontSize: "15px",
+                    fontWeight: "400",
+                    lineHeight: "1.2",
+                    whiteSpace: "nowrap",
                   }}
                 >
                   {problem.title}
@@ -352,21 +347,14 @@ export const MasterProblemsSection = () => {
 
                 {/* Title - centered vertically */}
                 <div
-                  className={`text-[#40444F] text-center tracking-[0.64px] absolute top-1/2 transform -translate-y-1/2 ${
-                    problem.title === "Сильно шумит при отжиме"
-                      ? "w-[150px]"
-                      : "w-[130px]"
-                  }`}
+                  className="text-[#40444F] text-center absolute top-1/2 transform -translate-y-1/2 px-2"
                   style={{
                     fontFamily:
                       "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                    fontSize: "16px",
-                    fontStyle: "italic",
-                    fontWeight: "700",
-                    lineHeight:
-                      problem.title === "Сильно шумит при отжиме"
-                        ? "1.1"
-                        : "normal",
+                    fontSize: "15px",
+                    fontWeight: "400",
+                    lineHeight: "1.2",
+                    whiteSpace: "nowrap",
                   }}
                 >
                   {problem.title}
