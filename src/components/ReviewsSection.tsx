@@ -61,37 +61,32 @@ const ReadMoreButton: React.FC<{
       {/* Straight underline */}
       <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#72B5FF] transition-opacity duration-300 group-hover:opacity-0"></span>
 
-      {/* Zigzag wavy underline - continuous animation */}
-      <span className="absolute bottom-0 left-0 w-full h-[4px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-hidden">
+      {/* Simple wavy underline - moves right */}
+      <span className="absolute bottom-0 left-0 w-full h-[3px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-hidden">
         <svg
-          width="200%"
-          height="4"
-          viewBox="0 0 200 4"
+          width="300%"
+          height="3"
+          viewBox="0 0 300 3"
           preserveAspectRatio="none"
           className="wave-animation"
         >
           <path
-            d="M-20,2 Q-10,0.5 0,2 Q10,3.5 20,2 Q30,0.5 40,2 Q50,3.5 60,2 Q70,0.5 80,2 Q90,3.5 100,2 Q110,0.5 120,2 Q130,3.5 140,2 Q150,0.5 160,2 Q170,3.5 180,2 Q190,0.5 200,2 Q210,3.5 220,2"
+            d="M0,1.5 Q25,0.5 50,1.5 Q75,2.5 100,1.5 Q125,0.5 150,1.5 Q175,2.5 200,1.5 Q225,0.5 250,1.5 Q275,2.5 300,1.5"
             stroke="#72B5FF"
-            strokeWidth="1.8"
+            strokeWidth="1.5"
             fill="none"
-            className="zigzag-path"
           />
         </svg>
       </span>
 
       <style jsx>{`
         .wave-animation {
-          animation: wave-flow 3s linear infinite;
+          animation: wave-move-right 3s linear infinite;
         }
 
-        .zigzag-path {
-          animation: zigzag-morph 2s ease-in-out infinite;
-        }
-
-        @keyframes wave-flow {
+        @keyframes wave-move-right {
           0% {
-            transform: translateX(-50%);
+            transform: translateX(-33.33%);
           }
           100% {
             transform: translateX(0%);

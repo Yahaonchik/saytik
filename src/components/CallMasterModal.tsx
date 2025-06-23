@@ -138,11 +138,6 @@ export const CallMasterModal: React.FC<CallMasterModalProps> = ({
                       Заказать
                     </button>
                   </form>
-
-                  <p className="text-xs text-gray-500 text-center mt-4">
-                    Нажимая кнопку "Заказать", вы соглашаетесь с обработкой
-                    персональных данных
-                  </p>
                 </div>
               </div>
             </motion.div>

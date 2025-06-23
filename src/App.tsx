@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -10,7 +10,7 @@ import Articles from "./pages/Articles";
 import NotFound from "./pages/NotFound";
 
 const App = () => {
-  const queryClient = React.useMemo(
+  const queryClient = useMemo(
     () =>
       new QueryClient({
         defaultOptions: {
