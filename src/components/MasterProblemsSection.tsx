@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 
 interface ProblemCard {
   title: string;
@@ -28,7 +28,7 @@ const allProblems: ProblemCard[] = [
   {
     title: "Не сушит",
     description:
-      "Одежда остаётся влажной после отжима? Возможно, нужно проверить сливной шланг или вентиляцию.",
+      "Одежда остаётся влажной после отжима? Возможно, нужно проверить сливной шланг или вентиляцию",
     articleId: "ne-sushit",
   },
   {
@@ -139,33 +139,30 @@ const LearnMoreButton: React.FC<{
 
 const BackgroundSVG: React.FC = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    {/* Desktop Background image */}
-    <div className="absolute inset-0 w-full h-full hidden md:block">
-      <img
-        src="https://cdn.builder.io/api/v1/assets/3c425170d2e9403fa39537f962323753/frame-787-1-14126c"
-        alt="Background"
-        className="w-full h-full object-contain object-center opacity-100"
-        style={{
-          imageRendering: "crisp-edges",
-          imageRendering: "-webkit-optimize-contrast",
-        }}
-      />
-    </div>
-
-    {/* Mobile Background image */}
-    <div className="absolute inset-0 w-full h-full block md:hidden">
-      <img
-        src="https://cdn.builder.io/api/v1/assets/32b96ec7a6584934a6eabcd2caf16f2d/group-11-c25ea9?format=webp&width=800"
-        alt="Mobile Background"
-        className="w-full h-full object-cover object-center opacity-100"
-        style={{
-          imageRendering: "crisp-edges",
-          imageRendering: "-webkit-optimize-contrast",
-          minWidth: "100%",
-          minHeight: "100%",
-        }}
-      />
-    </div>
+    <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 1910 920"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-full h-full object-cover"
+      preserveAspectRatio="xMidYMid slice"
+    >
+      <rect width="100%" height="100%" fill="url(#paint0_linear_6396_1083)" />
+      <defs>
+        <linearGradient
+          id="paint0_linear_6396_1083"
+          x1="956"
+          y1="-7.13079e-05"
+          x2="1331"
+          y2="834"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="white" />
+          <stop offset="1" stopColor="#D7E8FA" stopOpacity="0.54" />
+        </linearGradient>
+      </defs>
+    </svg>
   </div>
 );
 
@@ -181,18 +178,14 @@ export const MasterProblemsSection = () => {
         </h2>
 
         {/* Company Description - 2 rows */}
-        <div
-          className="text-center font-pt-serif font-normal leading-normal mb-12 md:mb-16 text-[#40444F] max-w-4xl mx-auto tracking-[0.18px]
-                      md:text-[18px]
-                      text-[15px]"
-        >
-          <div className="mb-2">
+        <div className="text-center font-pt-serif font-normal leading-normal mb-12 md:mb-16 text-[#40444F] max-w-4xl mx-auto tracking-[0.18px] text-[18px]">
+          <p className="mb-2">
             В <span className="text-[#72B5FF]">РемСтирМаш</span> мы заботимся о
-            вашем спокойствии и надёжной работ�� вашей техники. Профессионально
+            вашем спокойствии и надёжной работе вашей техники. Профессионально
             устраняем любые неисправности стиральных машин — от самых простых до
             сложных.
-          </div>
-          <div>Просто позвоните или оставьте заявку, и мы вам перезвоним.</div>
+          </p>
+          <p>Просто позвоните или оставьте заявку, и мы вам перезвоним.</p>
         </div>
 
         {/* Circular Problems - First 3 */}
@@ -206,7 +199,7 @@ export const MasterProblemsSection = () => {
             >
               {/* Title - Fixed height to ensure single line */}
               <h3
-                className="text-[#40444F] text-center leading-tight tracking-[0.64px] mb-[22px] h-[20px] flex items-center justify-center
+                className="text-[#40444F] text-center leading-tight tracking-[0.64px] mb-[7px] h-[20px] flex items-center justify-center
                            md:text-[16px]
                            text-[15px]"
                 style={{
@@ -219,17 +212,20 @@ export const MasterProblemsSection = () => {
                 {problem.title}
               </h3>
 
-              {/* Description - Flexible height, full width */}
-              <p
-                className="text-[#40444F] text-center font-pt-serif font-normal leading-normal tracking-[0.14px] flex-1 w-full
-                          md:text-[14px]
-                          text-[13px]"
+              {/* Description - Fixed 254x95 container, moved up 15px */}
+              <div
+                className="text-[#40444F] text-center font-pt-serif font-normal leading-normal tracking-[0.14px] flex items-center justify-center
+                          md:text-[14px] md:w-[254px] md:h-[95px]
+                          text-[13px] w-full flex-1"
+                style={{ transform: "translateY(-15px)" }}
               >
                 {problem.description}
-              </p>
+              </div>
 
-              {/* Learn More Button - Fixed at bottom */}
-              <LearnMoreButton articleId={problem.articleId} />
+              {/* Learn More Button - Fixed at bottom, moved up 20px */}
+              <div style={{ transform: "translateY(-20px)" }}>
+                <LearnMoreButton articleId={problem.articleId} />
+              </div>
             </div>
           ))}
         </div>
@@ -239,14 +235,14 @@ export const MasterProblemsSection = () => {
           {allProblems.slice(3).map((problem, index) => (
             <div
               key={index + 3}
-              className="flex flex-col items-center bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative
-                         md:w-[448px] md:h-[250px] md:rounded-[15px] md:px-[30px] md:pt-[70px] md:pb-[40px]
+              className="flex flex-col bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative
+                         md:w-[418px] md:h-[220px] md:rounded-[15px] md:p-[30px_30px_50px_30px]
                          w-[268px] h-[268px] rounded-full gap-[22px] p-[42px_28px_18px_28px]"
             >
-              {/* Title - Rectangular style */}
+              {/* Title - Takes needed space */}
               <h3
                 className="text-[#40444F] text-center leading-normal tracking-[0.64px] w-full
-                           md:text-[16px] md:mb-[30px]
+                           md:text-[16px] md:mb-[20px]
                            mb-[22px] h-[20px] flex items-center justify-center text-[15px]"
                 style={{
                   fontFamily:
@@ -258,11 +254,11 @@ export const MasterProblemsSection = () => {
                 {problem.title}
               </h3>
 
-              {/* Description - Rectangular style */}
-              <p
-                className="text-[#40444F] text-center leading-normal tracking-[0.14px] w-full
-                          md:text-[14px] md:px-[20px] md:mb-[30px]
-                          text-[13px] flex-1 flex items-center justify-center"
+              {/* Description - Fills available space evenly */}
+              <div
+                className="text-[#40444F] text-center leading-normal tracking-[0.14px] w-full flex-1 flex items-center justify-center
+                          md:text-[14px] md:px-[20px]
+                          text-[13px]"
                 style={{
                   fontFamily:
                     "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
@@ -270,15 +266,15 @@ export const MasterProblemsSection = () => {
                 }}
               >
                 {problem.description}
-              </p>
+              </div>
 
-              {/* Learn More Button - Rectangular style */}
+              {/* Learn More Button - Fixed at bottom */}
               <div
                 onClick={() =>
                   (window.location.href = `/articles?article=${problem.articleId}`)
                 }
                 className="text-[#72B5FF] text-center tracking-[0.6px] cursor-pointer transition-opacity hover:opacity-80
-                          md:text-[15px]
+                          md:text-[15px] md:mb-[20px]
                           text-[14px]"
                 style={{
                   fontFamily:

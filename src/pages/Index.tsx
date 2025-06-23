@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { WashingMachineDiagnostic } from "@/components/WashingMachineDiagnostic";
@@ -732,7 +732,7 @@ const Index = () => {
             <div className="text-black font-sans text-[13px] md:text-[14px] font-normal leading-[1.6] text-justify space-y-4">
               <p>
                 Стиральная машина — это техника, которая должна работать
-                исправно, отжимать, стирать и радовать стабильностью. Но на
+                исправно, отжимать, стирать �� радовать стабильностью. Но на
                 практике даже самая надёжная техника со временем тр��бу��т
                 внимания. Механические детали изнашиваются, электроника дает
                 сбои, а бытовая нагрузка делает своё дело. Вот почему ремонт
