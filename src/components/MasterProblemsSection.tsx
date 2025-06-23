@@ -210,8 +210,8 @@ export const MasterProblemsSection = () => {
           {allProblems.slice(0, 3).map((problem, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center bg-white rounded-full shadow-[0px_-3px_9.7px_0px_rgba(0,0,0,0.26)] relative
-                         w-[251px] h-[251px] p-[23px_10px_10px_10px] gap-[10px]"
+              className="flex flex-col items-center justify-center bg-white rounded-full shadow-[0px_-3px_29.8px_0px_rgba(0,0,0,0.34)] relative
+                         w-[191px] h-[191px] p-[23px_10px_10px_10px] gap-[10px]"
             >
               {/* SVG Border with Linear Gradient */}
               <svg
@@ -246,7 +246,7 @@ export const MasterProblemsSection = () => {
                   <img
                     src={problem.iconUrl}
                     alt={problem.title}
-                    className="w-[67px] h-[67px] rounded-[85px]"
+                    className="w-[50px] h-[50px] rounded-[85px]"
                   />
 
                   {/* Title */}
@@ -294,7 +294,7 @@ export const MasterProblemsSection = () => {
                   }}
                   onClick={() => handleOpenModal(problem.articleId)}
                 >
-                  Узнать подробнее
+                  Подробнее
                 </div>
               </div>
             </div>
@@ -319,8 +319,8 @@ export const MasterProblemsSection = () => {
           {allProblems.slice(3).map((problem, index) => (
             <div
               key={index + 3}
-              className={`flex flex-col items-center justify-center bg-white rounded-full shadow-[0px_-3px_9.7px_0px_rgba(0,0,0,0.26)] relative
-                         w-[251px] h-[251px] p-[23px_10px_10px_10px] gap-[10px]
+              className={`flex flex-col items-center justify-center bg-white rounded-full shadow-[0px_-3px_29.8px_0px_rgba(0,0,0,0.34)] relative
+                         w-[191px] h-[191px] p-[23px_10px_10px_10px] gap-[10px]
                          ${index === 0 ? "md:-translate-x-[30px]" : "md:translate-x-[30px]"}`}
             >
               {/* SVG Border with Linear Gradient */}
@@ -356,7 +356,7 @@ export const MasterProblemsSection = () => {
                   <img
                     src={problem.iconUrl}
                     alt={problem.title}
-                    className="w-[67px] h-[67px] rounded-[85px]"
+                    className="w-[50px] h-[50px] rounded-[85px]"
                   />
 
                   {/* Title */}
@@ -400,7 +400,7 @@ export const MasterProblemsSection = () => {
                   }}
                   onClick={() => handleOpenModal(problem.articleId)}
                 >
-                  Узнать подробнее
+                  Подробнее
                 </div>
               </div>
             </div>
