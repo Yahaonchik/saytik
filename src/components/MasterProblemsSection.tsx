@@ -241,44 +241,36 @@ export const MasterProblemsSection = () => {
               </svg>
 
               <div className="flex flex-col items-center w-full h-full relative z-10">
-                <div className="flex flex-col items-center gap-[20px] w-[119px] mt-[23px]">
-                  {/* Icon */}
-                  <img
-                    src={problem.iconUrl}
-                    alt={problem.title}
-                    className="w-[50px] h-[50px] rounded-[85px]"
-                  />
+                {/* Icon - 20px from top */}
+                <img
+                  src={problem.iconUrl}
+                  alt={problem.title}
+                  className="w-[50px] h-[50px] rounded-[85px] absolute top-[20px]"
+                />
 
-                  {/* Title */}
-                  <div
-                    className={`text-[#40444F] text-center tracking-[0.64px] ${
-                      problem.title === "Не крутит барабан"
-                        ? "w-[180px]"
-                        : "w-[147px]"
-                    }`}
-                    style={{
-                      fontFamily:
-                        "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                      fontSize: "16px",
-                      fontStyle: "italic",
-                      fontWeight: "700",
-                      lineHeight:
-                        problem.title === "Не крутит барабан"
-                          ? "1.1"
-                          : "normal",
-                      whiteSpace:
-                        problem.title === "Не крутит барабан"
-                          ? "nowrap"
-                          : "normal",
-                    }}
-                  >
-                    {problem.title}
-                  </div>
+                {/* Title - centered vertically */}
+                <div
+                  className={`text-[#40444F] text-center tracking-[0.64px] absolute top-1/2 transform -translate-y-1/2 ${
+                    problem.title === "Не крутит барабан"
+                      ? "w-[150px]"
+                      : "w-[130px]"
+                  }`}
+                  style={{
+                    fontFamily:
+                      "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                    fontSize: "16px",
+                    fontStyle: "italic",
+                    fontWeight: "700",
+                    lineHeight:
+                      problem.title === "Не крутит барабан" ? "1.1" : "normal",
+                  }}
+                >
+                  {problem.title}
                 </div>
 
-                {/* Learn More Button - Fixed at 25px from bottom */}
+                {/* Learn More Button - Fixed at bottom */}
                 <div
-                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer w-full absolute bottom-[25px]"
+                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer w-full absolute bottom-[15px]"
                   style={{
                     fontFamily:
                       "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
@@ -351,40 +343,38 @@ export const MasterProblemsSection = () => {
               </svg>
 
               <div className="flex flex-col items-center w-full h-full relative z-10">
-                <div className="flex flex-col items-center gap-[20px] w-[119px] mt-[23px]">
-                  {/* Icon */}
-                  <img
-                    src={problem.iconUrl}
-                    alt={problem.title}
-                    className="w-[50px] h-[50px] rounded-[85px]"
-                  />
+                {/* Icon - 20px from top */}
+                <img
+                  src={problem.iconUrl}
+                  alt={problem.title}
+                  className="w-[50px] h-[50px] rounded-[85px] absolute top-[20px]"
+                />
 
-                  {/* Title */}
-                  <div
-                    className={`text-[#40444F] text-center tracking-[0.64px] ${
+                {/* Title - centered vertically */}
+                <div
+                  className={`text-[#40444F] text-center tracking-[0.64px] absolute top-1/2 transform -translate-y-1/2 ${
+                    problem.title === "Сильно шумит при отжиме"
+                      ? "w-[150px]"
+                      : "w-[130px]"
+                  }`}
+                  style={{
+                    fontFamily:
+                      "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                    fontSize: "16px",
+                    fontStyle: "italic",
+                    fontWeight: "700",
+                    lineHeight:
                       problem.title === "Сильно шумит при отжиме"
-                        ? "w-[190px]"
-                        : "w-[147px]"
-                    }`}
-                    style={{
-                      fontFamily:
-                        "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                      fontSize: "16px",
-                      fontStyle: "italic",
-                      fontWeight: "700",
-                      lineHeight:
-                        problem.title === "Сильно шумит при отжиме"
-                          ? "1.1"
-                          : "normal",
-                    }}
-                  >
-                    {problem.title}
-                  </div>
+                        ? "1.1"
+                        : "normal",
+                  }}
+                >
+                  {problem.title}
                 </div>
 
-                {/* Learn More Button - Fixed at 25px from bottom */}
+                {/* Learn More Button - Fixed at bottom */}
                 <div
-                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer w-full absolute bottom-[25px]"
+                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer w-full absolute bottom-[15px]"
                   style={{
                     fontFamily:
                       "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
