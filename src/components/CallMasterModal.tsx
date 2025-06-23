@@ -67,15 +67,13 @@ export const CallMasterModal: React.FC<CallMasterModalProps> = ({
               </button>
 
               <div className="h-full flex">
-                {/* Left Side - Master Image (1/3) - scaled down 1.2x */}
+                {/* Left Side - Master Image (1/3) - scaled up 1.2x */}
                 <div className="w-1/3 relative overflow-hidden flex items-center justify-center">
-                  <div className="transform scale-[0.83]">
-                    {" "}
-                    {/* 1/1.2 = 0.83 */}
+                  <div className="transform scale-[1.2]">
                     <img
-                      src="https://cdn.builder.io/api/v1/assets/5f43915d1cce45c489b075510e2da397/acc8f5f7-5bb8-49af-b09c-e7bff01ba6f1-1-e6f200?format=webp&width=800"
+                      src="https://cdn.builder.io/api/v1/assets/08501a79d8aa41e0826372826d01fa38/image-3822663-5e0ae6?format=webp&width=800"
                       alt="Мастер по ремонту стиральных машин"
-                      className="w-full h-full object-cover object-center brightness-110 contrast-105 saturate-110"
+                      className="w-full h-full object-cover object-center"
                     />
                   </div>
                   {/* Gradient overlay to blend with form */}
@@ -135,8 +133,7 @@ export const CallMasterModal: React.FC<CallMasterModalProps> = ({
 
                     <button
                       type="submit"
-                      className="bg-[#72B5FF] text-white font-medium rounded-lg hover:bg-[#5da3ff] transition-colors mx-auto block text-sm"
-                      style={{ width: "242px", height: "40px" }}
+                      className="w-full max-w-[242px] h-[40px] bg-[#72B5FF] text-white font-medium rounded-lg hover:bg-[#5da3ff] transition-colors mx-auto block text-sm"
                     >
                       Заказать
                     </button>

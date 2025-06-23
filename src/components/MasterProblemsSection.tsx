@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { RepairDetailsModal } from "./RepairDetailsModal";
 
 interface ProblemCard {
   title: string;
@@ -28,7 +29,7 @@ const allProblems: ProblemCard[] = [
   {
     title: "Не сушит",
     description:
-      "Одежда остаётся влажной после отжима? Возможно, нужно проверить сливной шланг или вентиляцию",
+      "Оде��да остаётся влажной после отжима? Возможно, нужно проверить сливной шланг или вентиляцию",
     articleId: "ne-sushit",
   },
   {
@@ -42,9 +43,10 @@ const allProblems: ProblemCard[] = [
 const LearnMoreButton: React.FC<{
   articleId: string;
   isRectangular?: boolean;
-}> = ({ articleId, isRectangular = false }) => {
+  onOpenModal: (articleId: string) => void;
+}> = ({ articleId, isRectangular = false, onOpenModal }) => {
   const handleClick = () => {
-    window.location.href = `/articles?article=${articleId}`;
+    onOpenModal(articleId);
   };
 
   if (isRectangular) {
@@ -167,6 +169,21 @@ const BackgroundSVG: React.FC = () => (
 );
 
 export const MasterProblemsSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedArticleId, setSelectedArticleId] = useState<string | null>(
+    null,
+  );
+
+  const handleOpenModal = (articleId: string) => {
+    setSelectedArticleId(articleId);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedArticleId(null);
+  };
+
   return (
     <section className="relative py-16 md:py-20 lg:py-24 overflow-hidden">
       <BackgroundSVG />
@@ -178,14 +195,29 @@ export const MasterProblemsSection = () => {
         </h2>
 
         {/* Company Description - 2 rows */}
-        <div className="text-center font-pt-serif font-normal leading-normal mb-12 md:mb-16 text-[#40444F] max-w-4xl mx-auto tracking-[0.18px] text-[18px]">
-          <p className="mb-2">
+        <div
+          className="text-center font-pt-serif font-normal leading-relaxed mb-12 md:mb-16 text-[#40444F] mx-auto tracking-[0.18px] text-[18px] px-4"
+          style={{
+            maxWidth: "1000px",
+            lineHeight: "1.4",
+            wordSpacing: "-0.05em",
+            letterSpacing: "0.18px",
+          }}
+        >
+          <p
+            className="mb-1"
+            style={{
+              display: "inline",
+            }}
+          >
             В <span className="text-[#72B5FF]">РемСтирМаш</span> мы заботимся о
             вашем спокойствии и надёжной работе вашей техники. Профессионально
             устраняем любые неисправности стиральных машин — от самых простых до
-            сложных.
+            сложных.{" "}
           </p>
-          <p>Просто позвоните или оставьте заявку, и мы вам перезвоним.</p>
+          <span style={{ display: "inline" }}>
+            Просто позвоните или оставьте заявку, и мы вам п��резвоним.
+          </span>
         </div>
 
         {/* Circular Problems - First 3 */}
@@ -212,19 +244,26 @@ export const MasterProblemsSection = () => {
                 {problem.title}
               </h3>
 
-              {/* Description - Fixed 254x95 container, moved up 15px */}
+              {/* Description - Fixed 254x95 container, moved up 35px */}
               <div
                 className="text-[#40444F] text-center font-pt-serif font-normal leading-normal tracking-[0.14px] flex items-center justify-center
                           md:text-[14px] md:w-[254px] md:h-[95px]
                           text-[13px] w-full flex-1"
-                style={{ transform: "translateY(-15px)" }}
+                style={{
+                  transform: "translateY(-35px) !important",
+                  position: "relative",
+                  top: "-10px",
+                }}
               >
                 {problem.description}
               </div>
 
               {/* Learn More Button - Fixed at bottom, moved up 20px */}
               <div style={{ transform: "translateY(-20px)" }}>
-                <LearnMoreButton articleId={problem.articleId} />
+                <LearnMoreButton
+                  articleId={problem.articleId}
+                  onOpenModal={handleOpenModal}
+                />
               </div>
             </div>
           ))}
@@ -254,7 +293,7 @@ export const MasterProblemsSection = () => {
                 {problem.title}
               </h3>
 
-              {/* Description - Fills available space evenly */}
+              {/* Description - Fills available space evenly, moved up 15px */}
               <div
                 className="text-[#40444F] text-center leading-normal tracking-[0.14px] w-full flex-1 flex items-center justify-center
                           md:text-[14px] md:px-[20px]
@@ -263,16 +302,15 @@ export const MasterProblemsSection = () => {
                   fontFamily:
                     "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
                   fontWeight: "400",
+                  transform: "translateY(-15px)",
                 }}
               >
                 {problem.description}
               </div>
 
-              {/* Learn More Button - Fixed at bottom */}
+              {/* Learn More Button - Fixed at bottom, moved up 15px */}
               <div
-                onClick={() =>
-                  (window.location.href = `/articles?article=${problem.articleId}`)
-                }
+                onClick={() => handleOpenModal(problem.articleId)}
                 className="text-[#72B5FF] text-center tracking-[0.6px] cursor-pointer transition-opacity hover:opacity-80
                           md:text-[15px] md:mb-[20px]
                           text-[14px]"
@@ -280,6 +318,7 @@ export const MasterProblemsSection = () => {
                   fontFamily:
                     "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
                   fontWeight: "700",
+                  transform: "translateY(-15px)",
                 }}
               >
                 Узнать подробнее
@@ -300,6 +339,13 @@ export const MasterProblemsSection = () => {
           ))}
         </div>
       </div>
+
+      {/* Modal */}
+      <RepairDetailsModal
+        isOpen={isModalOpen}
+        articleId={selectedArticleId}
+        onClose={handleCloseModal}
+      />
     </section>
   );
 };
