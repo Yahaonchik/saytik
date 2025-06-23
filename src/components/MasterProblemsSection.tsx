@@ -12,7 +12,7 @@ const allProblems: ProblemCard[] = [
   {
     title: "Не сливает воду",
     description:
-      "Это распространённая проблема, связанная с несколькими во��можными причинами. Это может быть мотор или неисправный выключатель крышки.",
+      "Это распространённая проблема, связанная с несколькими возможными причинами. Это может быть мотор или неисправный выключатель крышки.",
     articleId: "ne-slivaet-vodu",
     iconUrl:
       "https://cdn.builder.io/api/v1/assets/810f7024ee0344baaafca74e1ef4c728/group-236-cf2c9b?format=webp&width=800",
@@ -250,11 +250,11 @@ export const MasterProblemsSection = () => {
 
                 {/* Title - centered vertically */}
                 <div
-                  className="text-[#40444F] text-center absolute top-1/2 transform -translate-y-1/2 w-full px-2"
+                  className="text-[#40444F] text-center absolute top-1/2 transform -translate-y-1/2 w-full px-1"
                   style={{
                     fontFamily:
                       "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                    fontSize: "11px",
+                    fontSize: "9px",
                     fontWeight: "400",
                     lineHeight: "1.1",
                     whiteSpace: "nowrap",
@@ -349,11 +349,11 @@ export const MasterProblemsSection = () => {
 
                 {/* Title - centered vertically */}
                 <div
-                  className="text-[#40444F] text-center absolute top-1/2 transform -translate-y-1/2 w-full px-2"
+                  className="text-[#40444F] text-center absolute top-1/2 transform -translate-y-1/2 w-full px-1"
                   style={{
                     fontFamily:
                       "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                    fontSize: "11px",
+                    fontSize: "9px",
                     fontWeight: "400",
                     lineHeight: "1.1",
                     whiteSpace: "nowrap",
