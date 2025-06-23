@@ -114,7 +114,7 @@ export const MasterProblemsSection = () => {
           }}
         >
           В <span className="text-[#72B5FF]">РемСтирМаш</span> мы заботимся о
-          надёжной работе вашей техники во всех уголках Одессы. Профессионально
+          надёжной работе вашей техник�� во всех уголках Одессы. Профессионально
           ус��раняем любые неисправности стиральных машин — от самых простых до
           самых сложных. Просто позвоните или оставьте заявку, и мы вам
           перезвоним.
@@ -240,34 +240,31 @@ export const MasterProblemsSection = () => {
                 />
               </svg>
 
-              <div className="flex flex-col items-center w-full h-full relative z-10">
-                {/* Icon - 20px from top */}
+              <div className="flex flex-col items-center justify-between w-full h-full relative z-10 py-4">
+                {/* Icon - at top */}
                 <img
                   src={problem.iconUrl}
                   alt={problem.title}
-                  className="w-[50px] h-[50px] rounded-[85px] absolute top-[20px]"
+                  className="w-[50px] h-[50px] rounded-[85px] mt-2"
                 />
 
-                {/* Title - centered vertically */}
+                {/* Title - in middle */}
                 <div
-                  className="text-[#40444F] text-center absolute top-1/2 transform -translate-y-1/2 w-full px-1"
+                  className="text-[#40444F] text-center px-4 flex-1 flex items-center justify-center"
                   style={{
                     fontFamily:
                       "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                    fontSize: "9px",
+                    fontSize: "15px",
                     fontWeight: "400",
-                    lineHeight: "1.1",
-                    whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
+                    lineHeight: "1.2",
                   }}
                 >
                   {problem.title}
                 </div>
 
-                {/* Learn More Button - Fixed at bottom */}
+                {/* Learn More Button - at bottom */}
                 <div
-                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer w-full absolute bottom-[15px]"
+                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer mb-2"
                   style={{
                     fontFamily:
                       "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
@@ -339,34 +336,31 @@ export const MasterProblemsSection = () => {
                 />
               </svg>
 
-              <div className="flex flex-col items-center w-full h-full relative z-10">
-                {/* Icon - 20px from top */}
+              <div className="flex flex-col items-center justify-between w-full h-full relative z-10 py-4">
+                {/* Icon - at top */}
                 <img
                   src={problem.iconUrl}
                   alt={problem.title}
-                  className="w-[50px] h-[50px] rounded-[85px] absolute top-[20px]"
+                  className="w-[50px] h-[50px] rounded-[85px] mt-2"
                 />
 
-                {/* Title - centered vertically */}
+                {/* Title - in middle */}
                 <div
-                  className="text-[#40444F] text-center absolute top-1/2 transform -translate-y-1/2 w-full px-1"
+                  className="text-[#40444F] text-center px-4 flex-1 flex items-center justify-center"
                   style={{
                     fontFamily:
                       "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                    fontSize: "9px",
+                    fontSize: "15px",
                     fontWeight: "400",
-                    lineHeight: "1.1",
-                    whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
+                    lineHeight: "1.2",
                   }}
                 >
                   {problem.title}
                 </div>
 
-                {/* Learn More Button - Fixed at bottom */}
+                {/* Learn More Button - at bottom */}
                 <div
-                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer w-full absolute bottom-[15px]"
+                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer mb-2"
                   style={{
                     fontFamily:
                       "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
