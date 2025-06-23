@@ -250,14 +250,16 @@ export const MasterProblemsSection = () => {
 
                 {/* Title - centered vertically */}
                 <div
-                  className="text-[#40444F] text-center absolute top-1/2 transform -translate-y-1/2 px-2"
+                  className="text-[#40444F] text-center absolute top-1/2 transform -translate-y-1/2 w-full px-3"
                   style={{
                     fontFamily:
                       "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                    fontSize: "15px",
+                    fontSize: "13px",
                     fontWeight: "400",
                     lineHeight: "1.2",
                     whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
                   }}
                 >
                   {problem.title}
@@ -347,14 +349,16 @@ export const MasterProblemsSection = () => {
 
                 {/* Title - centered vertically */}
                 <div
-                  className="text-[#40444F] text-center absolute top-1/2 transform -translate-y-1/2 px-2"
+                  className="text-[#40444F] text-center absolute top-1/2 transform -translate-y-1/2 w-full px-3"
                   style={{
                     fontFamily:
                       "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                    fontSize: "15px",
+                    fontSize: "13px",
                     fontWeight: "400",
                     lineHeight: "1.2",
                     whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
                   }}
                 >
                   {problem.title}
