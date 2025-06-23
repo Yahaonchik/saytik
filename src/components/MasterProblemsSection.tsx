@@ -5,120 +5,58 @@ interface ProblemCard {
   title: string;
   description: string;
   articleId: string;
+  iconUrl: string;
+}
+
+interface ProblemCard {
+  title: string;
+  description: string;
+  articleId: string;
+  iconUrl: string;
 }
 
 const allProblems: ProblemCard[] = [
   {
-    title: "Не крутит",
+    title: "Не сливает воду",
     description:
       "Это распространённая проблема, связанная с несколькими возможными причинами. Это может быть мотор или неисправный выключатель крышки.",
-    articleId: "ne-krutit-baraban",
+    articleId: "ne-slivaet-vodu",
+    iconUrl:
+      "https://cdn.builder.io/api/v1/assets/810f7024ee0344baaafca74e1ef4c728/group-236-cf2c9b?format=webp&width=800",
   },
   {
-    title: "Протекает вода",
+    title: "Не включается",
     description:
       "Это может быть вызвано засорённым шлангом или проблемой с насосом, который, возможно, придётся заменить.",
-    articleId: "protekaet-voda",
+    articleId: "ne-vklyuchaetsya",
+    iconUrl:
+      "https://cdn.builder.io/api/v1/assets/810f7024ee0344baaafca74e1ef4c728/image-3822682-0e6728?format=webp&width=800",
   },
   {
-    title: "Проблемы с мотором",
+    title: "Не крутит барабан",
     description:
       "Существует несколько признаков того, что у вашей машины проблемы с мотором. Один из них — это если бельё не двигается во время стирки.",
-    articleId: "problemy-s-motorom",
+    articleId: "ne-krutit-baraban",
+    iconUrl:
+      "https://cdn.builder.io/api/v1/assets/810f7024ee0344baaafca74e1ef4c728/image-3822683-ac5df0?format=webp&width=800",
   },
   {
-    title: "Не сушит",
+    title: "Протекает",
     description:
-      "Оде��да остаётся влажной после отжима? Возможно, нужно проверить слив��ой шланг или вентиляцию",
-    articleId: "ne-sushit",
+      "Одежда остаётся влажной после отжима? Возможно, нужно проверить сливной шланг или вентиляцию",
+    articleId: "protekaet",
+    iconUrl:
+      "https://cdn.builder.io/api/v1/assets/810f7024ee0344baaafca74e1ef4c728/group-235-95a6de?format=webp&width=800",
   },
   {
-    title: "Электрические неисправности",
+    title: "Сильно шумит при отжиме",
     description:
       "Если вы всё проверили, а один или несколько компонентов всё ещё не работают, возможно, проблема в электрике.",
-    articleId: "elektricheskie-neispravnosti",
+    articleId: "shumit-pri-otzhime",
+    iconUrl:
+      "https://cdn.builder.io/api/v1/assets/810f7024ee0344baaafca74e1ef4c728/image-3822684-6d1a7c?format=webp&width=800",
   },
 ];
-
-const LearnMoreButton: React.FC<{
-  articleId: string;
-  isRectangular?: boolean;
-  onOpenModal: (articleId: string) => void;
-}> = ({ articleId, isRectangular = false, onOpenModal }) => {
-  const handleClick = () => {
-    onOpenModal(articleId);
-  };
-
-  if (isRectangular) {
-    // Simple div for rectangular cards to avoid any button styling conflicts
-    return (
-      <div className="text-center mt-auto">
-        <div
-          onClick={handleClick}
-          className="text-[#72B5FF] font-pt-serif font-bold text-[15px] tracking-[0.6px] cursor-pointer transition-opacity hover:opacity-80"
-          style={{
-            textDecoration: "none",
-            border: "none",
-            outline: "none",
-            background: "none",
-          }}
-        >
-          Узнать подробнее
-        </div>
-      </div>
-    );
-  }
-
-  // Animated button for circular cards
-  return (
-    <div className="text-center mt-auto">
-      <button
-        onClick={handleClick}
-        className="inline-block text-[#72B5FF] font-pt-serif font-bold tracking-[0.56px] relative group transition-all duration-200 cursor-pointer
-                 md:text-[14px]
-                 text-[14px]"
-      >
-        <span className="relative z-10">Узнать подробнее</span>
-
-        {/* Straight underline */}
-        <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#72B5FF] transition-opacity duration-300 group-hover:opacity-0"></span>
-
-        {/* Simple wavy underline - moves right */}
-        <span className="absolute bottom-0 left-0 w-full h-[3px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-hidden">
-          <svg
-            width="300%"
-            height="3"
-            viewBox="0 0 300 3"
-            preserveAspectRatio="none"
-            className="wave-animation"
-          >
-            <path
-              d="M0,1.5 Q25,0.5 50,1.5 Q75,2.5 100,1.5 Q125,0.5 150,1.5 Q175,2.5 200,1.5 Q225,0.5 250,1.5 Q275,2.5 300,1.5"
-              stroke="#72B5FF"
-              strokeWidth="1.5"
-              fill="none"
-            />
-          </svg>
-        </span>
-      </button>
-
-      <style jsx>{`
-        .wave-animation {
-          animation: wave-move-right 3s linear infinite;
-        }
-
-        @keyframes wave-move-right {
-          0% {
-            transform: translateX(-33.33%);
-          }
-          100% {
-            transform: translateX(0%);
-          }
-        }
-      `}</style>
-    </div>
-  );
-};
 
 const BackgroundSVG: React.FC = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -170,35 +108,23 @@ export const MasterProblemsSection = () => {
       <BackgroundSVG />
 
       <div className="relative z-10 container mx-auto px-4 max-w-7xl">
-        {/* Main Title */}
-        <h2 className="text-center text-[16px] sm:text-[18px] md:text-[20px] font-crisp font-medium tracking-[0.8px] mb-6 text-black mx-auto leading-tight max-w-2xl">
-          Будем рады Вам помочь с любым видом проблемы
-        </h2>
-
-        {/* Company Description - 2 rows */}
+        {/* Company Description */}
         <div
-          className="text-center font-pt-serif font-normal leading-relaxed mb-12 md:mb-16 text-[#40444F] mx-auto tracking-[0.18px] text-[18px] px-4"
+          className="text-center text-[#40444F] mx-auto mb-12 md:mb-16 px-4"
           style={{
             maxWidth: "1000px",
+            fontFamily: "Georgia, serif",
+            fontSize: "18px",
+            fontWeight: "400",
             lineHeight: "1.4",
-            wordSpacing: "-0.05em",
-            letterSpacing: "0.18px",
+            letterSpacing: "1%",
           }}
         >
-          <p
-            className="mb-1"
-            style={{
-              display: "inline",
-            }}
-          >
-            В <span className="text-[#72B5FF]">Р��мСтирМаш</span> мы заботимся о
-            вашем спокойствии и надёжной работе вашей техники. Профессионально
-            устраняем любые неисправности стиральных машин — от самых простых до
-            сл��жных.{" "}
-          </p>
-          <span style={{ display: "inline" }}>
-            Просто позвоните или оставьте заявку, и мы вам п��резвоним.
-          </span>
+          В <span className="text-[#72B5FF]">РемСтирМаш</span> мы заботимся о
+          надёжной работе вашей техники во всех уголках Одессы. Профессионально
+          устраняем любые неисправности стиральных машин — от самых простых до
+          самых сложных. Просто позвоните или оставьте заявку, и мы вам
+          перезвоним.
         </div>
 
         {/* Wave Background SVG */}
@@ -241,49 +167,96 @@ export const MasterProblemsSection = () => {
         </svg>
 
         {/* Circular Problems - First 3 */}
-        <div className="flex flex-wrap justify-center gap-6 lg:gap-8 mb-8 md:mb-10">
+        <div className="flex flex-wrap justify-center gap-8 lg:gap-10 mb-8 md:mb-10">
           {allProblems.slice(0, 3).map((problem, index) => (
             <div
               key={index}
-              className="flex flex-col items-center bg-white rounded-full shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative
-                         md:w-[281px] md:h-[281px] md:p-[44px_30px_20px_30px]
-                         w-[268px] h-[268px] p-[42px_28px_18px_28px]"
+              className="flex flex-col items-center justify-center bg-white rounded-full shadow-[0px_-3px_9.7px_0px_rgba(0,0,0,0.26)] relative
+                         w-[251px] h-[251px] p-[23px_10px_10px_10px] gap-[10px]"
             >
-              {/* Title - Fixed height to ensure single line */}
-              <h3
-                className="text-[#40444F] text-center leading-tight tracking-[0.64px] mb-[7px] h-[20px] flex items-center justify-center
-                           md:text-[16px]
-                           text-[15px]"
-                style={{
-                  fontFamily:
-                    "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                  fontStyle: "italic",
-                  fontWeight: "700",
-                }}
+              {/* SVG Border with Linear Gradient */}
+              <svg
+                className="absolute inset-0 w-full h-full pointer-events-none"
+                style={{ zIndex: 1, opacity: 0.6 }}
               >
-                {problem.title}
-              </h3>
-
-              {/* Description - Fixed 254x95 container, moved up 35px */}
-              <div
-                className="text-[#40444F] text-center font-pt-serif font-normal leading-normal tracking-[0.14px] flex items-center justify-center
-                          md:text-[14px] md:w-[254px] md:h-[95px]
-                          text-[13px] w-full flex-1"
-                style={{
-                  transform: "translateY(-35px) !important",
-                  position: "relative",
-                  top: "-10px",
-                }}
-              >
-                {problem.description}
-              </div>
-
-              {/* Learn More Button - Fixed at bottom, moved up 20px */}
-              <div style={{ transform: "translateY(-20px)" }}>
-                <LearnMoreButton
-                  articleId={problem.articleId}
-                  onOpenModal={handleOpenModal}
+                <defs>
+                  <linearGradient
+                    id={`borderGradient${index}`}
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stopColor="rgba(255,255,255,0)" />
+                    <stop offset="100%" stopColor="rgba(114,181,255,1)" />
+                  </linearGradient>
+                </defs>
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="calc(50% - 1.5px)"
+                  fill="none"
+                  stroke={`url(#borderGradient${index})`}
+                  strokeWidth="3"
                 />
+              </svg>
+
+              <div className="flex flex-col items-center w-full h-full relative z-10">
+                <div className="flex flex-col items-center gap-[20px] w-[119px] mt-[23px]">
+                  {/* Icon */}
+                  <img
+                    src={problem.iconUrl}
+                    alt={problem.title}
+                    className="w-[67px] h-[67px] rounded-[85px]"
+                  />
+
+                  {/* Title */}
+                  <div
+                    className={`text-[#40444F] text-center tracking-[0.64px] ${
+                      problem.title === "Не крутит барабан"
+                        ? "w-[180px]"
+                        : "w-[147px]"
+                    }`}
+                    style={{
+                      fontFamily:
+                        "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                      fontSize: "16px",
+                      fontStyle: "italic",
+                      fontWeight: "700",
+                      lineHeight:
+                        problem.title === "Не крутит барабан"
+                          ? "1.1"
+                          : "normal",
+                      whiteSpace:
+                        problem.title === "Не крутит барабан"
+                          ? "nowrap"
+                          : "normal",
+                    }}
+                  >
+                    {problem.title}
+                  </div>
+                </div>
+
+                {/* Learn More Button - Fixed at 40px from bottom */}
+                <div
+                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer w-full absolute bottom-[40px]"
+                  style={{
+                    fontFamily:
+                      "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                    fontSize: "14px",
+                    fontWeight: "700",
+                    color: "#72B5FF",
+                    textDecoration: "underline",
+                    textDecorationStyle: "solid",
+                    textDecorationSkipInk: "none",
+                    textDecorationThickness: "auto",
+                    textUnderlineOffset: "auto",
+                    textUnderlinePosition: "from-font",
+                  }}
+                  onClick={() => handleOpenModal(problem.articleId)}
+                >
+                  Узнать подробнее
+                </div>
               </div>
             </div>
           ))}
@@ -293,7 +266,7 @@ export const MasterProblemsSection = () => {
         <img
           src="https://cdn.builder.io/api/v1/assets/fa85d7386c224d4d9f5093703eaea3c5/image-3822679-f5df36?format=webp&width=800"
           alt="Схема стиральной машины"
-          className="absolute w-[209px] h-[209px] object-contain pointer-events-none -z-10"
+          className="absolute w-[332px] h-[332px] object-contain pointer-events-none -z-10"
           style={{
             top: "calc(50% + 105px)",
             left: "calc(50% + 145px)",
@@ -302,72 +275,98 @@ export const MasterProblemsSection = () => {
           }}
         />
 
-        {/* Rectangular Problems - Last 2 cards */}
-        <div className="flex flex-wrap justify-center gap-6 lg:gap-12 max-w-5xl mx-auto">
+        {/* Circular Problems - Last 2 cards */}
+        <div className="flex flex-wrap justify-center gap-6 lg:gap-8 max-w-5xl mx-auto">
           {allProblems.slice(3).map((problem, index) => (
             <div
               key={index + 3}
-              className="flex flex-col bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative
-                         md:w-[418px] md:h-[220px] md:rounded-[15px] md:p-[30px_30px_50px_30px]
-                         w-[268px] h-[268px] rounded-full gap-[22px] p-[42px_28px_18px_28px]"
+              className="flex flex-col items-center justify-center bg-white rounded-full shadow-[0px_-3px_9.7px_0px_rgba(0,0,0,0.26)] relative
+                         w-[251px] h-[251px] p-[23px_10px_10px_10px] gap-[10px]"
+              style={{
+                transform:
+                  index === 0 ? "translateX(-30px)" : "translateX(30px)",
+              }}
             >
-              {/* Title - Takes needed space */}
-              <h3
-                className="text-[#40444F] text-center leading-normal tracking-[0.64px] w-full
-                           md:text-[16px] md:mb-[20px]
-                           mb-[22px] h-[20px] flex items-center justify-center text-[15px]"
-                style={{
-                  fontFamily:
-                    "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                  fontStyle: "italic",
-                  fontWeight: "700",
-                }}
-              >
-                {problem.title}
-              </h3>
-
-              {/* Description - Fills available space evenly, moved up 15px */}
-              <div
-                className="text-[#40444F] text-center leading-normal tracking-[0.14px] w-full flex-1 flex items-center justify-center
-                          md:text-[14px] md:px-[20px]
-                          text-[13px]"
-                style={{
-                  fontFamily:
-                    "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                  fontWeight: "400",
-                  transform: "translateY(-15px)",
-                }}
-              >
-                {problem.description}
-              </div>
-
-              {/* Learn More Button - Fixed at bottom, moved up 15px */}
-              <div
-                onClick={() => handleOpenModal(problem.articleId)}
-                className="text-[#72B5FF] text-center tracking-[0.6px] cursor-pointer transition-opacity hover:opacity-80
-                          md:text-[15px] md:mb-[20px]
-                          text-[14px]"
-                style={{
-                  fontFamily:
-                    "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                  fontWeight: "700",
-                  transform: "translateY(-15px)",
-                }}
-              >
-                Узнать подробнее
-              </div>
-
-              {/* Blue Line - Positioned at the very bottom */}
+              {/* SVG Border with Linear Gradient */}
               <svg
-                width="387"
-                height="4"
-                viewBox="0 0 388 4"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-[387px] max-w-full h-[4px] hidden md:block absolute bottom-0 left-1/2 transform -translate-x-1/2"
+                className="absolute inset-0 w-full h-full pointer-events-none"
+                style={{ zIndex: 1, opacity: 0.6 }}
               >
-                <path d="M0.5 2H387.5" stroke="#72B5FF" strokeWidth="4" />
+                <defs>
+                  <linearGradient
+                    id={`borderGradient${index + 3}`}
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stopColor="rgba(255,255,255,0)" />
+                    <stop offset="100%" stopColor="rgba(114,181,255,1)" />
+                  </linearGradient>
+                </defs>
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="calc(50% - 1.5px)"
+                  fill="none"
+                  stroke={`url(#borderGradient${index + 3})`}
+                  strokeWidth="3"
+                />
               </svg>
+
+              <div className="flex flex-col items-center w-full h-full relative z-10">
+                <div className="flex flex-col items-center gap-[20px] w-[119px] mt-[23px]">
+                  {/* Icon */}
+                  <img
+                    src={problem.iconUrl}
+                    alt={problem.title}
+                    className="w-[67px] h-[67px] rounded-[85px]"
+                  />
+
+                  {/* Title */}
+                  <div
+                    className={`text-[#40444F] text-center tracking-[0.64px] ${
+                      problem.title === "Сильно шумит при отжиме"
+                        ? "w-[190px]"
+                        : "w-[147px]"
+                    }`}
+                    style={{
+                      fontFamily:
+                        "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                      fontSize: "16px",
+                      fontStyle: "italic",
+                      fontWeight: "700",
+                      lineHeight:
+                        problem.title === "Сильно шумит при отжиме"
+                          ? "1.1"
+                          : "normal",
+                    }}
+                  >
+                    {problem.title}
+                  </div>
+                </div>
+
+                {/* Learn More Button - Fixed at 40px from bottom */}
+                <div
+                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer w-full absolute bottom-[40px]"
+                  style={{
+                    fontFamily:
+                      "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                    fontSize: "14px",
+                    fontWeight: "700",
+                    color: "#72B5FF",
+                    textDecoration: "underline",
+                    textDecorationStyle: "solid",
+                    textDecorationSkipInk: "none",
+                    textDecorationThickness: "auto",
+                    textUnderlineOffset: "auto",
+                    textUnderlinePosition: "from-font",
+                  }}
+                  onClick={() => handleOpenModal(problem.articleId)}
+                >
+                  Узнать подробнее
+                </div>
+              </div>
             </div>
           ))}
         </div>
