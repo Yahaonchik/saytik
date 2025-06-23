@@ -254,10 +254,11 @@ export const MasterProblemsSection = () => {
         <img
           src="https://cdn.builder.io/api/v1/assets/fa85d7386c224d4d9f5093703eaea3c5/image-3822679-f5df36?format=webp&width=800"
           alt="Схема стиральной машины"
-          className="absolute w-[209px] h-[209px] object-contain opacity-30 pointer-events-none z-0"
+          className="absolute w-[209px] h-[209px] object-contain pointer-events-none -z-10"
           style={{
-            top: "50%",
-            left: "50%",
+            top: "calc(50% + 140px)",
+            left: "calc(50% + 70px)",
+            opacity: "0.44",
             transform: "translate(-50%, -50%)",
           }}
         />
