@@ -115,7 +115,7 @@ export const MasterProblemsSection = () => {
         >
           В <span className="text-[#72B5FF]">РемСтирМаш</span> мы заботимся о
           надёжной работе вашей техники во всех уголках Одессы. Профессионально
-          устраняем любые неисправности стиральных машин — от самых простых до
+          ус��раняем любые неисправности стиральных машин — от самых простых до
           самых сложных. Просто позвоните или оставьте заявку, и мы вам
           перезвоним.
         </div>
@@ -132,28 +132,59 @@ export const MasterProblemsSection = () => {
             zIndex: -20,
           }}
         >
-          {/* Основная волна - упрощенная и стабильная */}
+          {/* Десктопная волна */}
           <svg
             width="100%"
             height="100%"
             viewBox="0 0 1910 514"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="w-full h-full"
+            className="w-full h-full hidden md:block"
             preserveAspectRatio="xMidYMid slice"
           >
             <path
               d="M-4 517V71.6489C83.5514 124.852 171.103 178.056 311.671 132.217C452.239 86.3774 630.418 -8.41736 781.093 0.600469C931.769 9.61829 1054.94 122.449 1157.46 160.719C1259.97 198.989 1357.23 112.613 1482.45 76.9931C1607.67 41.3736 1760.83 56.5113 1914 71.6489V517H-4Z"
-              fill="url(#paint0_linear_6454_986)"
+              fill="url(#paint0_linear_6454_986_desktop)"
               fillOpacity="0.33"
             />
             <defs>
               <linearGradient
-                id="paint0_linear_6454_986"
+                id="paint0_linear_6454_986_desktop"
                 x1="-4"
                 y1="258.5"
                 x2="1914"
                 y2="258.5"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stopColor="#72B5FF" />
+                <stop offset="0.471154" stopColor="#5D93CF" />
+                <stop offset="1" stopColor="#83B2E6" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          {/* Мобильная волна с более выраженными изгибами */}
+          <svg
+            width="100%"
+            height="100%"
+            viewBox="0 0 400 300"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-full h-full block md:hidden"
+            preserveAspectRatio="xMidYMid slice"
+          >
+            <path
+              d="M-10 300V90C30 130 70 170 120 120C170 70 220 30 270 60C320 90 360 140 400 90V300H-10Z"
+              fill="url(#paint0_linear_6454_986_mobile)"
+              fillOpacity="0.33"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_6454_986_mobile"
+                x1="-10"
+                y1="150"
+                x2="400"
+                y2="150"
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#72B5FF" />
@@ -276,8 +307,8 @@ export const MasterProblemsSection = () => {
           alt="Схема стиральной машины"
           className="absolute w-[272px] h-[272px] object-contain pointer-events-none -z-10"
           style={{
-            top: "426px",
-            left: "769px",
+            top: "calc(45% + 130px)",
+            left: "calc(50% + 120px)",
             opacity: "0.57",
             transform: "translate(-50%, -50%)",
           }}

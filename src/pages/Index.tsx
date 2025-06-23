@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { WashingMachineDiagnostic } from "@/components/WashingMachineDiagnostic";
@@ -11,8 +11,7 @@ import { MobileMenu } from "@/components/MobileMenu";
 import { MasterProblemsSection } from "@/components/MasterProblemsSection";
 
 const Index = () => {
-  const [isCallMasterModalOpen, setIsCallMasterModalOpen] =
-    React.useState(false);
+  const [isCallMasterModalOpen, setIsCallMasterModalOpen] = useState(false);
 
   const scrollToDiagnosis = () => {
     const element = document.getElementById("online-diagnosis");
@@ -825,7 +824,7 @@ const Index = () => {
               </h3>
 
               <p>
-                Сервисный центр РемСтирМаш — это современная профессиональная
+                Сервисный центр РемСтирМаш — это современная про��ессиональная
                 мастерская по ремонту стиральных машин в Одессе, где оказываются
                 все виды услуг: от быстрой замены деталей до глубокого ремонта с
                 полной разборкой. Мы берёмся за любую технику: от массовых
@@ -863,7 +862,7 @@ const Index = () => {
 
               <p>
                 <strong>
-                  Ремонт стиральных машин в Одессе с РемСтирМаш — это быстро,
+                  Ремонт стиральных машин в Одессе с РемСтир��аш — это быстро,
                   надёжно и профессионал��но.
                 </strong>
               </p>
