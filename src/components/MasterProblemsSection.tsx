@@ -276,9 +276,9 @@ export const MasterProblemsSection = () => {
                   </div>
                 </div>
 
-                {/* Learn More Button - Fixed at 40px from bottom */}
+                {/* Learn More Button - Fixed at 25px from bottom */}
                 <div
-                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer w-full absolute bottom-[40px]"
+                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer w-full absolute bottom-[25px]"
                   style={{
                     fontFamily:
                       "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
@@ -382,9 +382,9 @@ export const MasterProblemsSection = () => {
                   </div>
                 </div>
 
-                {/* Learn More Button - Fixed at 40px from bottom */}
+                {/* Learn More Button - Fixed at 25px from bottom */}
                 <div
-                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer w-full absolute bottom-[40px]"
+                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer w-full absolute bottom-[25px]"
                   style={{
                     fontFamily:
                       "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
