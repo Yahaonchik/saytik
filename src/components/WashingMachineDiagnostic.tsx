@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -576,7 +576,7 @@ function calculateProbabilities(brand: string, age: string, problem: string) {
       adjustedProbability *= brandCoeff.mechanics * ageCoeff.mechanics;
     }
 
-    // Корректируем цену в зависимости от бренда
+    // Корректируем цену в зависимости от б��енда
     if (cause.price > 0) {
       adjustedPrice = Math.round(cause.price * brandCoeff.price);
     }

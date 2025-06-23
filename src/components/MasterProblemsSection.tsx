@@ -136,10 +136,10 @@ export const MasterProblemsSection = () => {
           xmlns="http://www.w3.org/2000/svg"
           className="absolute pointer-events-none"
           style={{
-            bottom: 0,
+            top: "45%",
             left: "50%",
             width: "100vw",
-            height: "60%",
+            height: "90%",
             transform: "translateX(-50%)",
             zIndex: -20,
           }}
@@ -167,7 +167,7 @@ export const MasterProblemsSection = () => {
         </svg>
 
         {/* Circular Problems - First 3 */}
-        <div className="flex flex-wrap justify-center gap-8 lg:gap-10 mb-8 md:mb-10">
+        <div className="flex flex-wrap justify-center gap-8 lg:gap-[60px] mb-8 md:mb-10">
           {allProblems.slice(0, 3).map((problem, index) => (
             <div
               key={index}
