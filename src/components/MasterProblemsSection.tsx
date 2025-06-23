@@ -191,15 +191,54 @@ export const MasterProblemsSection = () => {
               display: "inline",
             }}
           >
-            В <span className="text-[#72B5FF]">РемСтирМаш</span> мы заботимся о
+            В <span className="text-[#72B5FF]">Р��мСтирМаш</span> мы заботимся о
             вашем спокойствии и надёжной работе вашей техники. Профессионально
             устраняем любые неисправности стиральных машин — от самых простых до
-            сложных.{" "}
+            сл��жных.{" "}
           </p>
           <span style={{ display: "inline" }}>
             Просто позвоните или оставьте заявку, и мы вам п��резвоним.
           </span>
         </div>
+
+        {/* Wave Background SVG */}
+        <svg
+          width="1910"
+          height="514"
+          viewBox="0 0 1910 514"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute pointer-events-none"
+          style={{
+            bottom: 0,
+            left: "50%",
+            width: "100vw",
+            height: "60%",
+            transform: "translateX(-50%)",
+            zIndex: -20,
+          }}
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M-4 517V71.6489C83.5514 124.852 171.103 178.056 311.671 132.217C452.239 86.3774 630.418 -8.41736 781.093 0.600469C931.769 9.61829 1054.94 122.449 1157.46 160.719C1259.97 198.989 1357.23 112.613 1482.45 76.9931C1607.67 41.3736 1760.83 56.5113 1914 71.6489V517H-4Z"
+            fill="url(#paint0_linear_6454_986)"
+            fillOpacity="0.35"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear_6454_986"
+              x1="-4"
+              y1="258.5"
+              x2="1914"
+              y2="258.5"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="#72B5FF" />
+              <stop offset="0.471154" stopColor="#5D93CF" />
+              <stop offset="1" stopColor="#83B2E6" />
+            </linearGradient>
+          </defs>
+        </svg>
 
         {/* Circular Problems - First 3 */}
         <div className="flex flex-wrap justify-center gap-6 lg:gap-8 mb-8 md:mb-10">
@@ -256,9 +295,9 @@ export const MasterProblemsSection = () => {
           alt="Схема стиральной машины"
           className="absolute w-[209px] h-[209px] object-contain pointer-events-none -z-10"
           style={{
-            top: "calc(50% + 140px)",
-            left: "calc(50% + 70px)",
-            opacity: "0.44",
+            top: "calc(50% + 105px)",
+            left: "calc(50% + 145px)",
+            opacity: "0.67",
             transform: "translate(-50%, -50%)",
           }}
         />
