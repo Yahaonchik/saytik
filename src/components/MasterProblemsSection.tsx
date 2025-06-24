@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { RepairDetailsModal } from "./RepairDetailsModal";
 
@@ -86,6 +86,28 @@ export const MasterProblemsSection = () => {
   const [selectedArticleId, setSelectedArticleId] = useState<string | null>(
     null,
   );
+  const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute("data-index"));
+            setVisibleCards((prev) => new Set([...prev, index]));
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "-50px" },
+    );
+
+    cardRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleOpenModal = (articleId: string) => {
     setSelectedArticleId(articleId);
@@ -220,46 +242,29 @@ export const MasterProblemsSection = () => {
           alt="Схема стиральной машины"
           className="absolute w-[468px] h-[468px] object-contain pointer-events-none -z-10"
           style={{
-            top: "calc(45% + 115px)",
-            left: "calc(50% + 160px)",
+            top: "calc(45% + 115px - 200px)",
+            left: "calc(50% + 160px - 150px)",
             transform: "translate(-50%, -50%) scaleX(-1)",
           }}
         />
 
         {/* Problem Cards - All 5 cards in rectangular format */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          className="flex flex-wrap justify-center gap-[40px_69px] max-w-[1086px] mx-auto"
-        >
+        <div className="flex flex-wrap justify-center gap-[40px_69px] max-w-[1086px] mx-auto">
           {allProblems.map((problem, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{
-                opacity: 0,
-                x: index % 2 === 0 ? -100 : 100, // Четные слева, нечетные справа
-                y: 20,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-                y: 0,
-              }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{
-                duration: 0.6,
-                ease: "easeOut",
-                delay: index * 0.1, // Поочередное появление
-              }}
-              className="w-[295px] h-[152px] flex-shrink-0 border border-[#C4C4C4] bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative cursor-pointer magic-border-card"
+              ref={(el) => (cardRefs.current[index] = el)}
+              data-index={index}
+              className={`w-[295px] h-[152px] flex-shrink-0 border border-[#C4C4C4] bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative cursor-pointer magic-border-card ${
+                index % 2 === 0 ? "slide-from-left" : "slide-from-right"
+              } ${visibleCards.has(index) ? "show" : ""}`}
               onClick={() => handleOpenModal(problem.articleId)}
               style={
                 {
                   "--border-width": "4px",
                   "--border-color": "#72B5FF",
                   "--duration": "0.3s",
+                  transitionDelay: `${index * 0.1}s`,
                 } as React.CSSProperties
               }
             >
@@ -416,9 +421,9 @@ export const MasterProblemsSection = () => {
               >
                 <path d="M0 2.5L230 2.5" stroke="#72B5FF" strokeWidth="3.8" />
               </svg>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
 
       {/* Modal */}

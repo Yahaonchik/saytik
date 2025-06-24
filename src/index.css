@@ -398,3 +398,57 @@
   animation-play-state: paused;
   transform: translateX(-100%);
 }
+
+/* АНИМАЦИИ СЛАЙДА ДЛЯ КАРТОЧЕК */
+.slide-from-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.6s ease-out;
+}
+
+.slide-from-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-from-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.6s ease-out;
+}
+
+.slide-from-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* CSS анимации через keyframes */
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-left {
+  animation: slideFromLeft 0.6s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slideFromRight 0.6s ease-out forwards;
+}

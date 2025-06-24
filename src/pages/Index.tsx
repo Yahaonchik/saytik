@@ -338,12 +338,16 @@ const Index = () => {
 
       {/* Master Rules Section */}
       <section className="py-8 sm:py-10 md:py-16 lg:py-24 relative">
-        {/* Background image */}
+        {/* ТЕСТОВЫЙ КОММЕНТАРИЙ - ВРЕМЯ: ${new Date().toISOString()} */}
+        {/* Background image - отзеркаленное и смещенное изображение стиралки */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
+          className="absolute inset-0 bg-cover bg-no-repeat opacity-80"
           style={{
             backgroundImage:
               "url('https://cdn.builder.io/api/v1/assets/777536c48a5841ebbea4bcebb08ba44c/frame-645-3a9b26?format=webp&width=800')",
+            transform: "scaleX(-1) translate(-150px, -200px)",
+            backgroundPosition: "left top",
+            backgroundSize: "contain",
           }}
         ></div>
 
@@ -381,7 +385,10 @@ const Index = () => {
             </div>
 
             {/* Card 2 - Image Right */}
-            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[400px] md:max-w-[622px] overflow-hidden drop-shadow-[1px_2px_10px_rgba(0,0,0,0.2)]">
+            <div
+              className="animate-slide-right bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[400px] md:max-w-[622px] overflow-hidden drop-shadow-[1px_2px_10px_rgba(0,0,0,0.2)]"
+              style={{ animationDelay: "0.2s" }}
+            >
               <div className="flex flex-col md:flex-row items-center h-auto md:h-[179px]">
                 <div className="flex-1 px-2 py-2 md:px-6 md:py-0 md:h-full flex flex-col justify-center order-2 md:order-1">
                   <div className="mb-2 md:mb-2 md:h-1/2 flex items-center md:items-end md:pb-2">
@@ -400,7 +407,7 @@ const Index = () => {
                 <div className="flex-shrink-0 w-full md:w-auto order-1 md:order-2">
                   <img
                     src="https://cdn.builder.io/api/v1/assets/ab9c320785cc40dbb2ad955655018371/2-27fe87?format=webp&width=1200"
-                    alt="Предоставляет гарантию до 24 месяцев н�� работу и запчасти"
+                    alt="Предоставляет гарантию до 24 месяцев на работу и запчасти"
                     className="w-full h-[110px] md:w-[264px] md:h-[179px] object-cover"
                   />
                 </div>
@@ -408,7 +415,13 @@ const Index = () => {
             </div>
 
             {/* Card 3 - Image Left */}
-            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[400px] md:max-w-[622px] overflow-hidden drop-shadow-[7px_6px_10px_rgba(0,0,0,0.2)]">
+            <motion.div
+              initial={{ opacity: 0, x: -60, y: 20 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-80px" }}
+              className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[400px] md:max-w-[622px] overflow-hidden drop-shadow-[7px_6px_10px_rgba(0,0,0,0.2)]"
+            >
               <div className="flex flex-col md:flex-row items-center h-auto md:h-[179px]">
                 <div className="flex-shrink-0 w-full md:w-auto">
                   <img
@@ -432,10 +445,16 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 4 - Image Right */}
-            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[400px] md:max-w-[622px] overflow-hidden drop-shadow-[1px_2px_10px_rgba(0,0,0,0.2)]">
+            <motion.div
+              initial={{ opacity: 0, x: 60, y: 20 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-80px" }}
+              className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[400px] md:max-w-[622px] overflow-hidden drop-shadow-[1px_2px_10px_rgba(0,0,0,0.2)]"
+            >
               <div className="flex flex-col md:flex-row items-center h-auto md:h-[179px]">
                 <div className="flex-1 px-2 py-2 md:px-6 md:py-0 md:h-full flex flex-col justify-center order-2 md:order-1">
                   <div className="mb-2 md:mb-2 md:h-1/2 flex items-center md:items-end md:pb-2">
@@ -446,7 +465,7 @@ const Index = () => {
                   <div className="border-t-[1px] border-[rgba(0,0,0,0.3)] mb-2 md:mb-0"></div>
                   <div className="md:h-1/2 flex items-center md:items-start md:pt-2">
                     <p className="text-[#484848] font-pt-serif text-[12px] sm:text-[13px] md:text-[14px] font-normal leading-[1.3] md:leading-relaxed text-center md:text-left max-w-[314px] drop-shadow-sm">
-                      Наш Мастер всегда приезжает вовремя и выполняет в��е
+                      Наш Мастер всегда приезжает вовремя и выполняет все
                       договоренности
                     </p>
                   </div>
@@ -459,15 +478,21 @@ const Index = () => {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 5 - Image Left - centered on all screens */}
-            <div className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[400px] md:max-w-[622px] overflow-hidden xl:col-span-2 xl:justify-self-center drop-shadow-[7px_6px_10px_rgba(0,0,0,0.2)]">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-80px" }}
+              className="bg-white rounded-[15px] shadow-lg border-[3px] border-[rgba(74,157,255,0.2)] w-full max-w-[400px] md:max-w-[622px] overflow-hidden xl:col-span-2 xl:justify-self-center drop-shadow-[7px_6px_10px_rgba(0,0,0,0.2)]"
+            >
               <div className="flex flex-col md:flex-row items-center h-auto md:h-[179px]">
                 <div className="flex-shrink-0 w-full md:w-auto">
                   <img
                     src="https://cdn.builder.io/api/v1/assets/ab9c320785cc40dbb2ad955655018371/5-234616?format=webp&width=1200"
-                    alt="Опыт мастера по ремонту стиральных ма��ин не менее 5 лет"
+                    alt="Опыт мастера по ремонту стиральных машин не менее 5 лет"
                     className="w-full h-[110px] md:w-[264px] md:h-[179px] object-cover"
                   />
                 </div>
@@ -486,7 +511,7 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -515,7 +540,10 @@ const Index = () => {
             {/* All cards in one responsive grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
               {/* Card 1 - Modern Equipment (moved to first position) */}
-              <div className="w-full max-w-[359px] h-[300px] flex flex-col items-center text-center p-5 bg-white">
+              <div
+                className="animate-slide-left w-full max-w-[359px] h-[300px] flex flex-col items-center text-center p-5 bg-white"
+                style={{ animationDelay: "0.1s" }}
+              >
                 {/* Icon section - fixed height */}
                 <div className="flex justify-center items-center w-full h-[70px] mb-3">
                   <img
@@ -548,7 +576,10 @@ const Index = () => {
               </div>
 
               {/* Card 2 - Price */}
-              <div className="w-full max-w-[359px] h-[300px] flex flex-col items-center text-center p-5 bg-white">
+              <div
+                className="animate-slide-right w-full max-w-[359px] h-[300px] flex flex-col items-center text-center p-5 bg-white"
+                style={{ animationDelay: "0.2s" }}
+              >
                 {/* Icon section - fixed height */}
                 <div className="flex justify-center items-center w-full h-[70px] mb-3">
                   <img
@@ -581,7 +612,10 @@ const Index = () => {
               </div>
 
               {/* Card 3 - Warranty */}
-              <div className="w-full max-w-[359px] h-[300px] flex flex-col items-center text-center p-5 bg-white">
+              <div
+                className="animate-slide-left w-full max-w-[359px] h-[300px] flex flex-col items-center text-center p-5 bg-white"
+                style={{ animationDelay: "0.3s" }}
+              >
                 {/* Icon section - fixed height */}
                 <div className="flex justify-center items-center w-full h-[70px] mb-3">
                   <img
@@ -613,7 +647,10 @@ const Index = () => {
               </div>
 
               {/* Card 4 - Supplier Connections (moved next to warranty) */}
-              <div className="w-full max-w-[359px] h-[300px] flex flex-col items-center text-center p-5 bg-white">
+              <div
+                className="animate-slide-right w-full max-w-[359px] h-[300px] flex flex-col items-center text-center p-5 bg-white"
+                style={{ animationDelay: "0.4s" }}
+              >
                 {/* Icon section - fixed height */}
                 <div className="flex justify-center items-center w-full h-[70px] mb-3">
                   <img
@@ -646,7 +683,10 @@ const Index = () => {
               </div>
 
               {/* Card 5 - Masters (moved to last position) */}
-              <div className="w-full max-w-[359px] h-[300px] flex flex-col items-center text-center p-5 bg-white">
+              <div
+                className="animate-slide-left w-full max-w-[359px] h-[300px] flex flex-col items-center text-center p-5 bg-white"
+                style={{ animationDelay: "0.5s" }}
+              >
                 {/* Icon section - fixed height */}
                 <div className="flex justify-center items-center w-full h-[70px] mb-3">
                   <img
@@ -753,7 +793,7 @@ const Index = () => {
                 оригинальных запчастей и вниманием к каждой детали. В нашем
                 распоряжении — профессионально оснащённая мастерская, склад
                 комплектующих и выездной сервис. Мы находим даже редкие детали и
-                точно знаем, как продлить жизнь вашей технике.
+                точно знаем, как продлить ��изнь вашей технике.
               </p>
 
               <div className="space-y-1 my-4">
@@ -780,7 +820,7 @@ const Index = () => {
 
               <p>
                 Ремонт стиральных машин в Одессе необходим и новым, и давно
-                используемым моделям. Все узлы техники имеют ограниченный
+                ��спользуемым моделям. Все узлы техники имеют ограниченный
                 ресурс, и при активной эксплуатации однажды выходят из строя.
                 собрали самые частые причины, по которым клиенты обращаются в
                 наш с��рвис:
@@ -803,7 +843,7 @@ const Index = () => {
                   4. Течёт корпус. Устраняем утечки, заменяем шланги, манжеты,
                   патрубки.
                 </p>
-                <p>5. Не греет вода. Проверим и заменим ТЭН.</p>
+                <p>5. Н�� греет вода. Проверим и заменим ТЭН.</p>
                 <p>
                   6. Выдаёт ошибку. Определим код неисправности и устраним
                   причину.
@@ -843,7 +883,7 @@ const Index = () => {
 
               <p>
                 Работаем только с гарантией. Каждый ремонт начинается с
-                диагностики, после которой мастер подробно объяс��яет, в чём
+                диагностики, после которой мастер подробно объяс��яет, в ��ём
                 проблема, и предлагает решение. Пос��е согласования с клиентом
                 мы начинаем ремонт.
               </p>
