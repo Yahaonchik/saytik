@@ -229,6 +229,7 @@ export const MasterProblemsSection = () => {
         style={{
           width: "calc(100% - 30px)",
           left: "15px",
+          boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.25)",
         }}
       />
 
@@ -238,6 +239,7 @@ export const MasterProblemsSection = () => {
         style={{
           width: "calc(100% - 30px)",
           left: "15px",
+          filter: "drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25))",
         }}
         height="5"
         viewBox="0 0 230 5"
@@ -299,8 +301,8 @@ export const MasterProblemsSection = () => {
           alt="Схема стиральной машины"
           className="absolute w-[529px] h-[529px] object-contain pointer-events-none"
           style={{
-            top: "calc(50% - 285px + 500px)",
-            left: "calc(50% - 40px)",
+            top: "calc(50% - 285px + 500px - 75px)",
+            left: "calc(50% - 40px - 75px)",
             transform: "translate(-50%, -50%) scaleX(-1)",
             filter:
               "brightness(1.75) contrast(1.75) saturate(0.1) sepia(0.75) hue-rotate(15deg)",
@@ -325,10 +327,147 @@ export const MasterProblemsSection = () => {
                 .map((problem, index) => renderCard(problem, index))}
             </div>
 
-            {/* Second row - 2 cards */}
-            <div className="flex justify-center items-center gap-[150px] mt-[50px]">
-              {renderCard(allProblems[3], 3)}
-              {renderCard(allProblems[4], 4)}
+            {/* Second row - 2 cards manually created */}
+            <div className="flex justify-center items-center gap-[50px] mt-[50px]">
+              {/* Протекает card */}
+              <div
+                className="w-full max-w-[173px] sm:max-w-[260px] md:max-w-[280px] lg:max-w-[295px] h-[140px] sm:h-[140px] md:h-[148px] lg:h-[152px] flex-shrink-0 border border-[#C4C4C4] bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative cursor-pointer magic-border-card"
+                onClick={() => handleOpenModal(allProblems[3].articleId)}
+                style={
+                  {
+                    "--border-width": "4px",
+                    "--border-color": "#72B5FF",
+                    "--duration": "0.3s",
+                    transitionDelay: "0.3s",
+                  } as React.CSSProperties
+                }
+              >
+                <img
+                  src={allProblems[3].iconUrl}
+                  alt={allProblems[3].title}
+                  className="card-icon w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] flex-shrink-0 rounded-[85px] absolute left-1/2 top-3 sm:top-3 lg:top-4 transform -translate-x-1/2 transition-transform duration-500 ease-out"
+                />
+                <div
+                  className="w-full text-[#40444F] text-center absolute left-0 px-2"
+                  style={{
+                    fontFamily:
+                      "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                    fontSize: "clamp(13px, 2.5vw, 16px)",
+                    fontWeight: "400",
+                    lineHeight: "1.2",
+                    letterSpacing: "0.64px",
+                    top: "clamp(65px, 10vw, 80px)",
+                  }}
+                >
+                  {allProblems[3].title}
+                </div>
+                <div
+                  className="text-[#72B5FF] text-center cursor-pointer absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap px-1"
+                  style={{
+                    fontFamily:
+                      "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                    fontSize: "clamp(11px, 2vw, 15px)",
+                    fontWeight: "700",
+                    lineHeight: "normal",
+                    letterSpacing: "0.6px",
+                    bottom: "15px",
+                  }}
+                >
+                  Узнать подробнее
+                </div>
+                <div
+                  className="sm:hidden absolute bottom-0 h-[4px] bg-[#72B5FF]"
+                  style={{
+                    width: "calc(100% - 30px)",
+                    left: "15px",
+                    boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.25)",
+                  }}
+                />
+                <svg
+                  className="hidden sm:block h-[4px] lg:h-[5px] flex-shrink-0 absolute bottom-[-3px] lg:bottom-[-4px]"
+                  style={{
+                    width: "calc(100% - 30px)",
+                    left: "15px",
+                    filter: "drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25))",
+                  }}
+                  height="5"
+                  viewBox="0 0 230 5"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 2.5L230 2.5" stroke="#72B5FF" strokeWidth="3.8" />
+                </svg>
+              </div>
+
+              {/* Сильно шумит при отжиме card */}
+              <div
+                className="w-full max-w-[173px] sm:max-w-[260px] md:max-w-[280px] lg:max-w-[295px] h-[140px] sm:h-[140px] md:h-[148px] lg:h-[152px] flex-shrink-0 border border-[#C4C4C4] bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative cursor-pointer magic-border-card"
+                onClick={() => handleOpenModal(allProblems[4].articleId)}
+                style={
+                  {
+                    "--border-width": "4px",
+                    "--border-color": "#72B5FF",
+                    "--duration": "0.3s",
+                    transitionDelay: "0.4s",
+                  } as React.CSSProperties
+                }
+              >
+                <img
+                  src={allProblems[4].iconUrl}
+                  alt={allProblems[4].title}
+                  className="card-icon w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] flex-shrink-0 rounded-[85px] absolute left-1/2 top-3 sm:top-3 lg:top-4 transform -translate-x-1/2 transition-transform duration-500 ease-out"
+                />
+                <div
+                  className="w-full text-[#40444F] text-center absolute left-0 px-2"
+                  style={{
+                    fontFamily:
+                      "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                    fontSize: "clamp(13px, 2.5vw, 16px)",
+                    fontWeight: "400",
+                    lineHeight: "1.2",
+                    letterSpacing: "0.64px",
+                    top: "clamp(65px, 10vw, 80px)",
+                  }}
+                >
+                  {allProblems[4].title}
+                </div>
+                <div
+                  className="text-[#72B5FF] text-center cursor-pointer absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap px-1"
+                  style={{
+                    fontFamily:
+                      "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                    fontSize: "clamp(11px, 2vw, 15px)",
+                    fontWeight: "700",
+                    lineHeight: "normal",
+                    letterSpacing: "0.6px",
+                    bottom: "15px",
+                  }}
+                >
+                  Узнать подробнее
+                </div>
+                <div
+                  className="sm:hidden absolute bottom-0 h-[4px] bg-[#72B5FF]"
+                  style={{
+                    width: "calc(100% - 30px)",
+                    left: "15px",
+                    boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.25)",
+                  }}
+                />
+                <svg
+                  className="hidden sm:block h-[4px] lg:h-[5px] flex-shrink-0 absolute bottom-[-3px] lg:bottom-[-4px]"
+                  style={{
+                    width: "calc(100% - 30px)",
+                    left: "15px",
+                    filter: "drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25))",
+                  }}
+                  height="5"
+                  viewBox="0 0 230 5"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 2.5L230 2.5" stroke="#72B5FF" strokeWidth="3.8" />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
