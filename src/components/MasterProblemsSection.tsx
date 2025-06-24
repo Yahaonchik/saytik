@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { RepairDetailsModal } from "./RepairDetailsModal";
 
 interface ProblemCard {
@@ -97,13 +98,17 @@ export const MasterProblemsSection = () => {
   };
 
   return (
-    <section className="relative py-16 md:py-20 lg:py-24 overflow-hidden">
+    <section className="relative py-16 md:py-20 lg:py-24 pb-32 md:pb-36 lg:pb-40 overflow-hidden">
       <BackgroundSVG />
 
       <div className="relative z-10 container mx-auto px-4 max-w-7xl">
         {/* Company Description */}
-        <div
-          className="text-center text-[#40444F] mx-auto mb-12 md:mb-16 px-4"
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center text-[#40444F] mx-auto mb-12 md:mb-16 px-4 -mt-12"
           style={{
             maxWidth: "1000px",
             fontFamily: "Georgia, serif",
@@ -118,7 +123,7 @@ export const MasterProblemsSection = () => {
           ус��раняем любые неисправности стиральных машин — от самых простых до
           самых сложных. Просто позвоните или оставьте заявку, и мы вам
           перезвоним.
-        </div>
+        </motion.div>
 
         {/* Wave Background - Adaptive and Stable */}
         <div
@@ -206,24 +211,49 @@ export const MasterProblemsSection = () => {
         </div>
 
         {/* Washing Machine Diagram - Absolutely positioned behind cards */}
-        <img
+        <motion.img
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 0.57, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
           src="https://cdn.builder.io/api/v1/assets/fa85d7386c224d4d9f5093703eaea3c5/image-3822679-f5df36?format=webp&width=800"
           alt="Схема стиральной машины"
-          className="absolute w-[272px] h-[272px] object-contain pointer-events-none -z-10"
+          className="absolute w-[468px] h-[468px] object-contain pointer-events-none -z-10"
           style={{
             top: "calc(45% + 115px)",
-            left: "calc(50% + 135px)",
-            opacity: "0.57",
-            transform: "translate(-50%, -50%)",
+            left: "calc(50% + 160px)",
+            transform: "translate(-50%, -50%) scaleX(-1)",
           }}
         />
 
         {/* Problem Cards - All 5 cards in rectangular format */}
-        <div className="flex flex-wrap justify-center gap-[40px_69px] max-w-[1086px] mx-auto">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className="flex flex-wrap justify-center gap-[40px_69px] max-w-[1086px] mx-auto"
+        >
           {allProblems.map((problem, index) => (
-            <div
+            <motion.div
               key={index}
-              className="w-[316px] h-[181px] flex-shrink-0 rounded-[15px] border border-[#C4C4C4] bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative cursor-pointer magic-border-card"
+              initial={{
+                opacity: 0,
+                x: index % 2 === 0 ? -100 : 100, // Четные слева, нечетные справа
+                y: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+                y: 0,
+              }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.6,
+                ease: "easeOut",
+                delay: index * 0.1, // Поочередное появление
+              }}
+              className="w-[295px] h-[152px] flex-shrink-0 border border-[#C4C4C4] bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative cursor-pointer magic-border-card"
               onClick={() => handleOpenModal(problem.articleId)}
               style={
                 {
@@ -254,7 +284,7 @@ export const MasterProblemsSection = () => {
                   height: calc(100% + 8px);
                   top: -4px;
                   left: -4px;
-                  border-radius: 19px;
+                  border-radius: 0px;
                   background:
                     linear-gradient(to right, #72b5ff 0%, #72b5ff 100%),
                     linear-gradient(to top, #72b5ff 50%, transparent 50%),
@@ -282,7 +312,7 @@ export const MasterProblemsSection = () => {
                   transition-delay: 0.6s, 0.3s, 0s;
                   pointer-events: none;
 
-                  /* Ensure rounded corners match the card */
+                  /* Ensure rectangular corners match the card */
                   mask:
                     linear-gradient(to right, #000 0%, #000 100%),
                     linear-gradient(to top, #000 50%, transparent 50%),
@@ -303,8 +333,8 @@ export const MasterProblemsSection = () => {
                     0% 0%;
                   mask-repeat: no-repeat;
 
-                  /* Apply rounded corners using clip-path for better corner handling */
-                  clip-path: inset(0 round 19px);
+                  /* Apply rectangular corners using clip-path */
+                  clip-path: inset(0 round 0px);
                 }
 
                 .magic-border-card:hover:before {
@@ -345,9 +375,9 @@ export const MasterProblemsSection = () => {
                 className="card-icon w-[54px] h-[54px] flex-shrink-0 rounded-[85px] absolute left-1/2 top-4 transform -translate-x-1/2 transition-transform duration-500 ease-out"
               />
 
-              {/* Problem title in center */}
+              {/* Problem title in center - moved closer to icon */}
               <div
-                className="w-full text-[#40444F] text-center absolute left-0 top-[88px] h-[21px]"
+                className="w-full text-[#40444F] text-center absolute left-0 top-[80px] h-[21px]"
                 style={{
                   fontFamily:
                     "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
@@ -360,9 +390,9 @@ export const MasterProblemsSection = () => {
                 {problem.title}
               </div>
 
-              {/* Learn more link - in one line */}
+              {/* Learn more link - in one line at bottom */}
               <div
-                className="text-[#72B5FF] text-center cursor-pointer absolute left-1/2 top-[134px] transform -translate-x-1/2 whitespace-nowrap"
+                className="text-[#72B5FF] text-center cursor-pointer absolute left-1/2 top-[115px] transform -translate-x-1/2 whitespace-nowrap"
                 style={{
                   fontFamily:
                     "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
@@ -375,20 +405,20 @@ export const MasterProblemsSection = () => {
                 Узнать подробнее
               </div>
 
-              {/* Original Underline SVG */}
+              {/* Original Underline SVG - adjusted for new card size, made straight and aligned with animation */}
               <svg
-                className="w-[250px] h-[5px] transform rotate-[-0.23deg] flex-shrink-0 absolute left-[34px] top-[178px]"
-                width="250"
+                className="w-[230px] h-[5px] flex-shrink-0 absolute left-[32px] bottom-[-4px]"
+                width="230"
                 height="5"
-                viewBox="0 0 250 5"
+                viewBox="0 0 230 5"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="M0 3L250 1.99598" stroke="#72B5FF" strokeWidth="4" />
+                <path d="M0 2.5L230 2.5" stroke="#72B5FF" strokeWidth="3.8" />
               </svg>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* Modal */}
