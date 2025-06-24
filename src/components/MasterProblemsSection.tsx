@@ -15,7 +15,7 @@ const allProblems: ProblemCard[] = [
       "Это распространённая проблема, связанная с несколькими возможными причинами. Это может быть мотор или неисправный выключатель крышки.",
     articleId: "ne-slivaet-vodu",
     iconUrl:
-      "https://cdn.builder.io/api/v1/assets/810f7024ee0344baaafca74e1ef4c728/group-236-cf2c9b?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/assets/8bfc794e3c6f411abc1802f52bf6c057/group-236-d36496?format=webp&width=800",
   },
   {
     title: "Не включается",
@@ -23,7 +23,7 @@ const allProblems: ProblemCard[] = [
       "Это может быть вызвано засорённым шлангом или проблемой с насосом, который, возможно, придётся заменить.",
     articleId: "ne-vklyuchaetsya",
     iconUrl:
-      "https://cdn.builder.io/api/v1/assets/810f7024ee0344baaafca74e1ef4c728/image-3822682-0e6728?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/assets/8bfc794e3c6f411abc1802f52bf6c057/image-3822682-716cb3?format=webp&width=800",
   },
   {
     title: "Не крутит барабан",
@@ -31,7 +31,7 @@ const allProblems: ProblemCard[] = [
       "Существует несколько признаков того, что у вашей машины проблемы с мотором. Один из них — это если бельё не двигается во время стирки.",
     articleId: "ne-krutit-baraban",
     iconUrl:
-      "https://cdn.builder.io/api/v1/assets/810f7024ee0344baaafca74e1ef4c728/image-3822683-ac5df0?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/assets/8bfc794e3c6f411abc1802f52bf6c057/image-3822683-e84138?format=webp&width=800",
   },
   {
     title: "Протекает",
@@ -39,7 +39,7 @@ const allProblems: ProblemCard[] = [
       "Одежда остаётся влажной после отжима? Возможно, нужно проверить сливной шланг или вентиляцию",
     articleId: "protekaet-voda",
     iconUrl:
-      "https://cdn.builder.io/api/v1/assets/810f7024ee0344baaafca74e1ef4c728/group-235-95a6de?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/assets/8bfc794e3c6f411abc1802f52bf6c057/group-235-1e74d6?format=webp&width=800",
   },
   {
     title: "Сильно шумит при отжиме",
@@ -47,7 +47,7 @@ const allProblems: ProblemCard[] = [
       "Если вы всё проверили, а один или несколько компонентов всё ещё не работают, возможно, проблема в электрике.",
     articleId: "shumit-pri-otzhime",
     iconUrl:
-      "https://cdn.builder.io/api/v1/assets/810f7024ee0344baaafca74e1ef4c728/image-3822684-6d1a7c?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/assets/8bfc794e3c6f411abc1802f52bf6c057/image-3822684-2b13c7?format=webp&width=800",
   },
 ];
 
@@ -263,10 +263,11 @@ export const MasterProblemsSection = () => {
                     className="text-[#40444F] text-center"
                     style={{
                       fontFamily:
-                        "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                        "'PT Serif Caption', -apple-system, Roboto, Helvetica, sans-serif",
                       fontSize: "15px",
                       fontWeight: "400",
-                      lineHeight: "1.2",
+                      lineHeight: "normal",
+                      letterSpacing: "0.6px",
                     }}
                   >
                     {problem.title}
@@ -306,8 +307,8 @@ export const MasterProblemsSection = () => {
           alt="Схема стиральной машины"
           className="absolute w-[272px] h-[272px] object-contain pointer-events-none -z-10"
           style={{
-            top: "calc(45% + 130px)",
-            left: "calc(50% + 120px)",
+            top: "calc(45% + 115px)",
+            left: "calc(50% + 135px)",
             opacity: "0.57",
             transform: "translate(-50%, -50%)",
           }}
@@ -372,10 +373,11 @@ export const MasterProblemsSection = () => {
                     className="text-[#40444F] text-center"
                     style={{
                       fontFamily:
-                        "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                        "'PT Serif Caption', -apple-system, Roboto, Helvetica, sans-serif",
                       fontSize: "15px",
                       fontWeight: "400",
-                      lineHeight: "1.2",
+                      lineHeight: "normal",
+                      letterSpacing: "0.6px",
                     }}
                   >
                     {problem.title}
