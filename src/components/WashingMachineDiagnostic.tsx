@@ -14,6 +14,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { CallMasterModal } from "./CallMasterModal";
 
 // Washing machine brands
 const brands = [
@@ -527,7 +528,7 @@ const baseProblemCauses = {
       type: "electronics",
     },
   ],
-  "Стиральная машина зависает": [
+  "С��иральная машина зависает": [
     {
       cause: "Неисп��авность модуля управления",
       probability: 100,
@@ -623,6 +624,7 @@ export function WashingMachineDiagnostic() {
   const [age, setAge] = useState<string>("");
   const [problem, setProblem] = useState<string>("");
   const [showResults, setShowResults] = useState(false);
+  const [isCallMasterModalOpen, setIsCallMasterModalOpen] = useState(false);
 
   const handleSubmit = () => {
     if (brand && age && problem) {
@@ -696,7 +698,7 @@ export function WashingMachineDiagnostic() {
                 </label>
                 <Select value={problem} onValueChange={setProblem}>
                   <SelectTrigger className="bg-[#E8E7E7] border-[rgba(0,0,0,0.23)] text-[14px] h-[40px] rounded-[5px] font-ibm-plex-serif text-[#4E5763]">
-                    <SelectValue placeholder="Выберите проблему" />
+                    <SelectValue placeholder="Выбе��ите проблему" />
                   </SelectTrigger>
                   <SelectContent>
                     {problems.map((p) => (
@@ -791,7 +793,13 @@ export function WashingMachineDiagnostic() {
                   ))}
                 </div>
 
-                <div className="mt-8 flex justify-center">
+                <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                  <Button
+                    onClick={() => setIsCallMasterModalOpen(true)}
+                    className="bg-[#72B5FF] text-white px-6 py-2 text-[16px] font-ibm-plex-serif rounded-[10px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.35)] hover:bg-[#5A9BFF] hover:shadow-lg transition-all duration-300"
+                  >
+                    Вызвать мастера
+                  </Button>
                   <Button
                     onClick={resetForm}
                     className="bg-white text-[#7C7878] px-6 py-2 text-[16px] font-ibm-plex-serif rounded-[10px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.35)] hover:shadow-lg transition-all duration-300"
@@ -804,6 +812,12 @@ export function WashingMachineDiagnostic() {
           )}
         </CardContent>
       </Card>
+
+      {/* Модальное окно вызова мастера */}
+      <CallMasterModal
+        isOpen={isCallMasterModalOpen}
+        onClose={() => setIsCallMasterModalOpen(false)}
+      />
     </div>
   );
 }

@@ -53,14 +53,14 @@ const allProblems: ProblemCard[] = [
 ];
 
 const BackgroundSVG: React.FC = () => (
-  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+  <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
     <svg
       width="100%"
       height="100%"
       viewBox="0 0 1910 920"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-full h-full object-cover"
+      className="w-full h-full min-h-full"
       preserveAspectRatio="xMidYMid slice"
     >
       <rect width="100%" height="100%" fill="url(#paint0_linear_6396_1083)" />
@@ -90,6 +90,9 @@ export const MasterProblemsSection = () => {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
+    // Сразу показываем все карточки на мобильных для упрощения
+    setVisibleCards(new Set([0, 1, 2, 3, 4]));
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -124,9 +127,7 @@ export const MasterProblemsSection = () => {
       key={index}
       ref={(el) => (cardRefs.current[index] = el)}
       data-index={index}
-      className={`w-full max-w-[240px] sm:max-w-[260px] md:max-w-[280px] lg:max-w-[295px] h-[130px] sm:h-[140px] md:h-[148px] lg:h-[152px] flex-shrink-0 border border-[#C4C4C4] bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative cursor-pointer magic-border-card ${
-        index % 2 === 0 ? "slide-from-left" : "slide-from-right"
-      } ${visibleCards.has(index) ? "show" : ""}`}
+      className="w-full max-w-[260px] sm:max-w-[260px] md:max-w-[280px] lg:max-w-[295px] h-[140px] sm:h-[140px] md:h-[148px] lg:h-[152px] flex-shrink-0 border border-[#C4C4C4] bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative cursor-pointer magic-border-card mx-auto opacity-100"
       onClick={() => handleOpenModal(problem.articleId)}
       style={
         {
@@ -143,102 +144,70 @@ export const MasterProblemsSection = () => {
           transition: all 0.3s ease;
         }
 
-        .magic-border-card:hover {
-          box-shadow: 0px 0px 20px 0px rgba(114, 181, 255, 0.3);
+        @media (min-width: 640px) {
+          .magic-border-card:hover {
+            box-shadow: 0px 0px 20px 0px rgba(114, 181, 255, 0.3);
+          }
+
+          .magic-border-card:hover .card-icon {
+            transform: translate(-50%, 0) scale(1.2);
+          }
         }
 
-        .magic-border-card:hover .card-icon {
-          transform: translate(-50%, 0) scale(1.2);
-        }
+        @media (min-width: 640px) {
+          .magic-border-card:before {
+            content: "";
+            position: absolute;
+            width: calc(100% + 8px);
+            height: calc(100% + 8px);
+            top: -4px;
+            left: -4px;
+            border-radius: 0px;
+            background:
+              linear-gradient(to right, #72b5ff 0%, #72b5ff 100%),
+              linear-gradient(to top, #72b5ff 50%, transparent 50%),
+              linear-gradient(to top, #72b5ff 50%, transparent 50%),
+              linear-gradient(to right, #72b5ff 0%, #72b5ff 100%),
+              linear-gradient(to left, #72b5ff 0%, #72b5ff 100%);
+            background-size:
+              100% 4px,
+              4px 200%,
+              4px 200%,
+              0% 4px,
+              0% 4px;
+            background-position:
+              50% 100%,
+              0% 0%,
+              100% 0%,
+              100% 0%,
+              0% 0%;
+            background-repeat: no-repeat;
+            transition:
+              transform 0.3s ease-in-out,
+              background-position 0.3s ease-in-out,
+              background-size 0.3s ease-in-out;
+            transform: scaleX(0);
+            transition-delay: 0.6s, 0.3s, 0s;
+            pointer-events: none;
+            clip-path: inset(0 round 0px);
+          }
 
-        .magic-border-card:before {
-          content: "";
-          position: absolute;
-          width: calc(100% + 8px);
-          height: calc(100% + 8px);
-          top: -4px;
-          left: -4px;
-          border-radius: 0px;
-          background:
-            linear-gradient(to right, #72b5ff 0%, #72b5ff 100%),
-            linear-gradient(to top, #72b5ff 50%, transparent 50%),
-            linear-gradient(to top, #72b5ff 50%, transparent 50%),
-            linear-gradient(to right, #72b5ff 0%, #72b5ff 100%),
-            linear-gradient(to left, #72b5ff 0%, #72b5ff 100%);
-          background-size:
-            100% 4px,
-            4px 200%,
-            4px 200%,
-            0% 4px,
-            0% 4px;
-          background-position:
-            50% 100%,
-            0% 0%,
-            100% 0%,
-            100% 0%,
-            0% 0%;
-          background-repeat: no-repeat;
-          transition:
-            transform 0.3s ease-in-out,
-            background-position 0.3s ease-in-out,
-            background-size 0.3s ease-in-out;
-          transform: scaleX(0);
-          transition-delay: 0.6s, 0.3s, 0s;
-          pointer-events: none;
-
-          /* Ensure rectangular corners match the card */
-          mask:
-            linear-gradient(to right, #000 0%, #000 100%),
-            linear-gradient(to top, #000 50%, transparent 50%),
-            linear-gradient(to top, #000 50%, transparent 50%),
-            linear-gradient(to right, #000 0%, #000 100%),
-            linear-gradient(to left, #000 0%, #000 100%);
-          mask-size:
-            100% 4px,
-            4px 200%,
-            4px 200%,
-            0% 4px,
-            0% 4px;
-          mask-position:
-            50% 100%,
-            0% 0%,
-            100% 0%,
-            100% 0%,
-            0% 0%;
-          mask-repeat: no-repeat;
-
-          /* Apply rectangular corners using clip-path */
-          clip-path: inset(0 round 0px);
-        }
-
-        .magic-border-card:hover:before {
-          background-size:
-            200% 4px,
-            4px 400%,
-            4px 400%,
-            55% 4px,
-            55% 4px;
-          background-position:
-            50% 100%,
-            0% 100%,
-            100% 100%,
-            100% 0%,
-            0% 0%;
-          transform: scaleX(1);
-          transition-delay: 0s, 0.3s, 0.6s;
-
-          mask-size:
-            200% 4px,
-            4px 400%,
-            4px 400%,
-            55% 4px,
-            55% 4px;
-          mask-position:
-            50% 100%,
-            0% 100%,
-            100% 100%,
-            100% 0%,
-            0% 0%;
+          .magic-border-card:hover:before {
+            background-size:
+              200% 4px,
+              4px 400%,
+              4px 400%,
+              55% 4px,
+              55% 4px;
+            background-position:
+              50% 100%,
+              0% 100%,
+              100% 100%,
+              100% 0%,
+              0% 0%;
+            transform: scaleX(1);
+            transition-delay: 0s, 0.3s, 0.6s;
+          }
         }
       `}</style>
 
@@ -249,7 +218,7 @@ export const MasterProblemsSection = () => {
         className="card-icon w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] flex-shrink-0 rounded-[85px] absolute left-1/2 top-3 sm:top-3 lg:top-4 transform -translate-x-1/2 transition-transform duration-500 ease-out"
       />
 
-      {/* Problem title in center - moved closer to icon */}
+      {/* Problem title in center - увеличено расстояние от иконки на мобильных */}
       <div
         className="w-full text-[#40444F] text-center absolute left-0 px-2"
         style={{
@@ -259,7 +228,7 @@ export const MasterProblemsSection = () => {
           fontWeight: "400",
           lineHeight: "1.2",
           letterSpacing: "0.64px",
-          top: "clamp(50px, 8vw, 80px)",
+          top: "clamp(65px, 10vw, 80px)", // Увеличили отступ от иконки
         }}
       >
         {problem.title}
@@ -281,9 +250,9 @@ export const MasterProblemsSection = () => {
         Узнать подробнее
       </div>
 
-      {/* Original Underline SVG - responsive width */}
+      {/* Original Underline SVG - скрыта на мобильных */}
       <svg
-        className="h-[3px] sm:h-[4px] lg:h-[5px] flex-shrink-0 absolute bottom-[-2px] sm:bottom-[-3px] lg:bottom-[-4px]"
+        className="hidden sm:block h-[4px] lg:h-[5px] flex-shrink-0 absolute bottom-[-3px] lg:bottom-[-4px]"
         style={{
           width: "calc(100% - 30px)",
           left: "15px",
@@ -299,7 +268,7 @@ export const MasterProblemsSection = () => {
   );
 
   return (
-    <section className="relative overflow-hidden" style={{ height: "930px" }}>
+    <section className="relative overflow-x-hidden min-h-[930px] sm:h-[930px] sm:overflow-hidden">
       <BackgroundSVG />
 
       <div className="relative z-10 container mx-auto px-4 max-w-7xl h-full">
@@ -339,7 +308,7 @@ export const MasterProblemsSection = () => {
           </motion.div>
         </div>
 
-        {/* Washing Machine Diagram - ORIGINAL POSITION */}
+        {/* Washing Machine Diagram - ORIGINAL SIZE */}
         <motion.img
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 0.75, scale: 1 }}
@@ -358,35 +327,39 @@ export const MasterProblemsSection = () => {
           }}
         />
 
-        {/* Problem Cards - ONLY RESPONSIVE CARDS */}
+        {/* Problem Cards - MOBILE RELATIVE, DESKTOP ABSOLUTE */}
+
+        {/* Мобильная версия - относительное позиционирование */}
         <div
-          className="absolute left-1/2 transform -translate-x-1/2 px-2 sm:px-4"
+          className="relative sm:hidden w-full px-4 z-20"
+          style={{ paddingTop: "280px" }}
+        >
+          <div className="flex flex-col items-center gap-4 w-full max-w-[300px] mx-auto">
+            {allProblems.map((problem, index) => renderCard(problem, index))}
+          </div>
+        </div>
+
+        {/* Планшеты и десктоп - абсолютное ��озиционирование */}
+        <div
+          className="hidden sm:block absolute left-1/2 transform -translate-x-1/2 px-3 sm:px-4"
           style={{
             top: "291px",
             width: "100%",
             maxWidth: "1086px",
           }}
         >
-          {/* Мобильная версия - одна колонка */}
-          <div className="flex flex-col items-center gap-3 sm:hidden">
-            {allProblems.map((problem, index) => renderCard(problem, index))}
+          {/* Первый ряд - 3 карточки */}
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 lg:gap-[69px] mb-6 lg:mb-10">
+            {allProblems
+              .slice(0, 3)
+              .map((problem, index) => renderCard(problem, index))}
           </div>
 
-          {/* Планшеты и десктоп */}
-          <div className="hidden sm:block">
-            {/* Первый ряд - 3 карточки */}
-            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 lg:gap-[69px] mb-6 lg:mb-10">
-              {allProblems
-                .slice(0, 3)
-                .map((problem, index) => renderCard(problem, index))}
-            </div>
-
-            {/* Второй ряд - 2 карточки */}
-            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 lg:gap-[69px]">
-              {allProblems
-                .slice(3, 5)
-                .map((problem, index) => renderCard(problem, index + 3))}
-            </div>
+          {/* Второй ряд - 2 карточки */}
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 lg:gap-[69px]">
+            {allProblems
+              .slice(3, 5)
+              .map((problem, index) => renderCard(problem, index + 3))}
           </div>
         </div>
 
@@ -394,10 +367,10 @@ export const MasterProblemsSection = () => {
         <div
           className="absolute pointer-events-none overflow-hidden"
           style={{
-            bottom: "0",
+            bottom: "-20px",
             left: "50%",
             width: "100vw",
-            height: "565px",
+            height: "585px",
             transform: "translateX(-50%)",
             zIndex: -20,
           }}
