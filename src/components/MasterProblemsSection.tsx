@@ -286,7 +286,8 @@ export const MasterProblemsSection = () => {
               от самых простых до самых сложных.
             </div>
             <div>
-              Просто позвоните или оставьте заявку, и мы вам перезвоним.
+              Просто позвоните или оставьте заявку,{" "}
+              <span style={{ color: "#72B5FF" }}>и мы вам перезвоним</span>.
             </div>
           </motion.div>
         </div>
@@ -301,12 +302,12 @@ export const MasterProblemsSection = () => {
           alt="Схема стиральной машины"
           className="absolute w-[529px] h-[529px] object-contain pointer-events-none"
           style={{
-            top: "calc(50% - 285px + 500px - 75px)",
-            left: "calc(50% - 40px - 75px)",
+            top: "calc(50% - 285px + 500px - 75px + 50px)",
+            left: "calc(50% - 40px - 75px + 75px)",
             transform: "translate(-50%, -50%) scaleX(-1)",
             filter:
               "brightness(1.75) contrast(1.75) saturate(0.1) sepia(0.75) hue-rotate(15deg)",
-            zIndex: -30,
+            zIndex: -10,
           }}
         />
 
@@ -503,7 +504,8 @@ export const MasterProblemsSection = () => {
               от самых простых до самых сложных.
             </div>
             <div>
-              Просто позвоните или оставьте заявку, и мы вам перезвоним.
+              Просто позвоните или оставьте заявку,{" "}
+              <span style={{ color: "#72B5FF" }}>и мы вам перезвоним</span>.
             </div>
           </motion.div>
         </div>
