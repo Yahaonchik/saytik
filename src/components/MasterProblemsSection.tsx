@@ -299,7 +299,7 @@ export const MasterProblemsSection = () => {
           alt="Схема стиральной машины"
           className="absolute w-[529px] h-[529px] object-contain pointer-events-none"
           style={{
-            top: "calc(50% - 285px)",
+            top: "calc(50% - 285px + 500px)",
             left: "calc(50% - 40px)",
             transform: "translate(-50%, -50%) scaleX(-1)",
             filter:
@@ -326,10 +326,9 @@ export const MasterProblemsSection = () => {
             </div>
 
             {/* Second row - 2 cards */}
-            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 lg:gap-[69px]">
-              {allProblems
-                .slice(3, 5)
-                .map((problem, index) => renderCard(problem, index + 3))}
+            <div className="flex justify-center items-center gap-[150px] mt-[50px]">
+              {renderCard(allProblems[3], 3)}
+              {renderCard(allProblems[4], 4)}
             </div>
           </div>
         </div>
