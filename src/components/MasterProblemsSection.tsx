@@ -250,9 +250,7 @@ export const MasterProblemsSection = () => {
   );
 
   return (
-    <section className="relative min-h-[930px] sm:h-[930px] overflow-hidden">
-      <BackgroundSVG />
-
+    <section className="relative h-[1200px] sm:h-[937px] overflow-hidden">
       {/* DESKTOP VERSION */}
       <div className="hidden sm:block relative z-10">
         {/* Desktop text - absolute positioned */}
@@ -413,6 +411,44 @@ export const MasterProblemsSection = () => {
               y1="280.205"
               x2="2030"
               y2="280.205"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="#72B5FF" />
+              <stop offset="1" stopColor="#B2D5FB" stopOpacity="0.62" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      {/* Wave Background - positioned at bottom */}
+      <div
+        className="absolute inset-x-0 bottom-0 w-full pointer-events-none"
+        style={{
+          height: "567px",
+          zIndex: 1,
+        }}
+      >
+        <svg
+          width="1910"
+          height="567"
+          viewBox="0 0 1910 567"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full object-cover"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <path
+            d="M0 567V76.347C87.2775 134.962 174.555 193.578 314.683 143.076C454.812 92.5737 581.644 17.3735 763.105 4.57084C930.178 -7.21669 1114.78 5.93298 1216.97 48.0963C1319.17 90.2596 1423.95 141.347 1552 116C1676.82 76.7572 1759.31 59.6695 1912 76.347V567H0Z"
+            fill="url(#paint0_linear_6509_123)"
+            fillOpacity="0.82"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear_6509_123"
+              x1="0"
+              y1="282.205"
+              x2="1912"
+              y2="282.205"
               gradientUnits="userSpaceOnUse"
             >
               <stop stopColor="#72B5FF" />
