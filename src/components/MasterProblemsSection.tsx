@@ -210,8 +210,8 @@ export const MasterProblemsSection = () => {
           {allProblems.slice(0, 3).map((problem, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center bg-white rounded-full shadow-[0px_-3px_29.8px_0px_rgba(0,0,0,0.34)] relative
-                         w-[191px] h-[191px] p-[23px_10px_10px_10px] gap-[10px]"
+              className="flex flex-col bg-white rounded-full shadow-[0px_-3px_29.8px_0px_rgba(0,0,0,0.34)] relative
+                         w-[191px] h-[191px]"
             >
               {/* SVG Border with Linear Gradient */}
               <svg
@@ -240,47 +240,60 @@ export const MasterProblemsSection = () => {
                 />
               </svg>
 
-              <div className="flex flex-col items-center w-full h-full relative z-10 pt-6 pb-4">
-                {/* Icon - near top with smaller margin */}
-                <img
-                  src={problem.iconUrl}
-                  alt={problem.title}
-                  className="w-[50px] h-[50px] rounded-[85px] mb-4"
-                />
+              <div
+                className="flex flex-col w-full h-full relative z-10"
+                style={{
+                  paddingTop: "18px",
+                  paddingBottom: "18px",
+                  justifyContent: "space-around",
+                }}
+              >
+                {/* Icon - at very top */}
+                <div className="flex justify-center">
+                  <img
+                    src={problem.iconUrl}
+                    alt={problem.title}
+                    className="w-[50px] h-[50px] rounded-[85px]"
+                  />
+                </div>
 
-                {/* Title - in middle with proper spacing */}
-                <div
-                  className="text-[#40444F] text-center px-4 flex-grow flex items-center justify-center"
-                  style={{
-                    fontFamily:
-                      "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                    fontSize: "15px",
-                    fontWeight: "400",
-                    lineHeight: "1.2",
-                  }}
-                >
-                  {problem.title}
+                {/* Title - in middle with flexible space */}
+                <div className="flex items-center justify-center px-3">
+                  <div
+                    className="text-[#40444F] text-center"
+                    style={{
+                      fontFamily:
+                        "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                      fontSize: "15px",
+                      fontWeight: "400",
+                      lineHeight: "1.2",
+                    }}
+                  >
+                    {problem.title}
+                  </div>
                 </div>
 
                 {/* Learn More Button - at bottom */}
-                <div
-                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer mt-4"
-                  style={{
-                    fontFamily:
-                      "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                    fontSize: "14px",
-                    fontWeight: "700",
-                    color: "#72B5FF",
-                    textDecoration: "underline",
-                    textDecorationStyle: "solid",
-                    textDecorationSkipInk: "none",
-                    textDecorationThickness: "auto",
-                    textUnderlineOffset: "auto",
-                    textUnderlinePosition: "from-font",
-                  }}
-                  onClick={() => handleOpenModal(problem.articleId)}
-                >
-                  Подробнее
+                <div className="flex justify-center">
+                  <div
+                    className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer"
+                    style={{
+                      fontFamily:
+                        "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                      fontSize: "14px",
+                      fontWeight: "700",
+                      color: "#72B5FF",
+                      textDecoration: "underline",
+                      textDecorationStyle: "solid",
+                      textDecorationSkipInk: "none",
+                      textDecorationThickness: "auto",
+                      textUnderlineOffset: "auto",
+                      textUnderlinePosition: "from-font",
+                    }}
+                    onClick={() => handleOpenModal(problem.articleId)}
+                  >
+                    Подробнее
+                  </div>
                 </div>
               </div>
             </div>
@@ -305,8 +318,8 @@ export const MasterProblemsSection = () => {
           {allProblems.slice(3).map((problem, index) => (
             <div
               key={index + 3}
-              className={`flex flex-col items-center justify-center bg-white rounded-full shadow-[0px_-3px_29.8px_0px_rgba(0,0,0,0.34)] relative
-                         w-[191px] h-[191px] p-[23px_10px_10px_10px] gap-[10px]
+              className={`flex flex-col bg-white rounded-full shadow-[0px_-3px_29.8px_0px_rgba(0,0,0,0.34)] relative
+                         w-[191px] h-[191px]
                          ${index === 0 ? "md:-translate-x-[30px]" : "md:translate-x-[30px]"}`}
             >
               {/* SVG Border with Linear Gradient */}
@@ -336,47 +349,60 @@ export const MasterProblemsSection = () => {
                 />
               </svg>
 
-              <div className="flex flex-col items-center w-full h-full relative z-10 pt-6 pb-4">
-                {/* Icon - near top with smaller margin */}
-                <img
-                  src={problem.iconUrl}
-                  alt={problem.title}
-                  className="w-[50px] h-[50px] rounded-[85px] mb-4"
-                />
+              <div
+                className="flex flex-col w-full h-full relative z-10"
+                style={{
+                  paddingTop: "18px",
+                  paddingBottom: "18px",
+                  justifyContent: "space-around",
+                }}
+              >
+                {/* Icon - at very top */}
+                <div className="flex justify-center">
+                  <img
+                    src={problem.iconUrl}
+                    alt={problem.title}
+                    className="w-[50px] h-[50px] rounded-[85px]"
+                  />
+                </div>
 
-                {/* Title - in middle with proper spacing */}
-                <div
-                  className="text-[#40444F] text-center px-4 flex-grow flex items-center justify-center"
-                  style={{
-                    fontFamily:
-                      "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                    fontSize: "15px",
-                    fontWeight: "400",
-                    lineHeight: "1.2",
-                  }}
-                >
-                  {problem.title}
+                {/* Title - in middle with flexible space */}
+                <div className="flex items-center justify-center px-3">
+                  <div
+                    className="text-[#40444F] text-center"
+                    style={{
+                      fontFamily:
+                        "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                      fontSize: "15px",
+                      fontWeight: "400",
+                      lineHeight: "1.2",
+                    }}
+                  >
+                    {problem.title}
+                  </div>
                 </div>
 
                 {/* Learn More Button - at bottom */}
-                <div
-                  className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer mt-4"
-                  style={{
-                    fontFamily:
-                      "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                    fontSize: "14px",
-                    fontWeight: "700",
-                    color: "#72B5FF",
-                    textDecoration: "underline",
-                    textDecorationStyle: "solid",
-                    textDecorationSkipInk: "none",
-                    textDecorationThickness: "auto",
-                    textUnderlineOffset: "auto",
-                    textUnderlinePosition: "from-font",
-                  }}
-                  onClick={() => handleOpenModal(problem.articleId)}
-                >
-                  Подробнее
+                <div className="flex justify-center">
+                  <div
+                    className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer"
+                    style={{
+                      fontFamily:
+                        "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                      fontSize: "14px",
+                      fontWeight: "700",
+                      color: "#72B5FF",
+                      textDecoration: "underline",
+                      textDecorationStyle: "solid",
+                      textDecorationSkipInk: "none",
+                      textDecorationThickness: "auto",
+                      textUnderlineOffset: "auto",
+                      textUnderlinePosition: "from-font",
+                    }}
+                    onClick={() => handleOpenModal(problem.articleId)}
+                  >
+                    Подробнее
+                  </div>
                 </div>
               </div>
             </div>
