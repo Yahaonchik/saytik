@@ -127,19 +127,45 @@ export const RepairDetailsModal: React.FC<RepairDetailsModalProps> = ({
 
           {/* Call to Action */}
           <div className="bg-gradient-to-r from-[#72B5FF] to-[#5AA3E8] rounded-xl p-6 text-center text-white">
-            <h3 className="text-lg font-semibold mb-2">
-              Нужна точная диагностика?
-            </h3>
-            <p className="text-white/90 mb-4 text-sm leading-relaxed">
-              Наши мастера проведут бесплатную диагностику и назовут точную
-              стоимость ремонта
-              <span className="block mt-1">
-                (при отказе от ремонта выезд оплачивается 150 грн)
-              </span>
-            </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <button
-                className="flex items-center justify-center gap-3 px-6 py-3 rounded-[60px] bg-white border-2 border-transparent shadow-lg hover:shadow-xl transition-all"
+                className="flex items-center justify-center gap-3 px-6 py-3 rounded-[60px] bg-white border-2 border-transparent shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                onClick={() => {
+                  onClose();
+                  setTimeout(() => {
+                    const diagnosticElement =
+                      document.getElementById("online-diagnosis");
+                    if (diagnosticElement) {
+                      diagnosticElement.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                    }
+                  }, 300);
+                }}
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-[18px] h-[18px]"
+                >
+                  <path
+                    d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                    stroke="#72B5FF"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <span className="text-[#72B5FF] font-semibold text-sm">
+                  Онлайн диагностика
+                </span>
+              </button>
+              <button
+                className="flex items-center justify-center gap-3 px-6 py-3 rounded-[60px] bg-white border-2 border-transparent shadow-lg hover:shadow-xl transition-all hover:scale-105"
                 onClick={() => setIsCallMasterOpen(true)}
               >
                 <svg
@@ -158,15 +184,9 @@ export const RepairDetailsModal: React.FC<RepairDetailsModalProps> = ({
                     strokeLinejoin="round"
                   />
                 </svg>
-                <span className="text-[#72B5FF] font-medium text-sm">
+                <span className="text-[#72B5FF] font-semibold text-sm">
                   Вызвать мастера
                 </span>
-              </button>
-              <button
-                onClick={onClose}
-                className="border border-white/30 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors"
-              >
-                Закрыть
               </button>
             </div>
           </div>

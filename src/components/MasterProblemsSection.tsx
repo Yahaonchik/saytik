@@ -15,7 +15,7 @@ const allProblems: ProblemCard[] = [
       "Это распространённая проблема, связанная с несколькими возможными причинами. Это может быть мотор или неисправный выключатель крышки.",
     articleId: "ne-slivaet-vodu",
     iconUrl:
-      "https://cdn.builder.io/api/v1/assets/8bfc794e3c6f411abc1802f52bf6c057/group-236-d36496?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/assets/3c425170d2e9403fa39537f962323753/group-236-5899b1?format=webp&width=800",
   },
   {
     title: "Не включается",
@@ -205,102 +205,6 @@ export const MasterProblemsSection = () => {
           />
         </div>
 
-        {/* Circular Problems - First 3 */}
-        <div className="flex flex-wrap justify-center gap-8 lg:gap-[60px] mb-8 md:mb-10">
-          {allProblems.slice(0, 3).map((problem, index) => (
-            <div
-              key={index}
-              className="flex flex-col bg-white rounded-full shadow-[0px_-3px_29.8px_0px_rgba(0,0,0,0.34)] relative
-                         w-[191px] h-[191px]"
-            >
-              {/* SVG Border with Linear Gradient */}
-              <svg
-                className="absolute inset-0 w-full h-full pointer-events-none"
-                style={{ zIndex: 1, opacity: 0.6 }}
-              >
-                <defs>
-                  <linearGradient
-                    id={`borderGradient${index}`}
-                    x1="0%"
-                    y1="0%"
-                    x2="0%"
-                    y2="100%"
-                  >
-                    <stop offset="0%" stopColor="rgba(255,255,255,0)" />
-                    <stop offset="100%" stopColor="rgba(114,181,255,1)" />
-                  </linearGradient>
-                </defs>
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="calc(50% - 1.5px)"
-                  fill="none"
-                  stroke={`url(#borderGradient${index})`}
-                  strokeWidth="3"
-                />
-              </svg>
-
-              <div
-                className="flex flex-col w-full h-full relative z-10"
-                style={{
-                  paddingTop: "18px",
-                  paddingBottom: "18px",
-                  justifyContent: "space-around",
-                }}
-              >
-                {/* Icon - at very top */}
-                <div className="flex justify-center">
-                  <img
-                    src={problem.iconUrl}
-                    alt={problem.title}
-                    className="w-[50px] h-[50px] rounded-[85px]"
-                  />
-                </div>
-
-                {/* Title - in middle with flexible space */}
-                <div className="flex items-center justify-center px-3">
-                  <div
-                    className="text-[#40444F] text-center"
-                    style={{
-                      fontFamily:
-                        "'PT Serif Caption', -apple-system, Roboto, Helvetica, sans-serif",
-                      fontSize: "15px",
-                      fontWeight: "400",
-                      lineHeight: "normal",
-                      letterSpacing: "0.6px",
-                    }}
-                  >
-                    {problem.title}
-                  </div>
-                </div>
-
-                {/* Learn More Button - at bottom */}
-                <div className="flex justify-center">
-                  <div
-                    className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer"
-                    style={{
-                      fontFamily:
-                        "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                      fontSize: "14px",
-                      fontWeight: "700",
-                      color: "#72B5FF",
-                      textDecoration: "underline",
-                      textDecorationStyle: "solid",
-                      textDecorationSkipInk: "none",
-                      textDecorationThickness: "auto",
-                      textUnderlineOffset: "auto",
-                      textUnderlinePosition: "from-font",
-                    }}
-                    onClick={() => handleOpenModal(problem.articleId)}
-                  >
-                    Подробнее
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
         {/* Washing Machine Diagram - Absolutely positioned behind cards */}
         <img
           src="https://cdn.builder.io/api/v1/assets/fa85d7386c224d4d9f5093703eaea3c5/image-3822679-f5df36?format=webp&width=800"
@@ -314,99 +218,174 @@ export const MasterProblemsSection = () => {
           }}
         />
 
-        {/* Circular Problems - Last 2 cards with responsive positioning */}
-        <div className="flex flex-wrap justify-center gap-6 lg:gap-8 max-w-5xl mx-auto">
-          {allProblems.slice(3).map((problem, index) => (
+        {/* Problem Cards - All 5 cards in rectangular format */}
+        <div className="flex flex-wrap justify-center gap-[40px_69px] max-w-[1086px] mx-auto">
+          {allProblems.map((problem, index) => (
             <div
-              key={index + 3}
-              className={`flex flex-col bg-white rounded-full shadow-[0px_-3px_29.8px_0px_rgba(0,0,0,0.34)] relative
-                         w-[191px] h-[191px]
-                         ${index === 0 ? "md:-translate-x-[30px]" : "md:translate-x-[30px]"}`}
+              key={index}
+              className="w-[316px] h-[181px] flex-shrink-0 rounded-[15px] border border-[#C4C4C4] bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative cursor-pointer magic-border-card"
+              onClick={() => handleOpenModal(problem.articleId)}
+              style={
+                {
+                  "--border-width": "4px",
+                  "--border-color": "#72B5FF",
+                  "--duration": "0.3s",
+                } as React.CSSProperties
+              }
             >
-              {/* SVG Border with Linear Gradient */}
-              <svg
-                className="absolute inset-0 w-full h-full pointer-events-none"
-                style={{ zIndex: 1, opacity: 0.6 }}
-              >
-                <defs>
-                  <linearGradient
-                    id={`borderGradient${index + 3}`}
-                    x1="0%"
-                    y1="0%"
-                    x2="0%"
-                    y2="100%"
-                  >
-                    <stop offset="0%" stopColor="rgba(255,255,255,0)" />
-                    <stop offset="100%" stopColor="rgba(114,181,255,1)" />
-                  </linearGradient>
-                </defs>
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="calc(50% - 1.5px)"
-                  fill="none"
-                  stroke={`url(#borderGradient${index + 3})`}
-                  strokeWidth="3"
-                />
-              </svg>
+              <style jsx>{`
+                .magic-border-card {
+                  position: relative;
+                  transition: all 0.3s ease;
+                }
 
+                .magic-border-card:hover {
+                  box-shadow: 0px 0px 20px 0px rgba(114, 181, 255, 0.3);
+                }
+
+                .magic-border-card:hover .card-icon {
+                  transform: translate(-50%, 0) scale(1.2);
+                }
+
+                .magic-border-card:before {
+                  content: "";
+                  position: absolute;
+                  width: calc(100% + 8px);
+                  height: calc(100% + 8px);
+                  top: -4px;
+                  left: -4px;
+                  border-radius: 19px;
+                  background:
+                    linear-gradient(to right, #72b5ff 0%, #72b5ff 100%),
+                    linear-gradient(to top, #72b5ff 50%, transparent 50%),
+                    linear-gradient(to top, #72b5ff 50%, transparent 50%),
+                    linear-gradient(to right, #72b5ff 0%, #72b5ff 100%),
+                    linear-gradient(to left, #72b5ff 0%, #72b5ff 100%);
+                  background-size:
+                    100% 4px,
+                    4px 200%,
+                    4px 200%,
+                    0% 4px,
+                    0% 4px;
+                  background-position:
+                    50% 100%,
+                    0% 0%,
+                    100% 0%,
+                    100% 0%,
+                    0% 0%;
+                  background-repeat: no-repeat;
+                  transition:
+                    transform 0.3s ease-in-out,
+                    background-position 0.3s ease-in-out,
+                    background-size 0.3s ease-in-out;
+                  transform: scaleX(0);
+                  transition-delay: 0.6s, 0.3s, 0s;
+                  pointer-events: none;
+
+                  /* Ensure rounded corners match the card */
+                  mask:
+                    linear-gradient(to right, #000 0%, #000 100%),
+                    linear-gradient(to top, #000 50%, transparent 50%),
+                    linear-gradient(to top, #000 50%, transparent 50%),
+                    linear-gradient(to right, #000 0%, #000 100%),
+                    linear-gradient(to left, #000 0%, #000 100%);
+                  mask-size:
+                    100% 4px,
+                    4px 200%,
+                    4px 200%,
+                    0% 4px,
+                    0% 4px;
+                  mask-position:
+                    50% 100%,
+                    0% 0%,
+                    100% 0%,
+                    100% 0%,
+                    0% 0%;
+                  mask-repeat: no-repeat;
+
+                  /* Apply rounded corners using clip-path for better corner handling */
+                  clip-path: inset(0 round 19px);
+                }
+
+                .magic-border-card:hover:before {
+                  background-size:
+                    200% 4px,
+                    4px 400%,
+                    4px 400%,
+                    55% 4px,
+                    55% 4px;
+                  background-position:
+                    50% 100%,
+                    0% 100%,
+                    100% 100%,
+                    100% 0%,
+                    0% 0%;
+                  transform: scaleX(1);
+                  transition-delay: 0s, 0.3s, 0.6s;
+
+                  mask-size:
+                    200% 4px,
+                    4px 400%,
+                    4px 400%,
+                    55% 4px,
+                    55% 4px;
+                  mask-position:
+                    50% 100%,
+                    0% 100%,
+                    100% 100%,
+                    100% 0%,
+                    0% 0%;
+                }
+              `}</style>
+
+              {/* Icon at top center */}
+              <img
+                src={problem.iconUrl}
+                alt={problem.title}
+                className="card-icon w-[54px] h-[54px] flex-shrink-0 rounded-[85px] absolute left-1/2 top-4 transform -translate-x-1/2 transition-transform duration-500 ease-out"
+              />
+
+              {/* Problem title in center */}
               <div
-                className="flex flex-col w-full h-full relative z-10"
+                className="w-full text-[#40444F] text-center absolute left-0 top-[88px] h-[21px]"
                 style={{
-                  paddingTop: "18px",
-                  paddingBottom: "18px",
-                  justifyContent: "space-around",
+                  fontFamily:
+                    "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                  fontSize: "16px",
+                  fontWeight: "400",
+                  lineHeight: "normal",
+                  letterSpacing: "0.64px",
                 }}
               >
-                {/* Icon - at very top */}
-                <div className="flex justify-center">
-                  <img
-                    src={problem.iconUrl}
-                    alt={problem.title}
-                    className="w-[50px] h-[50px] rounded-[85px]"
-                  />
-                </div>
-
-                {/* Title - in middle with flexible space */}
-                <div className="flex items-center justify-center px-3">
-                  <div
-                    className="text-[#40444F] text-center"
-                    style={{
-                      fontFamily:
-                        "'PT Serif Caption', -apple-system, Roboto, Helvetica, sans-serif",
-                      fontSize: "15px",
-                      fontWeight: "400",
-                      lineHeight: "normal",
-                      letterSpacing: "0.6px",
-                    }}
-                  >
-                    {problem.title}
-                  </div>
-                </div>
-
-                {/* Learn More Button - at bottom */}
-                <div className="flex justify-center">
-                  <div
-                    className="text-[#72B5FF] text-center tracking-[0.56px] cursor-pointer"
-                    style={{
-                      fontFamily:
-                        "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
-                      fontSize: "14px",
-                      fontWeight: "700",
-                      color: "#72B5FF",
-                      textDecoration: "underline",
-                      textDecorationStyle: "solid",
-                      textDecorationSkipInk: "none",
-                      textDecorationThickness: "auto",
-                      textUnderlineOffset: "auto",
-                      textUnderlinePosition: "from-font",
-                    }}
-                    onClick={() => handleOpenModal(problem.articleId)}
-                  >
-                    Подробнее
-                  </div>
-                </div>
+                {problem.title}
               </div>
+
+              {/* Learn more link - in one line */}
+              <div
+                className="text-[#72B5FF] text-center cursor-pointer absolute left-1/2 top-[134px] transform -translate-x-1/2 whitespace-nowrap"
+                style={{
+                  fontFamily:
+                    "'PT Serif', -apple-system, Roboto, Helvetica, sans-serif",
+                  fontSize: "15px",
+                  fontWeight: "700",
+                  lineHeight: "normal",
+                  letterSpacing: "0.6px",
+                }}
+              >
+                Узнать подробнее
+              </div>
+
+              {/* Original Underline SVG */}
+              <svg
+                className="w-[250px] h-[5px] transform rotate-[-0.23deg] flex-shrink-0 absolute left-[34px] top-[178px]"
+                width="250"
+                height="5"
+                viewBox="0 0 250 5"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 3L250 1.99598" stroke="#72B5FF" strokeWidth="4" />
+              </svg>
             </div>
           ))}
         </div>
