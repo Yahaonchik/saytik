@@ -29,7 +29,7 @@ const allProblems: ProblemCard[] = [
   {
     title: "Не крутит барабан",
     description:
-      "Существует несколько признаков того, что у вашей машины проблемы с мотор��м. Один из них — это если бельё не двигается во время стирки.",
+      "Существует несколько признаков того, что у вашей машины проблемы с мотором. Один из них — это если бельё не двигается во время стирки.",
     articleId: "ne-krutit-baraban",
     iconUrl:
       "https://cdn.builder.io/api/v1/assets/8bfc794e3c6f411abc1802f52bf6c057/image-3822683-e84138?format=webp&width=800",
@@ -45,7 +45,7 @@ const allProblems: ProblemCard[] = [
   {
     title: "Сильно шумит при отжиме",
     description:
-      "Если вы всё проверили, а один или нескольк�� компонентов всё ещё не работают, возможно, проблема в электрике.",
+      "Если вы всё проверили, а один или несколько компонентов всё ещё не работают, возможно, проблема в электрике.",
     articleId: "shumit-pri-otzhime",
     iconUrl:
       "https://cdn.builder.io/api/v1/assets/8bfc794e3c6f411abc1802f52bf6c057/image-3822684-2b13c7?format=webp&width=800",
@@ -86,31 +86,6 @@ export const MasterProblemsSection = () => {
   const [selectedArticleId, setSelectedArticleId] = useState<string | null>(
     null,
   );
-  const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    // Сразу показываем все карточки на мобильных для упрощения
-    setVisibleCards(new Set([0, 1, 2, 3, 4]));
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = Number(entry.target.getAttribute("data-index"));
-            setVisibleCards((prev) => new Set([...prev, index]));
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "-50px" },
-    );
-
-    cardRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => observer.disconnect();
-  }, []);
 
   const handleOpenModal = (articleId: string) => {
     setSelectedArticleId(articleId);
@@ -125,9 +100,7 @@ export const MasterProblemsSection = () => {
   const renderCard = (problem: ProblemCard, index: number) => (
     <div
       key={index}
-      ref={(el) => (cardRefs.current[index] = el)}
-      data-index={index}
-      className="w-full max-w-[260px] sm:max-w-[260px] md:max-w-[280px] lg:max-w-[295px] h-[140px] sm:h-[140px] md:h-[148px] lg:h-[152px] flex-shrink-0 border border-[#C4C4C4] bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative cursor-pointer magic-border-card mx-auto opacity-100"
+      className="w-full max-w-[173px] sm:max-w-[260px] md:max-w-[280px] lg:max-w-[295px] h-[140px] sm:h-[140px] md:h-[148px] lg:h-[152px] flex-shrink-0 border border-[#C4C4C4] bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative cursor-pointer magic-border-card mx-auto"
       onClick={() => handleOpenModal(problem.articleId)}
       style={
         {
@@ -218,7 +191,7 @@ export const MasterProblemsSection = () => {
         className="card-icon w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] flex-shrink-0 rounded-[85px] absolute left-1/2 top-3 sm:top-3 lg:top-4 transform -translate-x-1/2 transition-transform duration-500 ease-out"
       />
 
-      {/* Problem title in center - увеличено расстояние от иконки на мобильных */}
+      {/* Problem title in center */}
       <div
         className="w-full text-[#40444F] text-center absolute left-0 px-2"
         style={{
@@ -228,13 +201,13 @@ export const MasterProblemsSection = () => {
           fontWeight: "400",
           lineHeight: "1.2",
           letterSpacing: "0.64px",
-          top: "clamp(65px, 10vw, 80px)", // Увеличили отступ от иконки
+          top: "clamp(65px, 10vw, 80px)",
         }}
       >
         {problem.title}
       </div>
 
-      {/* Learn more link - in one line at bottom */}
+      {/* Learn more link */}
       <div
         className="text-[#72B5FF] text-center cursor-pointer absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap px-1"
         style={{
@@ -250,7 +223,16 @@ export const MasterProblemsSection = () => {
         Узнать подробнее
       </div>
 
-      {/* Original Underline SVG - скрыта на мобильных */}
+      {/* Static blue stripe for mobile */}
+      <div
+        className="sm:hidden absolute bottom-0 h-[4px] bg-[#72B5FF]"
+        style={{
+          width: "calc(100% - 30px)",
+          left: "15px",
+        }}
+      />
+
+      {/* Animated underline SVG for desktop */}
       <svg
         className="hidden sm:block h-[4px] lg:h-[5px] flex-shrink-0 absolute bottom-[-3px] lg:bottom-[-4px]"
         style={{
@@ -268,11 +250,12 @@ export const MasterProblemsSection = () => {
   );
 
   return (
-    <section className="relative overflow-x-hidden min-h-[930px] sm:h-[930px] sm:overflow-hidden">
+    <section className="relative min-h-[930px] sm:h-[930px] overflow-hidden">
       <BackgroundSVG />
 
-      <div className="relative z-10 container mx-auto px-4 max-w-7xl h-full">
-        {/* Company Description - ONLY RESPONSIVE TEXT */}
+      {/* DESKTOP VERSION */}
+      <div className="hidden sm:block relative z-10">
+        {/* Desktop text - absolute positioned */}
         <div
           className="absolute w-full flex justify-center"
           style={{ top: "70px" }}
@@ -285,13 +268,13 @@ export const MasterProblemsSection = () => {
             style={{
               maxWidth: "1000px",
               fontFamily: "Georgia, serif",
-              fontSize: "clamp(14px, 3vw, 18px)", // Адаптивный размер шрифта
+              fontSize: "clamp(14px, 3vw, 18px)",
               fontWeight: "400",
               lineHeight: "1.4",
               letterSpacing: "1%",
               textAlign: "center",
               color: "#40444F",
-              padding: "0 20px", // Адаптивные отступы
+              padding: "0 20px",
             }}
           >
             <div style={{ marginBottom: "8px" }}>
@@ -308,7 +291,7 @@ export const MasterProblemsSection = () => {
           </motion.div>
         </div>
 
-        {/* Washing Machine Diagram - ORIGINAL SIZE */}
+        {/* Desktop washing machine diagram */}
         <motion.img
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 0.75, scale: 1 }}
@@ -327,83 +310,116 @@ export const MasterProblemsSection = () => {
           }}
         />
 
-        {/* Problem Cards - MOBILE RELATIVE, DESKTOP ABSOLUTE */}
+        {/* Desktop cards - absolute positioned */}
+        <div className="container mx-auto px-4 max-w-7xl h-full">
+          <div
+            className="absolute left-1/2 transform -translate-x-1/2 px-3 sm:px-4"
+            style={{
+              top: "291px",
+              width: "100%",
+              maxWidth: "1086px",
+            }}
+          >
+            {/* First row - 3 cards */}
+            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 lg:gap-[69px] mb-6 lg:mb-10">
+              {allProblems
+                .slice(0, 3)
+                .map((problem, index) => renderCard(problem, index))}
+            </div>
 
-        {/* Мобильная версия - относительное позиционирование */}
-        <div
-          className="relative sm:hidden w-full px-4 z-20"
-          style={{ paddingTop: "280px" }}
-        >
-          <div className="flex flex-col items-center gap-4 w-full max-w-[300px] mx-auto">
+            {/* Second row - 2 cards */}
+            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 lg:gap-[69px]">
+              {allProblems
+                .slice(3, 5)
+                .map((problem, index) => renderCard(problem, index + 3))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* MOBILE VERSION */}
+      <div className="sm:hidden relative z-10">
+        {/* Mobile text - normal flow */}
+        <div className="w-full pt-[70px] pb-6 px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            style={{
+              maxWidth: "1000px",
+              margin: "0 auto",
+              fontFamily: "Georgia, serif",
+              fontSize: "clamp(14px, 3vw, 18px)",
+              fontWeight: "400",
+              lineHeight: "1.4",
+              letterSpacing: "1%",
+              textAlign: "center",
+              color: "#40444F",
+            }}
+          >
+            <div style={{ marginBottom: "8px" }}>
+              В <span style={{ color: "#72B5FF" }}>РемСтирМаш</span> мы
+              заботимся о надёжной работе вашей техники во всех уголках Одессы.
+            </div>
+            <div style={{ marginBottom: "8px" }}>
+              Профессионально устраняем любые неисправности стиральных машин —
+              от самых простых до самых сложных.
+            </div>
+            <div>
+              Просто позвоните или оставьте заявку, и мы вам перезвоним.
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Mobile cards - normal flow */}
+        <div className="w-full px-4">
+          <div className="flex flex-col items-center gap-4 w-full max-w-[200px] mx-auto">
             {allProblems.map((problem, index) => renderCard(problem, index))}
           </div>
         </div>
+      </div>
 
-        {/* Планшеты и десктоп - абсолютное ��озиционирование */}
-        <div
-          className="hidden sm:block absolute left-1/2 transform -translate-x-1/2 px-3 sm:px-4"
-          style={{
-            top: "291px",
-            width: "100%",
-            maxWidth: "1086px",
-          }}
+      {/* Wave Background - Hidden on mobile */}
+      <div
+        className="hidden sm:block absolute pointer-events-none overflow-hidden"
+        style={{
+          bottom: "-20px",
+          left: "50%",
+          width: "100vw",
+          height: "585px",
+          transform: "translateX(-50%)",
+          zIndex: -20,
+        }}
+      >
+        <svg
+          width="1910"
+          height="565"
+          viewBox="0 0 1910 565"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full"
+          preserveAspectRatio="xMidYMid slice"
         >
-          {/* Первый ряд - 3 карточки */}
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 lg:gap-[69px] mb-6 lg:mb-10">
-            {allProblems
-              .slice(0, 3)
-              .map((problem, index) => renderCard(problem, index))}
-          </div>
-
-          {/* Второй ряд - 2 карточки */}
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 lg:gap-[69px]">
-            {allProblems
-              .slice(3, 5)
-              .map((problem, index) => renderCard(problem, index + 3))}
-          </div>
-        </div>
-
-        {/* Wave Background - ORIGINAL POSITION */}
-        <div
-          className="absolute pointer-events-none overflow-hidden"
-          style={{
-            bottom: "-20px",
-            left: "50%",
-            width: "100vw",
-            height: "585px",
-            transform: "translateX(-50%)",
-            zIndex: -20,
-          }}
-        >
-          <svg
-            width="1910"
-            height="565"
-            viewBox="0 0 1910 565"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-full h-full"
-            preserveAspectRatio="xMidYMid slice"
-          >
-            <path
-              d="M0 565V74.3469C92.6639 132.962 185.328 191.578 334.104 141.076C482.88 90.5736 617.541 15.3735 810.201 2.57079C987.584 -9.21674 1153.1 21.0022 1261.61 63.1655C1370.11 105.329 1437.3 105.582 1573.25 80.2348C1705.78 40.9919 1867.89 57.6694 2030 74.3469V565H0Z"
-              fill="url(#paint0_linear_6509_123)"
-              fillOpacity="0.82"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_6509_123"
-                x1="0"
-                y1="280.205"
-                x2="2030"
-                y2="280.205"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#72B5FF" />
-                <stop offset="1" stopColor="#B2D5FB" stopOpacity="0.62" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
+          <path
+            d="M0 565V74.3469C92.6639 132.962 185.328 191.578 334.104 141.076C482.88 90.5736 617.541 15.3735 810.201 2.57079C987.584 -9.21674 1153.1 21.0022 1261.61 63.1655C1370.11 105.329 1437.3 105.582 1573.25 80.2348C1705.78 40.9919 1867.89 57.6694 2030 74.3469V565H0Z"
+            fill="url(#paint0_linear_6509_123)"
+            fillOpacity="0.82"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear_6509_123"
+              x1="0"
+              y1="280.205"
+              x2="2030"
+              y2="280.205"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="#72B5FF" />
+              <stop offset="1" stopColor="#B2D5FB" stopOpacity="0.62" />
+            </linearGradient>
+          </defs>
+        </svg>
       </div>
 
       {/* Modal */}
