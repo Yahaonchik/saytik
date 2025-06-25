@@ -16,7 +16,7 @@ const allProblems: ProblemCard[] = [
       "Это распространённая проблема, связанная с несколькими возможными причинами. Это может быть мотор или неисправный выключатель крышки.",
     articleId: "ne-slivaet-vodu",
     iconUrl:
-      "https://cdn.builder.io/api/v1/assets/3c425170d2e9403fa39537f962323753/group-236-5899b1?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fd2a9e5c4643c4a31913e9e7710441da6%2F409529998b8248869078bc4ac5b6e7d6",
   },
   {
     title: "Не включается",
@@ -24,7 +24,7 @@ const allProblems: ProblemCard[] = [
       "Это может быть вызвано засорённым шлангом или проблемой с насосом, который, возможно, придётся заменить.",
     articleId: "ne-vklyuchaetsya",
     iconUrl:
-      "https://cdn.builder.io/api/v1/assets/8bfc794e3c6f411abc1802f52bf6c057/image-3822682-716cb3?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fd2a9e5c4643c4a31913e9e7710441da6%2F6106d3cf4b6149e29f7d10206a76106b",
   },
   {
     title: "Не крутит барабан",
@@ -32,7 +32,7 @@ const allProblems: ProblemCard[] = [
       "Существует несколько признаков того, что у вашей машины проблемы с мотором. Один из них — это если бельё не двигается во время стирки.",
     articleId: "ne-krutit-baraban",
     iconUrl:
-      "https://cdn.builder.io/api/v1/assets/8bfc794e3c6f411abc1802f52bf6c057/image-3822683-e84138?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fd2a9e5c4643c4a31913e9e7710441da6%2Fb2bb01a8c1bb434794fea2559bee7be0",
   },
   {
     title: "Протекает",
@@ -40,7 +40,7 @@ const allProblems: ProblemCard[] = [
       "Одежда остаётся влажной после отжима? Возможно, нужно проверить сливной шланг или вентиляцию",
     articleId: "protekaet-voda",
     iconUrl:
-      "https://cdn.builder.io/api/v1/assets/8bfc794e3c6f411abc1802f52bf6c057/group-235-1e74d6?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fd2a9e5c4643c4a31913e9e7710441da6%2F189e942d6d124292adabaee3456d3ed5",
   },
   {
     title: "Сильно шумит при отжиме",
@@ -48,7 +48,7 @@ const allProblems: ProblemCard[] = [
       "Если вы всё проверили, а один или несколько компонентов всё ещё не работают, возможно, проблема в электрике.",
     articleId: "shumit-pri-otzhime",
     iconUrl:
-      "https://cdn.builder.io/api/v1/assets/8bfc794e3c6f411abc1802f52bf6c057/image-3822684-2b13c7?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fd2a9e5c4643c4a31913e9e7710441da6%2Fbf103989cc39481f81b2cd006c3da650",
   },
 ];
 
@@ -100,7 +100,7 @@ export const MasterProblemsSection = () => {
   const renderCard = (problem: ProblemCard, index: number) => (
     <div
       key={index}
-      className="w-full max-w-[173px] sm:max-w-[260px] md:max-w-[280px] lg:max-w-[295px] h-[140px] sm:h-[140px] md:h-[148px] lg:h-[152px] flex-shrink-0 border border-[#C4C4C4] bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative cursor-pointer magic-border-card mx-auto"
+      className="w-full max-w-[208px] sm:max-w-[260px] md:max-w-[280px] lg:max-w-[295px] h-[140px] sm:h-[140px] md:h-[148px] lg:h-[152px] flex-shrink-0 border border-[#C4C4C4] bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative cursor-pointer magic-border-card mx-auto"
       onClick={() => handleOpenModal(problem.articleId)}
       style={
         {
@@ -188,7 +188,7 @@ export const MasterProblemsSection = () => {
       <img
         src={problem.iconUrl}
         alt={problem.title}
-        className="card-icon w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] flex-shrink-0 rounded-[85px] absolute left-1/2 top-3 sm:top-3 lg:top-4 transform -translate-x-1/2 transition-transform duration-500 ease-out"
+        className="card-icon w-[48px] h-[48px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] flex-shrink-0  absolute left-1/2 top-3 sm:top-3 lg:top-4 transform -translate-x-1/2 transition-transform duration-500 ease-out" style={{imageRendering: "pixelated", WebkitImageRendering: "crisp-edges", MozImageRendering: "crisp-edges", msImageRendering: "pixelated", optimizeSpeed: "pixelated", WebkitOptimizeContrast: true}}
       />
 
       {/* Problem title in center */}
@@ -253,8 +253,8 @@ export const MasterProblemsSection = () => {
 
   return (
     <section className="relative h-[1200px] sm:h-[937px] overflow-hidden">
-      {/* DESKTOP VERSION */}
-      <div className="hidden sm:block relative z-10">
+      {/* MAIN VERSION - Now displays on all screen sizes */}
+      <div className="relative z-10">
         {/* Desktop text - absolute positioned */}
         <div
           className="absolute w-full flex justify-center"
@@ -298,11 +298,11 @@ export const MasterProblemsSection = () => {
           whileInView={{ opacity: 0.75, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-          src="https://cdn.builder.io/api/v1/image/assets%2F18f3fbac7f774ce89fe20a202aac550a%2Fc58184f28f3140b2825ceac1a305af30"
+          src="https://cdn.builder.io/api/v1/image/assets%2Fd2a9e5c4643c4a31913e9e7710441da6%2Ff025183f397e4ba58fd2efa60101d45a"
           alt="Схема стиральной машины"
-          className="absolute w-[529px] h-[529px] object-contain pointer-events-none"
+          className="washing-machine-desktop absolute w-[527px] h-[527px] object-contain pointer-events-none"
           style={{
-            top: "calc(50% - 285px + 500px - 75px + 50px)",
+            top: "calc(50% - 285px + 500px - 75px + 50px + 200px)",
             left: "calc(50% - 40px - 75px + 75px)",
             transform: "translate(-50%, -50%) scaleX(-1)",
             filter:
@@ -310,6 +310,13 @@ export const MasterProblemsSection = () => {
             zIndex: -10,
           }}
         />
+        <style jsx>{`
+          @media (min-width: 640px) {
+            .washing-machine-desktop {
+              top: calc(50% - 285px + 500px - 75px + 50px) !important;
+            }
+          }
+        `}</style>
 
         {/* Desktop cards - absolute positioned */}
         <div className="container mx-auto px-4 max-w-7xl h-full">
@@ -329,10 +336,10 @@ export const MasterProblemsSection = () => {
             </div>
 
             {/* Second row - 2 cards manually created */}
-            <div className="flex justify-center items-center gap-[50px] mt-[50px]">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-[50px] mt-8 sm:mt-[50px] px-4 sm:px-0">
               {/* Протекает card */}
               <div
-                className="w-full max-w-[173px] sm:max-w-[260px] md:max-w-[280px] lg:max-w-[295px] h-[140px] sm:h-[140px] md:h-[148px] lg:h-[152px] flex-shrink-0 border border-[#C4C4C4] bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative cursor-pointer magic-border-card"
+                className="w-full max-w-[208px] sm:max-w-[260px] md:max-w-[280px] lg:max-w-[295px] h-[140px] sm:h-[140px] md:h-[148px] lg:h-[152px] flex-shrink-0 border border-[#C4C4C4] bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative cursor-pointer magic-border-card"
                 onClick={() => handleOpenModal(allProblems[3].articleId)}
                 style={
                   {
@@ -346,7 +353,7 @@ export const MasterProblemsSection = () => {
                 <img
                   src={allProblems[3].iconUrl}
                   alt={allProblems[3].title}
-                  className="card-icon w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] flex-shrink-0 rounded-[85px] absolute left-1/2 top-3 sm:top-3 lg:top-4 transform -translate-x-1/2 transition-transform duration-500 ease-out"
+                  className="card-icon w-[48px] h-[48px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] flex-shrink-0  absolute left-1/2 top-3 sm:top-3 lg:top-4 transform -translate-x-1/2 transition-transform duration-500 ease-out" style={{imageRendering: "pixelated", WebkitImageRendering: "crisp-edges", MozImageRendering: "crisp-edges", msImageRendering: "pixelated", optimizeSpeed: "pixelated", WebkitOptimizeContrast: true}}
                 />
                 <div
                   className="w-full text-[#40444F] text-center absolute left-0 px-2"
@@ -402,7 +409,7 @@ export const MasterProblemsSection = () => {
 
               {/* Сильно шумит при отжиме card */}
               <div
-                className="w-full max-w-[173px] sm:max-w-[260px] md:max-w-[280px] lg:max-w-[295px] h-[140px] sm:h-[140px] md:h-[148px] lg:h-[152px] flex-shrink-0 border border-[#C4C4C4] bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative cursor-pointer magic-border-card"
+                className="w-full max-w-[208px] sm:max-w-[260px] md:max-w-[280px] lg:max-w-[295px] h-[140px] sm:h-[140px] md:h-[148px] lg:h-[152px] flex-shrink-0 border border-[#C4C4C4] bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative cursor-pointer magic-border-card"
                 onClick={() => handleOpenModal(allProblems[4].articleId)}
                 style={
                   {
@@ -416,7 +423,7 @@ export const MasterProblemsSection = () => {
                 <img
                   src={allProblems[4].iconUrl}
                   alt={allProblems[4].title}
-                  className="card-icon w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] flex-shrink-0 rounded-[85px] absolute left-1/2 top-3 sm:top-3 lg:top-4 transform -translate-x-1/2 transition-transform duration-500 ease-out"
+                  className="card-icon w-[48px] h-[48px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] flex-shrink-0  absolute left-1/2 top-3 sm:top-3 lg:top-4 transform -translate-x-1/2 transition-transform duration-500 ease-out" style={{imageRendering: "pixelated", WebkitImageRendering: "crisp-edges", MozImageRendering: "crisp-edges", msImageRendering: "pixelated", optimizeSpeed: "pixelated", WebkitOptimizeContrast: true}}
                 />
                 <div
                   className="w-full text-[#40444F] text-center absolute left-0 px-2"
@@ -474,53 +481,9 @@ export const MasterProblemsSection = () => {
         </div>
       </div>
 
-      {/* MOBILE VERSION */}
-      <div className="sm:hidden relative z-10">
-        {/* Mobile text - normal flow */}
-        <div className="w-full pt-[70px] pb-6 px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            style={{
-              maxWidth: "1000px",
-              margin: "0 auto",
-              fontFamily: "Georgia, serif",
-              fontSize: "clamp(14px, 3vw, 18px)",
-              fontWeight: "400",
-              lineHeight: "1.4",
-              letterSpacing: "1%",
-              textAlign: "center",
-              color: "#40444F",
-            }}
-          >
-            <div style={{ marginBottom: "8px" }}>
-              В <span style={{ color: "#72B5FF" }}>РемСтирМаш</span> мы
-              заботимся о надёжной работе вашей техники во всех уголках Одессы.
-            </div>
-            <div style={{ marginBottom: "8px" }}>
-              Профессионально устраняем любые неисправности стиральных машин —
-              от самых простых до самых сложных.
-            </div>
-            <div>
-              Просто позвоните или оставьте заявку,{" "}
-              <span style={{ color: "#72B5FF" }}>и мы вам перезвоним</span>.
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Mobile cards - normal flow */}
-        <div className="w-full px-4">
-          <div className="flex flex-col items-center gap-4 w-full max-w-[200px] mx-auto">
-            {allProblems.map((problem, index) => renderCard(problem, index))}
-          </div>
-        </div>
-      </div>
-
-      {/* Wave Background - Hidden on mobile */}
+      {/* Wave Background */}
       <div
-        className="hidden sm:block absolute pointer-events-none overflow-hidden"
+        className="absolute pointer-events-none overflow-hidden"
         style={{
           bottom: "-20px",
           left: "50%",
