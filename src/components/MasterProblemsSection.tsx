@@ -13,42 +13,42 @@ const allProblems: ProblemCard[] = [
   {
     title: "Не сливает воду",
     description:
-      "Это распространённая проблема, связанная с несколькими возможными причинами. Это может быть мотор или неисправный выключатель крышки.",
+      "Если ваша стиральная машина перестала сливать воду, причина может быть как простой, так и требующей ремонта. Чаще всего проблема связана с засором сливного шланга, фильтра или поломкой насоса. Также возможны сбои в работе модуля управления или засор канализации. Наши мастера быстро найдут причину и устранят неисправность.",
     articleId: "ne-slivaet-vodu",
     iconUrl:
-      "https://cdn.builder.io/api/v1/image/assets%2Fd2a9e5c4643c4a31913e9e7710441da6%2F409529998b8248869078bc4ac5b6e7d6",
+      "https://cdn.builder.io/api/v1/image/assets%2F0a52773350824337b93dd713c9b778a2%2F6d7e7527c7234ea08f7783e1cbd2ccc9",
   },
   {
     title: "Не включается",
     description:
-      "Это может быть вызвано засорённым шлангом или проблемой с насосом, который, возможно, придётся заменить.",
+      "Если ваша стиральная машина не включается, проблема может крыться в различных узлах. Чаще всего это связано с неисправностью блока питания, поломкой кнопки включения или проблемами с электропроводкой. Также возможны сбои в работе электронного модуля или повреждение сетевого фильтра. Наши специалисты проведут диагностику и восстановят работоспособность.",
     articleId: "ne-vklyuchaetsya",
     iconUrl:
-      "https://cdn.builder.io/api/v1/image/assets%2Fd2a9e5c4643c4a31913e9e7710441da6%2F6106d3cf4b6149e29f7d10206a76106b",
+      "https://cdn.builder.io/api/v1/image/assets%2F0a52773350824337b93dd713c9b778a2%2F3bed9eea197641c2809ddc9936e850b7",
   },
   {
     title: "Не крутит барабан",
     description:
-      "Существует несколько признаков того, что у вашей машины проблемы с мотором. Один из них — это если бельё не двигается во время стирки.",
+      "Если барабан вашей стиральной машины не вращается, причины могут быть разными. Чаще всего это износ приводного ремня, поломка двигателя или неисправность подшипников. Также возможны проблемы с электроникой, блокировкой барабана посторонними предметами или поломкой редуктора. Наши мастера быстро определят причину и выполнят качественный ремонт.",
     articleId: "ne-krutit-baraban",
     iconUrl:
-      "https://cdn.builder.io/api/v1/image/assets%2Fd2a9e5c4643c4a31913e9e7710441da6%2Fb2bb01a8c1bb434794fea2559bee7be0",
+      "https://cdn.builder.io/api/v1/image/assets%2F0a52773350824337b93dd713c9b778a2%2F0cddf25730054638a975c67d735114e6",
   },
   {
     title: "Протекает",
     description:
-      "Одежда остаётся влажной после отжима? Возможно, нужно проверить сливной шланг или вентиляцию",
+      "Если ваша стиральная машина протекает, важно быстро найти источник проблемы. Чаще всего причина в износе уплотнителей дверцы, повреждении шлангов или трещинах в баке. Также возможны проблемы с патрубками, неисправностью клапанов или ослаблением хомутов. Наши специалисты устранят течь и предотвратят повторные протечки.",
     articleId: "protekaet-voda",
     iconUrl:
-      "https://cdn.builder.io/api/v1/image/assets%2Fd2a9e5c4643c4a31913e9e7710441da6%2F189e942d6d124292adabaee3456d3ed5",
+      "https://cdn.builder.io/api/v1/image/assets%2F0a52773350824337b93dd713c9b778a2%2F698531ce478a4d808c597c63038ce1ae",
   },
   {
     title: "Сильно шумит при отжиме",
     description:
-      "Если вы всё проверили, а один или несколько компонентов всё ещё не работают, возможно, проблема в электрике.",
+      "Если ваша стиральная машина издает сильный шум при отжиме, это сигнал о серьезных неполадках. Чаще всего причина в износе подшипников, разбалансировке барабана или ослаблении креплений. Также возможны проблемы с амортизаторами, попадание посторонних предметов или износ приводного ремня. Наши мастера устранят источник шума и восстановят тихую работу.",
     articleId: "shumit-pri-otzhime",
     iconUrl:
-      "https://cdn.builder.io/api/v1/image/assets%2Fd2a9e5c4643c4a31913e9e7710441da6%2Fbf103989cc39481f81b2cd006c3da650",
+      "https://cdn.builder.io/api/v1/image/assets%2F0a52773350824337b93dd713c9b778a2%2Ff3253ff1d3aa4a4cab219ddc14552016",
   },
 ];
 
@@ -186,9 +186,14 @@ export const MasterProblemsSection = () => {
 
       {/* Icon at top center */}
       <img
-        src={problem.iconUrl}
+        src={`${problem.iconUrl}?format=webp&width=108&quality=90`}
         alt={problem.title}
-        className="card-icon w-[48px] h-[48px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] flex-shrink-0  absolute left-1/2 top-3 sm:top-3 lg:top-4 transform -translate-x-1/2 transition-transform duration-500 ease-out" style={{imageRendering: "pixelated", WebkitImageRendering: "crisp-edges", MozImageRendering: "crisp-edges", msImageRendering: "pixelated", optimizeSpeed: "pixelated", WebkitOptimizeContrast: true}}
+        className="card-icon w-[48px] h-[48px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] flex-shrink-0  absolute left-1/2 top-3 sm:top-3 lg:top-4 transform -translate-x-1/2 transition-transform duration-500 ease-out"
+        style={{
+          imageRendering: "auto",
+          WebkitImageRendering: "auto",
+          MozImageRendering: "auto",
+        }}
       />
 
       {/* Problem title in center */}
@@ -201,7 +206,7 @@ export const MasterProblemsSection = () => {
           fontWeight: "400",
           lineHeight: "1.2",
           letterSpacing: "0.64px",
-          top: "clamp(65px, 10vw, 80px)",
+          top: "clamp(75px, 10vw, 80px)", // Опущено на 10px для мобильных
         }}
       >
         {problem.title}
@@ -283,7 +288,7 @@ export const MasterProblemsSection = () => {
             </div>
             <div style={{ marginBottom: "8px" }}>
               Профессионально устраняем любые неисправности стиральных машин —
-              от самых простых до самых сложных.
+              от самых просты�� до самых сложных.
             </div>
             <div>
               Просто позвоните или оставьте заявку,{" "}
@@ -351,9 +356,14 @@ export const MasterProblemsSection = () => {
                 }
               >
                 <img
-                  src={allProblems[3].iconUrl}
+                  src={`${allProblems[3].iconUrl}?format=webp&width=108&quality=90`}
                   alt={allProblems[3].title}
-                  className="card-icon w-[48px] h-[48px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] flex-shrink-0  absolute left-1/2 top-3 sm:top-3 lg:top-4 transform -translate-x-1/2 transition-transform duration-500 ease-out" style={{imageRendering: "pixelated", WebkitImageRendering: "crisp-edges", MozImageRendering: "crisp-edges", msImageRendering: "pixelated", optimizeSpeed: "pixelated", WebkitOptimizeContrast: true}}
+                  className="card-icon w-[48px] h-[48px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] flex-shrink-0  absolute left-1/2 top-3 sm:top-3 lg:top-4 transform -translate-x-1/2 transition-transform duration-500 ease-out"
+                  style={{
+                    imageRendering: "auto",
+                    WebkitImageRendering: "auto",
+                    MozImageRendering: "auto",
+                  }}
                 />
                 <div
                   className="w-full text-[#40444F] text-center absolute left-0 px-2"
@@ -364,7 +374,7 @@ export const MasterProblemsSection = () => {
                     fontWeight: "400",
                     lineHeight: "1.2",
                     letterSpacing: "0.64px",
-                    top: "clamp(65px, 10vw, 80px)",
+                    top: "clamp(75px, 10vw, 80px)", // Опущено на 10px для мобильных
                   }}
                 >
                   {allProblems[3].title}
@@ -407,7 +417,7 @@ export const MasterProblemsSection = () => {
                 </svg>
               </div>
 
-              {/* Сильно шумит при отжиме card */}
+              {/* Силь��о шумит при отжиме card */}
               <div
                 className="w-full max-w-[208px] sm:max-w-[260px] md:max-w-[280px] lg:max-w-[295px] h-[140px] sm:h-[140px] md:h-[148px] lg:h-[152px] flex-shrink-0 border border-[#C4C4C4] bg-white shadow-[0px_0px_12.5px_0px_rgba(0,0,0,0.25)] relative cursor-pointer magic-border-card"
                 onClick={() => handleOpenModal(allProblems[4].articleId)}
@@ -421,9 +431,14 @@ export const MasterProblemsSection = () => {
                 }
               >
                 <img
-                  src={allProblems[4].iconUrl}
+                  src={`${allProblems[4].iconUrl}?format=webp&width=108&quality=90`}
                   alt={allProblems[4].title}
-                  className="card-icon w-[48px] h-[48px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] flex-shrink-0  absolute left-1/2 top-3 sm:top-3 lg:top-4 transform -translate-x-1/2 transition-transform duration-500 ease-out" style={{imageRendering: "pixelated", WebkitImageRendering: "crisp-edges", MozImageRendering: "crisp-edges", msImageRendering: "pixelated", optimizeSpeed: "pixelated", WebkitOptimizeContrast: true}}
+                  className="card-icon w-[48px] h-[48px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] flex-shrink-0  absolute left-1/2 top-3 sm:top-3 lg:top-4 transform -translate-x-1/2 transition-transform duration-500 ease-out"
+                  style={{
+                    imageRendering: "auto",
+                    WebkitImageRendering: "auto",
+                    MozImageRendering: "auto",
+                  }}
                 />
                 <div
                   className="w-full text-[#40444F] text-center absolute left-0 px-2"
@@ -434,7 +449,7 @@ export const MasterProblemsSection = () => {
                     fontWeight: "400",
                     lineHeight: "1.2",
                     letterSpacing: "0.64px",
-                    top: "clamp(65px, 10vw, 80px)",
+                    top: "clamp(75px, 10vw, 80px)", // Опущено на 10px для мобильных
                   }}
                 >
                   {allProblems[4].title}

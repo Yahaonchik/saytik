@@ -130,8 +130,13 @@
     font-feature-settings: normal;
     font-kerning: auto;
     font-variant-ligatures: none;
-    image-rendering: crisp-edges;
-    image-rendering: -webkit-optimize-contrast;
+  }
+
+  /* Ensure images inside buttons and links render smoothly */
+  a img,
+  button img {
+    image-rendering: auto;
+    -webkit-image-rendering: auto;
   }
 
   /* Specific improvements for PT Serif font - try pixel perfect rendering */
